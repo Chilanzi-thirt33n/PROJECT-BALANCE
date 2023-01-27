@@ -1,4 +1,4 @@
-# Balanced Diet Generator
+# Balanced Diet Generator=
 This web application is designed to help users in Zambia generate a balanced diet for a week using a random generation algorithm. The application is intended to address the problem of poor nutrition in the country, particularly among high-risk groups such as diabetics and children.
 
 # Tools Used
@@ -6,8 +6,8 @@ This web application is designed to help users in Zambia generate a balanced die
 * JavaScript
 * CSS (using Tailwind framework)
 * HTML
-* Lunacy (for prototyping)
-* Figma (for UX/UI design)
+* Figma (for prototyping)
+* Lunacy (for UX/UI design)
 
 # Installation
 
@@ -18,6 +18,7 @@ This web application is designed to help users in Zambia generate a balanced die
 
 # Usage
 
+* Select create my plan
 * Enter your dietary restrictions and preferences (if any)
 * Click on the "Generate Diet" button to generate a balanced diet for a week
 * The generated diet can be viewed and saved for future reference using a special code that will be issued.
@@ -35,4 +36,4 @@ This web application is designed to help users in Zambia generate a balanced die
 * Thanks to the developers of the tools used in this project for making them available and easy to use.
 * Thanks to the open-source community for the constant support and inspiration.
 
->> **Note: This is the final dissertation project for Cavendish University. The rights to this program will be owned by Cavendish University and myself.
+>> **Note: This is the final dissertation project for Cavendish University. The rights to this program will be owned by Cavendish University and myself however cloning and usage of this program is free so feel free to help.
