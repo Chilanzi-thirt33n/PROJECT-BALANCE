@@ -8,6 +8,8 @@ This web application is designed to help users in Zambia generate a balanced die
 * HTML
 * Figma (for prototyping)
 * Lunacy (for UX/UI design)
+* inkscape (graphics)
+* krita (Artworks)
 
 # Installation
 
