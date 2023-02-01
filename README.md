@@ -11,14 +11,7 @@ This web application is designed to help users in Zambia generate a balanced die
 * inkscape (graphics)
 * krita (Artworks)
 
-# Installation
-
-* Clone or download the repository
-* Run npm install to install the necessary dependencies
-* Start a local server (e.g. using http-server or live-server) and navigate to the project directory
-* The application should now be running on your local server and accessible via your web browser
-
-# Try it on github
+# Try it
 
 * [HealthyBites!](https://chilanzi-thirt33n.github.io/PROJECT-BALANCE/)
 
@@ -28,6 +21,13 @@ This web application is designed to help users in Zambia generate a balanced die
 * Enter your dietary restrictions and preferences (if any)
 * Click on the "Generate Diet" button to generate a balanced diet for a week
 * The generated diet can be viewed and saved for future reference using a special code that will be issued.
+
+# Installation
+
+* Clone or download the repository
+* Run npm install to install the necessary dependencies
+* Start a local server (e.g. using http-server or live-server) and navigate to the project directory
+* The application should now be running on your local server and accessible via your web browser
 
 # Contribution
 
