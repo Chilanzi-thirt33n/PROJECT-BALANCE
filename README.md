@@ -18,6 +18,10 @@ This web application is designed to help users in Zambia generate a balanced die
 * Start a local server (e.g. using http-server or live-server) and navigate to the project directory
 * The application should now be running on your local server and accessible via your web browser
 
+# Try it on github
+
+* [HealthyBites!](https://chilanzi-thirt33n.github.io/PROJECT-BALANCE/)
+
 # Usage
 
 * Select create my plan
