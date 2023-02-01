@@ -2,17 +2,56 @@
 
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="images/logo.png">
+    <meta charset="utf-8" />
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="images/logo.png" />
     <title>Auto generate a balanced diet | health foods - ARBIT DESIGNS</title>
   </head>
   <body>
     <!--this is banner for the logo-->
-    <div id="logo-wrapper"><img src="images/" alt=""></div>
+    <div id="logo-wrapper">
+      <img src="images/" alt="healthybites" />
+      <h1>HealthBite!</h1>
+    </div>
+    <!--thr form wrapped in the main because its the main content-->
+    <main>
+      <p>
+        Generate your personalized meal plan now! let our algorithm create a
+        balanced diet for you.
+      </p>
+
+      <!--form section-->
+      <form id="codeSection">
+        <ul>
+        <!--special condition-->
+       <li> <label >Special condition :<select name="spn" id="specialNeeds">
+          <option value="normal">None</option>
+          <option value="vegan">Vegan</option>
+          <option value="diabetic">Diabetic</option>
+          <option value="pescatarian">Pescatarian</option>
+        </select></label>
+         <!-- age field-->
+        <label for="age">Age :<input type="number" name="integer" id="age" min="1" max="150" value="22"></label></li>
+        <!--meal type for people to choose the food resources -->
+        <li><label>Meal type : <select name="meal" id="mealType">
+          <option value="western">Western meals</option>
+          <option value="Zambian">Zambian meals</option>
+          <option value="mix">Combination meals</option>
+        </select></label></li>
+</ul>
+<input type="submit" id="submit-btn" value="Generate meal">
+      </form>
+    </main>
     <!--the footer with cavendish details-->
-<footer><small><p>Copyright &copy; 2023 044-348 and Cavendish University Zambia.All rights reserved.</p></small></footer>
+    <footer>
+      <small
+        ><p>
+          Copyright &copy; 2023 044-348 and Cavendish University Zambia.All
+          rights reserved.
+        </p></small
+      >
+    </footer>
   </body>
-   <script src="javascript/script.js" ></script>
+  <script src="javascript/script.js"></script>
 </html>
