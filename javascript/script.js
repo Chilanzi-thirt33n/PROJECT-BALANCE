@@ -1,6 +1,7 @@
 // This script belongs to David Chilanzi Sensenta of Arbit Designs.
 // This script is developed as part of the final dissertation project.
 // All rights are reserved, please do not use without proper authorization.
+
 let formDetails = {}; //? global object to store form details
 
 //** function to get form details
