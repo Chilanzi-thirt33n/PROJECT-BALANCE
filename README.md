@@ -11,16 +11,16 @@ This web application is designed to help users in Zambia generate a balanced die
 * inkscape (graphics)
 * krita (Artworks)
 
-# Try it
-
-* [HealthyBites!](https://chilanzi-thirt33n.github.io/PROJECT-BALANCE/)
-
 # Usage
 
 * Select create my plan
 * Enter your dietary restrictions and preferences (if any)
 * Click on the "Generate Diet" button to generate a balanced diet for a week
 * The generated diet can be viewed and saved for future reference using a special code that will be issued.
+
+# Try it
+
+* [HealthyBites!](https://chilanzi-thirt33n.github.io/PROJECT-BALANCE/)
 
 # Installation
 
