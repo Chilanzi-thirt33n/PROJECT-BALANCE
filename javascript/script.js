@@ -4,32 +4,32 @@
 //npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch this is for tailwind
 //********************FUNCTIONS SECTION ******************************/
 //** functions random number for indexing up to seven */
-function getRandom7Int(){
-let random7 = Math.floor(Math.random() * 7);
-return random7;
+function getRandom7Int() {
+  let random7 = Math.floor(Math.random() * 7);
+  return random7;
 }
 //this is a function for those array with 14 objects
-function getRandom14Int(){
-let random7 = Math.floor(Math.random() * 14);
-return random7;
+function getRandom14Int() {
+  let random7 = Math.floor(Math.random() * 14);
+  return random7;
 }
-// function of arr with seven random days  
-function PlaceIntInArr(){
-  let sevenIntArr =[];
+// function of arr with seven random days
+function PlaceIntInArr() {
+  let sevenIntArr = [];
   let limit = 7;
-  for(let i=0 ;i<=limit;i++){
-    if(sevenIntArr.length!=limit){
+  for (let i = 0; i <= limit; i++) {
+    if (sevenIntArr.length != limit) {
       sevenIntArr.push(getRandom7Int());
     }
   }
   return sevenIntArr;
 }
 //this is for seven days but with arrays which go up to 14 meals
-function PlaceIntInArrTwo(){
-  let sevenIntArr =[];
+function PlaceIntInArrTwo() {
+  let sevenIntArr = [];
   let limit = 7;
-  for(let i=0 ;i<=limit;i++){
-    if(sevenIntArr.length!=limit){
+  for (let i = 0; i <= limit; i++) {
+    if (sevenIntArr.length != limit) {
       sevenIntArr.push(getRandom14Int());
     }
   }
@@ -80,12 +80,23 @@ function getSpecialCode() {
   return specialCode;
 }
 //**function for loading newpage */
-function loadPlanPage(){
+function loadPlanPage() {
   getDetails();
   window.location.assign("HealthyMeal.html");
 }
 
 //todo : create proper objects of meals to be loaded on the new page
 // normal meals
-let normalzed = [{},{},{},{},{},{},{}];
-let normalwestern = [{},{},{},{},{},{},{}];
+let normalized = [
+  {
+    breakfast: "brown bread",
+    breakfastSide: ["milk", "eggs"],
+    lunch: "nshima",
+    lunchside: ["village chicken", "spinach"],
+    mealSunset: "placeholder",
+    mealSunsetSide: ["side1", "side2"],
+    eveningmeal: "placeholder",
+    eveningmealside: ["side1", "side2"],
+  },
+  
+];
