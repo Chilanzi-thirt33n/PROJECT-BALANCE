@@ -35,6 +35,8 @@ function PlaceIntInArrTwo() {
   }
   return sevenIntArr;
 }
+
+
 //** function to get form details
 function getDetails() {
   let formDetails = {}; // object to store form data from generation field
@@ -54,6 +56,7 @@ function getDetails() {
 
   return formDetails;
 }
+console.log(getDetails().condition);
 //** function to get special name and code */
 function getSpecialCode() {
   let specialCode = {}; // object for storung form data from special code
@@ -85,9 +88,11 @@ function loadPlanPage() {
   window.location.assign("HealthyMeal.html");
 }
 
+
 //todo : create proper objects of meals to be loaded on the new page
 // normal meals
 let normalized = [
+  //day1
   {
     breakfast: "brown bread",
     breakfastSide: ["milk", "eggs"],
@@ -98,5 +103,253 @@ let normalized = [
     eveningmeal: "placeholder",
     eveningmealside: ["side1", "side2"],
   },
-  
+  //day2
+  {
+    breakfast: "brown bread",
+    breakfastSide: ["milk", "eggs"],
+    lunch: "nshima",
+    lunchside: ["village chicken", "spinach"],
+    mealSunset: "placeholder",
+    mealSunsetSide: ["side1", "side2"],
+    eveningmeal: "placeholder",
+    eveningmealside: ["side1", "side2"],
+  },
+  //day3
+  {
+    breakfast: "brown bread",
+    breakfastSide: ["milk", "eggs"],
+    lunch: "nshima",
+    lunchside: ["village chicken", "spinach"],
+    mealSunset: "placeholder",
+    mealSunsetSide: ["side1", "side2"],
+    eveningmeal: "placeholder",
+    eveningmealside: ["side1", "side2"],
+  },
+  //day4
+  {
+    breakfast: "brown bread",
+    breakfastSide: ["milk", "eggs"],
+    lunch: "nshima",
+    lunchside: ["village chicken", "spinach"],
+    mealSunset: "placeholder",
+    mealSunsetSide: ["side1", "side2"],
+    eveningmeal: "placeholder",
+    eveningmealside: ["side1", "side2"],
+  },
+  //day5
+  {
+    breakfast: "brown bread",
+    breakfastSide: ["milk", "eggs"],
+    lunch: "nshima",
+    lunchside: ["village chicken", "spinach"],
+    mealSunset: "placeholder",
+    mealSunsetSide: ["side1", "side2"],
+    eveningmeal: "placeholder",
+    eveningmealside: ["side1", "side2"],
+  },
+  //day6
+  {
+    breakfast: "brown bread",
+    breakfastSide: ["milk", "eggs"],
+    lunch: "nshima",
+    lunchside: ["village chicken", "spinach"],
+    mealSunset: "placeholder",
+    mealSunsetSide: ["side1", "side2"],
+    eveningmeal: "placeholder",
+    eveningmealside: ["side1", "side2"],
+  },
+  //day7
+   {
+    breakfast: "brown bread",
+    breakfastSide: ["milk", "eggs"],
+    lunch: "nshima",
+    lunchside: ["village chicken", "spinach"],
+    mealSunset: "placeholder",
+    mealSunsetSide: ["side1", "side2"],
+    eveningmeal: "placeholder",
+    eveningmealside: ["side1", "side2"],
+  }
 ];
+console.log(normalized[0].breakfast);
+//normal western
+let western = [
+  //day1
+  {
+    breakfast: "brown bread",
+    breakfastSide: ["milk", "eggs"],
+    lunch: "nshima",
+    lunchside: ["village chicken", "spinach"],
+    mealSunset: "placeholder",
+    mealSunsetSide: ["side1", "side2"],
+    eveningmeal: "placeholder",
+    eveningmealside: ["side1", "side2"],
+  },
+  //day2
+  {
+    breakfast: "brown bread",
+    breakfastSide: ["milk", "eggs"],
+    lunch: "nshima",
+    lunchside: ["village chicken", "spinach"],
+    mealSunset: "placeholder",
+    mealSunsetSide: ["side1", "side2"],
+    eveningmeal: "placeholder",
+    eveningmealside: ["side1", "side2"],
+  },
+  //day3
+  {
+    breakfast: "brown bread",
+    breakfastSide: ["milk", "eggs"],
+    lunch: "nshima",
+    lunchside: ["village chicken", "spinach"],
+    mealSunset: "placeholder",
+    mealSunsetSide: ["side1", "side2"],
+    eveningmeal: "placeholder",
+    eveningmealside: ["side1", "side2"],
+  },
+  //day4
+  {
+    breakfast: "brown bread",
+    breakfastSide: ["milk", "eggs"],
+    lunch: "nshima",
+    lunchside: ["village chicken", "spinach"],
+    mealSunset: "placeholder",
+    mealSunsetSide: ["side1", "side2"],
+    eveningmeal: "placeholder",
+    eveningmealside: ["side1", "side2"],
+  },
+  //day5
+  {
+    breakfast: "brown bread",
+    breakfastSide: ["milk", "eggs"],
+    lunch: "nshima",
+    lunchside: ["village chicken", "spinach"],
+    mealSunset: "placeholder",
+    mealSunsetSide: ["side1", "side2"],
+    eveningmeal: "placeholder",
+    eveningmealside: ["side1", "side2"],
+  },
+  //day6
+  {
+    breakfast: "brown bread",
+    breakfastSide: ["milk", "eggs"],
+    lunch: "nshima",
+    lunchside: ["village chicken", "spinach"],
+    mealSunset: "placeholder",
+    mealSunsetSide: ["side1", "side2"],
+    eveningmeal: "placeholder",
+    eveningmealside: ["side1", "side2"],
+  },
+  //day7
+   {
+    breakfast: "brown bread",
+    breakfastSide: ["milk", "eggs"],
+    lunch: "nshima",
+    lunchside: ["village chicken", "spinach"],
+    mealSunset: "placeholder",
+    mealSunsetSide: ["side1", "side2"],
+    eveningmeal: "placeholder",
+    eveningmealside: ["side1", "side2"],
+  }
+];
+
+function loadMealPlan(){
+  
+  PlaceIntInArr();// this is the arr with random numbers that will be used as index
+
+  //if for normal meals
+if (getDetails().condition === "normal" && getDetails().meal === "western" && getDetails().age >= 17)//todo : make these variables so that it easy to read
+{
+  //day1
+  normalized[PlaceIntInArr()[0]].breakfast;
+  normalized[PlaceIntInArr()[0]].breakfastSide[0];
+  normalized[PlaceIntInArr()[0]].breakfastSide[1];
+  normalized[PlaceIntInArr()[0]].lunch;
+  normalized[PlaceIntInArr()[0]].lunchside[0];
+  normalized[PlaceIntInArr()[0]].lunchside[1];
+  normalized[PlaceIntInArr()[0]].mealSunset;
+  normalized[PlaceIntInArr()[0]].mealSunsetSide[0];
+  normalized[PlaceIntInArr()[0]].mealSunsetSide[1];
+  normalized[PlaceIntInArr()[0]].eveningmeal;
+  normalized[PlaceIntInArr()[0]].eveningmealside[0];
+  normalized[PlaceIntInArr()[0]].eveningmealside[1];
+//day2
+  normalized[PlaceIntInArr()[1]].breakfast;
+  normalized[PlaceIntInArr()[1]].breakfastSide[0];
+  normalized[PlaceIntInArr()[1]].breakfastSide[1];
+  normalized[PlaceIntInArr()[1]].lunch;
+  normalized[PlaceIntInArr()[1]].lunchside[0];
+  normalized[PlaceIntInArr()[1]].lunchside[1];
+  normalized[PlaceIntInArr()[1]].mealSunset;
+  normalized[PlaceIntInArr()[1]].mealSunsetSide[0];
+  normalized[PlaceIntInArr()[1]].mealSunsetSide[1];
+  normalized[PlaceIntInArr()[1]].eveningmeal;
+  normalized[PlaceIntInArr()[1]].eveningmealside[0];
+  normalized[PlaceIntInArr()[1]].eveningmealside[1];
+//day3
+  normalized[PlaceIntInArr()[2]].breakfast;
+  normalized[PlaceIntInArr()[2]].breakfastSide[0];
+  normalized[PlaceIntInArr()[2]].breakfastSide[1];
+  normalized[PlaceIntInArr()[2]].lunch;
+  normalized[PlaceIntInArr()[2]].lunchside[0];
+  normalized[PlaceIntInArr()[2]].lunchside[1];
+  normalized[PlaceIntInArr()[2]].mealSunset;
+  normalized[PlaceIntInArr()[2]].mealSunsetSide[0];
+  normalized[PlaceIntInArr()[2]].mealSunsetSide[1];
+  normalized[PlaceIntInArr()[2]].eveningmeal;
+  normalized[PlaceIntInArr()[2]].eveningmealside[0];
+  normalized[PlaceIntInArr()[2]].eveningmealside[1];
+//day4
+  normalized[PlaceIntInArr()[3]].breakfast;
+  normalized[PlaceIntInArr()[3]].breakfastSide[0];
+  normalized[PlaceIntInArr()[3]].breakfastSide[1];
+  normalized[PlaceIntInArr()[3]].lunch;
+  normalized[PlaceIntInArr()[3]].lunchside[0];
+  normalized[PlaceIntInArr()[3]].lunchside[1];
+  normalized[PlaceIntInArr()[3]].mealSunset;
+  normalized[PlaceIntInArr()[3]].mealSunsetSide[0];
+  normalized[PlaceIntInArr()[3]].mealSunsetSide[1];
+  normalized[PlaceIntInArr()[3]].eveningmeal;
+  normalized[PlaceIntInArr()[3]].eveningmealside[0];
+  normalized[PlaceIntInArr()[3]].eveningmealside[1];
+//day5
+  normalized[PlaceIntInArr()[4]].breakfast;
+  normalized[PlaceIntInArr()[4]].breakfastSide[0];
+  normalized[PlaceIntInArr()[4]].breakfastSide[1];
+  normalized[PlaceIntInArr()[4]].lunch;
+  normalized[PlaceIntInArr()[4]].lunchside[0];
+  normalized[PlaceIntInArr()[4]].lunchside[1];
+  normalized[PlaceIntInArr()[4]].mealSunset;
+  normalized[PlaceIntInArr()[4]].mealSunsetSide[0];
+  normalized[PlaceIntInArr()[4]].mealSunsetSide[1];
+  normalized[PlaceIntInArr()[4]].eveningmeal;
+  normalized[PlaceIntInArr()[4]].eveningmealside[0];
+  normalized[PlaceIntInArr()[4]].eveningmealside[1];
+//day6
+  normalized[PlaceIntInArr()[5]].breakfast;
+  normalized[PlaceIntInArr()[5]].breakfastSide[0];
+  normalized[PlaceIntInArr()[5]].breakfastSide[1];
+  normalized[PlaceIntInArr()[5]].lunch;
+  normalized[PlaceIntInArr()[5]].lunchside[0];
+  normalized[PlaceIntInArr()[5]].lunchside[1];
+  normalized[PlaceIntInArr()[5]].mealSunset;
+  normalized[PlaceIntInArr()[5]].mealSunsetSide[0];
+  normalized[PlaceIntInArr()[5]].mealSunsetSide[1];
+  normalized[PlaceIntInArr()[5]].eveningmeal;
+  normalized[PlaceIntInArr()[5]].eveningmealside[0];
+  normalized[PlaceIntInArr()[5]].eveningmealside[1];
+  //day7
+  normalized[PlaceIntInArr()[6]].breakfast;
+  normalized[PlaceIntInArr()[6]].breakfastSide[0];
+  normalized[PlaceIntInArr()[6]].breakfastSide[1];
+  normalized[PlaceIntInArr()[6]].lunch;
+  normalized[PlaceIntInArr()[6]].lunchside[0];
+  normalized[PlaceIntInArr()[6]].lunchside[1];
+  normalized[PlaceIntInArr()[6]].mealSunset;
+  normalized[PlaceIntInArr()[6]].mealSunsetSide[0];
+  normalized[PlaceIntInArr()[6]].mealSunsetSide[1];
+  normalized[PlaceIntInArr()[6]].eveningmeal;
+  normalized[PlaceIntInArr()[6]].eveningmealside[0];
+  normalized[PlaceIntInArr()[6]].eveningmealside[1];
+}
+}
+console.log(getDetails().meal);
