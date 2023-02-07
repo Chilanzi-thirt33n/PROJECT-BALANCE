@@ -1,4 +1,4 @@
-# Balanced Diet Generator=
+# Balanced Diet Generator +
 This web application is designed to help users in Zambia generate a balanced diet for a week using a random generation algorithm. The application is intended to address the problem of poor nutrition in the country, particularly among high-risk groups such as diabetics and children.
 
 # Tools Used
