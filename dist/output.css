@@ -574,8 +574,8 @@ video {
   background-color: rgb(134 188 66 / var(--tw-bg-opacity));
 }
 
-.bg-\[url\(\'\/images\/index-mobile-bg\.webp\'\)\] {
-  background-image: url('/images/index-mobile-bg.webp');
+.bg-\[url\(\'\.\.\/images\/index-mobile-bg\.png\'\)\] {
+  background-image: url('../images/index-mobile-bg.png');
 }
 
 .bg-cover {
@@ -673,8 +673,8 @@ video {
     justify-content: center;
   }
 
-  .lg\:bg-\[url\(\'\/images\/index-desktop-bg\.webp\'\)\] {
-    background-image: url('/images/index-desktop-bg.webp');
+  .lg\:bg-\[url\(\'\.\.\/images\/index-desktop-bg\.png\'\)\] {
+    background-image: url('../images/index-desktop-bg.png');
   }
 
   .lg\:text-lg {
