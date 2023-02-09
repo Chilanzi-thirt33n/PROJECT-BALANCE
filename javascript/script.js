@@ -169,7 +169,7 @@ let normalized = [
     eveningmealside: ["side1", "side2"],
   },
 ];
-console.log(normalized[0].breakfast); // to test if the meals can be displayed
+//console.log(normalized[0].breakfast); // to test if the meals can be displayed
 // to test the function of place onto page
 /*let breakfastDayOne = document.querySelector("#day1 .day-card .breakfast dt");
 breakfastDayOne.nextElementSibling.nextElementSibling.textContent =
@@ -259,8 +259,8 @@ function loadMealPlan() {
   PlaceIntInArr(); // this is the arr with random numbers that will be used as index
   //todo : make these variables so that it easy to read
   let typeOne = "western",
-    typeTwo = "mix",
-    typeThree = "zambian"; // these are the types to compare to
+    typeThree = "mix",
+    typeTwo = "zambian"; // these are the types to compare to
   let conOne = "normal",
     conTwo = "vegan",
     conThree = "diabetic",
@@ -396,12 +396,28 @@ function loadMealPlan() {
 //console.log(getDetails().meal);// to test details
 //this is the function to stop submit from submiting
 let form = document.getElementById("codeSection");
-form.addEventListener("submit", function(event) {
+if(form){form.addEventListener("submit", function(event) {
   //prevents submit reload
   event.preventDefault();
   //gets users info to be processed by the meal plan function 
   getDetails();
   //loads new page 
   loadPlanPage();
-  //on load event listener
+});
+}
+// this is the funcation to place meals
+document.addEventListener("DOMContentLoaded", function() {
+  let loadMeal = document.getElementById("sevenday-plan");
+  if (loadMeal) {
+    PlaceIntInArr();
+    let breakfastDayOne = document.querySelector(
+      "#day1 .day-card .breakfast dt"
+    );
+    breakfastDayOne.textContent = normalized[PlaceIntInArr()[0]].breakfast;
+    breakfastDayOne.nextElementSibling.textContent =
+      normalized[PlaceIntInArr()[0]].breakfastSide[0];
+    breakfastDayOne.nextElementSibling.nextElementSibling.textContent =
+      normalized[PlaceIntInArr()[0]].breakfastSide[1];
+
+  }
 });
