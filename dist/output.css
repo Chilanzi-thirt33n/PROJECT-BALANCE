@@ -545,6 +545,14 @@ video {
   margin-top: 6rem;
 }
 
+.mt-10 {
+  margin-top: 2.5rem;
+}
+
+.mt-16 {
+  margin-top: 4rem;
+}
+
 .flex {
   display: flex;
 }
@@ -595,6 +603,11 @@ video {
 
 .justify-center {
   justify-content: center;
+}
+
+.break-normal {
+  overflow-wrap: normal;
+  word-break: normal;
 }
 
 .rounded-xl {
