@@ -790,6 +790,12 @@ video {
   }
 }
 
+@media (min-width: 768px) {
+  .md\:justify-center {
+    justify-content: center;
+  }
+}
+
 @media (min-width: 1024px) {
   .lg\:mt-28 {
     margin-top: 7rem;
