@@ -255,8 +255,32 @@ let western = [
   },
 ];
 
-function loadMealPlan() {
-  PlaceIntInArr(); // this is the arr with random numbers that will be used as index
+//console.log(getDetails().meal);// to test details
+//this is the function to stop submit from submiting
+let form = document.getElementById("codeSection");
+if(form){form.addEventListener("submit", function(event) {
+  //prevents submit reload
+  event.preventDefault();
+  //gets users info to be processed by the meal plan function 
+  let details = getDetails();
+  // saves the user details to session storage
+  sessionStorage.setItem("userDetails", JSON.stringify(details));
+  //loads new page 
+  loadPlanPage();
+});
+}
+// this is the funcation to place meals
+document.addEventListener("DOMContentLoaded", function() {
+  let loadMeal = document.getElementById("sevenday-plan");
+  if (loadMeal) {
+
+    PlaceIntInArr(); // randomise the array
+
+    // retrieves the user details from session storage
+    let userDetails = JSON.parse(sessionStorage.getItem("userDetails"));
+    // places the condition from user details on the new page
+   // document.write(userDetails.condition);
+
   //todo : make these variables so that it easy to read
   let typeOne = "western",
     typeThree = "mix",
@@ -265,8 +289,9 @@ function loadMealPlan() {
     conTwo = "vegan",
     conThree = "diabetic",
     conFour = "pescatarian"; // these are condition
-  //if for normal meals
-  if (getDetails().condition === conOne && getDetails().meal === typeOne) {
+
+    //if for normal meals
+ if (userDetails.condition === conOne && userDetails.meal === typeOne) {
     //day1 //variables holding location
     let breakfastDayOne = document.querySelector(
       "#day1 .day-card .breakfast dt"
@@ -391,33 +416,8 @@ function loadMealPlan() {
     normalized[PlaceIntInArr()[6]].eveningmeal;
     normalized[PlaceIntInArr()[6]].eveningmealside[0];
     normalized[PlaceIntInArr()[6]].eveningmealside[1];
+  } else {
+    document.write(" The " + userDetails.condition + " condition was picked . " + " " + userDetails.meal + " Meal plan was picked \n " + " and " + userDetails.age + " was the given age");
   }
-}
-//console.log(getDetails().meal);// to test details
-//this is the function to stop submit from submiting
-let form = document.getElementById("codeSection");
-if(form){form.addEventListener("submit", function(event) {
-  //prevents submit reload
-  event.preventDefault();
-  //gets users info to be processed by the meal plan function 
-  getDetails();
-  //loads new page 
-  loadPlanPage();
-});
-}
-// this is the funcation to place meals
-document.addEventListener("DOMContentLoaded", function() {
-  let loadMeal = document.getElementById("sevenday-plan");
-  if (loadMeal) {
-    PlaceIntInArr();
-    let breakfastDayOne = document.querySelector(
-      "#day1 .day-card .breakfast dt"
-    );
-    breakfastDayOne.textContent = normalized[PlaceIntInArr()[0]].breakfast;
-    breakfastDayOne.nextElementSibling.textContent =
-      normalized[PlaceIntInArr()[0]].breakfastSide[0];
-    breakfastDayOne.nextElementSibling.nextElementSibling.textContent =
-      normalized[PlaceIntInArr()[0]].breakfastSide[1];
-
   }
 });
