@@ -169,13 +169,17 @@ let normalized = [
     eveningmealside: ["side1", "side2"],
   },
 ];
+let normalWest = [];
+let normalMix = [];
+
 //console.log(normalized[0].breakfast); // to test if the meals can be displayed
 // to test the function of place onto page
 /*let breakfastDayOne = document.querySelector("#day1 .day-card .breakfast dt");
 breakfastDayOne.nextElementSibling.nextElementSibling.textContent =
   normalized[0].breakfast;*/
-//normal western
-let western = [
+
+//vegan meals
+let veganized = [
   //day1
   {
     breakfast: "brown bread",
@@ -254,170 +258,251 @@ let western = [
     eveningmealside: ["side1", "side2"],
   },
 ];
+let vegaWest = [];
+let veganMix = [];
+
+//Diabetic meals
+let diabeticZed = [];
+let diabeticWest = [];
+let diabeticMix = [];
+
+//pescaterian meals
+let pescatarianZed = [];
+let pescatarianWest = [];
+let pescatarianMix = [];
 
 //console.log(getDetails().meal);// to test details
 //this is the function to stop submit from submiting
 let form = document.getElementById("codeSection");
-if(form){form.addEventListener("submit", function(event) {
-  //prevents submit reload
-  event.preventDefault();
-  //gets users info to be processed by the meal plan function 
-  let details = getDetails();
-  // saves the user details to session storage
-  sessionStorage.setItem("userDetails", JSON.stringify(details));
-  //loads new page 
-  loadPlanPage();
-});
+if (form) {
+  form.addEventListener("submit", function (event) {
+    //prevents submit reload
+    event.preventDefault();
+    //gets users info to be processed by the meal plan function
+    let details = getDetails();
+    // saves the user details to session storage
+    sessionStorage.setItem("userDetails", JSON.stringify(details));
+    //loads new page
+    loadPlanPage();
+  });
 }
+
 // this is the funcation to place meals
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
   let loadMeal = document.getElementById("sevenday-plan");
   if (loadMeal) {
-
     PlaceIntInArr(); // randomise the array
 
     // retrieves the user details from session storage
     let userDetails = JSON.parse(sessionStorage.getItem("userDetails"));
     // places the condition from user details on the new page
-   // document.write(userDetails.condition);
+    // document.write(userDetails.condition);
 
-  //todo : make these variables so that it easy to read
-  let typeOne = "western",
-    typeThree = "mix",
-    typeTwo = "zambian"; // these are the types to compare to
-  let conOne = "normal",
-    conTwo = "vegan",
-    conThree = "diabetic",
-    conFour = "pescatarian"; // these are condition
+    //to place unique code on header
+    let unigueCode = document.getElementById("special-code");
+    unigueCode.textContent =
+      PlaceIntInArr()[0] +
+      " - " +
+      PlaceIntInArr()[1] +
+      " - " +
+      PlaceIntInArr()[2] +
+      " - " +
+      PlaceIntInArr()[3] +
+      " - " +
+      PlaceIntInArr()[4] +
+      " - " +
+      PlaceIntInArr()[5] +
+      " - " +
+      PlaceIntInArr()[6];
+
+    //todo : make these variables so that it easy to read
+    let typeOne = "western",
+      typeThree = "mix",
+      typeTwo = "zambian"; // these are the types to compare to
+    let conOne = "normal",
+      conTwo = "vegan",
+      conThree = "diabetic",
+      conFour = "pescatarian"; // these are condition
+    let norm1 = "Savory Safari Supper",
+      norm2 = "Harvest Harmony Platter",
+      norm3 = "Wilderness Wholesome Bowl",
+      vegan1 = "Herb & Spice Fusion",
+      vegan2 = "Vibrant Veggie Delight",
+      vegan3 = "Tropical Tasty Treat",
+      diabetic1 = "Diabetic Delicacy Plate",
+      diabetic2 = "Western Wellness Plate",
+      diabetic3 = "Balanced Bites Mix",
+      pescatarian1 = "Pescatarian Paradise Platter",
+      pescatarian2 = "Seafood Sensation Spread",
+      pescatarian3 = "Mixed Mariner's Medley";
 
     //if for normal meals
- if (userDetails.condition === conOne && userDetails.meal === typeOne) {
-    //day1 //variables holding location
-    let breakfastDayOne = document.querySelector(
-      "#day1 .day-card .breakfast dt"
-    );
-    let lunchDayOne = document.querySelector("#day1 .day-card .lunch dt");
-    let snackDayOne = document.querySelector("#day1 .day-card .snack dt");
-    let supaDayOne = document.querySelector("#day1 .day-card .supa dt");
+    if (userDetails.condition === conOne && userDetails.meal === typeTwo) {
+      //to place unique word on top
+      let FancyName = document.getElementById("special-name");
+      FancyName.textContent = norm1;
 
-    //placing the meals on document
+      //day1 //variables holding location
+      let breakfastDayOne = document.querySelector(
+        "#day1 .day-card .breakfast dt"
+      );
+      let lunchDayOne = document.querySelector("#day1 .day-card .lunch dt");
+      let snackDayOne = document.querySelector("#day1 .day-card .snack dt");
+      let supaDayOne = document.querySelector("#day1 .day-card .supa dt");
 
-    breakfastDayOne.textContent = normalized[PlaceIntInArr()[0]].breakfast;
-    breakfastDayOne.nextElementSibling.textContent =
-      normalized[PlaceIntInArr()[0]].breakfastSide[0];
-    breakfastDayOne.nextElementSibling.nextElementSibling.textContent =
-      normalized[PlaceIntInArr()[0]].breakfastSide[1];
+      //placing the meals on document
 
-    lunchDayOne.textContent = normalized[PlaceIntInArr()[0]].lunch;
-    lunchDayOne.nextElementSibling.textContent =
-      normalized[PlaceIntInArr()[0]].lunchside[0];
-    lunchDayOne.nextElementSibling.nextElementSibling.textContent =
-      normalized[PlaceIntInArr()[0]].lunchside[1];
+      breakfastDayOne.textContent = normalized[PlaceIntInArr()[0]].breakfast;
+      breakfastDayOne.nextElementSibling.textContent =
+        normalized[PlaceIntInArr()[0]].breakfastSide[0];
+      breakfastDayOne.nextElementSibling.nextElementSibling.textContent =
+        normalized[PlaceIntInArr()[0]].breakfastSide[1];
 
-    snackDayOne.textContent = normalized[PlaceIntInArr()[0]].mealSunset;
-    snackDayOne.nextElementSibling.textContent =
-      normalized[PlaceIntInArr()[0]].mealSunsetSide[0];
-    snackDayOne.nextElementSibling.nextElementSibling.textContent =
-      normalized[PlaceIntInArr()[0]].mealSunsetSide[1];
+      lunchDayOne.textContent = normalized[PlaceIntInArr()[0]].lunch;
+      lunchDayOne.nextElementSibling.textContent =
+        normalized[PlaceIntInArr()[0]].lunchside[0];
+      lunchDayOne.nextElementSibling.nextElementSibling.textContent =
+        normalized[PlaceIntInArr()[0]].lunchside[1];
 
-    supaDayOne.textContent = normalized[PlaceIntInArr()[0]].eveningmeal;
-    supaDayOne.nextElementSibling.textContent =
-      normalized[PlaceIntInArr()[0]].eveningmealside[0];
-    supaDayOne.nextElementSibling.nextElementSibling.textContent =
-      normalized[PlaceIntInArr()[0]].eveningmealside[1];
-    //day2
-    let breakfastDayTwo = document.querySelector(
-      "#day2 .day-card .breakfast dt"
-    );
-    let lunchDayTwo = document.querySelector("#day2 .day-card .lunch dt");
-    let snackDayTwo = document.querySelector("#day2 .day-card .snack dt");
-    let supaDayTwo = document.querySelector("#day2 .day-card .supa dt");
+      snackDayOne.textContent = normalized[PlaceIntInArr()[0]].mealSunset;
+      snackDayOne.nextElementSibling.textContent =
+        normalized[PlaceIntInArr()[0]].mealSunsetSide[0];
+      snackDayOne.nextElementSibling.nextElementSibling.textContent =
+        normalized[PlaceIntInArr()[0]].mealSunsetSide[1];
 
-    breakfastDayTwo.textContent = normalized[PlaceIntInArr()[1]].breakfast;
-    breakfastDayTwo.nextElementSibling.textContent =
-      normalized[PlaceIntInArr()[1]].breakfastSide[0];
-    breakfastDayTwo.nextElementSibling.nextElementSibling.textContent =
-      normalized[PlaceIntInArr()[1]].breakfastSide[1];
+      supaDayOne.textContent = normalized[PlaceIntInArr()[0]].eveningmeal;
+      supaDayOne.nextElementSibling.textContent =
+        normalized[PlaceIntInArr()[0]].eveningmealside[0];
+      supaDayOne.nextElementSibling.nextElementSibling.textContent =
+        normalized[PlaceIntInArr()[0]].eveningmealside[1];
+      //day2
+      let breakfastDayTwo = document.querySelector(
+        "#day2 .day-card .breakfast dt"
+      );
+      let lunchDayTwo = document.querySelector("#day2 .day-card .lunch dt");
+      let snackDayTwo = document.querySelector("#day2 .day-card .snack dt");
+      let supaDayTwo = document.querySelector("#day2 .day-card .supa dt");
 
-    lunchDayTwo.textContent = normalized[PlaceIntInArr()[1]].lunch;
-    lunchDayTwo.nextElementSibling =
-      normalized[PlaceIntInArr()[1]].lunchside[0];
-    lunchDayTwo.nextElementSibling.nextElementSibling =
-      normalized[PlaceIntInArr()[1]].lunchside[1];
+      breakfastDayTwo.textContent = normalized[PlaceIntInArr()[1]].breakfast;
+      breakfastDayTwo.nextElementSibling.textContent =
+        normalized[PlaceIntInArr()[1]].breakfastSide[0];
+      breakfastDayTwo.nextElementSibling.nextElementSibling.textContent =
+        normalized[PlaceIntInArr()[1]].breakfastSide[1];
 
-    normalized[PlaceIntInArr()[1]].mealSunset;
-    normalized[PlaceIntInArr()[1]].mealSunsetSide[0];
-    normalized[PlaceIntInArr()[1]].mealSunsetSide[1];
-    normalized[PlaceIntInArr()[1]].eveningmeal;
-    normalized[PlaceIntInArr()[1]].eveningmealside[0];
-    normalized[PlaceIntInArr()[1]].eveningmealside[1];
-    //day3
-    normalized[PlaceIntInArr()[2]].breakfast;
-    normalized[PlaceIntInArr()[2]].breakfastSide[0];
-    normalized[PlaceIntInArr()[2]].breakfastSide[1];
-    normalized[PlaceIntInArr()[2]].lunch;
-    normalized[PlaceIntInArr()[2]].lunchside[0];
-    normalized[PlaceIntInArr()[2]].lunchside[1];
-    normalized[PlaceIntInArr()[2]].mealSunset;
-    normalized[PlaceIntInArr()[2]].mealSunsetSide[0];
-    normalized[PlaceIntInArr()[2]].mealSunsetSide[1];
-    normalized[PlaceIntInArr()[2]].eveningmeal;
-    normalized[PlaceIntInArr()[2]].eveningmealside[0];
-    normalized[PlaceIntInArr()[2]].eveningmealside[1];
-    //day4
-    normalized[PlaceIntInArr()[3]].breakfast;
-    normalized[PlaceIntInArr()[3]].breakfastSide[0];
-    normalized[PlaceIntInArr()[3]].breakfastSide[1];
-    normalized[PlaceIntInArr()[3]].lunch;
-    normalized[PlaceIntInArr()[3]].lunchside[0];
-    normalized[PlaceIntInArr()[3]].lunchside[1];
-    normalized[PlaceIntInArr()[3]].mealSunset;
-    normalized[PlaceIntInArr()[3]].mealSunsetSide[0];
-    normalized[PlaceIntInArr()[3]].mealSunsetSide[1];
-    normalized[PlaceIntInArr()[3]].eveningmeal;
-    normalized[PlaceIntInArr()[3]].eveningmealside[0];
-    normalized[PlaceIntInArr()[3]].eveningmealside[1];
-    //day5
-    normalized[PlaceIntInArr()[4]].breakfast;
-    normalized[PlaceIntInArr()[4]].breakfastSide[0];
-    normalized[PlaceIntInArr()[4]].breakfastSide[1];
-    normalized[PlaceIntInArr()[4]].lunch;
-    normalized[PlaceIntInArr()[4]].lunchside[0];
-    normalized[PlaceIntInArr()[4]].lunchside[1];
-    normalized[PlaceIntInArr()[4]].mealSunset;
-    normalized[PlaceIntInArr()[4]].mealSunsetSide[0];
-    normalized[PlaceIntInArr()[4]].mealSunsetSide[1];
-    normalized[PlaceIntInArr()[4]].eveningmeal;
-    normalized[PlaceIntInArr()[4]].eveningmealside[0];
-    normalized[PlaceIntInArr()[4]].eveningmealside[1];
-    //day6
-    normalized[PlaceIntInArr()[5]].breakfast;
-    normalized[PlaceIntInArr()[5]].breakfastSide[0];
-    normalized[PlaceIntInArr()[5]].breakfastSide[1];
-    normalized[PlaceIntInArr()[5]].lunch;
-    normalized[PlaceIntInArr()[5]].lunchside[0];
-    normalized[PlaceIntInArr()[5]].lunchside[1];
-    normalized[PlaceIntInArr()[5]].mealSunset;
-    normalized[PlaceIntInArr()[5]].mealSunsetSide[0];
-    normalized[PlaceIntInArr()[5]].mealSunsetSide[1];
-    normalized[PlaceIntInArr()[5]].eveningmeal;
-    normalized[PlaceIntInArr()[5]].eveningmealside[0];
-    normalized[PlaceIntInArr()[5]].eveningmealside[1];
-    //day7
-    normalized[PlaceIntInArr()[6]].breakfast;
-    normalized[PlaceIntInArr()[6]].breakfastSide[0];
-    normalized[PlaceIntInArr()[6]].breakfastSide[1];
-    normalized[PlaceIntInArr()[6]].lunch;
-    normalized[PlaceIntInArr()[6]].lunchside[0];
-    normalized[PlaceIntInArr()[6]].lunchside[1];
-    normalized[PlaceIntInArr()[6]].mealSunset;
-    normalized[PlaceIntInArr()[6]].mealSunsetSide[0];
-    normalized[PlaceIntInArr()[6]].mealSunsetSide[1];
-    normalized[PlaceIntInArr()[6]].eveningmeal;
-    normalized[PlaceIntInArr()[6]].eveningmealside[0];
-    normalized[PlaceIntInArr()[6]].eveningmealside[1];
-  } else {
-    document.write(" The " + userDetails.condition + " condition was picked . " + " " + userDetails.meal + " Meal plan was picked \n " + " and " + userDetails.age + " was the given age");
-  }
+      lunchDayTwo.textContent = normalized[PlaceIntInArr()[1]].lunch;
+      lunchDayTwo.nextElementSibling.textContent =
+        normalized[PlaceIntInArr()[1]].lunchside[0];
+      lunchDayTwo.nextElementSibling.nextElementSibling.textContent =
+        normalized[PlaceIntInArr()[1]].lunchside[1];
+
+      snackDayTwo.textContent = normalized[PlaceIntInArr()[1]].mealSunset;
+      snackDayTwo.nextElementSibling.textContent =
+        normalized[PlaceIntInArr()[1]].mealSunsetSide[0];
+      snackDayTwo.nextElementSibling.nextElementSibling.textContent =
+        normalized[PlaceIntInArr()[1]].mealSunsetSide[1];
+
+      supaDayTwo.textContent = normalized[PlaceIntInArr()[1]].eveningmeal;
+      supaDayTwo.nextElementSibling.textContent =
+        normalized[PlaceIntInArr()[1]].eveningmealside[0];
+      supaDayTwo.nextElementSibling.nextElementSibling.textContent =
+        normalized[PlaceIntInArr()[1]].eveningmealside[1];
+
+      //day3
+      let breakfastDayThree = document.querySelector(
+        "#day3 .day-card .breakfast dt"
+      );
+      let lunchDayThree = document.querySelector("#day3 .day-card .lunch dt");
+      let snackDayThree = document.querySelector("#day3 .day-card .snack dt");
+      let supaDayThree = document.querySelector("#day3 .day-card .supa dt");
+
+      breakfastDayThree.textContent = normalized[PlaceIntInArr()[2]].breakfast;
+      breakfastDayThree.nextElementSibling.textContent =
+        normalized[PlaceIntInArr()[2]].breakfastSide[0];
+      breakfastDayThree.nextElementSibling.nextElementSibling.textContent =
+        normalized[PlaceIntInArr()[2]].breakfastSide[1];
+
+      lunchDayThree.textContent = normalized[PlaceIntInArr()[2]].lunch;
+      lunchDayThree.nextElementSibling.textContent =
+        normalized[PlaceIntInArr()[2]].lunchside[0];
+      lunchDayThree.nextElementSibling.nextElementSibling.textContent =
+        normalized[PlaceIntInArr()[2]].lunchside[1];
+
+      snackDayThree.textContent = normalized[PlaceIntInArr()[2]].mealSunset;
+      snackDayThree.nextElementSibling.textContent =
+        normalized[PlaceIntInArr()[2]].mealSunsetSide[0];
+      snackDayThree.nextElementSibling.nextElementSibling.textContent =
+        normalized[PlaceIntInArr()[2]].mealSunsetSide[1];
+
+      supaDayThree.textContent = normalized[PlaceIntInArr()[2]].eveningmeal;
+      supaDayThree.nextElementSibling.textContent =
+        normalized[PlaceIntInArr()[2]].eveningmealside[0];
+      supaDayThree.nextElementSibling.nextElementSibling.textContent =
+        normalized[PlaceIntInArr()[2]].eveningmealside[1];
+
+      //day4
+      normalized[PlaceIntInArr()[3]].breakfast;
+      normalized[PlaceIntInArr()[3]].breakfastSide[0];
+      normalized[PlaceIntInArr()[3]].breakfastSide[1];
+      normalized[PlaceIntInArr()[3]].lunch;
+      normalized[PlaceIntInArr()[3]].lunchside[0];
+      normalized[PlaceIntInArr()[3]].lunchside[1];
+      normalized[PlaceIntInArr()[3]].mealSunset;
+      normalized[PlaceIntInArr()[3]].mealSunsetSide[0];
+      normalized[PlaceIntInArr()[3]].mealSunsetSide[1];
+      normalized[PlaceIntInArr()[3]].eveningmeal;
+      normalized[PlaceIntInArr()[3]].eveningmealside[0];
+      normalized[PlaceIntInArr()[3]].eveningmealside[1];
+      //day5
+      normalized[PlaceIntInArr()[4]].breakfast;
+      normalized[PlaceIntInArr()[4]].breakfastSide[0];
+      normalized[PlaceIntInArr()[4]].breakfastSide[1];
+      normalized[PlaceIntInArr()[4]].lunch;
+      normalized[PlaceIntInArr()[4]].lunchside[0];
+      normalized[PlaceIntInArr()[4]].lunchside[1];
+      normalized[PlaceIntInArr()[4]].mealSunset;
+      normalized[PlaceIntInArr()[4]].mealSunsetSide[0];
+      normalized[PlaceIntInArr()[4]].mealSunsetSide[1];
+      normalized[PlaceIntInArr()[4]].eveningmeal;
+      normalized[PlaceIntInArr()[4]].eveningmealside[0];
+      normalized[PlaceIntInArr()[4]].eveningmealside[1];
+      //day6
+      normalized[PlaceIntInArr()[5]].breakfast;
+      normalized[PlaceIntInArr()[5]].breakfastSide[0];
+      normalized[PlaceIntInArr()[5]].breakfastSide[1];
+      normalized[PlaceIntInArr()[5]].lunch;
+      normalized[PlaceIntInArr()[5]].lunchside[0];
+      normalized[PlaceIntInArr()[5]].lunchside[1];
+      normalized[PlaceIntInArr()[5]].mealSunset;
+      normalized[PlaceIntInArr()[5]].mealSunsetSide[0];
+      normalized[PlaceIntInArr()[5]].mealSunsetSide[1];
+      normalized[PlaceIntInArr()[5]].eveningmeal;
+      normalized[PlaceIntInArr()[5]].eveningmealside[0];
+      normalized[PlaceIntInArr()[5]].eveningmealside[1];
+      //day7
+      normalized[PlaceIntInArr()[6]].breakfast;
+      normalized[PlaceIntInArr()[6]].breakfastSide[0];
+      normalized[PlaceIntInArr()[6]].breakfastSide[1];
+      normalized[PlaceIntInArr()[6]].lunch;
+      normalized[PlaceIntInArr()[6]].lunchside[0];
+      normalized[PlaceIntInArr()[6]].lunchside[1];
+      normalized[PlaceIntInArr()[6]].mealSunset;
+      normalized[PlaceIntInArr()[6]].mealSunsetSide[0];
+      normalized[PlaceIntInArr()[6]].mealSunsetSide[1];
+      normalized[PlaceIntInArr()[6]].eveningmeal;
+      normalized[PlaceIntInArr()[6]].eveningmealside[0];
+      normalized[PlaceIntInArr()[6]].eveningmealside[1];
+    } else {
+      document.write(
+        " The " +
+          userDetails.condition +
+          " condition was picked . " +
+          " " +
+          userDetails.meal +
+          " Meal plan was picked \n " +
+          " and " +
+          userDetails.age +
+          " was the given age"
+      );
+    }
   }
 });
