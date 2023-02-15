@@ -10,68 +10,78 @@
     <title>Auto generate a balanced diet | health foods - ARBIT DESIGNS</title>
   </head>
   <body
-    class=" bg-myGreen bg-[url('../images/code-bg-mobile.png')] lg:bg-[url('../images/code-bg-desktop.png')] bg-no-repeat bg-fixed bg-cover bg-clip-border font-poppins max-h-full flex flex-col lg:flex-row justify-end"
+    class="bg-myGreen bg-[url('../images/code-bg-mobile.png')] lg:bg-[url('../images/code-bg-desktop.png')] bg-no-repeat bg-fixed bg-cover bg-clip-border font-poppins max-h-full flex flex-col lg:flex-row justify-end"
   >
     <header class="h-[30vh]">
       <p id="blank-space"></p>
     </header>
 
-    <div id="main-wrap" class="bg-white h-[80vh] lg:w-[50vw] lg:h-screen ">
-    <!--thr form wrapped in the main because its the main content-->
-    <main>
-      <p>
-        Get healthy with our meal plan. Enjoy balanced, personalized nutrition.
-        Enter your details.
-      </p>
-      <!--form section-->
-      <form id="codeSection">
-        <ul>
-          <!--special condition-->
-          <li>
-            <label
-              >Special condition :<br><select name="spn" id="specialNeeds">
-                <option value="normal">Normal</option>
-                <option value="vegan">Vegan</option>
-                <option value="diabetic">Diabetic</option>
-                <option value="pescatarian">Pescatarian</option>
-              </select></label
-            >
-            <!-- age field-->
-            <label for="age"
-              >Age :<br><input
-                type="number"
-                name="integer"
-                id="age"
-                min="1"
-                max="150"
-                value="22"
-            /></label>
-          </li>
-          <!--meal type for people to choose the food resources -->
-          <li>
-            <label
-              >Meal type :<br>
-              <select name="meal" id="mealType">
-                <option value="western">Western meals</option>
-                <option value="zambian">Zambian meals</option>
-                <option value="mix">Combination meals</option>
-              </select></label
-            >
-          </li>
-        </ul>
-        <input type="submit" id="submit-btn" value="Generate meal" />
-      </form>
-    </main>
-    <!--the footer with cavendish details-->
-    <footer>
-      <small
-        ><p>
-          Copyright &copy; 2023 044-348 and Cavendish University Zambia.All
-          rights reserved.
-        </p></small
-      >
-    </footer>
-</div>
+    <div
+      id="main-wrap"
+      class="bg-myWhite lg:bg-white h-[75vh] lg:w-[50vw] lg:h-screen flex flex-col justify-around items-center rounded-tl-3xl rounded-tr-3xl lg:rounded-tl-none lg:rounded-tr-none"
+    >
+      <!--thr form wrapped in the main because its the main content-->
+      <main class="flex flex-col justify-center items-center">
+        <p class="font-bold text-center text-base lg:text-2xl px-7 text-myDarkestGreen">
+          Get healthy with our meal plan. Enjoy balanced, personalized
+          nutrition. Enter your details.
+        </p>
+        <!--form section-->
+        <form id="codeSection" class="mt-10 lg:mt-14 lg:bg-myWhite lg:p-12 lg:rounded-[20px]">
+          <ul>
+            <!--special condition-->
+            <li>
+              <label for="specialNeeds" class="text-sm text-myDarkGreen font-medium"
+                >Special condition <br /><select
+                  name="spn"
+                  id="specialNeeds"
+                  class="bg-white w-[313px] h-[48px] rounded-[10px] text-center font-light text-myGray drop-shadow-xl"
+                >
+                  <option value="normal">Normal</option>
+                  <option value="vegan">Vegan</option>
+                  <option value="diabetic">Diabetic</option>
+                  <option value="pescatarian">Pescatarian</option>
+                </select></label
+              >
+            </li>
+            <li>
+              <!-- age field-->
+              <label for="age" class="text-sm text-myDarkGreen font-medium"
+                >Age <br /><input
+                  type="number"
+                  name="integer"
+                  id="age"
+                  min="1"
+                  max="150"
+                  value="22"
+                   class="bg-white w-[313px] h-[48px] rounded-[10px] text-center font-light text-myGray drop-shadow-xl"
+              /></label>
+            </li>
+            <!--meal type for people to choose the food resources -->
+            <li>
+              <label for="mealType"
+                 class="text-sm text-myDarkGreen font-medium">Meal type <br />
+                <select name="meal" id="mealType"  class="bg-white w-[313px] h-[48px] rounded-[10px] text-center font-light text-myGray drop-shadow-xl ">
+                  <option value="western">Western meal</option>
+                  <option value="zambian">Zambian meal</option>
+                  <option value="mix">Combination meal</option>
+                </select></label
+              >
+            </li>
+          </ul>
+          <input type="submit" id="submit-btn" value="Generate meal" class="bg-myDarkGreen w-[313px] h-[48px] rounded-[10px] text-center text-base font-bold mt-10  transition ease-in-out delay-150 duration-300 text-myWhite hover:bg-cyan-800 hover:shadow-xl active:bg-teal-400 focus:bg-myGreen" />
+        </form>
+      </main>
+      <!--the footer with cavendish details-->
+      <footer>
+        <small
+          ><p class="text-center font-light text-myDarkGreen w-[380px]">
+            Copyright &copy; 2023 044-348 and Cavendish University Zambia.All
+            rights reserved.
+          </p></small
+        >
+      </footer>
+    </div>
   </body>
   <script src="javascript/script.js"></script>
 </html>
