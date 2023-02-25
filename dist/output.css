@@ -676,6 +676,17 @@ video {
   animation: spin 1s linear infinite;
 }
 
+@keyframes ping {
+  75%, 100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+.animate-ping {
+  animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
 .flex-row {
   flex-direction: row;
 }
@@ -924,6 +935,16 @@ video {
 .focus\:ring-myGreen:focus {
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(134 188 66 / var(--tw-ring-opacity));
+}
+
+@keyframes pulse {
+  50% {
+    opacity: .5;
+  }
+}
+
+.active\:animate-pulse:active {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
 .active\:bg-teal-400:active {

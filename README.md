@@ -13,9 +13,9 @@ This web application is designed to help users in Zambia generate a balanced die
 
 # Usage
 
-* Select create my plan
+* Select Get Started
 * Enter your dietary restrictions and preferences (if any)
-* Click on the "Generate Diet" button to generate a balanced diet for a week
+* Click on the "Generate Diet" button to generate a Randomized balanced diet for 7 days
 * The generated diet can be viewed and saved for future reference using a special code that will be issued.
 
 # Try it
