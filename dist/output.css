@@ -1092,6 +1092,11 @@ video {
     line-height: 1rem;
   }
 
+  .lg\:text-sm {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+
   .lg\:font-normal {
     font-weight: 400;
   }
