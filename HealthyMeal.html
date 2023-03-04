@@ -9,476 +9,498 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Seven days balanced diet | Eat Healthy Daily - Arbit designs</title>
   </head>
-  <body>
-    <header>
+  <body class="flex flex-col lg:flex-row font-poppins">
+    <!--this is where the details go for age and recoommentation -->
+    <header class="bg-myDarkestGreen h-64 w-[100vw] lg:w-96 lg:h-[auto] flex flex-col rounded-b-3xl lg:rounded-none fixed lg:relative p-1 lg:p-3">
       <!--this is banner for the logo-->
-      <div id="logo-wrapper"><img src="images/icons/logo160x160.png" alt="HealthyBites!" /></div>
+      <div id="logo-wrapper" class="justify-self-center self-center">
+        <img
+          src="images/icons/logo160x160.png"
+          alt="HealthyBites!"
+          class="w-12 h-12 mt-12 animate-spin"
+        />
+      </div>
       <!--here is where the special code for people to get and enter on -->
-      <div id="loage">
-        <h1 id="Header-Age">22</h1>
-        <p>recommendation of what to eat</p>
+      <div id="loadage" class="self-center justify-self-center">
+        <h1 id="Header-Age" class="text-center mt-3 font-extrabold text-base text-myGreen">22</h1>
+        <p class="text-center font-light text-myWhite text-sm lg:text-xl">Get healthy with our meal plan. Enjoy balanced, personalized nutrition. Enter your details.</p>
       </div>
-
-      <div id="special-detail-wrapper">
-        <div id="special-name-wrapper">
-          <h2>Special name :</h2>
-          <p id="special-name">SPECIAL NAME HERE</p>
+      <!-- special details wrapper-->
+      <div id="special-detail-wrapper"  class="self-center mt-3 justify-self-center">
+        <div id="special-name-wrapper" class="flex flex-row">
+          <h2 class="font-bold text-myWhite mr-3 ">Special name </h2>
+          <p id="special-name" class=" text-myWhite ml-3">SPECIAL NAME HERE</p>
         </div>
 
-        <div id="special-code-wrapper">
-          <h2>Meal code</h2>
-          <p id="special-code">XXXXXXX</p>
+        <div id="special-code-wrapper" class="flex flex-row">
+          <h2 class="font-bold text-myWhite mr-3 " >Meal code</h2>
+          <p id="special-code"  class=" text-myWhite ml-12">XXXXXXX</p>
         </div>
       </div>
-
-      <ul id="randomizer">
-        <li><a href="#"><img src="images/icons/" alt="Recipes">Recipes</a></li>
+      <!--this is for buttons that will be used for basic navigation-->
+      <ul id="randomizer" class="fixed bottom-0 self-center justify-self-center flex flex-row justify-evenly items-center  bg-myDarkestGreen w-[100vw]">
         <li>
-          <a href="#"><img src="images/icons/" alt="Randomise" />Randomise</a>
-      </li>
-      <li><a href="#"><img src="images/icons/" alt="Guide">Guide</a></li>
+          <a href="#"
+            ><img src="images/icons/recipes.png" alt="Recipes" /><p>Recipes</p></a
+          >
+        </li>
+        <li>
+          <button> <img
+              src="images/icons/randomize.png"
+              alt="Randomise"
+            />
+            <p>Randomize</p>
+          </button>
+         
+        </li>
+        <li>
+          <a href="#"><img src="images/icons/guide.png" alt="Guide" /> <p>Guide</p> </a>
+        </li>
       </ul>
     </header>
 
+    <!--div to hold main and footer-->
+    <div>
+      <main id="sevenday-plan" class="flex flex-wrap">
+        <!--first day card-->
+        <div id="day1">
+          <h3>Day One</h3>
+          <div class="day-card">
+            <!--morning card-->
+            <div class="breakfast">
+              <img src="images/icons/placehold.png" alt="morning meal" />
+              <dl>
+                <dt>meal name</dt>
+                <dd>bavarage</dd>
+                <dd>side dish</dd>
+              </dl>
+              <div>
+                <time datetime="T08:30">08:30hrs</time
+                ><img src="images/icons/morning.png" alt="08:30hrs" />
+              </div>
+            </div>
+
+            <!--day card-->
+            <div class="lunch">
+              <img src="images/icons/placehold.png" alt="lunch" />
+              <dl>
+                <dt>meal name</dt>
+                <dd>bavarage</dd>
+                <dd>side dish</dd>
+              </dl>
+              <div>
+                <time datetime="T12:30">12:30hrs</time
+                ><img src="images/icons/afternoon.png" alt="12:30hrs" />
+              </div>
+            </div>
+
+            <!--sunset card-->
+            <div class="snack">
+              <img src="images/icons/placehold.png" alt="snack" />
+              <dl>
+                <dt>meal name</dt>
+                <dd>bavarage</dd>
+                <dd>side dish</dd>
+              </dl>
+              <div>
+                <time datetime="T16:30">16:30hrs</time
+                ><img src="images/icons/sunset.png" alt="16:30hrs" />
+              </div>
+            </div>
+
+            <!--night card-->
+            <div class="supa">
+              <img src="images/icons/placehold.png" alt="snack" />
+              <dl>
+                <dt>meal name</dt>
+                <dd>bavarage</dd>
+                <dd>side dish</dd>
+              </dl>
+              <div>
+                <time datetime="T20:30">20:30hrs</time
+                ><img src="images/icons/night.png" alt="20:30hrs" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--second day card-->
+        <div id="day2">
+          <h3>Day Two</h3>
+          <div class="day-card">
+            <!--morning card-->
+            <div class="breakfast">
+              <img src="images/icons/placehold.png" alt="morning meal" />
+              <dl>
+                <dt>meal name</dt>
+                <dd>bavarage</dd>
+                <dd>side dish</dd>
+              </dl>
+              <div>
+                <time datetime="T08:30">08:30hrs</time
+                ><img src="images/icons/morning.png" alt="08:30hrs" />
+              </div>
+            </div>
+
+            <!--day card-->
+            <div class="lunch">
+              <img src="images/icons/placehold.png" alt="lunch" />
+              <dl>
+                <dt>meal name</dt>
+                <dd>bavarage</dd>
+                <dd>side dish</dd>
+              </dl>
+              <div>
+                <time datetime="T12:30">12:30hrs</time
+                ><img src="images/icons/afternoon.png" alt="12:30hrs" />
+              </div>
+            </div>
+
+            <!--sunset card-->
+            <div class="snack">
+              <img src="images/icons/placehold.png" alt="snack" />
+              <dl>
+                <dt>meal name</dt>
+                <dd>bavarage</dd>
+                <dd>side dish</dd>
+              </dl>
+              <div>
+                <time datetime="T16:30">16:30hrs</time
+                ><img src="images/icons/sunset.png" alt="16:30hrs" />
+              </div>
+            </div>
+
+            <!--night card-->
+            <div class="supa">
+              <img src="images/icons/placehold.png" alt="snack" />
+              <dl>
+                <dt>meal name</dt>
+                <dd>bavarage</dd>
+                <dd>side dish</dd>
+              </dl>
+              <div>
+                <time datetime="T20:30">20:30hrs</time
+                ><img src="images/icons/night.png" alt="20:30hrs" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--third day card-->
+        <div id="day3">
+          <h3>Day Three</h3>
+          <div class="day-card">
+            <!--morning card-->
+            <div class="breakfast">
+              <img src="images/icons/placehold.png" alt="morning meal" />
+              <dl>
+                <dt>meal name</dt>
+                <dd>bavarage</dd>
+                <dd>side dish</dd>
+              </dl>
+              <div>
+                <time datetime="T08:30">08:30hrs</time
+                ><img src="images/icons/morning.png" alt="08:30hrs" />
+              </div>
+            </div>
+
+            <!--day card-->
+            <div class="lunch">
+              <img src="images/icons/placehold.png" alt="lunch" />
+              <dl>
+                <dt>meal name</dt>
+                <dd>bavarage</dd>
+                <dd>side dish</dd>
+              </dl>
+              <div>
+                <time datetime="T12:30">12:30hrs</time
+                ><img src="images/icons/afternoon.png" alt="12:30hrs" />
+              </div>
+            </div>
+
+            <!--sunset card-->
+            <div class="snack">
+              <img src="images/icons/placehold.png" alt="snack" />
+              <dl>
+                <dt>meal name</dt>
+                <dd>bavarage</dd>
+                <dd>side dish</dd>
+              </dl>
+              <div>
+                <time datetime="T16:30">16:30hrs</time
+                ><img src="images/icons/sunset.png" alt="16:30hrs" />
+              </div>
+            </div>
+
+            <!--night card-->
+            <div class="supa">
+              <img src="images/icons/placehold.png" alt="snack" />
+              <dl>
+                <dt>meal name</dt>
+                <dd>bavarage</dd>
+                <dd>side dish</dd>
+              </dl>
+              <div>
+                <time datetime="T20:30">20:30hrs</time
+                ><img src="images/icons/night.png" alt="20:30hrs" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--four day card-->
+        <div id="day4">
+          <h3>Day Four</h3>
+          <div class="day-card">
+            <!--morning card-->
+            <div class="breakfast">
+              <img src="images/icons/placehold.png" alt="morning meal" />
+              <dl>
+                <dt>meal name</dt>
+                <dd>bavarage</dd>
+                <dd>side dish</dd>
+              </dl>
+              <div>
+                <time datetime="T08:30">08:30hrs</time
+                ><img src="images/icons/morning.png" alt="08:30hrs" />
+              </div>
+            </div>
+
+            <!--day card-->
+            <div class="lunch">
+              <img src="images/icons/placehold.png" alt="lunch" />
+              <dl>
+                <dt>meal name</dt>
+                <dd>bavarage</dd>
+                <dd>side dish</dd>
+              </dl>
+              <div>
+                <time datetime="T12:30">12:30hrs</time
+                ><img src="images/icons/afternoon.png" alt="12:30hrs" />
+              </div>
+            </div>
+
+            <!--sunset card-->
+            <div class="snack">
+              <img src="images/icons/placehold.png" alt="snack" />
+              <dl>
+                <dt>meal name</dt>
+                <dd>bavarage</dd>
+                <dd>side dish</dd>
+              </dl>
+              <div>
+                <time datetime="T16:30">16:30hrs</time
+                ><img src="images/icons/sunset.png" alt="16:30hrs" />
+              </div>
+            </div>
+
+            <!--night card-->
+            <div class="supa">
+              <img src="images/icons/placehold.png" alt="snack" />
+              <dl>
+                <dt>meal name</dt>
+                <dd>bavarage</dd>
+                <dd>side dish</dd>
+              </dl>
+              <div>
+                <time datetime="T20:30">20:30hrs</time
+                ><img src="images/icons/night.png" alt="20:30hrs" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--Fifth day card-->
+        <div id="day5">
+          <h3>Day Five</h3>
+          <div class="day-card">
+            <!--morning card-->
+            <div class="breakfast">
+              <img src="images/icons/placehold.png" alt="morning meal" />
+              <dl>
+                <dt>meal name</dt>
+                <dd>bavarage</dd>
+                <dd>side dish</dd>
+              </dl>
+              <div>
+                <time datetime="T08:30">08:30hrs</time
+                ><img src="images/icons/morning.png" alt="08:30hrs" />
+              </div>
+            </div>
+
+            <!--day card-->
+            <div class="lunch">
+              <img src="images/icons/placehold.png" alt="lunch" />
+              <dl>
+                <dt>meal name</dt>
+                <dd>bavarage</dd>
+                <dd>side dish</dd>
+              </dl>
+              <div>
+                <time datetime="T12:30">12:30hrs</time
+                ><img src="images/icons/afternoon.png" alt="12:30hrs" />
+              </div>
+            </div>
+
+            <!--sunset card-->
+            <div class="snack">
+              <img src="images/icons/placehold.png" alt="snack" />
+              <dl>
+                <dt>meal name</dt>
+                <dd>bavarage</dd>
+                <dd>side dish</dd>
+              </dl>
+              <div>
+                <time datetime="T16:30">16:30hrs</time
+                ><img src="images/icons/sunset.png" alt="16:30hrs" />
+              </div>
+            </div>
+
+            <!--night card-->
+            <div class="supa">
+              <img src="images/icons/placehold.png" alt="snack" />
+              <dl>
+                <dt>meal name</dt>
+                <dd>bavarage</dd>
+                <dd>side dish</dd>
+              </dl>
+              <div>
+                <time datetime="T20:30">20:30hrs</time
+                ><img src="images/icons/night.png" alt="20:30hrs" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--Sixth day card-->
+        <div id="day6">
+          <h3>Day Six</h3>
+          <div class="day-card">
+            <!--morning card-->
+            <div class="breakfast">
+              <img src="images/icons/placehold.png" alt="morning meal" />
+              <dl>
+                <dt>meal name</dt>
+                <dd>bavarage</dd>
+                <dd>side dish</dd>
+              </dl>
+              <div>
+                <time datetime="T08:30">08:30hrs</time
+                ><img src="images/icons/morning.png" alt="08:30hrs" />
+              </div>
+            </div>
+
+            <!--day card-->
+            <div class="lunch">
+              <img src="images/icons/placehold.png" alt="lunch" />
+              <dl>
+                <dt>meal name</dt>
+                <dd>bavarage</dd>
+                <dd>side dish</dd>
+              </dl>
+              <div>
+                <time datetime="T12:30">12:30hrs</time
+                ><img src="images/icons/afternoon.png" alt="12:30hrs" />
+              </div>
+            </div>
+
+            <!--sunset card-->
+            <div class="snack">
+              <img src="images/icons/placehold.png" alt="snack" />
+              <dl>
+                <dt>meal name</dt>
+                <dd>bavarage</dd>
+                <dd>side dish</dd>
+              </dl>
+              <div>
+                <time datetime="T16:30">16:30hrs</time
+                ><img src="images/icons/sunset.png" alt="16:30hrs" />
+              </div>
+            </div>
+
+            <!--night card-->
+            <div class="supa">
+              <img src="images/icons/placehold.png" alt="snack" />
+              <dl>
+                <dt>meal name</dt>
+                <dd>bavarage</dd>
+                <dd>side dish</dd>
+              </dl>
+              <div>
+                <time datetime="T20:30">20:30hrs</time
+                ><img src="images/icons/night.png" alt="20:30hrs" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--Seventh day card-->
+        <div id="day7">
+          <h3>Day Seven</h3>
+          <div class="day-card">
+            <!--morning card-->
+            <div class="breakfast">
+              <img src="images/icons/placehold.png" alt="morning meal" />
+              <dl>
+                <dt>meal name</dt>
+                <dd>bavarage</dd>
+                <dd>side dish</dd>
+              </dl>
+              <div>
+                <time datetime="T08:30">08:30hrs</time
+                ><img src="images/icons/morning.png" alt="08:30hrs" />
+              </div>
+            </div>
+
+            <!--day card-->
+            <div class="lunch">
+              <img src="images/icons/placehold.png" alt="lunch" />
+              <dl>
+                <dt>meal name</dt>
+                <dd>bavarage</dd>
+                <dd>side dish</dd>
+              </dl>
+              <div>
+                <time datetime="T12:30">12:30hrs</time
+                ><img src="images/icons/afternoon.png" alt="12:30hrs" />
+              </div>
+            </div>
+
+            <!--sunset card-->
+            <div class="snack">
+              <img src="images/icons/placehold.png" alt="snack" />
+              <dl>
+                <dt>meal name</dt>
+                <dd>bavarage</dd>
+                <dd>side dish</dd>
+              </dl>
+              <div>
+                <time datetime="T16:30">16:30hrs</time
+                ><img src="images/icons/sunset.png" alt="16:30hrs" />
+              </div>
+            </div>
+
+            <!--night card-->
+            <div class="supa">
+              <img src="images/icons/placehold.png" alt="snack" />
+              <dl>
+                <dt>meal name</dt>
+                <dd>bavarage</dd>
+                <dd>side dish</dd>
+              </dl>
+              <div>
+                <time datetime="T20:30">20:30hrs</time
+                ><img src="images/icons/night.png" alt="20:30hrs" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <footer>
+        <small
+          ><p>
+            Copyright &copy; 2023 044-348 and Cavendish University Zambia.All
+            rights reserved.
+          </p></small
+        >
+      </footer>
+    </div>
     <!--cards with four meal plans each day-->
-    <main id="sevenday-plan" class="flex flex-wrap">
-      <!--first day card-->
-      <div id="day1">
-        <h3>Day One</h3>
-        <div class="day-card">
-          <!--morning card-->
-          <div class="breakfast">
-            <img src="images/" alt="morning meal" />
-            <dl>
-              <dt>meal name</dt>
-              <dd>bavarage</dd>
-              <dd>side dish</dd>
-            </dl>
-            <div>
-              <time datetime="T08:30">08:30hrs</time
-              ><img src="images/" alt="08:30hrs" />
-            </div>
-          </div>
-
-          <!--day card-->
-          <div class="lunch">
-            <img src="images/" alt="lunch" />
-            <dl>
-              <dt>meal name</dt>
-              <dd>bavarage</dd>
-              <dd>side dish</dd>
-            </dl>
-            <div>
-              <time datetime="T12:30">12:30hrs</time
-              ><img src="images/" alt="12:30hrs" />
-            </div>
-          </div>
-
-          <!--sunset card-->
-          <div class="snack">
-            <img src="images/" alt="snack" />
-            <dl>
-              <dt>meal name</dt>
-              <dd>bavarage</dd>
-              <dd>side dish</dd>
-            </dl>
-            <div>
-              <time datetime="T16:30">16:30hrs</time
-              ><img src="images/" alt="16:30hrs" />
-            </div>
-          </div>
-
-          <!--night card-->
-          <div class="supa">
-            <img src="images/" alt="snack" />
-            <dl>
-              <dt>meal name</dt>
-              <dd>bavarage</dd>
-              <dd>side dish</dd>
-            </dl>
-            <div>
-              <time datetime="T20:30">20:30hrs</time
-              ><img src="images/" alt="20:30hrs" />
-            </div>
-          </div>
-        </div>
-      </div>
-      <!--second day card-->
-      <div id="day2">
-        <h3>Day Two</h3>
-        <div class="day-card">
-          <!--morning card-->
-          <div class="breakfast">
-            <img src="images/" alt="morning meal" />
-            <dl>
-              <dt>meal name</dt>
-              <dd>bavarage</dd>
-              <dd>side dish</dd>
-            </dl>
-            <div>
-              <time datetime="T08:30">08:30hrs</time
-              ><img src="images/" alt="08:30hrs" />
-            </div>
-          </div>
-
-          <!--day card-->
-          <div class="lunch">
-            <img src="images/" alt="lunch" />
-            <dl>
-              <dt>meal name</dt>
-              <dd>bavarage</dd>
-              <dd>side dish</dd>
-            </dl>
-            <div>
-              <time datetime="T12:30">12:30hrs</time
-              ><img src="images/" alt="12:30hrs" />
-            </div>
-          </div>
-
-          <!--sunset card-->
-          <div class="snack">
-            <img src="images/" alt="snack" />
-            <dl>
-              <dt>meal name</dt>
-              <dd>bavarage</dd>
-              <dd>side dish</dd>
-            </dl>
-            <div>
-              <time datetime="T16:30">16:30hrs</time
-              ><img src="images/" alt="16:30hrs" />
-            </div>
-          </div>
-
-          <!--night card-->
-          <div class="supa">
-            <img src="images/" alt="snack" />
-            <dl>
-              <dt>meal name</dt>
-              <dd>bavarage</dd>
-              <dd>side dish</dd>
-            </dl>
-            <div>
-              <time datetime="T20:30">20:30hrs</time
-              ><img src="images/" alt="20:30hrs" />
-            </div>
-          </div>
-        </div>
-      </div>
-      <!--third day card-->
-      <div id="day3">
-        <h3>Day Three</h3>
-        <div class="day-card">
-          <!--morning card-->
-          <div class="breakfast">
-            <img src="images/" alt="morning meal" />
-            <dl>
-              <dt>meal name</dt>
-              <dd>bavarage</dd>
-              <dd>side dish</dd>
-            </dl>
-            <div>
-              <time datetime="T08:30">08:30hrs</time
-              ><img src="images/" alt="08:30hrs" />
-            </div>
-          </div>
-
-          <!--day card-->
-          <div class="lunch">
-            <img src="images/" alt="lunch" />
-            <dl>
-              <dt>meal name</dt>
-              <dd>bavarage</dd>
-              <dd>side dish</dd>
-            </dl>
-            <div>
-              <time datetime="T12:30">12:30hrs</time
-              ><img src="images/" alt="12:30hrs" />
-            </div>
-          </div>
-
-          <!--sunset card-->
-          <div class="snack">
-            <img src="images/" alt="snack" />
-            <dl>
-              <dt>meal name</dt>
-              <dd>bavarage</dd>
-              <dd>side dish</dd>
-            </dl>
-            <div>
-              <time datetime="T16:30">16:30hrs</time
-              ><img src="images/" alt="16:30hrs" />
-            </div>
-          </div>
-
-          <!--night card-->
-          <div class="supa">
-            <img src="images/" alt="snack" />
-            <dl>
-              <dt>meal name</dt>
-              <dd>bavarage</dd>
-              <dd>side dish</dd>
-            </dl>
-            <div>
-              <time datetime="T20:30">20:30hrs</time
-              ><img src="images/" alt="20:30hrs" />
-            </div>
-          </div>
-        </div>
-      </div>
-      <!--four day card-->
-      <div id="day4">
-        <h3>Day Four</h3>
-        <div class="day-card">
-          <!--morning card-->
-          <div class="breakfast">
-            <img src="images/" alt="morning meal" />
-            <dl>
-              <dt>meal name</dt>
-              <dd>bavarage</dd>
-              <dd>side dish</dd>
-            </dl>
-            <div>
-              <time datetime="T08:30">08:30hrs</time
-              ><img src="images/" alt="08:30hrs" />
-            </div>
-          </div>
-
-          <!--day card-->
-          <div class="lunch">
-            <img src="images/" alt="lunch" />
-            <dl>
-              <dt>meal name</dt>
-              <dd>bavarage</dd>
-              <dd>side dish</dd>
-            </dl>
-            <div>
-              <time datetime="T12:30">12:30hrs</time
-              ><img src="images/" alt="12:30hrs" />
-            </div>
-          </div>
-
-          <!--sunset card-->
-          <div class="snack">
-            <img src="images/" alt="snack" />
-            <dl>
-              <dt>meal name</dt>
-              <dd>bavarage</dd>
-              <dd>side dish</dd>
-            </dl>
-            <div>
-              <time datetime="T16:30">16:30hrs</time
-              ><img src="images/" alt="16:30hrs" />
-            </div>
-          </div>
-
-          <!--night card-->
-          <div class="supa">
-            <img src="images/" alt="snack" />
-            <dl>
-              <dt>meal name</dt>
-              <dd>bavarage</dd>
-              <dd>side dish</dd>
-            </dl>
-            <div>
-              <time datetime="T20:30">20:30hrs</time
-              ><img src="images/" alt="20:30hrs" />
-            </div>
-          </div>
-        </div>
-      </div>
-      <!--Fifth day card-->
-      <div id="day5">
-        <h3>Day Five</h3>
-        <div class="day-card">
-          <!--morning card-->
-          <div class="breakfast">
-            <img src="images/" alt="morning meal" />
-            <dl>
-              <dt>meal name</dt>
-              <dd>bavarage</dd>
-              <dd>side dish</dd>
-            </dl>
-            <div>
-              <time datetime="T08:30">08:30hrs</time
-              ><img src="images/" alt="08:30hrs" />
-            </div>
-          </div>
-
-          <!--day card-->
-          <div class="lunch">
-            <img src="images/" alt="lunch" />
-            <dl>
-              <dt>meal name</dt>
-              <dd>bavarage</dd>
-              <dd>side dish</dd>
-            </dl>
-            <div>
-              <time datetime="T12:30">12:30hrs</time
-              ><img src="images/" alt="12:30hrs" />
-            </div>
-          </div>
-
-          <!--sunset card-->
-          <div class="snack">
-            <img src="images/" alt="snack" />
-            <dl>
-              <dt>meal name</dt>
-              <dd>bavarage</dd>
-              <dd>side dish</dd>
-            </dl>
-            <div>
-              <time datetime="T16:30">16:30hrs</time
-              ><img src="images/" alt="16:30hrs" />
-            </div>
-          </div>
-
-          <!--night card-->
-          <div class="supa">
-            <img src="images/" alt="snack" />
-            <dl>
-              <dt>meal name</dt>
-              <dd>bavarage</dd>
-              <dd>side dish</dd>
-            </dl>
-            <div>
-              <time datetime="T20:30">20:30hrs</time
-              ><img src="images/" alt="20:30hrs" />
-            </div>
-          </div>
-        </div>
-      </div>
-      <!--Sixth day card-->
-      <div id="day6">
-        <h3>Day Six</h3>
-        <div class="day-card">
-          <!--morning card-->
-          <div class="breakfast">
-            <img src="images/" alt="morning meal" />
-            <dl>
-              <dt>meal name</dt>
-              <dd>bavarage</dd>
-              <dd>side dish</dd>
-            </dl>
-            <div>
-              <time datetime="T08:30">08:30hrs</time
-              ><img src="images/" alt="08:30hrs" />
-            </div>
-          </div>
-
-          <!--day card-->
-          <div class="lunch">
-            <img src="images/" alt="lunch" />
-            <dl>
-              <dt>meal name</dt>
-              <dd>bavarage</dd>
-              <dd>side dish</dd>
-            </dl>
-            <div>
-              <time datetime="T12:30">12:30hrs</time
-              ><img src="images/" alt="12:30hrs" />
-            </div>
-          </div>
-
-          <!--sunset card-->
-          <div class="snack">
-            <img src="images/" alt="snack" />
-            <dl>
-              <dt>meal name</dt>
-              <dd>bavarage</dd>
-              <dd>side dish</dd>
-            </dl>
-            <div>
-              <time datetime="T16:30">16:30hrs</time
-              ><img src="images/" alt="16:30hrs" />
-            </div>
-          </div>
-
-          <!--night card-->
-          <div class="supa">
-            <img src="images/" alt="snack" />
-            <dl>
-              <dt>meal name</dt>
-              <dd>bavarage</dd>
-              <dd>side dish</dd>
-            </dl>
-            <div>
-              <time datetime="T20:30">20:30hrs</time
-              ><img src="images/" alt="20:30hrs" />
-            </div>
-          </div>
-        </div>
-      </div>
-      <!--Seventh day card-->
-      <div id="day7">
-        <h3>Day Seven</h3>
-        <div class="day-card">
-          <!--morning card-->
-          <div class="breakfast">
-            <img src="images/" alt="morning meal" />
-            <dl>
-              <dt>meal name</dt>
-              <dd>bavarage</dd>
-              <dd>side dish</dd>
-            </dl>
-            <div>
-              <time datetime="T08:30">08:30hrs</time
-              ><img src="images/" alt="08:30hrs" />
-            </div>
-          </div>
-
-          <!--day card-->
-          <div class="lunch">
-            <img src="images/" alt="lunch" />
-            <dl>
-              <dt>meal name</dt>
-              <dd>bavarage</dd>
-              <dd>side dish</dd>
-            </dl>
-            <div>
-              <time datetime="T12:30">12:30hrs</time
-              ><img src="images/" alt="12:30hrs" />
-            </div>
-          </div>
-
-          <!--sunset card-->
-          <div class="snack">
-            <img src="images/" alt="snack" />
-            <dl>
-              <dt>meal name</dt>
-              <dd>bavarage</dd>
-              <dd>side dish</dd>
-            </dl>
-            <div>
-              <time datetime="T16:30">16:30hrs</time
-              ><img src="images/" alt="16:30hrs" />
-            </div>
-          </div>
-
-          <!--night card-->
-          <div class="supa">
-            <img src="images/" alt="snack" />
-            <dl>
-              <dt>meal name</dt>
-              <dd>bavarage</dd>
-              <dd>side dish</dd>
-            </dl>
-            <div>
-              <time datetime="T20:30">20:30hrs</time
-              ><img src="images/" alt="20:30hrs" />
-            </div>
-          </div>
-        </div>
-      </div>
-    </main>
-
-    <footer>
-      <small
-        ><p>
-          Copyright &copy; 2023 044-348 and Cavendish University Zambia.All
-          rights reserved.
-        </p></small
-      >
-    </footer>
   </body>
-  <script src="javascript/script.js"></script>
+  <script src="javascript/script.js" defer></script>
 </html>
