@@ -1036,6 +1036,10 @@ video {
 }
 
 @media (min-width: 640px) {
+  .sm\:h-56 {
+    height: 14rem;
+  }
+
   .sm\:px-36 {
     padding-left: 9rem;
     padding-right: 9rem;
