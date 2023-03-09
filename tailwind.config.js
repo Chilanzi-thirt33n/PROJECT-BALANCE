@@ -11,6 +11,7 @@ module.exports = {
         myDarkestGreen: "#1A2223",
         myDarkGreen: "#283739",
         myGray: "#7c7c7c",
+        myDarkOrange: "#F2B6A5",myLightOrange:"#ffead4",
       },
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],
