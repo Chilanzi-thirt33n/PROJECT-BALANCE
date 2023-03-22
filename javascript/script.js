@@ -162,7 +162,7 @@ let normalized = [
   },
   //day7
   {
-    images:"images/meals/normal",
+    images: "images/meals/normal",
     breakfast: "brown bread",
     breakfastSide: ["milk", "eggs"],
     lunch: "nshima",
@@ -1382,19 +1382,68 @@ document.addEventListener("DOMContentLoaded", () => {
     // places the condition from user details on the new page
     // document.write(userDetails.condition);
 
+    //todo :this gets age and offers the recommendation
+    let DisplayAge = document.getElementById("Header-Age");
+    let DisplayRecommendation = document.querySelector("#Header-Age+p");
+    //todo :| 1 - 15 Age | 16 - 25 age| 26 - 45 age| 46 + age
+    let OneToFifteen = [
+        "Balanced diet with fruits, veggies, lean protein, low-fat dairy, limit sugary & processed foods.",
+        "Be active with sports, swimming, or dancing, limit TV and video games.",
+      ],
+      SixteenToTwentyFive = [
+        "Balanced diet with whole foods, limit processed/fast foods, drink water, limit alcohol.",
+        "Regular exercise like jogging, cycling, or weights, try yoga or rock climbing.",
+      ],
+      TwentyFiveToFortyFive = [
+        "Whole foods, limit processed/fast foods, drink water, limit alcohol and caffeine.",
+        "Regular exercises jogging, cycling, or lifting weights, and try new activities like hiking or martial arts.",
+      ],
+      fortySixPlus = [
+        "Balanced diet with whole foods, lean protein, healthy fats, limit sugar/salt, drink water.",
+        "Stay active with walking, swimming, yoga, exercise, social activities for mental health.",
+      ];
+        let young = 15, teen = 25 ,middleAge = 45;
+        //todo : random function for two
+        function getRandomOfTwo() {
+  let random = Math.floor(Math.random() * 2);
+  return random;
+}
+        // the logic for displaying the data 
+        if (DisplayAge){// to make sure these properties are available 
+          let UserAge = parseInt(userDetails.age,10);// this changes string to integer
+          if(UserAge <= young ){
+            DisplayAge.textContent = "Aged " + UserAge;
+            DisplayRecommendation.textContent = OneToFifteen[getRandomOfTwo()] ;
+          }
+          else if (UserAge <= teen){
+            DisplayAge.textContent = "Aged " + UserAge;
+            DisplayRecommendation.textContent = SixteenToTwentyFive[getRandomOfTwo()];
+          }
+          else if(UserAge <= middleAge){
+DisplayAge.textContent = "Aged " + UserAge;
+DisplayRecommendation.textContent = TwentyFiveToFortyFive[getRandomOfTwo()];
+          }
+          else{
+            DisplayAge.textContent = "Aged " + UserAge;
+            DisplayRecommendation.textContent =
+              fortySixPlus[getRandomOfTwo()];
+          }
+        }
+         let UserAge = parseInt(userDetails.age, 10);
+console.log(UserAge);
     //todo : make these variables so that it easy to read
     // these are the types of meals users may enter
     let typeOne = "western",
       typeThree = "mix",
       typeTwo = "zambian";
 
-      // these are condition users may enter
+    // these are condition users may enter
     let conOne = "normal",
       conTwo = "vegan",
       conThree = "diabetic",
       conFour = "pescatarian";
 
-      // these are special names tired to the  meal type present
+    // these are special names tired to the  meal type present
     let norm1 = "Savory Safari Supper",
       norm2 = "Harvest Harmony Platter",
       norm3 = "Wilderness Wholesome Bowl",
@@ -1657,12 +1706,9 @@ document.addEventListener("DOMContentLoaded", () => {
         normalized[PlaceIntInArr()[6]].eveningmealside[0];
       supaDaySeven.nextElementSibling.nextElementSibling.textContent =
         normalized[PlaceIntInArr()[6]].eveningmealside[1];
-    } 
+    }
     // normal two
-    else if (
-      userDetails.condition === conOne &&
-      userDetails.meal === typeOne
-    ) {
+    else if (userDetails.condition === conOne && userDetails.meal === typeOne) {
       //to place unique code on header
       let unigueCode = document.getElementById("special-code");
       unigueCode.textContent =
@@ -1908,7 +1954,7 @@ document.addEventListener("DOMContentLoaded", () => {
         normalWest[PlaceIntInArr()[6]].eveningmealside[0];
       supaDaySeven.nextElementSibling.nextElementSibling.textContent =
         normalWest[PlaceIntInArr()[6]].eveningmealside[1];
-    } 
+    }
     // normal three
     else if (
       userDetails.condition === conOne &&
@@ -2660,9 +2706,12 @@ document.addEventListener("DOMContentLoaded", () => {
         veganWest[PlaceIntInArr()[6]].eveningmealside[0];
       supaDaySeven.nextElementSibling.nextElementSibling.textContent =
         veganWest[PlaceIntInArr()[6]].eveningmealside[1];
-    } 
+    }
     // vegan three
-    else if (userDetails.condition === conTwo && userDetails.meal === typeThree) {
+    else if (
+      userDetails.condition === conTwo &&
+      userDetails.meal === typeThree
+    ) {
       //to place unique code on header
       let unigueCode = document.getElementById("special-code");
       unigueCode.textContent =
@@ -2911,7 +2960,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     //***************************************************** DIABETIC MEALS *********************************************************/
     // diabetic one
-    else if (userDetails.condition === conThree && userDetails.meal === typeTwo) {
+    else if (
+      userDetails.condition === conThree &&
+      userDetails.meal === typeTwo
+    ) {
       //to place unique word on top
       let FancyName = document.getElementById("special-name");
       FancyName.textContent = diabetic1;
@@ -3160,7 +3212,10 @@ document.addEventListener("DOMContentLoaded", () => {
         diabeticZed[PlaceIntInArr()[6]].eveningmealside[1];
     }
     // diabetic two
-    else if (userDetails.condition === conThree && userDetails.meal === typeOne) {
+    else if (
+      userDetails.condition === conThree &&
+      userDetails.meal === typeOne
+    ) {
       //to place unique code on header
       let unigueCode = document.getElementById("special-code");
       unigueCode.textContent =
@@ -3444,7 +3499,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
       //placing the meals on document
 
-      breakfastDayOne.textContent = diabeticMix[PlaceIntInArrTwo()[0]].breakfast;
+      breakfastDayOne.textContent =
+        diabeticMix[PlaceIntInArrTwo()[0]].breakfast;
       breakfastDayOne.nextElementSibling.textContent =
         diabeticMix[PlaceIntInArrTwo()[0]].breakfastSide[0];
       breakfastDayOne.nextElementSibling.nextElementSibling.textContent =
@@ -3476,7 +3532,8 @@ document.addEventListener("DOMContentLoaded", () => {
       let snackDayTwo = document.querySelector("#day2 .day-card .snack dt");
       let supaDayTwo = document.querySelector("#day2 .day-card .supa dt");
 
-      breakfastDayTwo.textContent = diabeticMix[PlaceIntInArrTwo()[1]].breakfast;
+      breakfastDayTwo.textContent =
+        diabeticMix[PlaceIntInArrTwo()[1]].breakfast;
       breakfastDayTwo.nextElementSibling.textContent =
         diabeticMix[PlaceIntInArrTwo()[1]].breakfastSide[0];
       breakfastDayTwo.nextElementSibling.nextElementSibling.textContent =
@@ -3508,7 +3565,8 @@ document.addEventListener("DOMContentLoaded", () => {
       let snackDayThree = document.querySelector("#day3 .day-card .snack dt");
       let supaDayThree = document.querySelector("#day3 .day-card .supa dt");
 
-      breakfastDayThree.textContent = diabeticMix[PlaceIntInArrTwo()[2]].breakfast;
+      breakfastDayThree.textContent =
+        diabeticMix[PlaceIntInArrTwo()[2]].breakfast;
       breakfastDayThree.nextElementSibling.textContent =
         diabeticMix[PlaceIntInArrTwo()[2]].breakfastSide[0];
       breakfastDayThree.nextElementSibling.nextElementSibling.textContent =
@@ -3540,7 +3598,8 @@ document.addEventListener("DOMContentLoaded", () => {
       let snackDayFour = document.querySelector("#day4 .day-card .snack dt");
       let supaDayFour = document.querySelector("#day4 .day-card .supa dt");
 
-      breakfastDayFour.textContent = diabeticMix[PlaceIntInArrTwo()[3]].breakfast;
+      breakfastDayFour.textContent =
+        diabeticMix[PlaceIntInArrTwo()[3]].breakfast;
       breakfastDayFour.nextElementSibling.textContent =
         diabeticMix[PlaceIntInArrTwo()[3]].breakfastSide[0];
       breakfastDayFour.nextElementSibling.nextElementSibling.textContent =
@@ -3572,7 +3631,8 @@ document.addEventListener("DOMContentLoaded", () => {
       let snackDayFive = document.querySelector("#day5 .day-card .snack dt");
       let supaDayFive = document.querySelector("#day5 .day-card .supa dt");
 
-      breakfastDayFive.textContent = diabeticMix[PlaceIntInArrTwo()[4]].breakfast;
+      breakfastDayFive.textContent =
+        diabeticMix[PlaceIntInArrTwo()[4]].breakfast;
       breakfastDayFive.nextElementSibling.textContent =
         diabeticMix[PlaceIntInArrTwo()[4]].breakfastSide[0];
       breakfastDayFive.nextElementSibling.nextElementSibling.textContent =
@@ -3604,7 +3664,8 @@ document.addEventListener("DOMContentLoaded", () => {
       let snackDaySix = document.querySelector("#day6 .day-card .snack dt");
       let supaDaySix = document.querySelector("#day6 .day-card .supa dt");
 
-      breakfastDaySix.textContent = diabeticMix[PlaceIntInArrTwo()[5]].breakfast;
+      breakfastDaySix.textContent =
+        diabeticMix[PlaceIntInArrTwo()[5]].breakfast;
       breakfastDaySix.nextElementSibling.textContent =
         diabeticMix[PlaceIntInArrTwo()[5]].breakfastSide[0];
       breakfastDaySix.nextElementSibling.nextElementSibling.textContent =
@@ -3636,7 +3697,8 @@ document.addEventListener("DOMContentLoaded", () => {
       let snackDaySeven = document.querySelector("#day7 .day-card .snack dt");
       let supaDaySeven = document.querySelector("#day7 .day-card .supa dt");
 
-      breakfastDaySeven.textContent = diabeticMix[PlaceIntInArrTwo()[6]].breakfast;
+      breakfastDaySeven.textContent =
+        diabeticMix[PlaceIntInArrTwo()[6]].breakfast;
       breakfastDaySeven.nextElementSibling.textContent =
         diabeticMix[PlaceIntInArrTwo()[6]].breakfastSide[0];
       breakfastDaySeven.nextElementSibling.nextElementSibling.textContent =
@@ -3675,10 +3737,13 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 //****** BUTTONs FUNCTIONALITY *********/
-//todo :this is for randomzing the exported information 
+
+//todo :this is for randomizing the exported information
 let button = document.querySelectorAll("#random-btn button, #random-btn img ");
-button.forEach((item)=>{
-  item.addEventListener("click",(e)=>{
-    location.reload();
-  })
-} );
+button.forEach((item) => {
+  item.addEventListener("click", (e) => {
+    if (e) {
+      location.reload();
+    }
+  });
+});
