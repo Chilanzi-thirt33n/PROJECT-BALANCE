@@ -1402,35 +1402,34 @@ document.addEventListener("DOMContentLoaded", () => {
         "Balanced diet with whole foods, lean protein, healthy fats, limit sugar/salt, drink water.",
         "Stay active with walking, swimming, yoga, exercise, social activities for mental health.",
       ];
-        let young = 15, teen = 25 ,middleAge = 45;
-        //todo : random function for two
-        function getRandomOfTwo() {
-  let random = Math.floor(Math.random() * 2);
-  return random;
-}
-        // the logic for displaying the data 
-        if (DisplayAge){// to make sure these properties are available 
-          let UserAge = parseInt(userDetails.age,10);// this changes string to integer
-          if(UserAge <= young ){
-            DisplayAge.textContent = "Aged " + UserAge;
-            DisplayRecommendation.textContent = OneToFifteen[getRandomOfTwo()] ;
-          }
-          else if (UserAge <= teen){
-            DisplayAge.textContent = "Aged " + UserAge;
-            DisplayRecommendation.textContent = SixteenToTwentyFive[getRandomOfTwo()];
-          }
-          else if(UserAge <= middleAge){
-DisplayAge.textContent = "Aged " + UserAge;
-DisplayRecommendation.textContent = TwentyFiveToFortyFive[getRandomOfTwo()];
-          }
-          else{
-            DisplayAge.textContent = "Aged " + UserAge;
-            DisplayRecommendation.textContent =
-              fortySixPlus[getRandomOfTwo()];
-          }
-        }
-         let UserAge = parseInt(userDetails.age, 10);
-console.log(UserAge);
+    let young = 15,
+      teen = 25,
+      middleAge = 45;
+    //todo : random function for two
+    function getRandomOfTwo() {
+      let random = Math.floor(Math.random() * 2);
+      return random;
+    }
+    // the logic for displaying the data
+    if (DisplayAge) {
+      // to make sure these properties are available
+      let UserAge = parseInt(userDetails.age, 10); // this changes string to integer
+      if (UserAge <= young) {
+        DisplayAge.textContent = "Aged " + UserAge;
+        DisplayRecommendation.textContent = OneToFifteen[getRandomOfTwo()];
+      } else if (UserAge <= teen) {
+        DisplayAge.textContent = "Aged " + UserAge;
+        DisplayRecommendation.textContent =
+          SixteenToTwentyFive[getRandomOfTwo()];
+      } else if (UserAge <= middleAge) {
+        DisplayAge.textContent = "Aged " + UserAge;
+        DisplayRecommendation.textContent =
+          TwentyFiveToFortyFive[getRandomOfTwo()];
+      } else {
+        DisplayAge.textContent = "Aged " + UserAge;
+        DisplayRecommendation.textContent = fortySixPlus[getRandomOfTwo()];
+      }
+    }
     //todo : make these variables so that it easy to read
     // these are the types of meals users may enter
     let typeOne = "western",
