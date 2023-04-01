@@ -959,18 +959,13 @@ video {
   color: rgb(134 188 66 / var(--tw-text-opacity));
 }
 
-.text-myDarkOrange {
+.text-myEmGreen {
   --tw-text-opacity: 1;
-  color: rgb(242 182 165 / var(--tw-text-opacity));
+  color: rgb(213 230 171 / var(--tw-text-opacity));
 }
 
 .text-\[o\.5rem\] {
   color: o.5rem;
-}
-
-.text-myEmGreen {
-  --tw-text-opacity: 1;
-  color: rgb(213 230 171 / var(--tw-text-opacity));
 }
 
 .shadow-lg {
@@ -1019,9 +1014,9 @@ video {
   border-color: rgb(26 34 35 / var(--tw-border-opacity));
 }
 
-.hover\:bg-cyan-800:hover {
+.hover\:bg-myEmGreen:hover {
   --tw-bg-opacity: 1;
-  background-color: rgb(21 94 117 / var(--tw-bg-opacity));
+  background-color: rgb(213 230 171 / var(--tw-bg-opacity));
 }
 
 .hover\:bg-slate-200:hover {
@@ -1042,11 +1037,6 @@ video {
 .hover\:bg-slate-600:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(71 85 105 / var(--tw-bg-opacity));
-}
-
-.hover\:bg-myEmGreen:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(213 230 171 / var(--tw-bg-opacity));
 }
 
 .hover\:text-myGreen:hover {
@@ -1282,6 +1272,10 @@ video {
     background-image: url(../images/bg-meals.png);
   }
 
+  .lg\:bg-\[url\(\.\.\/images\/meal-Desktop-bg\.png\)\] {
+    background-image: url(../images/meal-Desktop-bg.png);
+  }
+
   .lg\:p-12 {
     padding: 3rem;
   }
@@ -1345,7 +1339,23 @@ video {
 }
 
 @media (min-width: 1280px) {
+  .xl\:bg-\[\] {
+    background-color: ;
+  }
+
   .xl\:bg-\[url\(\'\.\.\/images\/index-desktop-bg\.png\'\)\] {
     background-image: url('../images/index-desktop-bg.png');
+  }
+
+  .xl\:bg-\[url\(\.\.\/images\/\)\] {
+    background-image: url(../images/);
+  }
+
+   {
+    background-image: url(../images/meal.xl\:bg-\[url\(\'\.\.\/images\/index-desktop-bg\.png\'\)\]);
+  }
+
+  .xl\:bg-\[url\(\.\.\/images\/meal-Desktop-bg\.png\)\] {
+    background-image: url(../images/meal-Desktop-bg.png);
   }
 }
