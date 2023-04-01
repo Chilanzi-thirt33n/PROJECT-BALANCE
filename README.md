@@ -22,6 +22,12 @@ This web application is designed to help users in Zambia generate a balanced die
 
 * [HealthyBites!](https://chilanzi-thirt33n.github.io/PROJECT-BALANCE/)
 
+# UI Design
+* Low fideity wireframes
+![Mobile view](https://github.com/Chilanzi-thirt33n/PROJECT-BALANCE/blob/master/images/documentation/lof%20mobile.png)
+* High fideity wireframes
+![Mobile view](https://github.com/Chilanzi-thirt33n/PROJECT-BALANCE/blob/master/images/documentation/Hifi%20mobile.png)
+
 # Installation
 
 * Clone or download the repository
