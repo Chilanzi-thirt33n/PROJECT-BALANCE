@@ -1339,23 +1339,7 @@ video {
 }
 
 @media (min-width: 1280px) {
-  .xl\:bg-\[\] {
-    background-color: ;
-  }
-
   .xl\:bg-\[url\(\'\.\.\/images\/index-desktop-bg\.png\'\)\] {
     background-image: url('../images/index-desktop-bg.png');
-  }
-
-  .xl\:bg-\[url\(\.\.\/images\/\)\] {
-    background-image: url(../images/);
-  }
-
-   {
-    background-image: url(../images/meal.xl\:bg-\[url\(\'\.\.\/images\/index-desktop-bg\.png\'\)\]);
-  }
-
-  .xl\:bg-\[url\(\.\.\/images\/meal-Desktop-bg\.png\)\] {
-    background-image: url(../images/meal-Desktop-bg.png);
   }
 }
