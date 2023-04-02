@@ -27,8 +27,9 @@
         <ul>
           <!--the special word to get group of meal-->
           <li>
-            <label
-              >Special name :<select name="spc" id="sp-name">
+            <label for="special-meals"> Special name </label>
+            <div id="special-meals">
+              <select name="spc" id="sp-name">
                 <option value="Savory Safari Supper">
                   Savory Safari Supper
                 </option>
@@ -62,37 +63,64 @@
                   Mixed Mariner's Medley
                 </option>
               </select>
-            </label>
+            </div>
           </li>
           <!--to get 7 digit code codes-->
           <li>
-            <label
-              >Meal code :<input
+            <label for="input-int"
+              id="error-msg">Meal code
+            </label>
+            <div id="input-int">
+              <input
                 type="number"
                 min="0"
                 max="13"
-                id="code0" /><input
+                placeholder="0"
+                id="code0"
+              />
+              <input
                 type="number"
                 min="0"
                 max="13"
-                id="code1" /><input
+                placeholder="0"
+                id="code1"
+              />
+              <input
                 type="number"
                 min="0"
                 max="13"
-                id="code2" /><input
+                placeholder="0"
+                id="code2"
+              />
+              <input
                 type="number"
                 min="0"
                 max="13"
-                id="code3" /><input
+                placeholder="0"
+                id="code3"
+              />
+              <input
                 type="number"
                 min="0"
                 max="13"
-                id="code4" /><input
+                placeholder="0"
+                id="code4"
+              />
+              <input
                 type="number"
                 min="0"
                 max="13"
-                id="code5" /><input type="number" min="0" max="13" id="code6"
-            /></label>
+                placeholder="0"
+                id="code5"
+              />
+              <input
+                type="number"
+                min="0"
+                max="13"
+                placeholder="0"
+                id="code6"
+              />
+            </div>
           </li>
         </ul>
         <input type="submit" value="View plan" />
