@@ -8,7 +8,7 @@
     <link rel="icon" href="images/icons/32x32.png" />
     <title>enter code of balance diet | healthy food - ARBIT DESIGNS</title>
   </head>
-  <body>
+  <body id="clearSession">
     <!--this is banner for the logo-->
     <div id="logo-wrapper">
       <img src="images/" alt="healthybites!" />
@@ -75,49 +75,49 @@
                 type="number"
                 min="0"
                 max="13"
-                placeholder="0"
+                value="0"
                 id="code0"
               />
               <input
                 type="number"
                 min="0"
                 max="13"
-                placeholder="0"
+                value="0"
                 id="code1"
               />
               <input
                 type="number"
                 min="0"
                 max="13"
-                placeholder="0"
+                value="0"
                 id="code2"
               />
               <input
                 type="number"
                 min="0"
                 max="13"
-                placeholder="0"
+                value="0"
                 id="code3"
               />
               <input
                 type="number"
                 min="0"
                 max="13"
-                placeholder="0"
+                value="0"
                 id="code4"
               />
               <input
                 type="number"
                 min="0"
                 max="13"
-                placeholder="0"
+                value="0"
                 id="code5"
               />
               <input
                 type="number"
                 min="0"
                 max="13"
-                placeholder="0"
+                value="0"
                 id="code6"
               />
             </div>
@@ -136,5 +136,12 @@
       >
     </footer>
   </body>
-  <script src="javascript/script.js"></script>
+  <!-- this is to clear storage immediately this page loads-->
+  <script async>
+    window.addEventListener("load",function () {
+      sessionStorage.clear();
+    });
+  </script>
+<!--this is script for getting details-->
+  <script async src="javascript/script.js"></script>
 </html>

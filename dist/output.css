@@ -774,9 +774,9 @@ video {
   border-width: 1px;
 }
 
-.bg-myGreen {
+.bg-myBgGreen {
   --tw-bg-opacity: 1;
-  background-color: rgb(134 188 66 / var(--tw-bg-opacity));
+  background-color: rgb(98 150 114 / var(--tw-bg-opacity));
 }
 
 .bg-myWhite {
@@ -797,11 +797,6 @@ video {
 .bg-myDarkestGreen {
   --tw-bg-opacity: 1;
   background-color: rgb(26 34 35 / var(--tw-bg-opacity));
-}
-
-.bg-myBgGreen {
-  --tw-bg-opacity: 1;
-  background-color: rgb(98 150 114 / var(--tw-bg-opacity));
 }
 
 .bg-\[url\(\'\.\.\/images\/code-bg-mobile\.png\'\)\] {

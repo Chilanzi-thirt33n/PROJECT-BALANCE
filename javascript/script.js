@@ -1330,6 +1330,18 @@ let pescatarianMix = [
     eveningmealside: ["side1", "side2"],
   },
 ];
+  const norm1 = "Savory Safari Supper",
+    norm2 = "Harvest Harmony Platter",
+    norm3 = "Wilderness Wholesome Bowl",
+    vegan1 = "Herb & Spice Fusion",
+    vegan2 = "Vibrant Veggie Delight",
+    vegan3 = "Tropical Tasty Treat",
+    diabetic1 = "Diabetic Delicacy Plate",
+    diabetic2 = "Western Wellness Plate",
+    diabetic3 = "Balanced Bites Mix",
+    pescatarian1 = "Pescatarian Paradise Platter",
+    pescatarian2 = "Seafood Sensation Spread",
+    pescatarian3 = "Mixed Mariner's Medley";
 //todo :function to get special name and code */
 function getSpecialCode() {
   let specialCode = {}; // object for storing form data from special code
@@ -1377,25 +1389,15 @@ if (returnForm) {
     event.preventDefault();
     //gets users info to be processed by the meal plan function
     let details = getSpecialCode();
-
-    let norm1 = "Savory Safari Supper",
-      norm2 = "Harvest Harmony Platter",
-      vegan1 = "Herb & Spice Fusion",
-      vegan2 = "Vibrant Veggie Delight",
-      diabetic1 = "Diabetic Delicacy Plate",
-      diabetic2 = "Western Wellness Plate",
-      pescatarian1 = "Pescatarian Paradise Platter",
-      pescatarian2 = "Seafood Sensation Spread";
-
     if (
-      details.Name === norm1 ||
+      details.Name === norm1 ||details.Name ===
       norm2 ||
-      vegan1 ||
-      vegan2 ||
-      diabetic1 ||
-      diabetic2 ||
-      pescatarian1 ||
-      pescatarian2
+      details.Name === vegan1 ||
+      details.Name === vegan2 ||
+      details.Name === diabetic1 ||
+      details.Name === diabetic2 ||
+      details.Name === pescatarian1 ||
+      details.Namw === pescatarian2
     ) {
       if (details.index0 > 6 || details.index1 > 6 || details.index2 > 6 || details.index3 > 6 || details.index4 > 6 || details.index5 > 6 || details.index6 > 6) {
         let msg = document.getElementById("error-msg");
@@ -1414,7 +1416,6 @@ if (returnForm) {
       //loads new page
       loadPlanPage();
     }
-    
   });
 }
 
@@ -1431,13 +1432,13 @@ document.addEventListener("DOMContentLoaded", () => {
     let userDetails = JSON.parse(sessionStorage.getItem("userDetails"));
     let userDetailsTwo = JSON.parse(sessionStorage.getItem("userDetailsTwo"));
     // creates index for accessing the meal index
-    let index0 = parseInt(userDetailsTwo.index0);
-    let index1 = parseInt(userDetailsTwo.index1);
-    let index2 = parseInt(userDetailsTwo.index2);
-    let index3 = parseInt(userDetailsTwo.index3);
-    let index4 = parseInt(userDetailsTwo.index4);
-    let index5 = parseInt(userDetailsTwo.index5);
-    let index6 = parseInt(userDetailsTwo.index6);
+    let index0 = parseInt(userDetailsTwo.index0,10);
+    let index1 = parseInt(userDetailsTwo.index1,10);
+    let index2 = parseInt(userDetailsTwo.index2,10);
+    let index3 = parseInt(userDetailsTwo.index3,10);
+    let index4 = parseInt(userDetailsTwo.index4,10);
+    let index5 = parseInt(userDetailsTwo.index5,10);
+    let index6 = parseInt(userDetailsTwo.index6,10);
 
     //todo :this gets age and offers the recommendation
     let DisplayAge = document.getElementById("Header-Age");
@@ -1481,9 +1482,9 @@ document.addEventListener("DOMContentLoaded", () => {
       return randomInt;
     }
     // the logic for displaying the data
-    if (DisplayAge) {
+    if (DisplayAge && userDetails) {
       // to make sure these properties are available
-      let UserAge = parseInt(userDetails.age, 10); // this changes string to integer
+      let UserAge = parseInt(userDetails.age,10); // this changes string to integer
       if (UserAge <= young) {
         DisplayAge.textContent = "Aged " + UserAge;
         DisplayRecommendation.textContent = OneToFifteen[getRandomOfTwo()];
@@ -1495,7 +1496,7 @@ document.addEventListener("DOMContentLoaded", () => {
         DisplayAge.textContent = "Aged " + UserAge;
         DisplayRecommendation.textContent =
           TwentyFiveToFortyFive[getRandomOfTwo()];
-      } else if (oldAge >= UserAge) {
+      } else if ( UserAge >=  oldAge) {
         DisplayAge.textContent = "Aged " + UserAge;
         DisplayRecommendation.textContent = fortySixPlus[getRandomOfTwo()];
       } else {
@@ -1516,22 +1517,10 @@ document.addEventListener("DOMContentLoaded", () => {
       conFour = "pescatarian";
 
     // these are special names tired to the  meal type present
-    let norm1 = "Savory Safari Supper",
-      norm2 = "Harvest Harmony Platter",
-      norm3 = "Wilderness Wholesome Bowl",
-      vegan1 = "Herb & Spice Fusion",
-      vegan2 = "Vibrant Veggie Delight",
-      vegan3 = "Tropical Tasty Treat",
-      diabetic1 = "Diabetic Delicacy Plate",
-      diabetic2 = "Western Wellness Plate",
-      diabetic3 = "Balanced Bites Mix",
-      pescatarian1 = "Pescatarian Paradise Platter",
-      pescatarian2 = "Seafood Sensation Spread",
-      pescatarian3 = "Mixed Mariner's Medley";
 
     //************************************************ NORMAL MEAL ***********************************************************/
     // normal one
-    if (userDetails.condition === conOne && userDetails.meal === typeTwo) {
+    if (userDetails && userDetails.condition === conOne && userDetails.meal === typeTwo) {
       //to place unique code on header
       let unigueCode = document.getElementById("special-code");
       unigueCode.textContent =
@@ -1780,7 +1769,7 @@ document.addEventListener("DOMContentLoaded", () => {
         normalized[PlaceIntInArr()[6]].eveningmealside[1];
     }
     // normal two
-    else if (userDetails.condition === conOne && userDetails.meal === typeOne) {
+    else if (userDetails && userDetails.condition === conOne && userDetails.meal === typeOne) {
       //to place unique code on header
       let unigueCode = document.getElementById("special-code");
       unigueCode.textContent =
@@ -2028,7 +2017,7 @@ document.addEventListener("DOMContentLoaded", () => {
         normalWest[PlaceIntInArr()[6]].eveningmealside[1];
     }
     // normal three
-    else if (
+    else if (userDetails &&
       userDetails.condition === conOne &&
       userDetails.meal === typeThree
     ) {
@@ -2282,7 +2271,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     //******************************************************* VEGAN MEALS ***********************************************************/
     // vegan one
-    else if (userDetails.condition === conTwo && userDetails.meal === typeTwo) {
+    else if (userDetails && userDetails.condition === conTwo && userDetails.meal === typeTwo) {
       //to place unique word on top
       let FancyName = document.getElementById("special-name");
       FancyName.textContent = vegan1;
@@ -2531,7 +2520,7 @@ document.addEventListener("DOMContentLoaded", () => {
         veganized[PlaceIntInArr()[6]].eveningmealside[1];
     }
     //vegan two
-    else if (userDetails.condition === conTwo && userDetails.meal === typeOne) {
+    else if (userDetails && userDetails.condition === conTwo && userDetails.meal === typeOne) {
       //to place unique word on top
       let FancyName = document.getElementById("special-name");
       FancyName.textContent = vegan2;
@@ -2780,7 +2769,7 @@ document.addEventListener("DOMContentLoaded", () => {
         veganWest[PlaceIntInArr()[6]].eveningmealside[1];
     }
     // vegan three
-    else if (
+    else if ( userDetails &&
       userDetails.condition === conTwo &&
       userDetails.meal === typeThree
     ) {
@@ -3032,7 +3021,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     //***************************************************** DIABETIC MEALS *********************************************************/
     // diabetic one
-    else if (
+    else if ( userDetails &&
       userDetails.condition === conThree &&
       userDetails.meal === typeTwo
     ) {
@@ -3284,7 +3273,7 @@ document.addEventListener("DOMContentLoaded", () => {
         diabeticZed[PlaceIntInArr()[6]].eveningmealside[1];
     }
     // diabetic two
-    else if (
+    else if ( userDetails &&
       userDetails.condition === conThree &&
       userDetails.meal === typeOne
     ) {
@@ -3537,7 +3526,7 @@ document.addEventListener("DOMContentLoaded", () => {
         diabeticWest[PlaceIntInArr()[6]].eveningmealside[1];
     }
     // diabetic three
-    else if (
+    else if ( userDetails &&
       userDetails.condition === conThree &&
       userDetails.meal === typeThree
     ) {
@@ -3795,7 +3784,7 @@ document.addEventListener("DOMContentLoaded", () => {
         diabeticMix[PlaceIntInArrTwo()[6]].eveningmealside[1];
     }
     // Pescaerian one
-    else if (
+    else if (userDetails &&
       userDetails.condition === conFour &&
       userDetails.meal === typeTwo
     ) {
@@ -4054,7 +4043,7 @@ document.addEventListener("DOMContentLoaded", () => {
         pescatarianZed[PlaceIntInArr()[6]].eveningmealside[1];
     }
     // pescatarian Two
-    else if (
+    else if (userDetails &&
       userDetails.condition === conFour &&
       userDetails.meal === typeOne
     ) {
@@ -4317,7 +4306,7 @@ document.addEventListener("DOMContentLoaded", () => {
         pescatarianWest[PlaceIntInArr()[6]].eveningmealside[1];
     }
     // pescaterian three
-    else if (
+    else if (userDetails &&
       userDetails.condition === conFour &&
       userDetails.meal === typeThree
     ) {
@@ -4589,7 +4578,7 @@ document.addEventListener("DOMContentLoaded", () => {
         pescatarianMix[PlaceIntInArrTwo()[6]].eveningmealside[1];
     } 
     // ** normal 1 returning customer
-    else if (userDetailsTwo.Name === norm1) {
+    else if (userDetailsTwo && userDetailsTwo.Name === norm1) {
       //to place unique code on header
       let unigueCode = document.getElementById("special-code");
       unigueCode.textContent =
@@ -4838,7 +4827,7 @@ document.addEventListener("DOMContentLoaded", () => {
         normalized[index6].eveningmealside[1];
     } 
     // ** normal 2 returning customer
-    else if (userDetailsTwo.Name === norm2) {
+    else if (userDetailsTwo && userDetailsTwo.Name === norm2) {
       //to place unique code on header
       let unigueCode = document.getElementById("special-code");
       unigueCode.textContent =
