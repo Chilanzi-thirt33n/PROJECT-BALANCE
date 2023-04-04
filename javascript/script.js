@@ -1431,14 +1431,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // retrieves the user details from session storage
     let userDetails = JSON.parse(sessionStorage.getItem("userDetails"));
     let userDetailsTwo = JSON.parse(sessionStorage.getItem("userDetailsTwo"));
-    // creates index for accessing the meal index
-    let index0 = parseInt(userDetailsTwo.index0,10);
-    let index1 = parseInt(userDetailsTwo.index1,10);
-    let index2 = parseInt(userDetailsTwo.index2,10);
-    let index3 = parseInt(userDetailsTwo.index3,10);
-    let index4 = parseInt(userDetailsTwo.index4,10);
-    let index5 = parseInt(userDetailsTwo.index5,10);
-    let index6 = parseInt(userDetailsTwo.index6,10);
+   
 
     //todo :this gets age and offers the recommendation
     let DisplayAge = document.getElementById("Header-Age");
@@ -4579,6 +4572,14 @@ document.addEventListener("DOMContentLoaded", () => {
     } 
     // ** normal 1 returning customer
     else if (userDetailsTwo && userDetailsTwo.Name === norm1) {
+      // creates index for accessing the meal index
+      let index0 = parseInt(userDetailsTwo.index0, 10);
+      let index1 = parseInt(userDetailsTwo.index1, 10);
+      let index2 = parseInt(userDetailsTwo.index2, 10);
+      let index3 = parseInt(userDetailsTwo.index3, 10);
+      let index4 = parseInt(userDetailsTwo.index4, 10);
+      let index5 = parseInt(userDetailsTwo.index5, 10);
+      let index6 = parseInt(userDetailsTwo.index6, 10);
       //to place unique code on header
       let unigueCode = document.getElementById("special-code");
       unigueCode.textContent =
@@ -4828,6 +4829,14 @@ document.addEventListener("DOMContentLoaded", () => {
     } 
     // ** normal 2 returning customer
     else if (userDetailsTwo && userDetailsTwo.Name === norm2) {
+      // creates index for accessing the meal index
+      let index0 = parseInt(userDetailsTwo.index0, 10);
+      let index1 = parseInt(userDetailsTwo.index1, 10);
+      let index2 = parseInt(userDetailsTwo.index2, 10);
+      let index3 = parseInt(userDetailsTwo.index3, 10);
+      let index4 = parseInt(userDetailsTwo.index4, 10);
+      let index5 = parseInt(userDetailsTwo.index5, 10);
+      let index6 = parseInt(userDetailsTwo.index6, 10);
       //to place unique code on header
       let unigueCode = document.getElementById("special-code");
       unigueCode.textContent =
@@ -5077,6 +5086,14 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     //** Normal 3 returnomg customer */
     else if (userDetailsTwo && userDetailsTwo.Name === norm3) {
+      // creates index for accessing the meal index
+      let index0 = parseInt(userDetailsTwo.index0, 10);
+      let index1 = parseInt(userDetailsTwo.index1, 10);
+      let index2 = parseInt(userDetailsTwo.index2, 10);
+      let index3 = parseInt(userDetailsTwo.index3, 10);
+      let index4 = parseInt(userDetailsTwo.index4, 10);
+      let index5 = parseInt(userDetailsTwo.index5, 10);
+      let index6 = parseInt(userDetailsTwo.index6, 10);
       //to place unique code on header
       let unigueCode = document.getElementById("special-code");
       unigueCode.textContent =
