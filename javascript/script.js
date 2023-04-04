@@ -4847,7 +4847,256 @@ document.addEventListener("DOMContentLoaded", () => {
 
       //to place unique word on top
       let FancyName = document.getElementById("special-name");
-      FancyName.textContent = norm1;
+      FancyName.textContent = norm2;
+
+      //day1 //variables holding location
+      let breakfastDayOne = document.querySelector(
+        "#day1 .day-card .breakfast dt"
+      );
+      let lunchDayOne = document.querySelector("#day1 .day-card .lunch dt");
+      let snackDayOne = document.querySelector("#day1 .day-card .snack dt");
+      let supaDayOne = document.querySelector("#day1 .day-card .supa dt");
+
+      //placing the meals on document
+
+      breakfastDayOne.textContent = normalized[index0].breakfast;
+      breakfastDayOne.nextElementSibling.textContent =
+        normalized[index0].breakfastSide[0];
+      breakfastDayOne.nextElementSibling.nextElementSibling.textContent =
+        normalized[index0].breakfastSide[1];
+
+      lunchDayOne.textContent = normalized[index0].lunch;
+      lunchDayOne.nextElementSibling.textContent =
+        normalized[index0].lunchside[0];
+      lunchDayOne.nextElementSibling.nextElementSibling.textContent =
+        normalized[index0].lunchside[1];
+
+      snackDayOne.textContent = normalized[index0].mealSunset;
+      snackDayOne.nextElementSibling.textContent =
+        normalized[index0].mealSunsetSide[0];
+      snackDayOne.nextElementSibling.nextElementSibling.textContent =
+        normalized[index0].mealSunsetSide[1];
+
+      supaDayOne.textContent = normalized[index0].eveningmeal;
+      supaDayOne.nextElementSibling.textContent =
+        normalized[index0].eveningmealside[0];
+      supaDayOne.nextElementSibling.nextElementSibling.textContent =
+        normalized[index0].eveningmealside[1];
+
+      //day2
+      let breakfastDayTwo = document.querySelector(
+        "#day2 .day-card .breakfast dt"
+      );
+      let lunchDayTwo = document.querySelector("#day2 .day-card .lunch dt");
+      let snackDayTwo = document.querySelector("#day2 .day-card .snack dt");
+      let supaDayTwo = document.querySelector("#day2 .day-card .supa dt");
+
+      breakfastDayTwo.textContent = normalized[PlaceIntInArr()[1]].breakfast;
+      breakfastDayTwo.nextElementSibling.textContent =
+        normalized[index1].breakfastSide[0];
+      breakfastDayTwo.nextElementSibling.nextElementSibling.textContent =
+        normalized[index1].breakfastSide[1];
+
+      lunchDayTwo.textContent = normalized[index1].lunch;
+      lunchDayTwo.nextElementSibling.textContent =
+        normalized[index1].lunchside[0];
+      lunchDayTwo.nextElementSibling.nextElementSibling.textContent =
+        normalized[index1].lunchside[1];
+
+      snackDayTwo.textContent = normalized[index1].mealSunset;
+      snackDayTwo.nextElementSibling.textContent =
+        normalized[index1].mealSunsetSide[0];
+      snackDayTwo.nextElementSibling.nextElementSibling.textContent =
+        normalized[index1].mealSunsetSide[1];
+
+      supaDayTwo.textContent = normalized[index1].eveningmeal;
+      supaDayTwo.nextElementSibling.textContent =
+        normalized[index1].eveningmealside[0];
+      supaDayTwo.nextElementSibling.nextElementSibling.textContent =
+        normalized[index1].eveningmealside[1];
+
+      //day3
+      let breakfastDayThree = document.querySelector(
+        "#day3 .day-card .breakfast dt"
+      );
+      let lunchDayThree = document.querySelector("#day3 .day-card .lunch dt");
+      let snackDayThree = document.querySelector("#day3 .day-card .snack dt");
+      let supaDayThree = document.querySelector("#day3 .day-card .supa dt");
+
+      breakfastDayThree.textContent = normalized[index2].breakfast;
+      breakfastDayThree.nextElementSibling.textContent =
+        normalized[index2].breakfastSide[0];
+      breakfastDayThree.nextElementSibling.nextElementSibling.textContent =
+        normalized[index2].breakfastSide[1];
+
+      lunchDayThree.textContent = normalized[index2].lunch;
+      lunchDayThree.nextElementSibling.textContent =
+        normalized[index2].lunchside[0];
+      lunchDayThree.nextElementSibling.nextElementSibling.textContent =
+        normalized[index2].lunchside[1];
+
+      snackDayThree.textContent = normalized[index2].mealSunset;
+      snackDayThree.nextElementSibling.textContent =
+        normalized[index2].mealSunsetSide[0];
+      snackDayThree.nextElementSibling.nextElementSibling.textContent =
+        normalized[index2].mealSunsetSide[1];
+
+      supaDayThree.textContent = normalized[index2].eveningmeal;
+      supaDayThree.nextElementSibling.textContent =
+        normalized[index2].eveningmealside[0];
+      supaDayThree.nextElementSibling.nextElementSibling.textContent =
+        normalized[index2].eveningmealside[1];
+
+      //day4
+      let breakfastDayFour = document.querySelector(
+        "#day4 .day-card .breakfast dt"
+      );
+      let lunchDayFour = document.querySelector("#day4 .day-card .lunch dt");
+      let snackDayFour = document.querySelector("#day4 .day-card .snack dt");
+      let supaDayFour = document.querySelector("#day4 .day-card .supa dt");
+
+      breakfastDayFour.textContent = normalized[index3].breakfast;
+      breakfastDayFour.nextElementSibling.textContent =
+        normalized[index3].breakfastSide[0];
+      breakfastDayFour.nextElementSibling.nextElementSibling.textContent =
+        normalized[index3].breakfastSide[1];
+
+      lunchDayFour.textContent = normalized[index3].lunch;
+      lunchDayFour.nextElementSibling.textContent =
+        normalized[index3].lunchside[0];
+      lunchDayFour.nextElementSibling.nextElementSibling.textContent =
+        normalized[index3].lunchside[1];
+
+      snackDayFour.textContent = normalized[index3].mealSunset;
+      snackDayFour.nextElementSibling.textContent =
+        normalized[index3].mealSunsetSide[0];
+      snackDayFour.nextElementSibling.nextElementSibling.textContent =
+        normalized[index3].mealSunsetSide[1];
+
+      supaDayFour.textContent = normalized[index3].eveningmeal;
+      supaDayFour.nextElementSibling.textContent =
+        normalized[index3].eveningmealside[0];
+      supaDayFour.nextElementSibling.nextElementSibling.textContent =
+        normalized[index3].eveningmealside[1];
+
+      //day5
+      let breakfastDayFive = document.querySelector(
+        "#day5 .day-card .breakfast dt"
+      );
+      let lunchDayFive = document.querySelector("#day5 .day-card .lunch dt");
+      let snackDayFive = document.querySelector("#day5 .day-card .snack dt");
+      let supaDayFive = document.querySelector("#day5 .day-card .supa dt");
+
+      breakfastDayFive.textContent = normalized[index4].breakfast;
+      breakfastDayFive.nextElementSibling.textContent =
+        normalized[index4].breakfastSide[0];
+      breakfastDayFive.nextElementSibling.nextElementSibling.textContent =
+        normalized[index4].breakfastSide[1];
+
+      lunchDayFive.textContent = normalized[index4].lunch;
+      lunchDayFive.nextElementSibling.textContent =
+        normalized[index4].lunchside[0];
+      lunchDayFive.nextElementSibling.nextElementSibling.textContent =
+        normalized[index4].lunchside[1];
+
+      snackDayFive.textContent = normalized[index4].mealSunset;
+      snackDayFive.nextElementSibling.textContent =
+        normalized[index4].mealSunsetSide[0];
+      snackDayFive.nextElementSibling.nextElementSibling.textContent =
+        normalized[index4].mealSunsetSide[1];
+
+      supaDayFive.textContent = normalized[index4].eveningmeal;
+      supaDayFive.nextElementSibling.textContent =
+        normalized[index4].eveningmealside[0];
+      supaDayFive.nextElementSibling.nextElementSibling.textContent =
+        normalized[index4].eveningmealside[1];
+
+      //day6
+      let breakfastDaySix = document.querySelector(
+        "#day6 .day-card .breakfast dt"
+      );
+      let lunchDaySix = document.querySelector("#day6 .day-card .lunch dt");
+      let snackDaySix = document.querySelector("#day6 .day-card .snack dt");
+      let supaDaySix = document.querySelector("#day6 .day-card .supa dt");
+
+      breakfastDaySix.textContent = normalized[index5].breakfast;
+      breakfastDaySix.nextElementSibling.textContent =
+        normalized[index5].breakfastSide[0];
+      breakfastDaySix.nextElementSibling.nextElementSibling.textContent =
+        normalized[index5].breakfastSide[1];
+
+      lunchDaySix.textContent = normalized[index5].lunch;
+      lunchDaySix.nextElementSibling.textContent =
+        normalized[index5].lunchside[0];
+      lunchDaySix.nextElementSibling.nextElementSibling.textContent =
+        normalized[index5].lunchside[1];
+
+      snackDaySix.textContent = normalized[index5].mealSunset;
+      snackDaySix.nextElementSibling.textContent =
+        normalized[index5].mealSunsetSide[0];
+      snackDaySix.nextElementSibling.nextElementSibling.textContent =
+        normalized[index5].mealSunsetSide[1];
+
+      supaDaySix.textContent = normalized[index5].eveningmeal;
+      supaDaySix.nextElementSibling.textContent =
+        normalized[index5].eveningmealside[0];
+      supaDaySix.nextElementSibling.nextElementSibling.textContent =
+        normalized[index5].eveningmealside[1];
+
+      //day7
+      let breakfastDaySeven = document.querySelector(
+        "#day7 .day-card .breakfast dt"
+      );
+      let lunchDaySeven = document.querySelector("#day7 .day-card .lunch dt");
+      let snackDaySeven = document.querySelector("#day7 .day-card .snack dt");
+      let supaDaySeven = document.querySelector("#day7 .day-card .supa dt");
+
+      breakfastDaySeven.textContent = normalized[index6].breakfast;
+      breakfastDaySeven.nextElementSibling.textContent =
+        normalized[index6].breakfastSide[0];
+      breakfastDaySeven.nextElementSibling.nextElementSibling.textContent =
+        normalized[index6].breakfastSide[1];
+
+      lunchDaySeven.textContent = normalized[index6].lunch;
+      lunchDaySeven.nextElementSibling.textContent =
+        normalized[index6].lunchside[0];
+      lunchDaySeven.nextElementSibling.nextElementSibling.textContent =
+        normalized[index6].lunchside[1];
+
+      snackDaySeven.textContent = normalized[index6].mealSunset;
+      snackDaySeven.nextElementSibling.textContent =
+        normalized[index6].mealSunsetSide[0];
+      snackDaySeven.nextElementSibling.nextElementSibling.textContent =
+        normalized[index6].mealSunsetSide[1];
+
+      supaDaySeven.textContent = normalized[index6].eveningmeal;
+      supaDaySeven.nextElementSibling.textContent =
+        normalized[index6].eveningmealside[0];
+      supaDaySeven.nextElementSibling.nextElementSibling.textContent =
+        normalized[index6].eveningmealside[1];
+    }
+    //** Normal 3 returnomg customer */
+    else if (userDetailsTwo && userDetailsTwo.Name === norm3) {
+      //to place unique code on header
+      let unigueCode = document.getElementById("special-code");
+      unigueCode.textContent =
+        index0 +
+        " - " +
+        index1 +
+        " - " +
+        index2 +
+        " - " +
+        index3 +
+        " - " +
+        index4 +
+        " - " +
+        index5 +
+        " - " +
+        index6;
+
+      //to place unique word on top
+      let FancyName = document.getElementById("special-name");
+      FancyName.textContent = norm3;
 
       //day1 //variables holding location
       let breakfastDayOne = document.querySelector(
