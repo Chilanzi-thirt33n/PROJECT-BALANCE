@@ -102,14 +102,15 @@ if (returnForm) {
       ) {
         let msg = document.getElementById("error-msg");
         msg.innerHTML =
-          '<small> error: <em style =" color : #86BC42"> meal picked only has values equal or less than 6 </em> </small>';
+          '<small style = "text-align : center" > <em style =" color : #86BC42">Meal code Error: </em>  meal picked only has values from 0 to 6   </small>';
       } else {
         // saves the user details to session storage
         sessionStorage.setItem("userDetailsTwo", JSON.stringify(details));
         //loads new page
         loadPlanPage();
       }
-    } else {
+    }
+    else {
       // saves the user details to session storage
       sessionStorage.setItem("userDetailsTwo", JSON.stringify(details));
       //loads new page
@@ -140,23 +141,23 @@ document.addEventListener("DOMContentLoaded", () => {
         "Be active with sports, swimming, or dancing, limit TV and video games.",
       ],
       SixteenToTwentyFive = [
-        "Balanced diet with whole foods, limit processed/fast foods, drink water, limit alcohol.",
+        "Balanced diet with whole foods, limit processed fast foods, drink water, limit alcohol.",
         "Regular exercise like jogging, cycling, or weights, try yoga or rock climbing.",
       ],
       TwentyFiveToFortyFive = [
-        "Whole foods, limit processed/fast foods, drink water, limit alcohol and caffeine.",
+        "Whole foods, limit processed fast foods, drink water, limit alcohol and caffeine.",
         "Regular exercises jogging, cycling, or lifting weights, and try new activities like hiking or martial arts.",
       ],
       fortySixPlus = [
-        "Balanced diet with whole foods, lean protein, healthy fats, limit sugar/salt, drink water.",
+        "Balanced diet with whole foods, lean protein, healthy fats, limit sugar salt, drink water.",
         "Stay active with walking, swimming, yoga, exercise, social activities for mental health.",
       ],
       RecommendationList = [
         "Balanced diet with whole foods, limit processed/fast foods, drink water, limit alcohol.",
         "Regular exercise like jogging, cycling, or weights, try yoga or rock climbing.",
-        "Whole foods, limit processed/fast foods, drink water, limit alcohol and caffeine.",
+        "Whole foods, limit processed fast foods, drink water, limit alcohol and caffeine.",
         "Regular exercises jogging, cycling, or lifting weights, and try new activities like hiking or martial arts.",
-        "Balanced diet with whole foods, lean protein, healthy fats, limit sugar/salt, drink water.",
+        "Balanced diet with whole foods, lean protein, healthy fats, limit sugar salt, drink water.",
         "Stay active with walking, swimming, yoga, exercise, social activities for mental health.",
       ];
     // the logic for displaying the data
@@ -183,7 +184,6 @@ document.addEventListener("DOMContentLoaded", () => {
           RecommendationList[getRandomOfSix()];
       }
     }
-    // these are special names tired to the  meal type present
 
     //************************************************ NORMAL MEAL ***********************************************************/
     // normal one
@@ -3782,7 +3782,7 @@ document.addEventListener("DOMContentLoaded", () => {
       supaDaySeven.nextElementSibling.nextElementSibling.textContent =
         normalized[index6].eveningmealside[1];
     }
-    //** Normal 3 returnomg customer */
+    //** Normal 3 returning customer */
     else if (userDetailsTwo && userDetailsTwo.Name === norm3) {
       // creates index for accessing the meal index
       let index0 = parseInt(userDetailsTwo.index0, 10);

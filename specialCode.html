@@ -6,30 +6,29 @@
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" href="images/icons/32x32.png" />
-    <title>enter code of balance diet | healthy food - ARBIT DESIGNS</title>
+    <link rel="stylesheet" href="dist/output.css">
+    <title>Special Code | healthy food - ARBIT DESIGNS</title>
   </head>
-  <body id="clearSession">
+  <body id="clearSession" class="bg-myBgGreen m-1 h-[100svh] bg-[url(../images/unique-Moile-bg.png)] bg-cover bg-center lg:bg-[url(../images/unique-Desktop-bg.png)] bg-no-repeat font-poppins flex flex-col justify-start items-center">
     <!--this is banner for the logo-->
-    <div id="logo-wrapper">
-      <img src="images/" alt="healthybites!" />
-      <h1>HealthBites!</h1>
+    <div id="logo-wrapper" class="flex flex-row w-screen justify-center">
+      <a href="index.html"><img src="images/icons/logo160x160.png" alt="healthybites!" class="w-16 h-16 mt-12 animate-spin"/></a>
     </div>
-    <header>
-      <p>
-        Please enter the code and special word issued to you to access your
-        healthy, balanced meals. Enjoy your delicious and nutritious food
-        journey!
+    <header class="mb-4">
+      <h1 class="text-myWhite text-3xl text-center font-bold">Welcome Back</h1>
+      <p class="text-myWhite text-base font-medium mt-2 text-center leading-tight w-[23.7rem] lg:w-[27rem]">
+        Enter <bold class="text-myEmGreen text-4xl">Meal Code</bold> and <bold class="text-myEmGreen text-4xl">Special Name</bold>
       </p>
     </header>
     <!--thw special form main-->
-    <main>
-      <form id="issuedCodeForm">
-        <ul>
+    <main class="bg-myWhite h-[45svh] lg:h-[40svh] w-[23.7rem] lg:w-[27rem] rounded-[20px] flex justify-center items-center p-2">
+      <form id="issuedCodeForm" class="flex flex-col justify-evenly items-center">
+        <ul class="flex flex-col justify-center items-center">
           <!--the special word to get group of meal-->
           <li>
-            <label for="special-meals"> Special name </label>
+            <label for="special-meals" class="text-sm text-myDarkGreen font-medium"> Special name </label>
             <div id="special-meals">
-              <select name="spc" id="sp-name">
+              <select name="spc" id="sp-name" class="bg-white w-[313px] h-[48px] rounded-[10px] text-center font-light text-myGray drop-shadow-xl">
                 <option value="Savory Safari Supper">
                   Savory Safari Supper
                 </option>
@@ -67,67 +66,75 @@
           </li>
           <!--to get 7 digit code codes-->
           <li>
-            <label for="input-int"
+            <label class="text-sm text-myDarkGreen font-medium" for="input-int"
               id="error-msg">Meal code
             </label>
-            <div id="input-int">
+            <div id="input-int" class="flex flex-nowrap justify-center items-center space-x-2 transition ease-in-out delay-150 duration-300 focus:w-11">
               <input
                 type="number"
-                min="0"
+                min="00"
                 max="13"
-                value="0"
-                id="code0"
+                value="00"
+                id="code0" class="rounded-[10px] h-12 w-9 text-center drop-shadow-xl transition ease-in-out delay-150 duration-300 focus:w-11"
+              />
+              <input
+                type="number"
+                min="00"
+                max="13"
+                value="00"
+                id="code1" class="rounded-[10px] h-12 w-9 text-center drop-shadow-xl transition ease-in-out delay-150 duration-300 focus:w-11"
               />
               <input
                 type="number"
                 min="0"
                 max="13"
-                value="0"
-                id="code1"
-              />
-              <input
-                type="number"
-                min="0"
-                max="13"
-                value="0"
+                value="00"
                 id="code2"
+                class="rounded-[10px] h-12 w-9 text-center drop-shadow-xl transition ease-in-out delay-150 duration-300 focus:w-11"
               />
               <input
                 type="number"
-                min="0"
+                min="00"
                 max="13"
-                value="0"
+                value="00"
                 id="code3"
+                class="rounded-[10px] h-12 w-9 text-center drop-shadow-xl transition ease-in-out delay-150 duration-300 focus:w-11"
               />
               <input
                 type="number"
-                min="0"
+                min="00"
                 max="13"
-                value="0"
+                value="00"
                 id="code4"
+                class="rounded-[10px] h-12 w-9 text-center drop-shadow-xl transition ease-in-out delay-150 duration-300 focus:w-11"
               />
               <input
                 type="number"
-                min="0"
+                min="00"
                 max="13"
-                value="0"
+                value="00"
                 id="code5"
+                class="rounded-[10px] h-12 w-9 text-center drop-shadow-xl transition ease-in-out delay-150 duration-300 focus:w-11"
               />
               <input
                 type="number"
-                min="0"
+                min="00"
                 max="13"
-                value="0"
+                value="00"
                 id="code6"
+                class="rounded-[10px] h-12 w-9 text-center drop-shadow-xl transition ease-in-out delay-150 duration-300 focus:w-11"
               />
             </div>
           </li>
         </ul>
-        <input type="submit" value="View plan" />
+        <input type="submit" value="View plan" class="bg-myDarkGreen w-[313px] h-[48px] rounded-[10px] text-center text-base font-bold mt-10  transition ease-in-out delay-150 duration-300 text-myWhite hover:bg-myEmGreen hover:shadow-xl active:bg-teal-400 focus:bg-myGreen" />
+
+        <input type="reset" value="Reset code" class="w-[313px] h-[48px] rounded-[10px] text-center text-base font-normal mt-2 transition ease-in-out delay-150 duration-300 text-myDarkGreen hover:border-2 hover:shadow-xl"  >
       </form>
     </main>
     <!--the footer with cavendish details-->
-    <footer>
+    <footer class="px-2 text-center text-myWhite font-light text-[0.5rem] lg:text-xs
+      ">
       <small
         ><p>
           Copyright &copy; 2023 044-348 and Cavendish University Zambia.All
