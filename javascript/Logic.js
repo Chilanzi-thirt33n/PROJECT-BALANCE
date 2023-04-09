@@ -3,1370 +3,62 @@
 // All rights are reserved, please do not use without proper authorization.
 //npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch this is for tailwind
 
-//*******************************************************************************FUNCTIONS SECTION ****************************************************************************/
-//todo :functions random number for indexing up to seven
-function getRandom7Int() {
-  let random7 = Math.floor(Math.random() * 7);
-  return random7;
-}
-//todo :this is a function for those array with 14 objects
-function getRandom14Int() {
-  let random7 = Math.floor(Math.random() * 14);
-  return random7;
-}
-//todo :function of arr with seven random days
-function PlaceIntInArr() {
-  let sevenIntArr = [];
-  let limit = 7;
-  for (let i = 0; i <= limit; i++) {
-    if (sevenIntArr.length != limit) {
-      sevenIntArr.push(getRandom7Int());
-    }
-  }
-  return sevenIntArr;
-}
-//todo :this is a function for seven days but with arrays which go up to 14 meals
-function PlaceIntInArrTwo() {
-  let sevenIntArr = [];
-  let limit = 7;
-  for (let i = 0; i <= limit; i++) {
-    if (sevenIntArr.length != limit) {
-      sevenIntArr.push(getRandom14Int());
-    }
-  }
-  return sevenIntArr;
-}
-//todo function to get form details
-function getDetails() {
-  let formDetails = {}; // object to store form data from generation field
-  //selecting the form fields to retrieve data from
-  let specialCondition = document.getElementById("specialNeeds");
-  let age = document.getElementById("age");
-  let meal = document.getElementById("mealType");
-  //get the selected value and place it in selected condition
-  let selectedCondition =
-    specialCondition.options[specialCondition.selectedIndex].value;
-  let selectedAge = age.value;
-  let selectedMealType = meal.options[meal.selectedIndex].value;
-  // placing them into object formDetails
-  formDetails.condition = selectedCondition;
-  formDetails.age = selectedAge;
-  formDetails.meal = selectedMealType;
+import {
+  normalized,
+  normalWest,
+  normalMix,
+  veganized,
+  veganWest,
+  veganMix,
+  diabeticZed,
+  diabeticWest,
+  diabeticMix,
+  pescatarianZed,
+  pescatarianWest,
+  pescatarianMix,
+} from "./meals.js";
 
-  return formDetails;
-}
+import {
+  PlaceIntInArr,
+  PlaceIntInArrTwo,
+  getDetails,
+  loadPlanPage,
+  getRandomOfTwo,
+  getRandomOfSix,
+  getSpecialCode,
+} from "./methods.js";
 
-//todo :function for loading newpage
-function loadPlanPage() {
-  window.location.assign("HealthyMeal.html");
-}
+//todo : make these variables so that it easy to read
+// these are the types of meals users may enter
+const typeOne = "western",
+  typeThree = "mix",
+  typeTwo = "zambian";
 
-//** ------------------------------------------------------------- FOOD OBJECTS WITH MEALS  --------------------------------------------------------------
-//todo :normal meals
-let normalized = [
-  //day1
-  {
-    image: "images/meals/normal",
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-  //day2
-  {
-    image: "images/meals/normal",
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-  //day3
-  {
-    image: "images/meals/normal",
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-  //day4
-  {
-    images: "images/meals/normal",
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-  //day5
-  {
-    image: "images/meals/normal",
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-  //day6
-  {
-    image: "images/meals/normal",
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-  //day7
-  {
-    images: "images/meals/normal",
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-];
-let normalWest = [
-  //day1
-  {
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-  //day2
-  {
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-  //day3
-  {
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-  //day4
-  {
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-  //day5
-  {
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-  //day6
-  {
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-  //day7
-  {
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-];
-let normalMix = [
-  //day1
-  {
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-  //day2
-  {
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-  //day3
-  {
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-  //day4
-  {
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-  //day5
-  {
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-  //day6
-  {
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-  //day7
-  {
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-  //day8
-  {
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-  //day9
-  {
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-  //day10
-  {
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-  //day11
-  {
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-  //day12
-  {
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-  //day13
-  {
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-  //day14
-  {
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-];
-//todo :vegan meals
-let veganized = [
-  //day1
-  {
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-  //day2
-  {
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-  //day3
-  {
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-  //day4
-  {
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-  //day5
-  {
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-  //day6
-  {
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-  //day7
-  {
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-];
-let veganWest = [
-  //day1
-  {
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-  //day2
-  {
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-  //day3
-  {
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-  //day4
-  {
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-  //day5
-  {
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-  //day6
-  {
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-  //day7
-  {
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-];
-let veganMix = [
-  //day1
-  {
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-  //day2
-  {
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-  //day3
-  {
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-  //day4
-  {
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-  //day5
-  {
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-  //day6
-  {
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-  //day7
-  {
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-  //day8
-  {
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-  //day9
-  {
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-  //day10
-  {
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-  //day11
-  {
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-  //day12
-  {
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-  //day13
-  {
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-  //day14
-  {
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-];
-//todo :Diabetic meals
-let diabeticZed = [
-  //day1
-  {
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-  //day2
-  {
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-  //day3
-  {
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-  //day4
-  {
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-  //day5
-  {
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-  //day6
-  {
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-  //day7
-  {
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-];
-let diabeticWest = [
-  //day1
-  {
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-  //day2
-  {
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-  //day3
-  {
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-  //day4
-  {
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-  //day5
-  {
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-  //day6
-  {
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-  //day7
-  {
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-];
-let diabeticMix = [
-  //day1
-  {
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-  //day2
-  {
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-  //day3
-  {
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-  //day4
-  {
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-  //day5
-  {
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-  //day6
-  {
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-  //day7
-  {
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-  //day8
-  {
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-  //day9
-  {
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-  //day10
-  {
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-  //day11
-  {
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-  //day12
-  {
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-  //day13
-  {
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-  //day14
-  {
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-];
+// these are condition users may enter
+const conOne = "normal",
+  conTwo = "vegan",
+  conThree = "diabetic",
+  conFour = "pescatarian";
 
-//todo :pescaterian meals
-let pescatarianZed = [
-  //day1
-  {
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-  //day2
-  {
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-  //day3
-  {
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-  //day4
-  {
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-  //day5
-  {
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-  //day6
-  {
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-  //day7
-  {
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-];
-let pescatarianWest = [
-  //day1
-  {
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-  //day2
-  {
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-  //day3
-  {
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-  //day4
-  {
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-  //day5
-  {
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-  //day6
-  {
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-  //day7
-  {
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-];
-let pescatarianMix = [
-  //day1
-  {
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-  //day2
-  {
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-  //day3
-  {
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-  //day4
-  {
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-  //day5
-  {
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-  //day6
-  {
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-  //day7
-  {
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-  //day8
-  {
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-  //day9
-  {
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-  //day10
-  {
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-  //day11
-  {
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-  //day12
-  {
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-  //day13
-  {
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-  //day14
-  {
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
-  },
-];
-  const norm1 = "Savory Safari Supper",
-    norm2 = "Harvest Harmony Platter",
-    norm3 = "Wilderness Wholesome Bowl",
-    vegan1 = "Herb & Spice Fusion",
-    vegan2 = "Vibrant Veggie Delight",
-    vegan3 = "Tropical Tasty Treat",
-    diabetic1 = "Diabetic Delicacy Plate",
-    diabetic2 = "Western Wellness Plate",
-    diabetic3 = "Balanced Bites Mix",
-    pescatarian1 = "Pescatarian Paradise Platter",
-    pescatarian2 = "Seafood Sensation Spread",
-    pescatarian3 = "Mixed Mariner's Medley";
-//todo :function to get special name and code */
-function getSpecialCode() {
-  let specialCode = {}; // object for storing form data from special code
-  // the special name and the seven integers collection
-  let mealName = document.getElementById("sp-name");
-  let int0 = document.getElementById("code0").value;
-  let int1 = document.getElementById("code1").value;
-  let int2 = document.getElementById("code2").value;
-  let int3 = document.getElementById("code3").value;
-  let int4 = document.getElementById("code4").value;
-  let int5 = document.getElementById("code5").value;
-  let int6 = document.getElementById("code6").value;
-  let selectedName = mealName.options[mealName.selectedIndex].value;
-  // store the data into an object for retrieval
-  specialCode.Name = selectedName;
-  specialCode.index0 = int0;
-  specialCode.index1 = int1;
-  specialCode.index2 = int2;
-  specialCode.index3 = int3;
-  specialCode.index4 = int4;
-  specialCode.index5 = int5;
-  specialCode.index6 = int6;
+//these are age ranges
+const young = 15,
+  teen = 25,
+  middleAge = 45,
+  oldAge = 46;
 
-  return specialCode;
-}
+const norm1 = "Savory Safari Supper",
+  norm2 = "Harvest Harmony Platter",
+  norm3 = "Wilderness Wholesome Bowl",
+  vegan1 = "Herb & Spice Fusion",
+  vegan2 = "Vibrant Veggie Delight",
+  vegan3 = "Tropical Tasty Treat",
+  diabetic1 = "Diabetic Delicacy Plate",
+  diabetic2 = "Western Wellness Plate",
+  diabetic3 = "Balanced Bites Mix",
+  pescatarian1 = "Pescatarian Paradise Platter",
+  pescatarian2 = "Seafood Sensation Spread",
+  pescatarian3 = "Mixed Mariner's Medley";
+
 //todo :this is the function to stop submit from submitting
 let form = document.getElementById("codeSection");
 if (form) {
@@ -1390,8 +82,8 @@ if (returnForm) {
     //gets users info to be processed by the meal plan function
     let details = getSpecialCode();
     if (
-      details.Name === norm1 ||details.Name ===
-      norm2 ||
+      details.Name === norm1 ||
+      details.Name === norm2 ||
       details.Name === vegan1 ||
       details.Name === vegan2 ||
       details.Name === diabetic1 ||
@@ -1399,7 +91,15 @@ if (returnForm) {
       details.Name === pescatarian1 ||
       details.Namw === pescatarian2
     ) {
-      if (details.index0 > 6 || details.index1 > 6 || details.index2 > 6 || details.index3 > 6 || details.index4 > 6 || details.index5 > 6 || details.index6 > 6) {
+      if (
+        details.index0 > 6 ||
+        details.index1 > 6 ||
+        details.index2 > 6 ||
+        details.index3 > 6 ||
+        details.index4 > 6 ||
+        details.index5 > 6 ||
+        details.index6 > 6
+      ) {
         let msg = document.getElementById("error-msg");
         msg.innerHTML =
           '<small> error: <em style =" color : #86BC42"> meal picked only has values equal or less than 6 </em> </small>';
@@ -1409,8 +109,7 @@ if (returnForm) {
         //loads new page
         loadPlanPage();
       }
-    }
-    else {
+    } else {
       // saves the user details to session storage
       sessionStorage.setItem("userDetailsTwo", JSON.stringify(details));
       //loads new page
@@ -1431,7 +130,6 @@ document.addEventListener("DOMContentLoaded", () => {
     // retrieves the user details from session storage
     let userDetails = JSON.parse(sessionStorage.getItem("userDetails"));
     let userDetailsTwo = JSON.parse(sessionStorage.getItem("userDetailsTwo"));
-   
 
     //todo :this gets age and offers the recommendation
     let DisplayAge = document.getElementById("Header-Age");
@@ -1460,24 +158,11 @@ document.addEventListener("DOMContentLoaded", () => {
         "Regular exercises jogging, cycling, or lifting weights, and try new activities like hiking or martial arts.",
         "Balanced diet with whole foods, lean protein, healthy fats, limit sugar/salt, drink water.",
         "Stay active with walking, swimming, yoga, exercise, social activities for mental health.",
-      ]; 
-    let young = 15,
-      teen = 25,
-      middleAge = 45,
-      oldAge = 46;
-    //todo : random function for two and six
-    function getRandomOfTwo() {
-      let randomInt = Math.floor(Math.random() * 2);
-      return randomInt;
-    }
-    function getRandomOfSix() {
-      let randomInt = Math.floor(Math.random() * 6);
-      return randomInt;
-    }
+      ];
     // the logic for displaying the data
     if (DisplayAge && userDetails) {
       // to make sure these properties are available
-      let UserAge = parseInt(userDetails.age,10); // this changes string to integer
+      let UserAge = parseInt(userDetails.age, 10); // this changes string to integer
       if (UserAge <= young) {
         DisplayAge.textContent = "Aged " + UserAge;
         DisplayRecommendation.textContent = OneToFifteen[getRandomOfTwo()];
@@ -1489,31 +174,24 @@ document.addEventListener("DOMContentLoaded", () => {
         DisplayAge.textContent = "Aged " + UserAge;
         DisplayRecommendation.textContent =
           TwentyFiveToFortyFive[getRandomOfTwo()];
-      } else if ( UserAge >=  oldAge) {
+      } else if (UserAge >= oldAge) {
         DisplayAge.textContent = "Aged " + UserAge;
         DisplayRecommendation.textContent = fortySixPlus[getRandomOfTwo()];
       } else {
         DisplayAge.textContent = "Recommendation";
-         DisplayRecommendation.textContent = RecommendationList[getRandomOfSix()];
+        DisplayRecommendation.textContent =
+          RecommendationList[getRandomOfSix()];
       }
     }
-    //todo : make these variables so that it easy to read
-    // these are the types of meals users may enter
-    let typeOne = "western",
-      typeThree = "mix",
-      typeTwo = "zambian";
-
-    // these are condition users may enter
-    let conOne = "normal",
-      conTwo = "vegan",
-      conThree = "diabetic",
-      conFour = "pescatarian";
-
     // these are special names tired to the  meal type present
 
     //************************************************ NORMAL MEAL ***********************************************************/
     // normal one
-    if (userDetails && userDetails.condition === conOne && userDetails.meal === typeTwo) {
+    if (
+      userDetails &&
+      userDetails.condition === conOne &&
+      userDetails.meal === typeTwo
+    ) {
       //to place unique code on header
       let unigueCode = document.getElementById("special-code");
       unigueCode.textContent =
@@ -1762,7 +440,11 @@ document.addEventListener("DOMContentLoaded", () => {
         normalized[PlaceIntInArr()[6]].eveningmealside[1];
     }
     // normal two
-    else if (userDetails && userDetails.condition === conOne && userDetails.meal === typeOne) {
+    else if (
+      userDetails &&
+      userDetails.condition === conOne &&
+      userDetails.meal === typeOne
+    ) {
       //to place unique code on header
       let unigueCode = document.getElementById("special-code");
       unigueCode.textContent =
@@ -2010,7 +692,8 @@ document.addEventListener("DOMContentLoaded", () => {
         normalWest[PlaceIntInArr()[6]].eveningmealside[1];
     }
     // normal three
-    else if (userDetails &&
+    else if (
+      userDetails &&
       userDetails.condition === conOne &&
       userDetails.meal === typeThree
     ) {
@@ -2264,7 +947,11 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     //******************************************************* VEGAN MEALS ***********************************************************/
     // vegan one
-    else if (userDetails && userDetails.condition === conTwo && userDetails.meal === typeTwo) {
+    else if (
+      userDetails &&
+      userDetails.condition === conTwo &&
+      userDetails.meal === typeTwo
+    ) {
       //to place unique word on top
       let FancyName = document.getElementById("special-name");
       FancyName.textContent = vegan1;
@@ -2513,7 +1200,11 @@ document.addEventListener("DOMContentLoaded", () => {
         veganized[PlaceIntInArr()[6]].eveningmealside[1];
     }
     //vegan two
-    else if (userDetails && userDetails.condition === conTwo && userDetails.meal === typeOne) {
+    else if (
+      userDetails &&
+      userDetails.condition === conTwo &&
+      userDetails.meal === typeOne
+    ) {
       //to place unique word on top
       let FancyName = document.getElementById("special-name");
       FancyName.textContent = vegan2;
@@ -2762,7 +1453,8 @@ document.addEventListener("DOMContentLoaded", () => {
         veganWest[PlaceIntInArr()[6]].eveningmealside[1];
     }
     // vegan three
-    else if ( userDetails &&
+    else if (
+      userDetails &&
       userDetails.condition === conTwo &&
       userDetails.meal === typeThree
     ) {
@@ -3014,7 +1706,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     //***************************************************** DIABETIC MEALS *********************************************************/
     // diabetic one
-    else if ( userDetails &&
+    else if (
+      userDetails &&
       userDetails.condition === conThree &&
       userDetails.meal === typeTwo
     ) {
@@ -3266,7 +1959,8 @@ document.addEventListener("DOMContentLoaded", () => {
         diabeticZed[PlaceIntInArr()[6]].eveningmealside[1];
     }
     // diabetic two
-    else if ( userDetails &&
+    else if (
+      userDetails &&
       userDetails.condition === conThree &&
       userDetails.meal === typeOne
     ) {
@@ -3519,7 +2213,8 @@ document.addEventListener("DOMContentLoaded", () => {
         diabeticWest[PlaceIntInArr()[6]].eveningmealside[1];
     }
     // diabetic three
-    else if ( userDetails &&
+    else if (
+      userDetails &&
       userDetails.condition === conThree &&
       userDetails.meal === typeThree
     ) {
@@ -3777,7 +2472,8 @@ document.addEventListener("DOMContentLoaded", () => {
         diabeticMix[PlaceIntInArrTwo()[6]].eveningmealside[1];
     }
     // Pescaerian one
-    else if (userDetails &&
+    else if (
+      userDetails &&
       userDetails.condition === conFour &&
       userDetails.meal === typeTwo
     ) {
@@ -4036,7 +2732,8 @@ document.addEventListener("DOMContentLoaded", () => {
         pescatarianZed[PlaceIntInArr()[6]].eveningmealside[1];
     }
     // pescatarian Two
-    else if (userDetails &&
+    else if (
+      userDetails &&
       userDetails.condition === conFour &&
       userDetails.meal === typeOne
     ) {
@@ -4299,7 +2996,8 @@ document.addEventListener("DOMContentLoaded", () => {
         pescatarianWest[PlaceIntInArr()[6]].eveningmealside[1];
     }
     // pescaterian three
-    else if (userDetails &&
+    else if (
+      userDetails &&
       userDetails.condition === conFour &&
       userDetails.meal === typeThree
     ) {
@@ -4569,7 +3267,7 @@ document.addEventListener("DOMContentLoaded", () => {
         pescatarianMix[PlaceIntInArrTwo()[6]].eveningmealside[0];
       supaDaySeven.nextElementSibling.nextElementSibling.textContent =
         pescatarianMix[PlaceIntInArrTwo()[6]].eveningmealside[1];
-    } 
+    }
     // ** normal 1 returning customer
     else if (userDetailsTwo && userDetailsTwo.Name === norm1) {
       // creates index for accessing the meal index
@@ -4826,7 +3524,7 @@ document.addEventListener("DOMContentLoaded", () => {
         normalized[index6].eveningmealside[0];
       supaDaySeven.nextElementSibling.nextElementSibling.textContent =
         normalized[index6].eveningmealside[1];
-    } 
+    }
     // ** normal 2 returning customer
     else if (userDetailsTwo && userDetailsTwo.Name === norm2) {
       // creates index for accessing the meal index
