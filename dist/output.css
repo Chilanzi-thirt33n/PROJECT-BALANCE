@@ -629,6 +629,10 @@ video {
   margin-top: 2.25rem;
 }
 
+.mb-10 {
+  margin-bottom: 2.5rem;
+}
+
 .flex {
   display: flex;
 }
@@ -1155,6 +1159,10 @@ video {
 }
 
 @media (min-width: 640px) {
+  .sm\:mb-10 {
+    margin-bottom: 2.5rem;
+  }
+
   .sm\:px-36 {
     padding-left: 9rem;
     padding-right: 9rem;
