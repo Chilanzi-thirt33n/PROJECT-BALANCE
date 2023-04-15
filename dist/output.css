@@ -621,10 +621,6 @@ video {
   margin-bottom: 1rem;
 }
 
-.mt-11 {
-  margin-top: 2.75rem;
-}
-
 .mt-14 {
   margin-top: 3.5rem;
 }
@@ -661,20 +657,16 @@ video {
   height: 30svh;
 }
 
-.h-\[100svh\] {
-  height: 100svh;
+.h-\[100dvh\] {
+  height: 100dvh;
 }
 
 .h-\[45svh\] {
   height: 45svh;
 }
 
-.h-\[99svh\] {
-  height: 99svh;
-}
-
-.h-\[100dvh\] {
-  height: 100dvh;
+.h-\[50svh\] {
+  height: 50svh;
 }
 
 .max-h-full {
@@ -747,10 +739,6 @@ video {
   align-items: center;
 }
 
-.justify-start {
-  justify-content: flex-start;
-}
-
 .justify-end {
   justify-content: flex-end;
 }
@@ -777,20 +765,12 @@ video {
   margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
-.self-end {
-  align-self: flex-end;
-}
-
 .self-center {
   align-self: center;
 }
 
 .justify-self-start {
   justify-self: start;
-}
-
-.justify-self-end {
-  justify-self: end;
 }
 
 .justify-self-center {
@@ -865,10 +845,6 @@ video {
 
 .bg-\[url\(\'\.\.\/images\/index-mobile-bg\.png\'\)\] {
   background-image: url('../images/index-mobile-bg.png');
-}
-
-.bg-\[url\(\.\.\/images\/unique-Moile-bg\.png\)\] {
-  background-image: url(../images/unique-Moile-bg.png);
 }
 
 .bg-\[url\(\.\.\/images\/unique-Desktop-bg\.png\)\] {
@@ -1255,6 +1231,14 @@ video {
     height: 40svh;
   }
 
+  .lg\:h-\[98svh\] {
+    height: 98svh;
+  }
+
+  .lg\:h-\[55svh\] {
+    height: 55svh;
+  }
+
   .lg\:w-\[50vw\] {
     width: 50vw;
   }
@@ -1293,6 +1277,10 @@ video {
 
   .lg\:justify-center {
     justify-content: center;
+  }
+
+  .lg\:justify-around {
+    justify-content: space-around;
   }
 
   .lg\:overflow-hidden {
@@ -1369,10 +1357,6 @@ video {
     background-image: url(../images/meal-Desktop-bg.png);
   }
 
-  .lg\:bg-\[url\(\.\.\/images\/unique-Desktop-bg\.png\)\] {
-    background-image: url(../images/unique-Desktop-bg.png);
-  }
-
   .lg\:p-12 {
     padding: 3rem;
   }
@@ -1438,5 +1422,12 @@ video {
 @media (min-width: 1280px) {
   .xl\:bg-\[url\(\'\.\.\/images\/index-desktop-bg\.png\'\)\] {
     background-image: url('../images/index-desktop-bg.png');
+  }
+}
+
+@media (min-width: 1536px) {
+  .\32xl\:text-xs {
+    font-size: 0.75rem;
+    line-height: 1rem;
   }
 }
