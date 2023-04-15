@@ -669,6 +669,10 @@ video {
   height: 50svh;
 }
 
+.h-\[45svh\] {
+  height: 45svh;
+}
+
 .max-h-full {
   max-height: 100%;
 }
@@ -1229,6 +1233,10 @@ video {
 
   .lg\:h-\[55svh\] {
     height: 55svh;
+  }
+
+  .lg\:h-\[50svh\] {
+    height: 50svh;
   }
 
   .lg\:w-\[50vw\] {
