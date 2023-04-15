@@ -661,10 +661,6 @@ video {
   height: 100dvh;
 }
 
-.h-\[45svh\] {
-  height: 45svh;
-}
-
 .h-\[50svh\] {
   height: 50svh;
 }
@@ -1170,10 +1166,6 @@ video {
     left: 0px;
   }
 
-  .lg\:top-64 {
-    top: 16rem;
-  }
-
   .lg\:mx-72 {
     margin-left: 18rem;
     margin-right: 18rem;
@@ -1225,14 +1217,6 @@ video {
 
   .lg\:h-8 {
     height: 2rem;
-  }
-
-  .lg\:h-\[40svh\] {
-    height: 40svh;
-  }
-
-  .lg\:h-\[98svh\] {
-    height: 98svh;
   }
 
   .lg\:h-\[55svh\] {
@@ -1422,12 +1406,5 @@ video {
 @media (min-width: 1280px) {
   .xl\:bg-\[url\(\'\.\.\/images\/index-desktop-bg\.png\'\)\] {
     background-image: url('../images/index-desktop-bg.png');
-  }
-}
-
-@media (min-width: 1536px) {
-  .\32xl\:text-xs {
-    font-size: 0.75rem;
-    line-height: 1rem;
   }
 }
