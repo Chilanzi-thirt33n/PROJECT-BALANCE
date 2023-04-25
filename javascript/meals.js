@@ -88,25 +88,25 @@ let normalized = [
 let normalWest = [
   //day1
   {
-    breakfast: "brown bread",
+    breakfast: "Brown bread",
     breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
+    lunch: "Chicken Salad",
+    lunchside: ["spinach ", "Water"],
+    mealSunset: "Cornflakes",
+    mealSunsetSide: ["milk", "banana"],
+    eveningmeal: "pesto chicken",
+    eveningmealside: ["rice", "brocoli"],
   },
   //day2
   {
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
-    lunch: "nshima",
-    lunchside: ["village chicken", "spinach"],
-    mealSunset: "placeholder",
-    mealSunsetSide: ["side1", "side2"],
-    eveningmeal: "placeholder",
-    eveningmealside: ["side1", "side2"],
+    breakfast: "Oat meal",
+    breakfastSide: ["Milk", "Orange"],
+    lunch: "Quinoa",
+    lunchside: ["Chickpea", "Orange juice"],
+    mealSunset: "Brown bread",
+    mealSunsetSide: ["Black Tea", "Apple"],
+    eveningmeal: "Chickpea Curry",
+    eveningmealside: ["Sausage", "pear"],
   },
   //day3
   {

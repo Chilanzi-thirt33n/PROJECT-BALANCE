@@ -125,8 +125,8 @@ document.addEventListener("DOMContentLoaded", () => {
   let loadMeal = document.getElementById("sevenday-plan");
   if (loadMeal) {
     //randomize function is called for seven and fourteen
-    PlaceIntInArr();
-    PlaceIntInArrTwo();
+   let indexGiven = PlaceIntInArr();
+   let indexGiven2 = PlaceIntInArrTwo();
 
     // retrieves the user details from session storage
     let userDetails = JSON.parse(sessionStorage.getItem("userDetails"));
@@ -195,19 +195,19 @@ document.addEventListener("DOMContentLoaded", () => {
       //to place unique code on header
       let unigueCode = document.getElementById("special-code");
       unigueCode.textContent =
-        PlaceIntInArr()[0] +
+        indexGiven[0] +
         " - " +
-        PlaceIntInArr()[1] +
+        indexGiven[1] +
         " - " +
-        PlaceIntInArr()[2] +
+        indexGiven[2] +
         " - " +
-        PlaceIntInArr()[3] +
+        indexGiven[3] +
         " - " +
-        PlaceIntInArr()[4] +
+        indexGiven[4] +
         " - " +
-        PlaceIntInArr()[5] +
+        indexGiven[5] +
         " - " +
-        PlaceIntInArr()[6];
+        indexGiven[6];
 
       //to place unique word on top
       let FancyName = document.getElementById("special-name");
@@ -223,29 +223,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
       //placing the meals on document
 
-      breakfastDayOne.textContent = normalized[PlaceIntInArr()[0]].breakfast;
+      breakfastDayOne.textContent = normalized[indexGiven[0]].breakfast;
       breakfastDayOne.nextElementSibling.textContent =
-        normalized[PlaceIntInArr()[0]].breakfastSide[0];
+        normalized[indexGiven[0]].breakfastSide[0];
       breakfastDayOne.nextElementSibling.nextElementSibling.textContent =
-        normalized[PlaceIntInArr()[0]].breakfastSide[1];
+        normalized[indexGiven[0]].breakfastSide[1];
 
-      lunchDayOne.textContent = normalized[PlaceIntInArr()[0]].lunch;
+      lunchDayOne.textContent = normalized[indexGiven[0]].lunch;
       lunchDayOne.nextElementSibling.textContent =
-        normalized[PlaceIntInArr()[0]].lunchside[0];
+        normalized[indexGiven[0]].lunchside[0];
       lunchDayOne.nextElementSibling.nextElementSibling.textContent =
-        normalized[PlaceIntInArr()[0]].lunchside[1];
+        normalized[indexGiven[0]].lunchside[1];
 
-      snackDayOne.textContent = normalized[PlaceIntInArr()[0]].mealSunset;
+      snackDayOne.textContent = normalized[indexGiven[0]].mealSunset;
       snackDayOne.nextElementSibling.textContent =
-        normalized[PlaceIntInArr()[0]].mealSunsetSide[0];
+        normalized[indexGiven[0]].mealSunsetSide[0];
       snackDayOne.nextElementSibling.nextElementSibling.textContent =
-        normalized[PlaceIntInArr()[0]].mealSunsetSide[1];
+        normalized[indexGiven[0]].mealSunsetSide[1];
 
-      supaDayOne.textContent = normalized[PlaceIntInArr()[0]].eveningmeal;
+      supaDayOne.textContent = normalized[indexGiven[0]].eveningmeal;
       supaDayOne.nextElementSibling.textContent =
-        normalized[PlaceIntInArr()[0]].eveningmealside[0];
+        normalized[indexGiven[0]].eveningmealside[0];
       supaDayOne.nextElementSibling.nextElementSibling.textContent =
-        normalized[PlaceIntInArr()[0]].eveningmealside[1];
+        normalized[indexGiven[0]].eveningmealside[1];
 
       //day2
       let breakfastDayTwo = document.querySelector(
@@ -255,29 +255,29 @@ document.addEventListener("DOMContentLoaded", () => {
       let snackDayTwo = document.querySelector("#day2 .day-card .snack dt");
       let supaDayTwo = document.querySelector("#day2 .day-card .supa dt");
 
-      breakfastDayTwo.textContent = normalized[PlaceIntInArr()[1]].breakfast;
+      breakfastDayTwo.textContent = normalized[indexGiven[1]].breakfast;
       breakfastDayTwo.nextElementSibling.textContent =
-        normalized[PlaceIntInArr()[1]].breakfastSide[0];
+        normalized[indexGiven[1]].breakfastSide[0];
       breakfastDayTwo.nextElementSibling.nextElementSibling.textContent =
-        normalized[PlaceIntInArr()[1]].breakfastSide[1];
+        normalized[indexGiven[1]].breakfastSide[1];
 
-      lunchDayTwo.textContent = normalized[PlaceIntInArr()[1]].lunch;
+      lunchDayTwo.textContent = normalized[indexGiven[1]].lunch;
       lunchDayTwo.nextElementSibling.textContent =
-        normalized[PlaceIntInArr()[1]].lunchside[0];
+        normalized[indexGiven[1]].lunchside[0];
       lunchDayTwo.nextElementSibling.nextElementSibling.textContent =
-        normalized[PlaceIntInArr()[1]].lunchside[1];
+        normalized[indexGiven[1]].lunchside[1];
 
-      snackDayTwo.textContent = normalized[PlaceIntInArr()[1]].mealSunset;
+      snackDayTwo.textContent = normalized[indexGiven[1]].mealSunset;
       snackDayTwo.nextElementSibling.textContent =
-        normalized[PlaceIntInArr()[1]].mealSunsetSide[0];
+        normalized[indexGiven[1]].mealSunsetSide[0];
       snackDayTwo.nextElementSibling.nextElementSibling.textContent =
-        normalized[PlaceIntInArr()[1]].mealSunsetSide[1];
+        normalized[indexGiven[1]].mealSunsetSide[1];
 
-      supaDayTwo.textContent = normalized[PlaceIntInArr()[1]].eveningmeal;
+      supaDayTwo.textContent = normalized[indexGiven[1]].eveningmeal;
       supaDayTwo.nextElementSibling.textContent =
-        normalized[PlaceIntInArr()[1]].eveningmealside[0];
+        normalized[indexGiven[1]].eveningmealside[0];
       supaDayTwo.nextElementSibling.nextElementSibling.textContent =
-        normalized[PlaceIntInArr()[1]].eveningmealside[1];
+        normalized[indexGiven[1]].eveningmealside[1];
 
       //day3
       let breakfastDayThree = document.querySelector(
@@ -287,29 +287,29 @@ document.addEventListener("DOMContentLoaded", () => {
       let snackDayThree = document.querySelector("#day3 .day-card .snack dt");
       let supaDayThree = document.querySelector("#day3 .day-card .supa dt");
 
-      breakfastDayThree.textContent = normalized[PlaceIntInArr()[2]].breakfast;
+      breakfastDayThree.textContent = normalized[indexGiven[2]].breakfast;
       breakfastDayThree.nextElementSibling.textContent =
-        normalized[PlaceIntInArr()[2]].breakfastSide[0];
+        normalized[indexGiven[2]].breakfastSide[0];
       breakfastDayThree.nextElementSibling.nextElementSibling.textContent =
-        normalized[PlaceIntInArr()[2]].breakfastSide[1];
+        normalized[indexGiven[2]].breakfastSide[1];
 
-      lunchDayThree.textContent = normalized[PlaceIntInArr()[2]].lunch;
+      lunchDayThree.textContent = normalized[indexGiven[2]].lunch;
       lunchDayThree.nextElementSibling.textContent =
-        normalized[PlaceIntInArr()[2]].lunchside[0];
+        normalized[indexGiven[2]].lunchside[0];
       lunchDayThree.nextElementSibling.nextElementSibling.textContent =
-        normalized[PlaceIntInArr()[2]].lunchside[1];
+        normalized[indexGiven[2]].lunchside[1];
 
-      snackDayThree.textContent = normalized[PlaceIntInArr()[2]].mealSunset;
+      snackDayThree.textContent = normalized[indexGiven[2]].mealSunset;
       snackDayThree.nextElementSibling.textContent =
-        normalized[PlaceIntInArr()[2]].mealSunsetSide[0];
+        normalized[indexGiven[2]].mealSunsetSide[0];
       snackDayThree.nextElementSibling.nextElementSibling.textContent =
-        normalized[PlaceIntInArr()[2]].mealSunsetSide[1];
+        normalized[indexGiven[2]].mealSunsetSide[1];
 
-      supaDayThree.textContent = normalized[PlaceIntInArr()[2]].eveningmeal;
+      supaDayThree.textContent = normalized[indexGiven[2]].eveningmeal;
       supaDayThree.nextElementSibling.textContent =
-        normalized[PlaceIntInArr()[2]].eveningmealside[0];
+        normalized[indexGiven[2]].eveningmealside[0];
       supaDayThree.nextElementSibling.nextElementSibling.textContent =
-        normalized[PlaceIntInArr()[2]].eveningmealside[1];
+        normalized[indexGiven[2]].eveningmealside[1];
 
       //day4
       let breakfastDayFour = document.querySelector(
@@ -319,29 +319,29 @@ document.addEventListener("DOMContentLoaded", () => {
       let snackDayFour = document.querySelector("#day4 .day-card .snack dt");
       let supaDayFour = document.querySelector("#day4 .day-card .supa dt");
 
-      breakfastDayFour.textContent = normalized[PlaceIntInArr()[3]].breakfast;
+      breakfastDayFour.textContent = normalized[indexGiven[3]].breakfast;
       breakfastDayFour.nextElementSibling.textContent =
-        normalized[PlaceIntInArr()[3]].breakfastSide[0];
+        normalized[indexGiven[3]].breakfastSide[0];
       breakfastDayFour.nextElementSibling.nextElementSibling.textContent =
-        normalized[PlaceIntInArr()[3]].breakfastSide[1];
+        normalized[indexGiven[3]].breakfastSide[1];
 
-      lunchDayFour.textContent = normalized[PlaceIntInArr()[3]].lunch;
+      lunchDayFour.textContent = normalized[indexGiven[3]].lunch;
       lunchDayFour.nextElementSibling.textContent =
-        normalized[PlaceIntInArr()[3]].lunchside[0];
+        normalized[indexGiven[3]].lunchside[0];
       lunchDayFour.nextElementSibling.nextElementSibling.textContent =
-        normalized[PlaceIntInArr()[3]].lunchside[1];
+        normalized[indexGiven[3]].lunchside[1];
 
-      snackDayFour.textContent = normalized[PlaceIntInArr()[3]].mealSunset;
+      snackDayFour.textContent = normalized[indexGiven[3]].mealSunset;
       snackDayFour.nextElementSibling.textContent =
-        normalized[PlaceIntInArr()[3]].mealSunsetSide[0];
+        normalized[indexGiven[3]].mealSunsetSide[0];
       snackDayFour.nextElementSibling.nextElementSibling.textContent =
-        normalized[PlaceIntInArr()[3]].mealSunsetSide[1];
+        normalized[indexGiven[3]].mealSunsetSide[1];
 
-      supaDayFour.textContent = normalized[PlaceIntInArr()[3]].eveningmeal;
+      supaDayFour.textContent = normalized[indexGiven[3]].eveningmeal;
       supaDayFour.nextElementSibling.textContent =
-        normalized[PlaceIntInArr()[3]].eveningmealside[0];
+        normalized[indexGiven[3]].eveningmealside[0];
       supaDayFour.nextElementSibling.nextElementSibling.textContent =
-        normalized[PlaceIntInArr()[3]].eveningmealside[1];
+        normalized[indexGiven[3]].eveningmealside[1];
 
       //day5
       let breakfastDayFive = document.querySelector(
@@ -351,29 +351,29 @@ document.addEventListener("DOMContentLoaded", () => {
       let snackDayFive = document.querySelector("#day5 .day-card .snack dt");
       let supaDayFive = document.querySelector("#day5 .day-card .supa dt");
 
-      breakfastDayFive.textContent = normalized[PlaceIntInArr()[4]].breakfast;
+      breakfastDayFive.textContent = normalized[indexGiven[4]].breakfast;
       breakfastDayFive.nextElementSibling.textContent =
-        normalized[PlaceIntInArr()[4]].breakfastSide[0];
+        normalized[indexGiven[4]].breakfastSide[0];
       breakfastDayFive.nextElementSibling.nextElementSibling.textContent =
-        normalized[PlaceIntInArr()[4]].breakfastSide[1];
+        normalized[indexGiven[4]].breakfastSide[1];
 
-      lunchDayFive.textContent = normalized[PlaceIntInArr()[4]].lunch;
+      lunchDayFive.textContent = normalized[indexGiven[4]].lunch;
       lunchDayFive.nextElementSibling.textContent =
-        normalized[PlaceIntInArr()[4]].lunchside[0];
+        normalized[indexGiven[4]].lunchside[0];
       lunchDayFive.nextElementSibling.nextElementSibling.textContent =
-        normalized[PlaceIntInArr()[4]].lunchside[1];
+        normalized[indexGiven[4]].lunchside[1];
 
-      snackDayFive.textContent = normalized[PlaceIntInArr()[4]].mealSunset;
+      snackDayFive.textContent = normalized[indexGiven[4]].mealSunset;
       snackDayFive.nextElementSibling.textContent =
-        normalized[PlaceIntInArr()[4]].mealSunsetSide[0];
+        normalized[indexGiven[4]].mealSunsetSide[0];
       snackDayFive.nextElementSibling.nextElementSibling.textContent =
-        normalized[PlaceIntInArr()[4]].mealSunsetSide[1];
+        normalized[indexGiven[4]].mealSunsetSide[1];
 
-      supaDayFive.textContent = normalized[PlaceIntInArr()[4]].eveningmeal;
+      supaDayFive.textContent = normalized[indexGiven[4]].eveningmeal;
       supaDayFive.nextElementSibling.textContent =
-        normalized[PlaceIntInArr()[4]].eveningmealside[0];
+        normalized[indexGiven[4]].eveningmealside[0];
       supaDayFive.nextElementSibling.nextElementSibling.textContent =
-        normalized[PlaceIntInArr()[4]].eveningmealside[1];
+        normalized[indexGiven[4]].eveningmealside[1];
 
       //day6
       let breakfastDaySix = document.querySelector(
@@ -383,29 +383,29 @@ document.addEventListener("DOMContentLoaded", () => {
       let snackDaySix = document.querySelector("#day6 .day-card .snack dt");
       let supaDaySix = document.querySelector("#day6 .day-card .supa dt");
 
-      breakfastDaySix.textContent = normalized[PlaceIntInArr()[5]].breakfast;
+      breakfastDaySix.textContent = normalized[indexGiven[5]].breakfast;
       breakfastDaySix.nextElementSibling.textContent =
-        normalized[PlaceIntInArr()[5]].breakfastSide[0];
+        normalized[indexGiven[5]].breakfastSide[0];
       breakfastDaySix.nextElementSibling.nextElementSibling.textContent =
-        normalized[PlaceIntInArr()[5]].breakfastSide[1];
+        normalized[indexGiven[5]].breakfastSide[1];
 
-      lunchDaySix.textContent = normalized[PlaceIntInArr()[5]].lunch;
+      lunchDaySix.textContent = normalized[indexGiven[5]].lunch;
       lunchDaySix.nextElementSibling.textContent =
-        normalized[PlaceIntInArr()[5]].lunchside[0];
+        normalized[indexGiven[5]].lunchside[0];
       lunchDaySix.nextElementSibling.nextElementSibling.textContent =
-        normalized[PlaceIntInArr()[5]].lunchside[1];
+        normalized[indexGiven[5]].lunchside[1];
 
-      snackDaySix.textContent = normalized[PlaceIntInArr()[5]].mealSunset;
+      snackDaySix.textContent = normalized[indexGiven[5]].mealSunset;
       snackDaySix.nextElementSibling.textContent =
-        normalized[PlaceIntInArr()[5]].mealSunsetSide[0];
+        normalized[indexGiven[5]].mealSunsetSide[0];
       snackDaySix.nextElementSibling.nextElementSibling.textContent =
-        normalized[PlaceIntInArr()[5]].mealSunsetSide[1];
+        normalized[indexGiven[5]].mealSunsetSide[1];
 
-      supaDaySix.textContent = normalized[PlaceIntInArr()[5]].eveningmeal;
+      supaDaySix.textContent = normalized[indexGiven[5]].eveningmeal;
       supaDaySix.nextElementSibling.textContent =
-        normalized[PlaceIntInArr()[5]].eveningmealside[0];
+        normalized[indexGiven[5]].eveningmealside[0];
       supaDaySix.nextElementSibling.nextElementSibling.textContent =
-        normalized[PlaceIntInArr()[5]].eveningmealside[1];
+        normalized[indexGiven[5]].eveningmealside[1];
 
       //day7
       let breakfastDaySeven = document.querySelector(
@@ -415,29 +415,29 @@ document.addEventListener("DOMContentLoaded", () => {
       let snackDaySeven = document.querySelector("#day7 .day-card .snack dt");
       let supaDaySeven = document.querySelector("#day7 .day-card .supa dt");
 
-      breakfastDaySeven.textContent = normalized[PlaceIntInArr()[6]].breakfast;
+      breakfastDaySeven.textContent = normalized[indexGiven[6]].breakfast;
       breakfastDaySeven.nextElementSibling.textContent =
-        normalized[PlaceIntInArr()[6]].breakfastSide[0];
+        normalized[indexGiven[6]].breakfastSide[0];
       breakfastDaySeven.nextElementSibling.nextElementSibling.textContent =
-        normalized[PlaceIntInArr()[6]].breakfastSide[1];
+        normalized[indexGiven[6]].breakfastSide[1];
 
-      lunchDaySeven.textContent = normalized[PlaceIntInArr()[6]].lunch;
+      lunchDaySeven.textContent = normalized[indexGiven[6]].lunch;
       lunchDaySeven.nextElementSibling.textContent =
-        normalized[PlaceIntInArr()[6]].lunchside[0];
+        normalized[indexGiven[6]].lunchside[0];
       lunchDaySeven.nextElementSibling.nextElementSibling.textContent =
-        normalized[PlaceIntInArr()[6]].lunchside[1];
+        normalized[indexGiven[6]].lunchside[1];
 
-      snackDaySeven.textContent = normalized[PlaceIntInArr()[6]].mealSunset;
+      snackDaySeven.textContent = normalized[indexGiven[6]].mealSunset;
       snackDaySeven.nextElementSibling.textContent =
-        normalized[PlaceIntInArr()[6]].mealSunsetSide[0];
+        normalized[indexGiven[6]].mealSunsetSide[0];
       snackDaySeven.nextElementSibling.nextElementSibling.textContent =
-        normalized[PlaceIntInArr()[6]].mealSunsetSide[1];
+        normalized[indexGiven[6]].mealSunsetSide[1];
 
-      supaDaySeven.textContent = normalized[PlaceIntInArr()[6]].eveningmeal;
+      supaDaySeven.textContent = normalized[indexGiven[6]].eveningmeal;
       supaDaySeven.nextElementSibling.textContent =
-        normalized[PlaceIntInArr()[6]].eveningmealside[0];
+        normalized[indexGiven[6]].eveningmealside[0];
       supaDaySeven.nextElementSibling.nextElementSibling.textContent =
-        normalized[PlaceIntInArr()[6]].eveningmealside[1];
+        normalized[indexGiven[6]].eveningmealside[1];
     }
     // normal two
     else if (
@@ -448,19 +448,19 @@ document.addEventListener("DOMContentLoaded", () => {
       //to place unique code on header
       let unigueCode = document.getElementById("special-code");
       unigueCode.textContent =
-        PlaceIntInArr()[0] +
+        indexGiven[0] +
         " - " +
-        PlaceIntInArr()[1] +
+        indexGiven[1] +
         " - " +
-        PlaceIntInArr()[2] +
+        indexGiven[2] +
         " - " +
-        PlaceIntInArr()[3] +
+        indexGiven[3] +
         " - " +
-        PlaceIntInArr()[4] +
+        indexGiven[4] +
         " - " +
-        PlaceIntInArr()[5] +
+        indexGiven[5] +
         " - " +
-        PlaceIntInArr()[6];
+        indexGiven[6];
       //to place unique word on top
       let FancyName = document.getElementById("special-name");
       FancyName.textContent = norm2;
@@ -475,29 +475,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
       //placing the meals on document
 
-      breakfastDayOne.textContent = normalWest[PlaceIntInArr()[0]].breakfast;
+      breakfastDayOne.textContent = normalWest[indexGiven[0]].breakfast;
       breakfastDayOne.nextElementSibling.textContent =
-        normalWest[PlaceIntInArr()[0]].breakfastSide[0];
+        normalWest[indexGiven[0]].breakfastSide[0];
       breakfastDayOne.nextElementSibling.nextElementSibling.textContent =
-        normalWest[PlaceIntInArr()[0]].breakfastSide[1];
+        normalWest[indexGiven[0]].breakfastSide[1];
 
-      lunchDayOne.textContent = normalWest[PlaceIntInArr()[0]].lunch;
+      lunchDayOne.textContent = normalWest[indexGiven[0]].lunch;
       lunchDayOne.nextElementSibling.textContent =
-        normalWest[PlaceIntInArr()[0]].lunchside[0];
+        normalWest[indexGiven[0]].lunchside[0];
       lunchDayOne.nextElementSibling.nextElementSibling.textContent =
-        normalWest[PlaceIntInArr()[0]].lunchside[1];
+        normalWest[indexGiven[0]].lunchside[1];
 
-      snackDayOne.textContent = normalWest[PlaceIntInArr()[0]].mealSunset;
+      snackDayOne.textContent = normalWest[indexGiven[0]].mealSunset;
       snackDayOne.nextElementSibling.textContent =
-        normalWest[PlaceIntInArr()[0]].mealSunsetSide[0];
+        normalWest[indexGiven[0]].mealSunsetSide[0];
       snackDayOne.nextElementSibling.nextElementSibling.textContent =
-        normalWest[PlaceIntInArr()[0]].mealSunsetSide[1];
+        normalWest[indexGiven[0]].mealSunsetSide[1];
 
-      supaDayOne.textContent = normalWest[PlaceIntInArr()[0]].eveningmeal;
+      supaDayOne.textContent = normalWest[indexGiven[0]].eveningmeal;
       supaDayOne.nextElementSibling.textContent =
-        normalWest[PlaceIntInArr()[0]].eveningmealside[0];
+        normalWest[indexGiven[0]].eveningmealside[0];
       supaDayOne.nextElementSibling.nextElementSibling.textContent =
-        normalWest[PlaceIntInArr()[0]].eveningmealside[1];
+        normalWest[indexGiven[0]].eveningmealside[1];
 
       //day2
       let breakfastDayTwo = document.querySelector(
@@ -507,29 +507,29 @@ document.addEventListener("DOMContentLoaded", () => {
       let snackDayTwo = document.querySelector("#day2 .day-card .snack dt");
       let supaDayTwo = document.querySelector("#day2 .day-card .supa dt");
 
-      breakfastDayTwo.textContent = normalWest[PlaceIntInArr()[1]].breakfast;
+      breakfastDayTwo.textContent = normalWest[indexGiven[1]].breakfast;
       breakfastDayTwo.nextElementSibling.textContent =
-        normalWest[PlaceIntInArr()[1]].breakfastSide[0];
+        normalWest[indexGiven[1]].breakfastSide[0];
       breakfastDayTwo.nextElementSibling.nextElementSibling.textContent =
-        normalWest[PlaceIntInArr()[1]].breakfastSide[1];
+        normalWest[indexGiven[1]].breakfastSide[1];
 
-      lunchDayTwo.textContent = normalWest[PlaceIntInArr()[1]].lunch;
+      lunchDayTwo.textContent = normalWest[indexGiven[1]].lunch;
       lunchDayTwo.nextElementSibling.textContent =
-        normalWest[PlaceIntInArr()[1]].lunchside[0];
+        normalWest[indexGiven[1]].lunchside[0];
       lunchDayTwo.nextElementSibling.nextElementSibling.textContent =
-        normalWest[PlaceIntInArr()[1]].lunchside[1];
+        normalWest[indexGiven[1]].lunchside[1];
 
-      snackDayTwo.textContent = normalWest[PlaceIntInArr()[1]].mealSunset;
+      snackDayTwo.textContent = normalWest[indexGiven[1]].mealSunset;
       snackDayTwo.nextElementSibling.textContent =
-        normalWest[PlaceIntInArr()[1]].mealSunsetSide[0];
+        normalWest[indexGiven[1]].mealSunsetSide[0];
       snackDayTwo.nextElementSibling.nextElementSibling.textContent =
-        normalWest[PlaceIntInArr()[1]].mealSunsetSide[1];
+        normalWest[indexGiven[1]].mealSunsetSide[1];
 
-      supaDayTwo.textContent = normalWest[PlaceIntInArr()[1]].eveningmeal;
+      supaDayTwo.textContent = normalWest[indexGiven[1]].eveningmeal;
       supaDayTwo.nextElementSibling.textContent =
-        normalWest[PlaceIntInArr()[1]].eveningmealside[0];
+        normalWest[indexGiven[1]].eveningmealside[0];
       supaDayTwo.nextElementSibling.nextElementSibling.textContent =
-        normalWest[PlaceIntInArr()[1]].eveningmealside[1];
+        normalWest[indexGiven[1]].eveningmealside[1];
 
       //day3
       let breakfastDayThree = document.querySelector(
@@ -539,29 +539,29 @@ document.addEventListener("DOMContentLoaded", () => {
       let snackDayThree = document.querySelector("#day3 .day-card .snack dt");
       let supaDayThree = document.querySelector("#day3 .day-card .supa dt");
 
-      breakfastDayThree.textContent = normalWest[PlaceIntInArr()[2]].breakfast;
+      breakfastDayThree.textContent = normalWest[indexGiven[2]].breakfast;
       breakfastDayThree.nextElementSibling.textContent =
-        normalWest[PlaceIntInArr()[2]].breakfastSide[0];
+        normalWest[indexGiven[2]].breakfastSide[0];
       breakfastDayThree.nextElementSibling.nextElementSibling.textContent =
-        normalWest[PlaceIntInArr()[2]].breakfastSide[1];
+        normalWest[indexGiven[2]].breakfastSide[1];
 
-      lunchDayThree.textContent = normalWest[PlaceIntInArr()[2]].lunch;
+      lunchDayThree.textContent = normalWest[indexGiven[2]].lunch;
       lunchDayThree.nextElementSibling.textContent =
-        normalWest[PlaceIntInArr()[2]].lunchside[0];
+        normalWest[indexGiven[2]].lunchside[0];
       lunchDayThree.nextElementSibling.nextElementSibling.textContent =
-        normalWest[PlaceIntInArr()[2]].lunchside[1];
+        normalWest[indexGiven[2]].lunchside[1];
 
-      snackDayThree.textContent = normalWest[PlaceIntInArr()[2]].mealSunset;
+      snackDayThree.textContent = normalWest[indexGiven[2]].mealSunset;
       snackDayThree.nextElementSibling.textContent =
-        normalWest[PlaceIntInArr()[2]].mealSunsetSide[0];
+        normalWest[indexGiven[2]].mealSunsetSide[0];
       snackDayThree.nextElementSibling.nextElementSibling.textContent =
-        normalWest[PlaceIntInArr()[2]].mealSunsetSide[1];
+        normalWest[indexGiven[2]].mealSunsetSide[1];
 
-      supaDayThree.textContent = normalWest[PlaceIntInArr()[2]].eveningmeal;
+      supaDayThree.textContent = normalWest[indexGiven[2]].eveningmeal;
       supaDayThree.nextElementSibling.textContent =
-        normalWest[PlaceIntInArr()[2]].eveningmealside[0];
+        normalWest[indexGiven[2]].eveningmealside[0];
       supaDayThree.nextElementSibling.nextElementSibling.textContent =
-        normalWest[PlaceIntInArr()[2]].eveningmealside[1];
+        normalWest[indexGiven[2]].eveningmealside[1];
 
       //day4
       let breakfastDayFour = document.querySelector(
@@ -571,29 +571,29 @@ document.addEventListener("DOMContentLoaded", () => {
       let snackDayFour = document.querySelector("#day4 .day-card .snack dt");
       let supaDayFour = document.querySelector("#day4 .day-card .supa dt");
 
-      breakfastDayFour.textContent = normalWest[PlaceIntInArr()[3]].breakfast;
+      breakfastDayFour.textContent = normalWest[indexGiven[3]].breakfast;
       breakfastDayFour.nextElementSibling.textContent =
-        normalWest[PlaceIntInArr()[3]].breakfastSide[0];
+        normalWest[indexGiven[3]].breakfastSide[0];
       breakfastDayFour.nextElementSibling.nextElementSibling.textContent =
-        normalWest[PlaceIntInArr()[3]].breakfastSide[1];
+        normalWest[indexGiven[3]].breakfastSide[1];
 
-      lunchDayFour.textContent = normalWest[PlaceIntInArr()[3]].lunch;
+      lunchDayFour.textContent = normalWest[indexGiven[3]].lunch;
       lunchDayFour.nextElementSibling.textContent =
-        normalWest[PlaceIntInArr()[3]].lunchside[0];
+        normalWest[indexGiven[3]].lunchside[0];
       lunchDayFour.nextElementSibling.nextElementSibling.textContent =
-        normalWest[PlaceIntInArr()[3]].lunchside[1];
+        normalWest[indexGiven[3]].lunchside[1];
 
-      snackDayFour.textContent = normalWest[PlaceIntInArr()[3]].mealSunset;
+      snackDayFour.textContent = normalWest[indexGiven[3]].mealSunset;
       snackDayFour.nextElementSibling.textContent =
-        normalWest[PlaceIntInArr()[3]].mealSunsetSide[0];
+        normalWest[indexGiven[3]].mealSunsetSide[0];
       snackDayFour.nextElementSibling.nextElementSibling.textContent =
-        normalWest[PlaceIntInArr()[3]].mealSunsetSide[1];
+        normalWest[indexGiven[3]].mealSunsetSide[1];
 
-      supaDayFour.textContent = normalWest[PlaceIntInArr()[3]].eveningmeal;
+      supaDayFour.textContent = normalWest[indexGiven[3]].eveningmeal;
       supaDayFour.nextElementSibling.textContent =
-        normalWest[PlaceIntInArr()[3]].eveningmealside[0];
+        normalWest[indexGiven[3]].eveningmealside[0];
       supaDayFour.nextElementSibling.nextElementSibling.textContent =
-        normalWest[PlaceIntInArr()[3]].eveningmealside[1];
+        normalWest[indexGiven[3]].eveningmealside[1];
 
       //day5
       let breakfastDayFive = document.querySelector(
@@ -603,29 +603,29 @@ document.addEventListener("DOMContentLoaded", () => {
       let snackDayFive = document.querySelector("#day5 .day-card .snack dt");
       let supaDayFive = document.querySelector("#day5 .day-card .supa dt");
 
-      breakfastDayFive.textContent = normalWest[PlaceIntInArr()[4]].breakfast;
+      breakfastDayFive.textContent = normalWest[indexGiven[4]].breakfast;
       breakfastDayFive.nextElementSibling.textContent =
-        normalWest[PlaceIntInArr()[4]].breakfastSide[0];
+        normalWest[indexGiven[4]].breakfastSide[0];
       breakfastDayFive.nextElementSibling.nextElementSibling.textContent =
-        normalWest[PlaceIntInArr()[4]].breakfastSide[1];
+        normalWest[indexGiven[4]].breakfastSide[1];
 
-      lunchDayFive.textContent = normalWest[PlaceIntInArr()[4]].lunch;
+      lunchDayFive.textContent = normalWest[indexGiven[4]].lunch;
       lunchDayFive.nextElementSibling.textContent =
-        normalWest[PlaceIntInArr()[4]].lunchside[0];
+        normalWest[indexGiven[4]].lunchside[0];
       lunchDayFive.nextElementSibling.nextElementSibling.textContent =
-        normalWest[PlaceIntInArr()[4]].lunchside[1];
+        normalWest[indexGiven[4]].lunchside[1];
 
-      snackDayFive.textContent = normalWest[PlaceIntInArr()[4]].mealSunset;
+      snackDayFive.textContent = normalWest[indexGiven[4]].mealSunset;
       snackDayFive.nextElementSibling.textContent =
-        normalWest[PlaceIntInArr()[4]].mealSunsetSide[0];
+        normalWest[indexGiven[4]].mealSunsetSide[0];
       snackDayFive.nextElementSibling.nextElementSibling.textContent =
-        normalWest[PlaceIntInArr()[4]].mealSunsetSide[1];
+        normalWest[indexGiven[4]].mealSunsetSide[1];
 
-      supaDayFive.textContent = normalWest[PlaceIntInArr()[4]].eveningmeal;
+      supaDayFive.textContent = normalWest[indexGiven[4]].eveningmeal;
       supaDayFive.nextElementSibling.textContent =
-        normalWest[PlaceIntInArr()[4]].eveningmealside[0];
+        normalWest[indexGiven[4]].eveningmealside[0];
       supaDayFive.nextElementSibling.nextElementSibling.textContent =
-        normalWest[PlaceIntInArr()[4]].eveningmealside[1];
+        normalWest[indexGiven[4]].eveningmealside[1];
 
       //day6
       let breakfastDaySix = document.querySelector(
@@ -635,29 +635,29 @@ document.addEventListener("DOMContentLoaded", () => {
       let snackDaySix = document.querySelector("#day6 .day-card .snack dt");
       let supaDaySix = document.querySelector("#day6 .day-card .supa dt");
 
-      breakfastDaySix.textContent = normalWest[PlaceIntInArr()[5]].breakfast;
+      breakfastDaySix.textContent = normalWest[indexGiven[5]].breakfast;
       breakfastDaySix.nextElementSibling.textContent =
-        normalWest[PlaceIntInArr()[5]].breakfastSide[0];
+        normalWest[indexGiven[5]].breakfastSide[0];
       breakfastDaySix.nextElementSibling.nextElementSibling.textContent =
-        normalWest[PlaceIntInArr()[5]].breakfastSide[1];
+        normalWest[indexGiven[5]].breakfastSide[1];
 
-      lunchDaySix.textContent = normalWest[PlaceIntInArr()[5]].lunch;
+      lunchDaySix.textContent = normalWest[indexGiven[5]].lunch;
       lunchDaySix.nextElementSibling.textContent =
-        normalWest[PlaceIntInArr()[5]].lunchside[0];
+        normalWest[indexGiven[5]].lunchside[0];
       lunchDaySix.nextElementSibling.nextElementSibling.textContent =
-        normalWest[PlaceIntInArr()[5]].lunchside[1];
+        normalWest[indexGiven[5]].lunchside[1];
 
-      snackDaySix.textContent = normalWest[PlaceIntInArr()[5]].mealSunset;
+      snackDaySix.textContent = normalWest[indexGiven[5]].mealSunset;
       snackDaySix.nextElementSibling.textContent =
-        normalWest[PlaceIntInArr()[5]].mealSunsetSide[0];
+        normalWest[indexGiven[5]].mealSunsetSide[0];
       snackDaySix.nextElementSibling.nextElementSibling.textContent =
-        normalWest[PlaceIntInArr()[5]].mealSunsetSide[1];
+        normalWest[indexGiven[5]].mealSunsetSide[1];
 
-      supaDaySix.textContent = normalWest[PlaceIntInArr()[5]].eveningmeal;
+      supaDaySix.textContent = normalWest[indexGiven[5]].eveningmeal;
       supaDaySix.nextElementSibling.textContent =
-        normalWest[PlaceIntInArr()[5]].eveningmealside[0];
+        normalWest[indexGiven[5]].eveningmealside[0];
       supaDaySix.nextElementSibling.nextElementSibling.textContent =
-        normalWest[PlaceIntInArr()[5]].eveningmealside[1];
+        normalWest[indexGiven[5]].eveningmealside[1];
 
       //day7
       let breakfastDaySeven = document.querySelector(
@@ -667,29 +667,29 @@ document.addEventListener("DOMContentLoaded", () => {
       let snackDaySeven = document.querySelector("#day7 .day-card .snack dt");
       let supaDaySeven = document.querySelector("#day7 .day-card .supa dt");
 
-      breakfastDaySeven.textContent = normalWest[PlaceIntInArr()[6]].breakfast;
+      breakfastDaySeven.textContent = normalWest[indexGiven[6]].breakfast;
       breakfastDaySeven.nextElementSibling.textContent =
-        normalWest[PlaceIntInArr()[6]].breakfastSide[0];
+        normalWest[indexGiven[6]].breakfastSide[0];
       breakfastDaySeven.nextElementSibling.nextElementSibling.textContent =
-        normalWest[PlaceIntInArr()[6]].breakfastSide[1];
+        normalWest[indexGiven[6]].breakfastSide[1];
 
-      lunchDaySeven.textContent = normalWest[PlaceIntInArr()[6]].lunch;
+      lunchDaySeven.textContent = normalWest[indexGiven[6]].lunch;
       lunchDaySeven.nextElementSibling.textContent =
-        normalWest[PlaceIntInArr()[6]].lunchside[0];
+        normalWest[indexGiven[6]].lunchside[0];
       lunchDaySeven.nextElementSibling.nextElementSibling.textContent =
-        normalWest[PlaceIntInArr()[6]].lunchside[1];
+        normalWest[indexGiven[6]].lunchside[1];
 
-      snackDaySeven.textContent = normalWest[PlaceIntInArr()[6]].mealSunset;
+      snackDaySeven.textContent = normalWest[indexGiven[6]].mealSunset;
       snackDaySeven.nextElementSibling.textContent =
-        normalWest[PlaceIntInArr()[6]].mealSunsetSide[0];
+        normalWest[indexGiven[6]].mealSunsetSide[0];
       snackDaySeven.nextElementSibling.nextElementSibling.textContent =
-        normalWest[PlaceIntInArr()[6]].mealSunsetSide[1];
+        normalWest[indexGiven[6]].mealSunsetSide[1];
 
-      supaDaySeven.textContent = normalWest[PlaceIntInArr()[6]].eveningmeal;
+      supaDaySeven.textContent = normalWest[indexGiven[6]].eveningmeal;
       supaDaySeven.nextElementSibling.textContent =
-        normalWest[PlaceIntInArr()[6]].eveningmealside[0];
+        normalWest[indexGiven[6]].eveningmealside[0];
       supaDaySeven.nextElementSibling.nextElementSibling.textContent =
-        normalWest[PlaceIntInArr()[6]].eveningmealside[1];
+        normalWest[indexGiven[6]].eveningmealside[1];
     }
     // normal three
     else if (
@@ -700,19 +700,19 @@ document.addEventListener("DOMContentLoaded", () => {
       //to place unique code on header
       let unigueCode = document.getElementById("special-code");
       unigueCode.textContent =
-        PlaceIntInArrTwo()[0] +
+        indexGiven2[0] +
         " - " +
-        PlaceIntInArrTwo()[1] +
+        indexGiven2[1] +
         " - " +
-        PlaceIntInArrTwo()[2] +
+        indexGiven2[2] +
         " - " +
-        PlaceIntInArrTwo()[3] +
+        indexGiven2[3] +
         " - " +
-        PlaceIntInArrTwo()[4] +
+        indexGiven2[4] +
         " - " +
-        PlaceIntInArrTwo()[5] +
+        indexGiven2[5] +
         " - " +
-        PlaceIntInArrTwo()[6];
+        indexGiven2[6];
       //to place unique word on top
       let FancyName = document.getElementById("special-name");
       FancyName.textContent = norm3;
@@ -727,29 +727,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
       //placing the meals on document
 
-      breakfastDayOne.textContent = normalMix[PlaceIntInArrTwo()[0]].breakfast;
+      breakfastDayOne.textContent = normalMix[indexGiven2[0]].breakfast;
       breakfastDayOne.nextElementSibling.textContent =
-        normalMix[PlaceIntInArrTwo()[0]].breakfastSide[0];
+        normalMix[indexGiven2[0]].breakfastSide[0];
       breakfastDayOne.nextElementSibling.nextElementSibling.textContent =
-        normalMix[PlaceIntInArrTwo()[0]].breakfastSide[1];
+        normalMix[indexGiven2[0]].breakfastSide[1];
 
-      lunchDayOne.textContent = normalMix[PlaceIntInArrTwo()[0]].lunch;
+      lunchDayOne.textContent = normalMix[indexGiven2[0]].lunch;
       lunchDayOne.nextElementSibling.textContent =
-        normalMix[PlaceIntInArrTwo()[0]].lunchside[0];
+        normalMix[indexGiven2[0]].lunchside[0];
       lunchDayOne.nextElementSibling.nextElementSibling.textContent =
-        normalMix[PlaceIntInArrTwo()[0]].lunchside[1];
+        normalMix[indexGiven2[0]].lunchside[1];
 
-      snackDayOne.textContent = normalMix[PlaceIntInArrTwo()[0]].mealSunset;
+      snackDayOne.textContent = normalMix[indexGiven2[0]].mealSunset;
       snackDayOne.nextElementSibling.textContent =
-        normalMix[PlaceIntInArrTwo()[0]].mealSunsetSide[0];
+        normalMix[indexGiven2[0]].mealSunsetSide[0];
       snackDayOne.nextElementSibling.nextElementSibling.textContent =
-        normalMix[PlaceIntInArrTwo()[0]].mealSunsetSide[1];
+        normalMix[indexGiven2[0]].mealSunsetSide[1];
 
-      supaDayOne.textContent = normalMix[PlaceIntInArrTwo()[0]].eveningmeal;
+      supaDayOne.textContent = normalMix[indexGiven2[0]].eveningmeal;
       supaDayOne.nextElementSibling.textContent =
-        normalMix[PlaceIntInArrTwo()[0]].eveningmealside[0];
+        normalMix[indexGiven2[0]].eveningmealside[0];
       supaDayOne.nextElementSibling.nextElementSibling.textContent =
-        normalMix[PlaceIntInArrTwo()[0]].eveningmealside[1];
+        normalMix[indexGiven2[0]].eveningmealside[1];
 
       //day2
       let breakfastDayTwo = document.querySelector(
@@ -759,29 +759,29 @@ document.addEventListener("DOMContentLoaded", () => {
       let snackDayTwo = document.querySelector("#day2 .day-card .snack dt");
       let supaDayTwo = document.querySelector("#day2 .day-card .supa dt");
 
-      breakfastDayTwo.textContent = normalMix[PlaceIntInArrTwo()[1]].breakfast;
+      breakfastDayTwo.textContent = normalMix[indexGiven2[1]].breakfast;
       breakfastDayTwo.nextElementSibling.textContent =
-        normalMix[PlaceIntInArrTwo()[1]].breakfastSide[0];
+        normalMix[indexGiven2[1]].breakfastSide[0];
       breakfastDayTwo.nextElementSibling.nextElementSibling.textContent =
-        normalMix[PlaceIntInArrTwo()[1]].breakfastSide[1];
+        normalMix[indexGiven2[1]].breakfastSide[1];
 
-      lunchDayTwo.textContent = normalMix[PlaceIntInArrTwo()[1]].lunch;
+      lunchDayTwo.textContent = normalMix[indexGiven2[1]].lunch;
       lunchDayTwo.nextElementSibling.textContent =
-        normalMix[PlaceIntInArrTwo()[1]].lunchside[0];
+        normalMix[indexGiven2[1]].lunchside[0];
       lunchDayTwo.nextElementSibling.nextElementSibling.textContent =
-        normalMix[PlaceIntInArrTwo()[1]].lunchside[1];
+        normalMix[indexGiven2[1]].lunchside[1];
 
-      snackDayTwo.textContent = normalMix[PlaceIntInArrTwo()[1]].mealSunset;
+      snackDayTwo.textContent = normalMix[indexGiven2[1]].mealSunset;
       snackDayTwo.nextElementSibling.textContent =
-        normalMix[PlaceIntInArrTwo()[1]].mealSunsetSide[0];
+        normalMix[indexGiven2[1]].mealSunsetSide[0];
       snackDayTwo.nextElementSibling.nextElementSibling.textContent =
-        normalMix[PlaceIntInArrTwo()[1]].mealSunsetSide[1];
+        normalMix[indexGiven2[1]].mealSunsetSide[1];
 
-      supaDayTwo.textContent = normalMix[PlaceIntInArrTwo()[1]].eveningmeal;
+      supaDayTwo.textContent = normalMix[indexGiven2[1]].eveningmeal;
       supaDayTwo.nextElementSibling.textContent =
-        normalMix[PlaceIntInArrTwo()[1]].eveningmealside[0];
+        normalMix[indexGiven2[1]].eveningmealside[0];
       supaDayTwo.nextElementSibling.nextElementSibling.textContent =
-        normalMix[PlaceIntInArrTwo()[1]].eveningmealside[1];
+        normalMix[indexGiven2[1]].eveningmealside[1];
 
       //day3
       let breakfastDayThree = document.querySelector(
@@ -792,29 +792,29 @@ document.addEventListener("DOMContentLoaded", () => {
       let supaDayThree = document.querySelector("#day3 .day-card .supa dt");
 
       breakfastDayThree.textContent =
-        normalMix[PlaceIntInArrTwo()[2]].breakfast;
+        normalMix[indexGiven2[2]].breakfast;
       breakfastDayThree.nextElementSibling.textContent =
-        normalMix[PlaceIntInArrTwo()[2]].breakfastSide[0];
+        normalMix[indexGiven2[2]].breakfastSide[0];
       breakfastDayThree.nextElementSibling.nextElementSibling.textContent =
-        normalMix[PlaceIntInArrTwo()[2]].breakfastSide[1];
+        normalMix[indexGiven2[2]].breakfastSide[1];
 
-      lunchDayThree.textContent = normalMix[PlaceIntInArrTwo()[2]].lunch;
+      lunchDayThree.textContent = normalMix[indexGiven2[2]].lunch;
       lunchDayThree.nextElementSibling.textContent =
-        normalMix[PlaceIntInArrTwo()[2]].lunchside[0];
+        normalMix[indexGiven2[2]].lunchside[0];
       lunchDayThree.nextElementSibling.nextElementSibling.textContent =
-        normalMix[PlaceIntInArrTwo()[2]].lunchside[1];
+        normalMix[indexGiven2[2]].lunchside[1];
 
-      snackDayThree.textContent = normalMix[PlaceIntInArrTwo()[2]].mealSunset;
+      snackDayThree.textContent = normalMix[indexGiven2[2]].mealSunset;
       snackDayThree.nextElementSibling.textContent =
-        normalMix[PlaceIntInArrTwo()[2]].mealSunsetSide[0];
+        normalMix[indexGiven2[2]].mealSunsetSide[0];
       snackDayThree.nextElementSibling.nextElementSibling.textContent =
-        normalMix[PlaceIntInArrTwo()[2]].mealSunsetSide[1];
+        normalMix[indexGiven2[2]].mealSunsetSide[1];
 
-      supaDayThree.textContent = normalMix[PlaceIntInArrTwo()[2]].eveningmeal;
+      supaDayThree.textContent = normalMix[indexGiven2[2]].eveningmeal;
       supaDayThree.nextElementSibling.textContent =
-        normalMix[PlaceIntInArrTwo()[2]].eveningmealside[0];
+        normalMix[indexGiven2[2]].eveningmealside[0];
       supaDayThree.nextElementSibling.nextElementSibling.textContent =
-        normalMix[PlaceIntInArrTwo()[2]].eveningmealside[1];
+        normalMix[indexGiven2[2]].eveningmealside[1];
 
       //day4
       let breakfastDayFour = document.querySelector(
@@ -824,29 +824,29 @@ document.addEventListener("DOMContentLoaded", () => {
       let snackDayFour = document.querySelector("#day4 .day-card .snack dt");
       let supaDayFour = document.querySelector("#day4 .day-card .supa dt");
 
-      breakfastDayFour.textContent = normalMix[PlaceIntInArrTwo()[3]].breakfast;
+      breakfastDayFour.textContent = normalMix[indexGiven2[3]].breakfast;
       breakfastDayFour.nextElementSibling.textContent =
-        normalMix[PlaceIntInArrTwo()[3]].breakfastSide[0];
+        normalMix[indexGiven2[3]].breakfastSide[0];
       breakfastDayFour.nextElementSibling.nextElementSibling.textContent =
-        normalMix[PlaceIntInArrTwo()[3]].breakfastSide[1];
+        normalMix[indexGiven2[3]].breakfastSide[1];
 
-      lunchDayFour.textContent = normalMix[PlaceIntInArrTwo()[3]].lunch;
+      lunchDayFour.textContent = normalMix[indexGiven2[3]].lunch;
       lunchDayFour.nextElementSibling.textContent =
-        normalMix[PlaceIntInArrTwo()[3]].lunchside[0];
+        normalMix[indexGiven2[3]].lunchside[0];
       lunchDayFour.nextElementSibling.nextElementSibling.textContent =
-        normalMix[PlaceIntInArrTwo()[3]].lunchside[1];
+        normalMix[indexGiven2[3]].lunchside[1];
 
-      snackDayFour.textContent = normalMix[PlaceIntInArrTwo()[3]].mealSunset;
+      snackDayFour.textContent = normalMix[indexGiven2[3]].mealSunset;
       snackDayFour.nextElementSibling.textContent =
-        normalMix[PlaceIntInArrTwo()[3]].mealSunsetSide[0];
+        normalMix[indexGiven2[3]].mealSunsetSide[0];
       snackDayFour.nextElementSibling.nextElementSibling.textContent =
-        normalMix[PlaceIntInArrTwo()[3]].mealSunsetSide[1];
+        normalMix[indexGiven2[3]].mealSunsetSide[1];
 
-      supaDayFour.textContent = normalMix[PlaceIntInArrTwo()[3]].eveningmeal;
+      supaDayFour.textContent = normalMix[indexGiven2[3]].eveningmeal;
       supaDayFour.nextElementSibling.textContent =
-        normalMix[PlaceIntInArrTwo()[3]].eveningmealside[0];
+        normalMix[indexGiven2[3]].eveningmealside[0];
       supaDayFour.nextElementSibling.nextElementSibling.textContent =
-        normalMix[PlaceIntInArrTwo()[3]].eveningmealside[1];
+        normalMix[indexGiven2[3]].eveningmealside[1];
 
       //day5
       let breakfastDayFive = document.querySelector(
@@ -856,29 +856,29 @@ document.addEventListener("DOMContentLoaded", () => {
       let snackDayFive = document.querySelector("#day5 .day-card .snack dt");
       let supaDayFive = document.querySelector("#day5 .day-card .supa dt");
 
-      breakfastDayFive.textContent = normalMix[PlaceIntInArrTwo()[4]].breakfast;
+      breakfastDayFive.textContent = normalMix[indexGiven2[4]].breakfast;
       breakfastDayFive.nextElementSibling.textContent =
-        normalMix[PlaceIntInArrTwo()[4]].breakfastSide[0];
+        normalMix[indexGiven2[4]].breakfastSide[0];
       breakfastDayFive.nextElementSibling.nextElementSibling.textContent =
-        normalMix[PlaceIntInArrTwo()[4]].breakfastSide[1];
+        normalMix[indexGiven2[4]].breakfastSide[1];
 
-      lunchDayFive.textContent = normalMix[PlaceIntInArrTwo()[4]].lunch;
+      lunchDayFive.textContent = normalMix[indexGiven2[4]].lunch;
       lunchDayFive.nextElementSibling.textContent =
-        normalMix[PlaceIntInArrTwo()[4]].lunchside[0];
+        normalMix[indexGiven2[4]].lunchside[0];
       lunchDayFive.nextElementSibling.nextElementSibling.textContent =
-        normalMix[PlaceIntInArrTwo()[4]].lunchside[1];
+        normalMix[indexGiven2[4]].lunchside[1];
 
-      snackDayFive.textContent = normalMix[PlaceIntInArrTwo()[4]].mealSunset;
+      snackDayFive.textContent = normalMix[indexGiven2[4]].mealSunset;
       snackDayFive.nextElementSibling.textContent =
-        normalMix[PlaceIntInArrTwo()[4]].mealSunsetSide[0];
+        normalMix[indexGiven2[4]].mealSunsetSide[0];
       snackDayFive.nextElementSibling.nextElementSibling.textContent =
-        normalMix[PlaceIntInArrTwo()[4]].mealSunsetSide[1];
+        normalMix[indexGiven2[4]].mealSunsetSide[1];
 
-      supaDayFive.textContent = normalMix[PlaceIntInArrTwo()[4]].eveningmeal;
+      supaDayFive.textContent = normalMix[indexGiven2[4]].eveningmeal;
       supaDayFive.nextElementSibling.textContent =
-        normalMix[PlaceIntInArrTwo()[4]].eveningmealside[0];
+        normalMix[indexGiven2[4]].eveningmealside[0];
       supaDayFive.nextElementSibling.nextElementSibling.textContent =
-        normalMix[PlaceIntInArrTwo()[4]].eveningmealside[1];
+        normalMix[indexGiven2[4]].eveningmealside[1];
 
       //day6
       let breakfastDaySix = document.querySelector(
@@ -888,29 +888,29 @@ document.addEventListener("DOMContentLoaded", () => {
       let snackDaySix = document.querySelector("#day6 .day-card .snack dt");
       let supaDaySix = document.querySelector("#day6 .day-card .supa dt");
 
-      breakfastDaySix.textContent = normalMix[PlaceIntInArrTwo()[5]].breakfast;
+      breakfastDaySix.textContent = normalMix[indexGiven2[5]].breakfast;
       breakfastDaySix.nextElementSibling.textContent =
-        normalMix[PlaceIntInArrTwo()[5]].breakfastSide[0];
+        normalMix[indexGiven2[5]].breakfastSide[0];
       breakfastDaySix.nextElementSibling.nextElementSibling.textContent =
-        normalMix[PlaceIntInArrTwo()[5]].breakfastSide[1];
+        normalMix[indexGiven2[5]].breakfastSide[1];
 
-      lunchDaySix.textContent = normalMix[PlaceIntInArrTwo()[5]].lunch;
+      lunchDaySix.textContent = normalMix[indexGiven2[5]].lunch;
       lunchDaySix.nextElementSibling.textContent =
-        normalMix[PlaceIntInArrTwo()[5]].lunchside[0];
+        normalMix[indexGiven2[5]].lunchside[0];
       lunchDaySix.nextElementSibling.nextElementSibling.textContent =
-        normalMix[PlaceIntInArrTwo()[5]].lunchside[1];
+        normalMix[indexGiven2[5]].lunchside[1];
 
-      snackDaySix.textContent = normalMix[PlaceIntInArrTwo()[5]].mealSunset;
+      snackDaySix.textContent = normalMix[indexGiven2[5]].mealSunset;
       snackDaySix.nextElementSibling.textContent =
-        normalMix[PlaceIntInArrTwo()[5]].mealSunsetSide[0];
+        normalMix[indexGiven2[5]].mealSunsetSide[0];
       snackDaySix.nextElementSibling.nextElementSibling.textContent =
-        normalMix[PlaceIntInArrTwo()[5]].mealSunsetSide[1];
+        normalMix[indexGiven2[5]].mealSunsetSide[1];
 
-      supaDaySix.textContent = normalMix[PlaceIntInArrTwo()[5]].eveningmeal;
+      supaDaySix.textContent = normalMix[indexGiven2[5]].eveningmeal;
       supaDaySix.nextElementSibling.textContent =
-        normalMix[PlaceIntInArrTwo()[5]].eveningmealside[0];
+        normalMix[indexGiven2[5]].eveningmealside[0];
       supaDaySix.nextElementSibling.nextElementSibling.textContent =
-        normalMix[PlaceIntInArrTwo()[5]].eveningmealside[1];
+        normalMix[indexGiven2[5]].eveningmealside[1];
 
       //day7
       let breakfastDaySeven = document.querySelector(
@@ -921,29 +921,29 @@ document.addEventListener("DOMContentLoaded", () => {
       let supaDaySeven = document.querySelector("#day7 .day-card .supa dt");
 
       breakfastDaySeven.textContent =
-        normalMix[PlaceIntInArrTwo()[6]].breakfast;
+        normalMix[indexGiven2[6]].breakfast;
       breakfastDaySeven.nextElementSibling.textContent =
-        normalMix[PlaceIntInArrTwo()[6]].breakfastSide[0];
+        normalMix[indexGiven2[6]].breakfastSide[0];
       breakfastDaySeven.nextElementSibling.nextElementSibling.textContent =
-        normalMix[PlaceIntInArrTwo()[6]].breakfastSide[1];
+        normalMix[indexGiven2[6]].breakfastSide[1];
 
-      lunchDaySeven.textContent = normalMix[PlaceIntInArrTwo()[6]].lunch;
+      lunchDaySeven.textContent = normalMix[indexGiven2[6]].lunch;
       lunchDaySeven.nextElementSibling.textContent =
-        normalMix[PlaceIntInArrTwo()[6]].lunchside[0];
+        normalMix[indexGiven2[6]].lunchside[0];
       lunchDaySeven.nextElementSibling.nextElementSibling.textContent =
-        normalMix[PlaceIntInArrTwo()[6]].lunchside[1];
+        normalMix[indexGiven2[6]].lunchside[1];
 
-      snackDaySeven.textContent = normalMix[PlaceIntInArrTwo()[6]].mealSunset;
+      snackDaySeven.textContent = normalMix[indexGiven2[6]].mealSunset;
       snackDaySeven.nextElementSibling.textContent =
-        normalMix[PlaceIntInArrTwo()[6]].mealSunsetSide[0];
+        normalMix[indexGiven2[6]].mealSunsetSide[0];
       snackDaySeven.nextElementSibling.nextElementSibling.textContent =
-        normalMix[PlaceIntInArrTwo()[6]].mealSunsetSide[1];
+        normalMix[indexGiven2[6]].mealSunsetSide[1];
 
-      supaDaySeven.textContent = normalMix[PlaceIntInArrTwo()[6]].eveningmeal;
+      supaDaySeven.textContent = normalMix[indexGiven2[6]].eveningmeal;
       supaDaySeven.nextElementSibling.textContent =
-        normalMix[PlaceIntInArrTwo()[6]].eveningmealside[0];
+        normalMix[indexGiven2[6]].eveningmealside[0];
       supaDaySeven.nextElementSibling.nextElementSibling.textContent =
-        normalMix[PlaceIntInArrTwo()[6]].eveningmealside[1];
+        normalMix[indexGiven2[6]].eveningmealside[1];
     }
     //******************************************************* VEGAN MEALS ***********************************************************/
     // vegan one
@@ -959,19 +959,19 @@ document.addEventListener("DOMContentLoaded", () => {
       //to place unique code on header
       let unigueCode = document.getElementById("special-code");
       unigueCode.textContent =
-        PlaceIntInArr()[0] +
+        indexGiven[0] +
         " - " +
-        PlaceIntInArr()[1] +
+        indexGiven[1] +
         " - " +
-        PlaceIntInArr()[2] +
+        indexGiven[2] +
         " - " +
-        PlaceIntInArr()[3] +
+        indexGiven[3] +
         " - " +
-        PlaceIntInArr()[4] +
+        indexGiven[4] +
         " - " +
-        PlaceIntInArr()[5] +
+        indexGiven[5] +
         " - " +
-        PlaceIntInArr()[6];
+        indexGiven[6];
 
       //day1 //variables holding location
       let breakfastDayOne = document.querySelector(
@@ -983,29 +983,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
       //placing the meals on document
 
-      breakfastDayOne.textContent = veganized[PlaceIntInArr()[0]].breakfast;
+      breakfastDayOne.textContent = veganized[indexGiven[0]].breakfast;
       breakfastDayOne.nextElementSibling.textContent =
-        veganized[PlaceIntInArr()[0]].breakfastSide[0];
+        veganized[indexGiven[0]].breakfastSide[0];
       breakfastDayOne.nextElementSibling.nextElementSibling.textContent =
-        veganized[PlaceIntInArr()[0]].breakfastSide[1];
+        veganized[indexGiven[0]].breakfastSide[1];
 
-      lunchDayOne.textContent = veganized[PlaceIntInArr()[0]].lunch;
+      lunchDayOne.textContent = veganized[indexGiven[0]].lunch;
       lunchDayOne.nextElementSibling.textContent =
-        veganized[PlaceIntInArr()[0]].lunchside[0];
+        veganized[indexGiven[0]].lunchside[0];
       lunchDayOne.nextElementSibling.nextElementSibling.textContent =
-        veganized[PlaceIntInArr()[0]].lunchside[1];
+        veganized[indexGiven[0]].lunchside[1];
 
-      snackDayOne.textContent = veganized[PlaceIntInArr()[0]].mealSunset;
+      snackDayOne.textContent = veganized[indexGiven[0]].mealSunset;
       snackDayOne.nextElementSibling.textContent =
-        veganized[PlaceIntInArr()[0]].mealSunsetSide[0];
+        veganized[indexGiven[0]].mealSunsetSide[0];
       snackDayOne.nextElementSibling.nextElementSibling.textContent =
-        veganized[PlaceIntInArr()[0]].mealSunsetSide[1];
+        veganized[indexGiven[0]].mealSunsetSide[1];
 
-      supaDayOne.textContent = veganized[PlaceIntInArr()[0]].eveningmeal;
+      supaDayOne.textContent = veganized[indexGiven[0]].eveningmeal;
       supaDayOne.nextElementSibling.textContent =
-        veganized[PlaceIntInArr()[0]].eveningmealside[0];
+        veganized[indexGiven[0]].eveningmealside[0];
       supaDayOne.nextElementSibling.nextElementSibling.textContent =
-        veganized[PlaceIntInArr()[0]].eveningmealside[1];
+        veganized[indexGiven[0]].eveningmealside[1];
 
       //day2
       let breakfastDayTwo = document.querySelector(
@@ -1015,29 +1015,29 @@ document.addEventListener("DOMContentLoaded", () => {
       let snackDayTwo = document.querySelector("#day2 .day-card .snack dt");
       let supaDayTwo = document.querySelector("#day2 .day-card .supa dt");
 
-      breakfastDayTwo.textContent = veganized[PlaceIntInArr()[1]].breakfast;
+      breakfastDayTwo.textContent = veganized[indexGiven[1]].breakfast;
       breakfastDayTwo.nextElementSibling.textContent =
-        veganized[PlaceIntInArr()[1]].breakfastSide[0];
+        veganized[indexGiven[1]].breakfastSide[0];
       breakfastDayTwo.nextElementSibling.nextElementSibling.textContent =
-        veganized[PlaceIntInArr()[1]].breakfastSide[1];
+        veganized[indexGiven[1]].breakfastSide[1];
 
-      lunchDayTwo.textContent = veganized[PlaceIntInArr()[1]].lunch;
+      lunchDayTwo.textContent = veganized[indexGiven[1]].lunch;
       lunchDayTwo.nextElementSibling.textContent =
-        veganized[PlaceIntInArr()[1]].lunchside[0];
+        veganized[indexGiven[1]].lunchside[0];
       lunchDayTwo.nextElementSibling.nextElementSibling.textContent =
-        veganized[PlaceIntInArr()[1]].lunchside[1];
+        veganized[indexGiven[1]].lunchside[1];
 
-      snackDayTwo.textContent = normalized[PlaceIntInArr()[1]].mealSunset;
+      snackDayTwo.textContent = normalized[indexGiven[1]].mealSunset;
       snackDayTwo.nextElementSibling.textContent =
-        normalized[PlaceIntInArr()[1]].mealSunsetSide[0];
+        normalized[indexGiven[1]].mealSunsetSide[0];
       snackDayTwo.nextElementSibling.nextElementSibling.textContent =
-        normalized[PlaceIntInArr()[1]].mealSunsetSide[1];
+        normalized[indexGiven[1]].mealSunsetSide[1];
 
-      supaDayTwo.textContent = veganized[PlaceIntInArr()[1]].eveningmeal;
+      supaDayTwo.textContent = veganized[indexGiven[1]].eveningmeal;
       supaDayTwo.nextElementSibling.textContent =
-        veganized[PlaceIntInArr()[1]].eveningmealside[0];
+        veganized[indexGiven[1]].eveningmealside[0];
       supaDayTwo.nextElementSibling.nextElementSibling.textContent =
-        veganized[PlaceIntInArr()[1]].eveningmealside[1];
+        veganized[indexGiven[1]].eveningmealside[1];
 
       //day3
       let breakfastDayThree = document.querySelector(
@@ -1047,29 +1047,29 @@ document.addEventListener("DOMContentLoaded", () => {
       let snackDayThree = document.querySelector("#day3 .day-card .snack dt");
       let supaDayThree = document.querySelector("#day3 .day-card .supa dt");
 
-      breakfastDayThree.textContent = veganized[PlaceIntInArr()[2]].breakfast;
+      breakfastDayThree.textContent = veganized[indexGiven[2]].breakfast;
       breakfastDayThree.nextElementSibling.textContent =
-        veganized[PlaceIntInArr()[2]].breakfastSide[0];
+        veganized[indexGiven[2]].breakfastSide[0];
       breakfastDayThree.nextElementSibling.nextElementSibling.textContent =
-        veganized[PlaceIntInArr()[2]].breakfastSide[1];
+        veganized[indexGiven[2]].breakfastSide[1];
 
-      lunchDayThree.textContent = veganized[PlaceIntInArr()[2]].lunch;
+      lunchDayThree.textContent = veganized[indexGiven[2]].lunch;
       lunchDayThree.nextElementSibling.textContent =
-        veganized[PlaceIntInArr()[2]].lunchside[0];
+        veganized[indexGiven[2]].lunchside[0];
       lunchDayThree.nextElementSibling.nextElementSibling.textContent =
-        veganized[PlaceIntInArr()[2]].lunchside[1];
+        veganized[indexGiven[2]].lunchside[1];
 
-      snackDayThree.textContent = veganized[PlaceIntInArr()[2]].mealSunset;
+      snackDayThree.textContent = veganized[indexGiven[2]].mealSunset;
       snackDayThree.nextElementSibling.textContent =
-        veganized[PlaceIntInArr()[2]].mealSunsetSide[0];
+        veganized[indexGiven[2]].mealSunsetSide[0];
       snackDayThree.nextElementSibling.nextElementSibling.textContent =
-        veganized[PlaceIntInArr()[2]].mealSunsetSide[1];
+        veganized[indexGiven[2]].mealSunsetSide[1];
 
-      supaDayThree.textContent = veganized[PlaceIntInArr()[2]].eveningmeal;
+      supaDayThree.textContent = veganized[indexGiven[2]].eveningmeal;
       supaDayThree.nextElementSibling.textContent =
-        veganized[PlaceIntInArr()[2]].eveningmealside[0];
+        veganized[indexGiven[2]].eveningmealside[0];
       supaDayThree.nextElementSibling.nextElementSibling.textContent =
-        veganized[PlaceIntInArr()[2]].eveningmealside[1];
+        veganized[indexGiven[2]].eveningmealside[1];
 
       //day4
       let breakfastDayFour = document.querySelector(
@@ -1079,29 +1079,29 @@ document.addEventListener("DOMContentLoaded", () => {
       let snackDayFour = document.querySelector("#day4 .day-card .snack dt");
       let supaDayFour = document.querySelector("#day4 .day-card .supa dt");
 
-      breakfastDayFour.textContent = veganized[PlaceIntInArr()[3]].breakfast;
+      breakfastDayFour.textContent = veganized[indexGiven[3]].breakfast;
       breakfastDayFour.nextElementSibling.textContent =
-        veganized[PlaceIntInArr()[3]].breakfastSide[0];
+        veganized[indexGiven[3]].breakfastSide[0];
       breakfastDayFour.nextElementSibling.nextElementSibling.textContent =
-        veganized[PlaceIntInArr()[3]].breakfastSide[1];
+        veganized[indexGiven[3]].breakfastSide[1];
 
-      lunchDayFour.textContent = veganized[PlaceIntInArr()[3]].lunch;
+      lunchDayFour.textContent = veganized[indexGiven[3]].lunch;
       lunchDayFour.nextElementSibling.textContent =
-        veganized[PlaceIntInArr()[3]].lunchside[0];
+        veganized[indexGiven[3]].lunchside[0];
       lunchDayFour.nextElementSibling.nextElementSibling.textContent =
-        veganized[PlaceIntInArr()[3]].lunchside[1];
+        veganized[indexGiven[3]].lunchside[1];
 
-      snackDayFour.textContent = veganized[PlaceIntInArr()[3]].mealSunset;
+      snackDayFour.textContent = veganized[indexGiven[3]].mealSunset;
       snackDayFour.nextElementSibling.textContent =
-        veganized[PlaceIntInArr()[3]].mealSunsetSide[0];
+        veganized[indexGiven[3]].mealSunsetSide[0];
       snackDayFour.nextElementSibling.nextElementSibling.textContent =
-        veganized[PlaceIntInArr()[3]].mealSunsetSide[1];
+        veganized[indexGiven[3]].mealSunsetSide[1];
 
-      supaDayFour.textContent = veganized[PlaceIntInArr()[3]].eveningmeal;
+      supaDayFour.textContent = veganized[indexGiven[3]].eveningmeal;
       supaDayFour.nextElementSibling.textContent =
-        veganized[PlaceIntInArr()[3]].eveningmealside[0];
+        veganized[indexGiven[3]].eveningmealside[0];
       supaDayFour.nextElementSibling.nextElementSibling.textContent =
-        veganized[PlaceIntInArr()[3]].eveningmealside[1];
+        veganized[indexGiven[3]].eveningmealside[1];
 
       //day5
       let breakfastDayFive = document.querySelector(
@@ -1111,29 +1111,29 @@ document.addEventListener("DOMContentLoaded", () => {
       let snackDayFive = document.querySelector("#day5 .day-card .snack dt");
       let supaDayFive = document.querySelector("#day5 .day-card .supa dt");
 
-      breakfastDayFive.textContent = veganized[PlaceIntInArr()[4]].breakfast;
+      breakfastDayFive.textContent = veganized[indexGiven[4]].breakfast;
       breakfastDayFive.nextElementSibling.textContent =
-        veganized[PlaceIntInArr()[4]].breakfastSide[0];
+        veganized[indexGiven[4]].breakfastSide[0];
       breakfastDayFive.nextElementSibling.nextElementSibling.textContent =
-        veganized[PlaceIntInArr()[4]].breakfastSide[1];
+        veganized[indexGiven[4]].breakfastSide[1];
 
-      lunchDayFive.textContent = veganized[PlaceIntInArr()[4]].lunch;
+      lunchDayFive.textContent = veganized[indexGiven[4]].lunch;
       lunchDayFive.nextElementSibling.textContent =
-        veganized[PlaceIntInArr()[4]].lunchside[0];
+        veganized[indexGiven[4]].lunchside[0];
       lunchDayFive.nextElementSibling.nextElementSibling.textContent =
-        veganized[PlaceIntInArr()[4]].lunchside[1];
+        veganized[indexGiven[4]].lunchside[1];
 
-      snackDayFive.textContent = veganized[PlaceIntInArr()[4]].mealSunset;
+      snackDayFive.textContent = veganized[indexGiven[4]].mealSunset;
       snackDayFive.nextElementSibling.textContent =
-        veganized[PlaceIntInArr()[4]].mealSunsetSide[0];
+        veganized[indexGiven[4]].mealSunsetSide[0];
       snackDayFive.nextElementSibling.nextElementSibling.textContent =
-        veganized[PlaceIntInArr()[4]].mealSunsetSide[1];
+        veganized[indexGiven[4]].mealSunsetSide[1];
 
-      supaDayFive.textContent = veganized[PlaceIntInArr()[4]].eveningmeal;
+      supaDayFive.textContent = veganized[indexGiven[4]].eveningmeal;
       supaDayFive.nextElementSibling.textContent =
-        veganized[PlaceIntInArr()[4]].eveningmealside[0];
+        veganized[indexGiven[4]].eveningmealside[0];
       supaDayFive.nextElementSibling.nextElementSibling.textContent =
-        veganized[PlaceIntInArr()[4]].eveningmealside[1];
+        veganized[indexGiven[4]].eveningmealside[1];
 
       //day6
       let breakfastDaySix = document.querySelector(
@@ -1143,29 +1143,29 @@ document.addEventListener("DOMContentLoaded", () => {
       let snackDaySix = document.querySelector("#day6 .day-card .snack dt");
       let supaDaySix = document.querySelector("#day6 .day-card .supa dt");
 
-      breakfastDaySix.textContent = veganized[PlaceIntInArr()[5]].breakfast;
+      breakfastDaySix.textContent = veganized[indexGiven[5]].breakfast;
       breakfastDaySix.nextElementSibling.textContent =
-        veganized[PlaceIntInArr()[5]].breakfastSide[0];
+        veganized[indexGiven[5]].breakfastSide[0];
       breakfastDaySix.nextElementSibling.nextElementSibling.textContent =
-        veganized[PlaceIntInArr()[5]].breakfastSide[1];
+        veganized[indexGiven[5]].breakfastSide[1];
 
-      lunchDaySix.textContent = veganized[PlaceIntInArr()[5]].lunch;
+      lunchDaySix.textContent = veganized[indexGiven[5]].lunch;
       lunchDaySix.nextElementSibling.textContent =
-        veganized[PlaceIntInArr()[5]].lunchside[0];
+        veganized[indexGiven[5]].lunchside[0];
       lunchDaySix.nextElementSibling.nextElementSibling.textContent =
-        veganized[PlaceIntInArr()[5]].lunchside[1];
+        veganized[indexGiven[5]].lunchside[1];
 
-      snackDaySix.textContent = veganized[PlaceIntInArr()[5]].mealSunset;
+      snackDaySix.textContent = veganized[indexGiven[5]].mealSunset;
       snackDaySix.nextElementSibling.textContent =
-        veganized[PlaceIntInArr()[5]].mealSunsetSide[0];
+        veganized[indexGiven[5]].mealSunsetSide[0];
       snackDaySix.nextElementSibling.nextElementSibling.textContent =
-        veganized[PlaceIntInArr()[5]].mealSunsetSide[1];
+        veganized[indexGiven[5]].mealSunsetSide[1];
 
-      supaDaySix.textContent = veganized[PlaceIntInArr()[5]].eveningmeal;
+      supaDaySix.textContent = veganized[indexGiven[5]].eveningmeal;
       supaDaySix.nextElementSibling.textContent =
-        veganized[PlaceIntInArr()[5]].eveningmealside[0];
+        veganized[indexGiven[5]].eveningmealside[0];
       supaDaySix.nextElementSibling.nextElementSibling.textContent =
-        veganized[PlaceIntInArr()[5]].eveningmealside[1];
+        veganized[indexGiven[5]].eveningmealside[1];
 
       //day7
       let breakfastDaySeven = document.querySelector(
@@ -1175,29 +1175,29 @@ document.addEventListener("DOMContentLoaded", () => {
       let snackDaySeven = document.querySelector("#day7 .day-card .snack dt");
       let supaDaySeven = document.querySelector("#day7 .day-card .supa dt");
 
-      breakfastDaySeven.textContent = veganized[PlaceIntInArr()[6]].breakfast;
+      breakfastDaySeven.textContent = veganized[indexGiven[6]].breakfast;
       breakfastDaySeven.nextElementSibling.textContent =
-        veganized[PlaceIntInArr()[6]].breakfastSide[0];
+        veganized[indexGiven[6]].breakfastSide[0];
       breakfastDaySeven.nextElementSibling.nextElementSibling.textContent =
-        veganized[PlaceIntInArr()[6]].breakfastSide[1];
+        veganized[indexGiven[6]].breakfastSide[1];
 
-      lunchDaySeven.textContent = veganized[PlaceIntInArr()[6]].lunch;
+      lunchDaySeven.textContent = veganized[indexGiven[6]].lunch;
       lunchDaySeven.nextElementSibling.textContent =
-        veganized[PlaceIntInArr()[6]].lunchside[0];
+        veganized[indexGiven[6]].lunchside[0];
       lunchDaySeven.nextElementSibling.nextElementSibling.textContent =
-        veganized[PlaceIntInArr()[6]].lunchside[1];
+        veganized[indexGiven[6]].lunchside[1];
 
-      snackDaySeven.textContent = veganized[PlaceIntInArr()[6]].mealSunset;
+      snackDaySeven.textContent = veganized[indexGiven[6]].mealSunset;
       snackDaySeven.nextElementSibling.textContent =
-        veganized[PlaceIntInArr()[6]].mealSunsetSide[0];
+        veganized[indexGiven[6]].mealSunsetSide[0];
       snackDaySeven.nextElementSibling.nextElementSibling.textContent =
-        veganized[PlaceIntInArr()[6]].mealSunsetSide[1];
+        veganized[indexGiven[6]].mealSunsetSide[1];
 
-      supaDaySeven.textContent = veganized[PlaceIntInArr()[6]].eveningmeal;
+      supaDaySeven.textContent = veganized[indexGiven[6]].eveningmeal;
       supaDaySeven.nextElementSibling.textContent =
-        veganized[PlaceIntInArr()[6]].eveningmealside[0];
+        veganized[indexGiven[6]].eveningmealside[0];
       supaDaySeven.nextElementSibling.nextElementSibling.textContent =
-        veganized[PlaceIntInArr()[6]].eveningmealside[1];
+        veganized[indexGiven[6]].eveningmealside[1];
     }
     //vegan two
     else if (
@@ -1212,19 +1212,19 @@ document.addEventListener("DOMContentLoaded", () => {
       //to place unique code on header
       let unigueCode = document.getElementById("special-code");
       unigueCode.textContent =
-        PlaceIntInArr()[0] +
+        indexGiven[0] +
         " - " +
-        PlaceIntInArr()[1] +
+        indexGiven[1] +
         " - " +
-        PlaceIntInArr()[2] +
+        indexGiven[2] +
         " - " +
-        PlaceIntInArr()[3] +
+        indexGiven[3] +
         " - " +
-        PlaceIntInArr()[4] +
+        indexGiven[4] +
         " - " +
-        PlaceIntInArr()[5] +
+        indexGiven[5] +
         " - " +
-        PlaceIntInArr()[6];
+        indexGiven[6];
 
       //day1 //variables holding location
       let breakfastDayOne = document.querySelector(
@@ -1236,29 +1236,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
       //placing the meals on document
 
-      breakfastDayOne.textContent = veganWest[PlaceIntInArr()[0]].breakfast;
+      breakfastDayOne.textContent = veganWest[indexGiven[0]].breakfast;
       breakfastDayOne.nextElementSibling.textContent =
-        veganWest[PlaceIntInArr()[0]].breakfastSide[0];
+        veganWest[indexGiven[0]].breakfastSide[0];
       breakfastDayOne.nextElementSibling.nextElementSibling.textContent =
-        veganWest[PlaceIntInArr()[0]].breakfastSide[1];
+        veganWest[indexGiven[0]].breakfastSide[1];
 
-      lunchDayOne.textContent = veganWest[PlaceIntInArr()[0]].lunch;
+      lunchDayOne.textContent = veganWest[indexGiven[0]].lunch;
       lunchDayOne.nextElementSibling.textContent =
-        veganWest[PlaceIntInArr()[0]].lunchside[0];
+        veganWest[indexGiven[0]].lunchside[0];
       lunchDayOne.nextElementSibling.nextElementSibling.textContent =
-        veganWest[PlaceIntInArr()[0]].lunchside[1];
+        veganWest[indexGiven[0]].lunchside[1];
 
-      snackDayOne.textContent = veganWest[PlaceIntInArr()[0]].mealSunset;
+      snackDayOne.textContent = veganWest[indexGiven[0]].mealSunset;
       snackDayOne.nextElementSibling.textContent =
-        veganWest[PlaceIntInArr()[0]].mealSunsetSide[0];
+        veganWest[indexGiven[0]].mealSunsetSide[0];
       snackDayOne.nextElementSibling.nextElementSibling.textContent =
-        veganWest[PlaceIntInArr()[0]].mealSunsetSide[1];
+        veganWest[indexGiven[0]].mealSunsetSide[1];
 
-      supaDayOne.textContent = veganWest[PlaceIntInArr()[0]].eveningmeal;
+      supaDayOne.textContent = veganWest[indexGiven[0]].eveningmeal;
       supaDayOne.nextElementSibling.textContent =
-        veganWest[PlaceIntInArr()[0]].eveningmealside[0];
+        veganWest[indexGiven[0]].eveningmealside[0];
       supaDayOne.nextElementSibling.nextElementSibling.textContent =
-        veganWest[PlaceIntInArr()[0]].eveningmealside[1];
+        veganWest[indexGiven[0]].eveningmealside[1];
 
       //day2
       let breakfastDayTwo = document.querySelector(
@@ -1268,29 +1268,29 @@ document.addEventListener("DOMContentLoaded", () => {
       let snackDayTwo = document.querySelector("#day2 .day-card .snack dt");
       let supaDayTwo = document.querySelector("#day2 .day-card .supa dt");
 
-      breakfastDayTwo.textContent = veganWest[PlaceIntInArr()[1]].breakfast;
+      breakfastDayTwo.textContent = veganWest[indexGiven[1]].breakfast;
       breakfastDayTwo.nextElementSibling.textContent =
-        veganWest[PlaceIntInArr()[1]].breakfastSide[0];
+        veganWest[indexGiven[1]].breakfastSide[0];
       breakfastDayTwo.nextElementSibling.nextElementSibling.textContent =
-        veganWest[PlaceIntInArr()[1]].breakfastSide[1];
+        veganWest[indexGiven[1]].breakfastSide[1];
 
-      lunchDayTwo.textContent = veganWest[PlaceIntInArr()[1]].lunch;
+      lunchDayTwo.textContent = veganWest[indexGiven[1]].lunch;
       lunchDayTwo.nextElementSibling.textContent =
-        veganWest[PlaceIntInArr()[1]].lunchside[0];
+        veganWest[indexGiven[1]].lunchside[0];
       lunchDayTwo.nextElementSibling.nextElementSibling.textContent =
-        veganWest[PlaceIntInArr()[1]].lunchside[1];
+        veganWest[indexGiven[1]].lunchside[1];
 
-      snackDayTwo.textContent = normalized[PlaceIntInArr()[1]].mealSunset;
+      snackDayTwo.textContent = normalized[indexGiven[1]].mealSunset;
       snackDayTwo.nextElementSibling.textContent =
-        normalized[PlaceIntInArr()[1]].mealSunsetSide[0];
+        normalized[indexGiven[1]].mealSunsetSide[0];
       snackDayTwo.nextElementSibling.nextElementSibling.textContent =
-        normalized[PlaceIntInArr()[1]].mealSunsetSide[1];
+        normalized[indexGiven[1]].mealSunsetSide[1];
 
-      supaDayTwo.textContent = veganWest[PlaceIntInArr()[1]].eveningmeal;
+      supaDayTwo.textContent = veganWest[indexGiven[1]].eveningmeal;
       supaDayTwo.nextElementSibling.textContent =
-        veganWest[PlaceIntInArr()[1]].eveningmealside[0];
+        veganWest[indexGiven[1]].eveningmealside[0];
       supaDayTwo.nextElementSibling.nextElementSibling.textContent =
-        veganWest[PlaceIntInArr()[1]].eveningmealside[1];
+        veganWest[indexGiven[1]].eveningmealside[1];
 
       //day3
       let breakfastDayThree = document.querySelector(
@@ -1300,29 +1300,29 @@ document.addEventListener("DOMContentLoaded", () => {
       let snackDayThree = document.querySelector("#day3 .day-card .snack dt");
       let supaDayThree = document.querySelector("#day3 .day-card .supa dt");
 
-      breakfastDayThree.textContent = veganWest[PlaceIntInArr()[2]].breakfast;
+      breakfastDayThree.textContent = veganWest[indexGiven[2]].breakfast;
       breakfastDayThree.nextElementSibling.textContent =
-        veganWest[PlaceIntInArr()[2]].breakfastSide[0];
+        veganWest[indexGiven[2]].breakfastSide[0];
       breakfastDayThree.nextElementSibling.nextElementSibling.textContent =
-        veganWest[PlaceIntInArr()[2]].breakfastSide[1];
+        veganWest[indexGiven[2]].breakfastSide[1];
 
-      lunchDayThree.textContent = veganWest[PlaceIntInArr()[2]].lunch;
+      lunchDayThree.textContent = veganWest[indexGiven[2]].lunch;
       lunchDayThree.nextElementSibling.textContent =
-        veganWest[PlaceIntInArr()[2]].lunchside[0];
+        veganWest[indexGiven[2]].lunchside[0];
       lunchDayThree.nextElementSibling.nextElementSibling.textContent =
-        veganWest[PlaceIntInArr()[2]].lunchside[1];
+        veganWest[indexGiven[2]].lunchside[1];
 
-      snackDayThree.textContent = veganWest[PlaceIntInArr()[2]].mealSunset;
+      snackDayThree.textContent = veganWest[indexGiven[2]].mealSunset;
       snackDayThree.nextElementSibling.textContent =
-        veganWest[PlaceIntInArr()[2]].mealSunsetSide[0];
+        veganWest[indexGiven[2]].mealSunsetSide[0];
       snackDayThree.nextElementSibling.nextElementSibling.textContent =
-        veganWest[PlaceIntInArr()[2]].mealSunsetSide[1];
+        veganWest[indexGiven[2]].mealSunsetSide[1];
 
-      supaDayThree.textContent = veganWest[PlaceIntInArr()[2]].eveningmeal;
+      supaDayThree.textContent = veganWest[indexGiven[2]].eveningmeal;
       supaDayThree.nextElementSibling.textContent =
-        veganWest[PlaceIntInArr()[2]].eveningmealside[0];
+        veganWest[indexGiven[2]].eveningmealside[0];
       supaDayThree.nextElementSibling.nextElementSibling.textContent =
-        veganWest[PlaceIntInArr()[2]].eveningmealside[1];
+        veganWest[indexGiven[2]].eveningmealside[1];
 
       //day4
       let breakfastDayFour = document.querySelector(
@@ -1332,29 +1332,29 @@ document.addEventListener("DOMContentLoaded", () => {
       let snackDayFour = document.querySelector("#day4 .day-card .snack dt");
       let supaDayFour = document.querySelector("#day4 .day-card .supa dt");
 
-      breakfastDayFour.textContent = veganWest[PlaceIntInArr()[3]].breakfast;
+      breakfastDayFour.textContent = veganWest[indexGiven[3]].breakfast;
       breakfastDayFour.nextElementSibling.textContent =
-        veganWest[PlaceIntInArr()[3]].breakfastSide[0];
+        veganWest[indexGiven[3]].breakfastSide[0];
       breakfastDayFour.nextElementSibling.nextElementSibling.textContent =
-        veganWest[PlaceIntInArr()[3]].breakfastSide[1];
+        veganWest[indexGiven[3]].breakfastSide[1];
 
-      lunchDayFour.textContent = veganWest[PlaceIntInArr()[3]].lunch;
+      lunchDayFour.textContent = veganWest[indexGiven[3]].lunch;
       lunchDayFour.nextElementSibling.textContent =
-        veganWest[PlaceIntInArr()[3]].lunchside[0];
+        veganWest[indexGiven[3]].lunchside[0];
       lunchDayFour.nextElementSibling.nextElementSibling.textContent =
-        veganWest[PlaceIntInArr()[3]].lunchside[1];
+        veganWest[indexGiven[3]].lunchside[1];
 
-      snackDayFour.textContent = veganWest[PlaceIntInArr()[3]].mealSunset;
+      snackDayFour.textContent = veganWest[indexGiven[3]].mealSunset;
       snackDayFour.nextElementSibling.textContent =
-        veganWest[PlaceIntInArr()[3]].mealSunsetSide[0];
+        veganWest[indexGiven[3]].mealSunsetSide[0];
       snackDayFour.nextElementSibling.nextElementSibling.textContent =
-        veganWest[PlaceIntInArr()[3]].mealSunsetSide[1];
+        veganWest[indexGiven[3]].mealSunsetSide[1];
 
-      supaDayFour.textContent = veganWest[PlaceIntInArr()[3]].eveningmeal;
+      supaDayFour.textContent = veganWest[indexGiven[3]].eveningmeal;
       supaDayFour.nextElementSibling.textContent =
-        veganWest[PlaceIntInArr()[3]].eveningmealside[0];
+        veganWest[indexGiven[3]].eveningmealside[0];
       supaDayFour.nextElementSibling.nextElementSibling.textContent =
-        veganWest[PlaceIntInArr()[3]].eveningmealside[1];
+        veganWest[indexGiven[3]].eveningmealside[1];
 
       //day5
       let breakfastDayFive = document.querySelector(
@@ -1364,29 +1364,29 @@ document.addEventListener("DOMContentLoaded", () => {
       let snackDayFive = document.querySelector("#day5 .day-card .snack dt");
       let supaDayFive = document.querySelector("#day5 .day-card .supa dt");
 
-      breakfastDayFive.textContent = veganWest[PlaceIntInArr()[4]].breakfast;
+      breakfastDayFive.textContent = veganWest[indexGiven[4]].breakfast;
       breakfastDayFive.nextElementSibling.textContent =
-        veganWest[PlaceIntInArr()[4]].breakfastSide[0];
+        veganWest[indexGiven[4]].breakfastSide[0];
       breakfastDayFive.nextElementSibling.nextElementSibling.textContent =
-        veganWest[PlaceIntInArr()[4]].breakfastSide[1];
+        veganWest[indexGiven[4]].breakfastSide[1];
 
-      lunchDayFive.textContent = veganWest[PlaceIntInArr()[4]].lunch;
+      lunchDayFive.textContent = veganWest[indexGiven[4]].lunch;
       lunchDayFive.nextElementSibling.textContent =
-        veganWest[PlaceIntInArr()[4]].lunchside[0];
+        veganWest[indexGiven[4]].lunchside[0];
       lunchDayFive.nextElementSibling.nextElementSibling.textContent =
-        veganWest[PlaceIntInArr()[4]].lunchside[1];
+        veganWest[indexGiven[4]].lunchside[1];
 
-      snackDayFive.textContent = veganWest[PlaceIntInArr()[4]].mealSunset;
+      snackDayFive.textContent = veganWest[indexGiven[4]].mealSunset;
       snackDayFive.nextElementSibling.textContent =
-        veganWest[PlaceIntInArr()[4]].mealSunsetSide[0];
+        veganWest[indexGiven[4]].mealSunsetSide[0];
       snackDayFive.nextElementSibling.nextElementSibling.textContent =
-        veganWest[PlaceIntInArr()[4]].mealSunsetSide[1];
+        veganWest[indexGiven[4]].mealSunsetSide[1];
 
-      supaDayFive.textContent = veganWest[PlaceIntInArr()[4]].eveningmeal;
+      supaDayFive.textContent = veganWest[indexGiven[4]].eveningmeal;
       supaDayFive.nextElementSibling.textContent =
-        veganWest[PlaceIntInArr()[4]].eveningmealside[0];
+        veganWest[indexGiven[4]].eveningmealside[0];
       supaDayFive.nextElementSibling.nextElementSibling.textContent =
-        veganWest[PlaceIntInArr()[4]].eveningmealside[1];
+        veganWest[indexGiven[4]].eveningmealside[1];
 
       //day6
       let breakfastDaySix = document.querySelector(
@@ -1396,29 +1396,29 @@ document.addEventListener("DOMContentLoaded", () => {
       let snackDaySix = document.querySelector("#day6 .day-card .snack dt");
       let supaDaySix = document.querySelector("#day6 .day-card .supa dt");
 
-      breakfastDaySix.textContent = veganWest[PlaceIntInArr()[5]].breakfast;
+      breakfastDaySix.textContent = veganWest[indexGiven[5]].breakfast;
       breakfastDaySix.nextElementSibling.textContent =
-        veganWest[PlaceIntInArr()[5]].breakfastSide[0];
+        veganWest[indexGiven[5]].breakfastSide[0];
       breakfastDaySix.nextElementSibling.nextElementSibling.textContent =
-        veganWest[PlaceIntInArr()[5]].breakfastSide[1];
+        veganWest[indexGiven[5]].breakfastSide[1];
 
-      lunchDaySix.textContent = veganWest[PlaceIntInArr()[5]].lunch;
+      lunchDaySix.textContent = veganWest[indexGiven[5]].lunch;
       lunchDaySix.nextElementSibling.textContent =
-        veganWest[PlaceIntInArr()[5]].lunchside[0];
+        veganWest[indexGiven[5]].lunchside[0];
       lunchDaySix.nextElementSibling.nextElementSibling.textContent =
-        veganWest[PlaceIntInArr()[5]].lunchside[1];
+        veganWest[indexGiven[5]].lunchside[1];
 
-      snackDaySix.textContent = veganWest[PlaceIntInArr()[5]].mealSunset;
+      snackDaySix.textContent = veganWest[indexGiven[5]].mealSunset;
       snackDaySix.nextElementSibling.textContent =
-        veganWest[PlaceIntInArr()[5]].mealSunsetSide[0];
+        veganWest[indexGiven[5]].mealSunsetSide[0];
       snackDaySix.nextElementSibling.nextElementSibling.textContent =
-        veganWest[PlaceIntInArr()[5]].mealSunsetSide[1];
+        veganWest[indexGiven[5]].mealSunsetSide[1];
 
-      supaDaySix.textContent = veganWest[PlaceIntInArr()[5]].eveningmeal;
+      supaDaySix.textContent = veganWest[indexGiven[5]].eveningmeal;
       supaDaySix.nextElementSibling.textContent =
-        veganWest[PlaceIntInArr()[5]].eveningmealside[0];
+        veganWest[indexGiven[5]].eveningmealside[0];
       supaDaySix.nextElementSibling.nextElementSibling.textContent =
-        veganWest[PlaceIntInArr()[5]].eveningmealside[1];
+        veganWest[indexGiven[5]].eveningmealside[1];
 
       //day7
       let breakfastDaySeven = document.querySelector(
@@ -1428,29 +1428,29 @@ document.addEventListener("DOMContentLoaded", () => {
       let snackDaySeven = document.querySelector("#day7 .day-card .snack dt");
       let supaDaySeven = document.querySelector("#day7 .day-card .supa dt");
 
-      breakfastDaySeven.textContent = veganWest[PlaceIntInArr()[6]].breakfast;
+      breakfastDaySeven.textContent = veganWest[indexGiven[6]].breakfast;
       breakfastDaySeven.nextElementSibling.textContent =
-        veganWest[PlaceIntInArr()[6]].breakfastSide[0];
+        veganWest[indexGiven[6]].breakfastSide[0];
       breakfastDaySeven.nextElementSibling.nextElementSibling.textContent =
-        veganWest[PlaceIntInArr()[6]].breakfastSide[1];
+        veganWest[indexGiven[6]].breakfastSide[1];
 
-      lunchDaySeven.textContent = veganWest[PlaceIntInArr()[6]].lunch;
+      lunchDaySeven.textContent = veganWest[indexGiven[6]].lunch;
       lunchDaySeven.nextElementSibling.textContent =
-        veganWest[PlaceIntInArr()[6]].lunchside[0];
+        veganWest[indexGiven[6]].lunchside[0];
       lunchDaySeven.nextElementSibling.nextElementSibling.textContent =
-        veganWest[PlaceIntInArr()[6]].lunchside[1];
+        veganWest[indexGiven[6]].lunchside[1];
 
-      snackDaySeven.textContent = veganWest[PlaceIntInArr()[6]].mealSunset;
+      snackDaySeven.textContent = veganWest[indexGiven[6]].mealSunset;
       snackDaySeven.nextElementSibling.textContent =
-        veganWest[PlaceIntInArr()[6]].mealSunsetSide[0];
+        veganWest[indexGiven[6]].mealSunsetSide[0];
       snackDaySeven.nextElementSibling.nextElementSibling.textContent =
-        veganWest[PlaceIntInArr()[6]].mealSunsetSide[1];
+        veganWest[indexGiven[6]].mealSunsetSide[1];
 
-      supaDaySeven.textContent = veganWest[PlaceIntInArr()[6]].eveningmeal;
+      supaDaySeven.textContent = veganWest[indexGiven[6]].eveningmeal;
       supaDaySeven.nextElementSibling.textContent =
-        veganWest[PlaceIntInArr()[6]].eveningmealside[0];
+        veganWest[indexGiven[6]].eveningmealside[0];
       supaDaySeven.nextElementSibling.nextElementSibling.textContent =
-        veganWest[PlaceIntInArr()[6]].eveningmealside[1];
+        veganWest[indexGiven[6]].eveningmealside[1];
     }
     // vegan three
     else if (
@@ -1461,19 +1461,19 @@ document.addEventListener("DOMContentLoaded", () => {
       //to place unique code on header
       let unigueCode = document.getElementById("special-code");
       unigueCode.textContent =
-        PlaceIntInArrTwo()[0] +
+        indexGiven2[0] +
         " - " +
-        PlaceIntInArrTwo()[1] +
+        indexGiven2[1] +
         " - " +
-        PlaceIntInArrTwo()[2] +
+        indexGiven2[2] +
         " - " +
-        PlaceIntInArrTwo()[3] +
+        indexGiven2[3] +
         " - " +
-        PlaceIntInArrTwo()[4] +
+        indexGiven2[4] +
         " - " +
-        PlaceIntInArrTwo()[5] +
+        indexGiven2[5] +
         " - " +
-        PlaceIntInArrTwo()[6];
+        indexGiven2[6];
       //to place unique word on top
       let FancyName = document.getElementById("special-name");
       FancyName.textContent = vegan3;
@@ -1488,29 +1488,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
       //placing the meals on document
 
-      breakfastDayOne.textContent = veganMix[PlaceIntInArrTwo()[0]].breakfast;
+      breakfastDayOne.textContent = veganMix[indexGiven2[0]].breakfast;
       breakfastDayOne.nextElementSibling.textContent =
-        veganMix[PlaceIntInArrTwo()[0]].breakfastSide[0];
+        veganMix[indexGiven2[0]].breakfastSide[0];
       breakfastDayOne.nextElementSibling.nextElementSibling.textContent =
-        veganMix[PlaceIntInArrTwo()[0]].breakfastSide[1];
+        veganMix[indexGiven2[0]].breakfastSide[1];
 
-      lunchDayOne.textContent = veganMix[PlaceIntInArrTwo()[0]].lunch;
+      lunchDayOne.textContent = veganMix[indexGiven2[0]].lunch;
       lunchDayOne.nextElementSibling.textContent =
-        veganMix[PlaceIntInArrTwo()[0]].lunchside[0];
+        veganMix[indexGiven2[0]].lunchside[0];
       lunchDayOne.nextElementSibling.nextElementSibling.textContent =
-        veganMix[PlaceIntInArrTwo()[0]].lunchside[1];
+        veganMix[indexGiven2[0]].lunchside[1];
 
-      snackDayOne.textContent = veganMix[PlaceIntInArrTwo()[0]].mealSunset;
+      snackDayOne.textContent = veganMix[indexGiven2[0]].mealSunset;
       snackDayOne.nextElementSibling.textContent =
-        veganMix[PlaceIntInArrTwo()[0]].mealSunsetSide[0];
+        veganMix[indexGiven2[0]].mealSunsetSide[0];
       snackDayOne.nextElementSibling.nextElementSibling.textContent =
-        veganMix[PlaceIntInArrTwo()[0]].mealSunsetSide[1];
+        veganMix[indexGiven2[0]].mealSunsetSide[1];
 
-      supaDayOne.textContent = veganMix[PlaceIntInArrTwo()[0]].eveningmeal;
+      supaDayOne.textContent = veganMix[indexGiven2[0]].eveningmeal;
       supaDayOne.nextElementSibling.textContent =
-        veganMix[PlaceIntInArrTwo()[0]].eveningmealside[0];
+        veganMix[indexGiven2[0]].eveningmealside[0];
       supaDayOne.nextElementSibling.nextElementSibling.textContent =
-        veganMix[PlaceIntInArrTwo()[0]].eveningmealside[1];
+        veganMix[indexGiven2[0]].eveningmealside[1];
 
       //day2
       let breakfastDayTwo = document.querySelector(
@@ -1520,29 +1520,29 @@ document.addEventListener("DOMContentLoaded", () => {
       let snackDayTwo = document.querySelector("#day2 .day-card .snack dt");
       let supaDayTwo = document.querySelector("#day2 .day-card .supa dt");
 
-      breakfastDayTwo.textContent = veganMix[PlaceIntInArrTwo()[1]].breakfast;
+      breakfastDayTwo.textContent = veganMix[indexGiven2[1]].breakfast;
       breakfastDayTwo.nextElementSibling.textContent =
-        veganMix[PlaceIntInArrTwo()[1]].breakfastSide[0];
+        veganMix[indexGiven2[1]].breakfastSide[0];
       breakfastDayTwo.nextElementSibling.nextElementSibling.textContent =
-        veganMix[PlaceIntInArrTwo()[1]].breakfastSide[1];
+        veganMix[indexGiven2[1]].breakfastSide[1];
 
-      lunchDayTwo.textContent = veganMix[PlaceIntInArrTwo()[1]].lunch;
+      lunchDayTwo.textContent = veganMix[indexGiven2[1]].lunch;
       lunchDayTwo.nextElementSibling.textContent =
-        veganMix[PlaceIntInArrTwo()[1]].lunchside[0];
+        veganMix[indexGiven2[1]].lunchside[0];
       lunchDayTwo.nextElementSibling.nextElementSibling.textContent =
-        veganMix[PlaceIntInArrTwo()[1]].lunchside[1];
+        veganMix[indexGiven2[1]].lunchside[1];
 
-      snackDayTwo.textContent = veganMix[PlaceIntInArrTwo()[1]].mealSunset;
+      snackDayTwo.textContent = veganMix[indexGiven2[1]].mealSunset;
       snackDayTwo.nextElementSibling.textContent =
-        veganMix[PlaceIntInArrTwo()[1]].mealSunsetSide[0];
+        veganMix[indexGiven2[1]].mealSunsetSide[0];
       snackDayTwo.nextElementSibling.nextElementSibling.textContent =
-        veganMix[PlaceIntInArrTwo()[1]].mealSunsetSide[1];
+        veganMix[indexGiven2[1]].mealSunsetSide[1];
 
-      supaDayTwo.textContent = veganMix[PlaceIntInArrTwo()[1]].eveningmeal;
+      supaDayTwo.textContent = veganMix[indexGiven2[1]].eveningmeal;
       supaDayTwo.nextElementSibling.textContent =
-        veganMix[PlaceIntInArrTwo()[1]].eveningmealside[0];
+        veganMix[indexGiven2[1]].eveningmealside[0];
       supaDayTwo.nextElementSibling.nextElementSibling.textContent =
-        veganMix[PlaceIntInArrTwo()[1]].eveningmealside[1];
+        veganMix[indexGiven2[1]].eveningmealside[1];
 
       //day3
       let breakfastDayThree = document.querySelector(
@@ -1552,29 +1552,29 @@ document.addEventListener("DOMContentLoaded", () => {
       let snackDayThree = document.querySelector("#day3 .day-card .snack dt");
       let supaDayThree = document.querySelector("#day3 .day-card .supa dt");
 
-      breakfastDayThree.textContent = veganMix[PlaceIntInArrTwo()[2]].breakfast;
+      breakfastDayThree.textContent = veganMix[indexGiven2[2]].breakfast;
       breakfastDayThree.nextElementSibling.textContent =
-        veganMix[PlaceIntInArrTwo()[2]].breakfastSide[0];
+        veganMix[indexGiven2[2]].breakfastSide[0];
       breakfastDayThree.nextElementSibling.nextElementSibling.textContent =
-        veganMix[PlaceIntInArrTwo()[2]].breakfastSide[1];
+        veganMix[indexGiven2[2]].breakfastSide[1];
 
-      lunchDayThree.textContent = veganMix[PlaceIntInArrTwo()[2]].lunch;
+      lunchDayThree.textContent = veganMix[indexGiven2[2]].lunch;
       lunchDayThree.nextElementSibling.textContent =
-        veganMix[PlaceIntInArrTwo()[2]].lunchside[0];
+        veganMix[indexGiven2[2]].lunchside[0];
       lunchDayThree.nextElementSibling.nextElementSibling.textContent =
-        veganMix[PlaceIntInArrTwo()[2]].lunchside[1];
+        veganMix[indexGiven2[2]].lunchside[1];
 
-      snackDayThree.textContent = veganMix[PlaceIntInArrTwo()[2]].mealSunset;
+      snackDayThree.textContent = veganMix[indexGiven2[2]].mealSunset;
       snackDayThree.nextElementSibling.textContent =
-        veganMix[PlaceIntInArrTwo()[2]].mealSunsetSide[0];
+        veganMix[indexGiven2[2]].mealSunsetSide[0];
       snackDayThree.nextElementSibling.nextElementSibling.textContent =
-        veganMix[PlaceIntInArrTwo()[2]].mealSunsetSide[1];
+        veganMix[indexGiven2[2]].mealSunsetSide[1];
 
-      supaDayThree.textContent = veganMix[PlaceIntInArrTwo()[2]].eveningmeal;
+      supaDayThree.textContent = veganMix[indexGiven2[2]].eveningmeal;
       supaDayThree.nextElementSibling.textContent =
-        veganMix[PlaceIntInArrTwo()[2]].eveningmealside[0];
+        veganMix[indexGiven2[2]].eveningmealside[0];
       supaDayThree.nextElementSibling.nextElementSibling.textContent =
-        veganMix[PlaceIntInArrTwo()[2]].eveningmealside[1];
+        veganMix[indexGiven2[2]].eveningmealside[1];
 
       //day4
       let breakfastDayFour = document.querySelector(
@@ -1584,29 +1584,29 @@ document.addEventListener("DOMContentLoaded", () => {
       let snackDayFour = document.querySelector("#day4 .day-card .snack dt");
       let supaDayFour = document.querySelector("#day4 .day-card .supa dt");
 
-      breakfastDayFour.textContent = veganMix[PlaceIntInArrTwo()[3]].breakfast;
+      breakfastDayFour.textContent = veganMix[indexGiven2[3]].breakfast;
       breakfastDayFour.nextElementSibling.textContent =
-        veganMix[PlaceIntInArrTwo()[3]].breakfastSide[0];
+        veganMix[indexGiven2[3]].breakfastSide[0];
       breakfastDayFour.nextElementSibling.nextElementSibling.textContent =
-        veganMix[PlaceIntInArrTwo()[3]].breakfastSide[1];
+        veganMix[indexGiven2[3]].breakfastSide[1];
 
-      lunchDayFour.textContent = veganMix[PlaceIntInArrTwo()[3]].lunch;
+      lunchDayFour.textContent = veganMix[indexGiven2[3]].lunch;
       lunchDayFour.nextElementSibling.textContent =
-        veganMix[PlaceIntInArrTwo()[3]].lunchside[0];
+        veganMix[indexGiven2[3]].lunchside[0];
       lunchDayFour.nextElementSibling.nextElementSibling.textContent =
-        veganMix[PlaceIntInArrTwo()[3]].lunchside[1];
+        veganMix[indexGiven2[3]].lunchside[1];
 
-      snackDayFour.textContent = veganMix[PlaceIntInArrTwo()[3]].mealSunset;
+      snackDayFour.textContent = veganMix[indexGiven2[3]].mealSunset;
       snackDayFour.nextElementSibling.textContent =
-        veganMix[PlaceIntInArrTwo()[3]].mealSunsetSide[0];
+        veganMix[indexGiven2[3]].mealSunsetSide[0];
       snackDayFour.nextElementSibling.nextElementSibling.textContent =
-        veganMix[PlaceIntInArrTwo()[3]].mealSunsetSide[1];
+        veganMix[indexGiven2[3]].mealSunsetSide[1];
 
-      supaDayFour.textContent = veganMix[PlaceIntInArrTwo()[3]].eveningmeal;
+      supaDayFour.textContent = veganMix[indexGiven2[3]].eveningmeal;
       supaDayFour.nextElementSibling.textContent =
-        veganMix[PlaceIntInArrTwo()[3]].eveningmealside[0];
+        veganMix[indexGiven2[3]].eveningmealside[0];
       supaDayFour.nextElementSibling.nextElementSibling.textContent =
-        veganMix[PlaceIntInArrTwo()[3]].eveningmealside[1];
+        veganMix[indexGiven2[3]].eveningmealside[1];
 
       //day5
       let breakfastDayFive = document.querySelector(
@@ -1616,29 +1616,29 @@ document.addEventListener("DOMContentLoaded", () => {
       let snackDayFive = document.querySelector("#day5 .day-card .snack dt");
       let supaDayFive = document.querySelector("#day5 .day-card .supa dt");
 
-      breakfastDayFive.textContent = veganMix[PlaceIntInArrTwo()[4]].breakfast;
+      breakfastDayFive.textContent = veganMix[indexGiven2[4]].breakfast;
       breakfastDayFive.nextElementSibling.textContent =
-        veganMix[PlaceIntInArrTwo()[4]].breakfastSide[0];
+        veganMix[indexGiven2[4]].breakfastSide[0];
       breakfastDayFive.nextElementSibling.nextElementSibling.textContent =
-        veganMix[PlaceIntInArrTwo()[4]].breakfastSide[1];
+        veganMix[indexGiven2[4]].breakfastSide[1];
 
-      lunchDayFive.textContent = veganMix[PlaceIntInArrTwo()[4]].lunch;
+      lunchDayFive.textContent = veganMix[indexGiven2[4]].lunch;
       lunchDayFive.nextElementSibling.textContent =
-        veganMix[PlaceIntInArrTwo()[4]].lunchside[0];
+        veganMix[indexGiven2[4]].lunchside[0];
       lunchDayFive.nextElementSibling.nextElementSibling.textContent =
-        veganMix[PlaceIntInArrTwo()[4]].lunchside[1];
+        veganMix[indexGiven2[4]].lunchside[1];
 
-      snackDayFive.textContent = veganMix[PlaceIntInArrTwo()[4]].mealSunset;
+      snackDayFive.textContent = veganMix[indexGiven2[4]].mealSunset;
       snackDayFive.nextElementSibling.textContent =
-        veganMix[PlaceIntInArrTwo()[4]].mealSunsetSide[0];
+        veganMix[indexGiven2[4]].mealSunsetSide[0];
       snackDayFive.nextElementSibling.nextElementSibling.textContent =
-        veganMix[PlaceIntInArrTwo()[4]].mealSunsetSide[1];
+        veganMix[indexGiven2[4]].mealSunsetSide[1];
 
-      supaDayFive.textContent = veganMix[PlaceIntInArrTwo()[4]].eveningmeal;
+      supaDayFive.textContent = veganMix[indexGiven2[4]].eveningmeal;
       supaDayFive.nextElementSibling.textContent =
-        veganMix[PlaceIntInArrTwo()[4]].eveningmealside[0];
+        veganMix[indexGiven2[4]].eveningmealside[0];
       supaDayFive.nextElementSibling.nextElementSibling.textContent =
-        veganMix[PlaceIntInArrTwo()[4]].eveningmealside[1];
+        veganMix[indexGiven2[4]].eveningmealside[1];
 
       //day6
       let breakfastDaySix = document.querySelector(
@@ -1648,29 +1648,29 @@ document.addEventListener("DOMContentLoaded", () => {
       let snackDaySix = document.querySelector("#day6 .day-card .snack dt");
       let supaDaySix = document.querySelector("#day6 .day-card .supa dt");
 
-      breakfastDaySix.textContent = veganMix[PlaceIntInArrTwo()[5]].breakfast;
+      breakfastDaySix.textContent = veganMix[indexGiven2[5]].breakfast;
       breakfastDaySix.nextElementSibling.textContent =
-        veganMix[PlaceIntInArrTwo()[5]].breakfastSide[0];
+        veganMix[indexGiven2[5]].breakfastSide[0];
       breakfastDaySix.nextElementSibling.nextElementSibling.textContent =
-        veganMix[PlaceIntInArrTwo()[5]].breakfastSide[1];
+        veganMix[indexGiven2[5]].breakfastSide[1];
 
-      lunchDaySix.textContent = veganMix[PlaceIntInArrTwo()[5]].lunch;
+      lunchDaySix.textContent = veganMix[indexGiven2[5]].lunch;
       lunchDaySix.nextElementSibling.textContent =
-        veganMix[PlaceIntInArrTwo()[5]].lunchside[0];
+        veganMix[indexGiven2[5]].lunchside[0];
       lunchDaySix.nextElementSibling.nextElementSibling.textContent =
-        veganMix[PlaceIntInArrTwo()[5]].lunchside[1];
+        veganMix[indexGiven2[5]].lunchside[1];
 
-      snackDaySix.textContent = veganMix[PlaceIntInArrTwo()[5]].mealSunset;
+      snackDaySix.textContent = veganMix[indexGiven2[5]].mealSunset;
       snackDaySix.nextElementSibling.textContent =
-        veganMix[PlaceIntInArrTwo()[5]].mealSunsetSide[0];
+        veganMix[indexGiven2[5]].mealSunsetSide[0];
       snackDaySix.nextElementSibling.nextElementSibling.textContent =
-        veganMix[PlaceIntInArrTwo()[5]].mealSunsetSide[1];
+        veganMix[indexGiven2[5]].mealSunsetSide[1];
 
-      supaDaySix.textContent = veganMix[PlaceIntInArrTwo()[5]].eveningmeal;
+      supaDaySix.textContent = veganMix[indexGiven2[5]].eveningmeal;
       supaDaySix.nextElementSibling.textContent =
-        veganMix[PlaceIntInArrTwo()[5]].eveningmealside[0];
+        veganMix[indexGiven2[5]].eveningmealside[0];
       supaDaySix.nextElementSibling.nextElementSibling.textContent =
-        veganMix[PlaceIntInArrTwo()[5]].eveningmealside[1];
+        veganMix[indexGiven2[5]].eveningmealside[1];
 
       //day7
       let breakfastDaySeven = document.querySelector(
@@ -1680,29 +1680,29 @@ document.addEventListener("DOMContentLoaded", () => {
       let snackDaySeven = document.querySelector("#day7 .day-card .snack dt");
       let supaDaySeven = document.querySelector("#day7 .day-card .supa dt");
 
-      breakfastDaySeven.textContent = veganMix[PlaceIntInArrTwo()[6]].breakfast;
+      breakfastDaySeven.textContent = veganMix[indexGiven2[6]].breakfast;
       breakfastDaySeven.nextElementSibling.textContent =
-        veganMix[PlaceIntInArrTwo()[6]].breakfastSide[0];
+        veganMix[indexGiven2[6]].breakfastSide[0];
       breakfastDaySeven.nextElementSibling.nextElementSibling.textContent =
-        veganMix[PlaceIntInArrTwo()[6]].breakfastSide[1];
+        veganMix[indexGiven2[6]].breakfastSide[1];
 
-      lunchDaySeven.textContent = veganMix[PlaceIntInArrTwo()[6]].lunch;
+      lunchDaySeven.textContent = veganMix[indexGiven2[6]].lunch;
       lunchDaySeven.nextElementSibling.textContent =
-        veganMix[PlaceIntInArrTwo()[6]].lunchside[0];
+        veganMix[indexGiven2[6]].lunchside[0];
       lunchDaySeven.nextElementSibling.nextElementSibling.textContent =
-        veganMix[PlaceIntInArrTwo()[6]].lunchside[1];
+        veganMix[indexGiven2[6]].lunchside[1];
 
-      snackDaySeven.textContent = veganMix[PlaceIntInArrTwo()[6]].mealSunset;
+      snackDaySeven.textContent = veganMix[indexGiven2[6]].mealSunset;
       snackDaySeven.nextElementSibling.textContent =
-        veganMix[PlaceIntInArrTwo()[6]].mealSunsetSide[0];
+        veganMix[indexGiven2[6]].mealSunsetSide[0];
       snackDaySeven.nextElementSibling.nextElementSibling.textContent =
-        veganMix[PlaceIntInArrTwo()[6]].mealSunsetSide[1];
+        veganMix[indexGiven2[6]].mealSunsetSide[1];
 
-      supaDaySeven.textContent = veganMix[PlaceIntInArrTwo()[6]].eveningmeal;
+      supaDaySeven.textContent = veganMix[indexGiven2[6]].eveningmeal;
       supaDaySeven.nextElementSibling.textContent =
-        veganMix[PlaceIntInArrTwo()[6]].eveningmealside[0];
+        veganMix[indexGiven2[6]].eveningmealside[0];
       supaDaySeven.nextElementSibling.nextElementSibling.textContent =
-        veganMix[PlaceIntInArrTwo()[6]].eveningmealside[1];
+        veganMix[indexGiven2[6]].eveningmealside[1];
     }
     //***************************************************** DIABETIC MEALS *********************************************************/
     // diabetic one
@@ -1718,19 +1718,19 @@ document.addEventListener("DOMContentLoaded", () => {
       //to place unique code on header
       let unigueCode = document.getElementById("special-code");
       unigueCode.textContent =
-        PlaceIntInArr()[0] +
+        indexGiven[0] +
         " - " +
-        PlaceIntInArr()[1] +
+        indexGiven[1] +
         " - " +
-        PlaceIntInArr()[2] +
+        indexGiven[2] +
         " - " +
-        PlaceIntInArr()[3] +
+        indexGiven[3] +
         " - " +
-        PlaceIntInArr()[4] +
+        indexGiven[4] +
         " - " +
-        PlaceIntInArr()[5] +
+        indexGiven[5] +
         " - " +
-        PlaceIntInArr()[6];
+        indexGiven[6];
 
       //day1 //variables holding location
       let breakfastDayOne = document.querySelector(
@@ -1742,29 +1742,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
       //placing the meals on document
 
-      breakfastDayOne.textContent = diabeticZed[PlaceIntInArr()[0]].breakfast;
+      breakfastDayOne.textContent = diabeticZed[indexGiven[0]].breakfast;
       breakfastDayOne.nextElementSibling.textContent =
-        diabeticZed[PlaceIntInArr()[0]].breakfastSide[0];
+        diabeticZed[indexGiven[0]].breakfastSide[0];
       breakfastDayOne.nextElementSibling.nextElementSibling.textContent =
-        diabeticZed[PlaceIntInArr()[0]].breakfastSide[1];
+        diabeticZed[indexGiven[0]].breakfastSide[1];
 
-      lunchDayOne.textContent = diabeticZed[PlaceIntInArr()[0]].lunch;
+      lunchDayOne.textContent = diabeticZed[indexGiven[0]].lunch;
       lunchDayOne.nextElementSibling.textContent =
-        diabeticZed[PlaceIntInArr()[0]].lunchside[0];
+        diabeticZed[indexGiven[0]].lunchside[0];
       lunchDayOne.nextElementSibling.nextElementSibling.textContent =
-        diabeticZed[PlaceIntInArr()[0]].lunchside[1];
+        diabeticZed[indexGiven[0]].lunchside[1];
 
-      snackDayOne.textContent = diabeticZed[PlaceIntInArr()[0]].mealSunset;
+      snackDayOne.textContent = diabeticZed[indexGiven[0]].mealSunset;
       snackDayOne.nextElementSibling.textContent =
-        diabeticZed[PlaceIntInArr()[0]].mealSunsetSide[0];
+        diabeticZed[indexGiven[0]].mealSunsetSide[0];
       snackDayOne.nextElementSibling.nextElementSibling.textContent =
-        diabeticZed[PlaceIntInArr()[0]].mealSunsetSide[1];
+        diabeticZed[indexGiven[0]].mealSunsetSide[1];
 
-      supaDayOne.textContent = diabeticZed[PlaceIntInArr()[0]].eveningmeal;
+      supaDayOne.textContent = diabeticZed[indexGiven[0]].eveningmeal;
       supaDayOne.nextElementSibling.textContent =
-        diabeticZed[PlaceIntInArr()[0]].eveningmealside[0];
+        diabeticZed[indexGiven[0]].eveningmealside[0];
       supaDayOne.nextElementSibling.nextElementSibling.textContent =
-        diabeticZed[PlaceIntInArr()[0]].eveningmealside[1];
+        diabeticZed[indexGiven[0]].eveningmealside[1];
 
       //day2
       let breakfastDayTwo = document.querySelector(
@@ -1774,29 +1774,29 @@ document.addEventListener("DOMContentLoaded", () => {
       let snackDayTwo = document.querySelector("#day2 .day-card .snack dt");
       let supaDayTwo = document.querySelector("#day2 .day-card .supa dt");
 
-      breakfastDayTwo.textContent = diabeticZed[PlaceIntInArr()[1]].breakfast;
+      breakfastDayTwo.textContent = diabeticZed[indexGiven[1]].breakfast;
       breakfastDayTwo.nextElementSibling.textContent =
-        diabeticZed[PlaceIntInArr()[1]].breakfastSide[0];
+        diabeticZed[indexGiven[1]].breakfastSide[0];
       breakfastDayTwo.nextElementSibling.nextElementSibling.textContent =
-        diabeticZed[PlaceIntInArr()[1]].breakfastSide[1];
+        diabeticZed[indexGiven[1]].breakfastSide[1];
 
-      lunchDayTwo.textContent = diabeticZed[PlaceIntInArr()[1]].lunch;
+      lunchDayTwo.textContent = diabeticZed[indexGiven[1]].lunch;
       lunchDayTwo.nextElementSibling.textContent =
-        diabeticZed[PlaceIntInArr()[1]].lunchside[0];
+        diabeticZed[indexGiven[1]].lunchside[0];
       lunchDayTwo.nextElementSibling.nextElementSibling.textContent =
-        diabeticZed[PlaceIntInArr()[1]].lunchside[1];
+        diabeticZed[indexGiven[1]].lunchside[1];
 
-      snackDayTwo.textContent = normalized[PlaceIntInArr()[1]].mealSunset;
+      snackDayTwo.textContent = normalized[indexGiven[1]].mealSunset;
       snackDayTwo.nextElementSibling.textContent =
-        normalized[PlaceIntInArr()[1]].mealSunsetSide[0];
+        normalized[indexGiven[1]].mealSunsetSide[0];
       snackDayTwo.nextElementSibling.nextElementSibling.textContent =
-        normalized[PlaceIntInArr()[1]].mealSunsetSide[1];
+        normalized[indexGiven[1]].mealSunsetSide[1];
 
-      supaDayTwo.textContent = diabeticZed[PlaceIntInArr()[1]].eveningmeal;
+      supaDayTwo.textContent = diabeticZed[indexGiven[1]].eveningmeal;
       supaDayTwo.nextElementSibling.textContent =
-        diabeticZed[PlaceIntInArr()[1]].eveningmealside[0];
+        diabeticZed[indexGiven[1]].eveningmealside[0];
       supaDayTwo.nextElementSibling.nextElementSibling.textContent =
-        diabeticZed[PlaceIntInArr()[1]].eveningmealside[1];
+        diabeticZed[indexGiven[1]].eveningmealside[1];
 
       //day3
       let breakfastDayThree = document.querySelector(
@@ -1806,29 +1806,29 @@ document.addEventListener("DOMContentLoaded", () => {
       let snackDayThree = document.querySelector("#day3 .day-card .snack dt");
       let supaDayThree = document.querySelector("#day3 .day-card .supa dt");
 
-      breakfastDayThree.textContent = diabeticZed[PlaceIntInArr()[2]].breakfast;
+      breakfastDayThree.textContent = diabeticZed[indexGiven[2]].breakfast;
       breakfastDayThree.nextElementSibling.textContent =
-        diabeticZed[PlaceIntInArr()[2]].breakfastSide[0];
+        diabeticZed[indexGiven[2]].breakfastSide[0];
       breakfastDayThree.nextElementSibling.nextElementSibling.textContent =
-        diabeticZed[PlaceIntInArr()[2]].breakfastSide[1];
+        diabeticZed[indexGiven[2]].breakfastSide[1];
 
-      lunchDayThree.textContent = diabeticZed[PlaceIntInArr()[2]].lunch;
+      lunchDayThree.textContent = diabeticZed[indexGiven[2]].lunch;
       lunchDayThree.nextElementSibling.textContent =
-        diabeticZed[PlaceIntInArr()[2]].lunchside[0];
+        diabeticZed[indexGiven[2]].lunchside[0];
       lunchDayThree.nextElementSibling.nextElementSibling.textContent =
-        diabeticZed[PlaceIntInArr()[2]].lunchside[1];
+        diabeticZed[indexGiven[2]].lunchside[1];
 
-      snackDayThree.textContent = diabeticZed[PlaceIntInArr()[2]].mealSunset;
+      snackDayThree.textContent = diabeticZed[indexGiven[2]].mealSunset;
       snackDayThree.nextElementSibling.textContent =
-        diabeticZed[PlaceIntInArr()[2]].mealSunsetSide[0];
+        diabeticZed[indexGiven[2]].mealSunsetSide[0];
       snackDayThree.nextElementSibling.nextElementSibling.textContent =
-        diabeticZed[PlaceIntInArr()[2]].mealSunsetSide[1];
+        diabeticZed[indexGiven[2]].mealSunsetSide[1];
 
-      supaDayThree.textContent = diabeticZed[PlaceIntInArr()[2]].eveningmeal;
+      supaDayThree.textContent = diabeticZed[indexGiven[2]].eveningmeal;
       supaDayThree.nextElementSibling.textContent =
-        diabeticZed[PlaceIntInArr()[2]].eveningmealside[0];
+        diabeticZed[indexGiven[2]].eveningmealside[0];
       supaDayThree.nextElementSibling.nextElementSibling.textContent =
-        diabeticZed[PlaceIntInArr()[2]].eveningmealside[1];
+        diabeticZed[indexGiven[2]].eveningmealside[1];
 
       //day4
       let breakfastDayFour = document.querySelector(
@@ -1838,29 +1838,29 @@ document.addEventListener("DOMContentLoaded", () => {
       let snackDayFour = document.querySelector("#day4 .day-card .snack dt");
       let supaDayFour = document.querySelector("#day4 .day-card .supa dt");
 
-      breakfastDayFour.textContent = diabeticZed[PlaceIntInArr()[3]].breakfast;
+      breakfastDayFour.textContent = diabeticZed[indexGiven[3]].breakfast;
       breakfastDayFour.nextElementSibling.textContent =
-        diabeticZed[PlaceIntInArr()[3]].breakfastSide[0];
+        diabeticZed[indexGiven[3]].breakfastSide[0];
       breakfastDayFour.nextElementSibling.nextElementSibling.textContent =
-        diabeticZed[PlaceIntInArr()[3]].breakfastSide[1];
+        diabeticZed[indexGiven[3]].breakfastSide[1];
 
-      lunchDayFour.textContent = diabeticZed[PlaceIntInArr()[3]].lunch;
+      lunchDayFour.textContent = diabeticZed[indexGiven[3]].lunch;
       lunchDayFour.nextElementSibling.textContent =
-        diabeticZed[PlaceIntInArr()[3]].lunchside[0];
+        diabeticZed[indexGiven[3]].lunchside[0];
       lunchDayFour.nextElementSibling.nextElementSibling.textContent =
-        diabeticZed[PlaceIntInArr()[3]].lunchside[1];
+        diabeticZed[indexGiven[3]].lunchside[1];
 
-      snackDayFour.textContent = diabeticZed[PlaceIntInArr()[3]].mealSunset;
+      snackDayFour.textContent = diabeticZed[indexGiven[3]].mealSunset;
       snackDayFour.nextElementSibling.textContent =
-        diabeticZed[PlaceIntInArr()[3]].mealSunsetSide[0];
+        diabeticZed[indexGiven[3]].mealSunsetSide[0];
       snackDayFour.nextElementSibling.nextElementSibling.textContent =
-        diabeticZed[PlaceIntInArr()[3]].mealSunsetSide[1];
+        diabeticZed[indexGiven[3]].mealSunsetSide[1];
 
-      supaDayFour.textContent = diabeticZed[PlaceIntInArr()[3]].eveningmeal;
+      supaDayFour.textContent = diabeticZed[indexGiven[3]].eveningmeal;
       supaDayFour.nextElementSibling.textContent =
-        diabeticZed[PlaceIntInArr()[3]].eveningmealside[0];
+        diabeticZed[indexGiven[3]].eveningmealside[0];
       supaDayFour.nextElementSibling.nextElementSibling.textContent =
-        diabeticZed[PlaceIntInArr()[3]].eveningmealside[1];
+        diabeticZed[indexGiven[3]].eveningmealside[1];
 
       //day5
       let breakfastDayFive = document.querySelector(
@@ -1870,29 +1870,29 @@ document.addEventListener("DOMContentLoaded", () => {
       let snackDayFive = document.querySelector("#day5 .day-card .snack dt");
       let supaDayFive = document.querySelector("#day5 .day-card .supa dt");
 
-      breakfastDayFive.textContent = diabeticZed[PlaceIntInArr()[4]].breakfast;
+      breakfastDayFive.textContent = diabeticZed[indexGiven[4]].breakfast;
       breakfastDayFive.nextElementSibling.textContent =
-        diabeticZed[PlaceIntInArr()[4]].breakfastSide[0];
+        diabeticZed[indexGiven[4]].breakfastSide[0];
       breakfastDayFive.nextElementSibling.nextElementSibling.textContent =
-        diabeticZed[PlaceIntInArr()[4]].breakfastSide[1];
+        diabeticZed[indexGiven[4]].breakfastSide[1];
 
-      lunchDayFive.textContent = diabeticZed[PlaceIntInArr()[4]].lunch;
+      lunchDayFive.textContent = diabeticZed[indexGiven[4]].lunch;
       lunchDayFive.nextElementSibling.textContent =
-        diabeticZed[PlaceIntInArr()[4]].lunchside[0];
+        diabeticZed[indexGiven[4]].lunchside[0];
       lunchDayFive.nextElementSibling.nextElementSibling.textContent =
-        diabeticZed[PlaceIntInArr()[4]].lunchside[1];
+        diabeticZed[indexGiven[4]].lunchside[1];
 
-      snackDayFive.textContent = diabeticZed[PlaceIntInArr()[4]].mealSunset;
+      snackDayFive.textContent = diabeticZed[indexGiven[4]].mealSunset;
       snackDayFive.nextElementSibling.textContent =
-        diabeticZed[PlaceIntInArr()[4]].mealSunsetSide[0];
+        diabeticZed[indexGiven[4]].mealSunsetSide[0];
       snackDayFive.nextElementSibling.nextElementSibling.textContent =
-        diabeticZed[PlaceIntInArr()[4]].mealSunsetSide[1];
+        diabeticZed[indexGiven[4]].mealSunsetSide[1];
 
-      supaDayFive.textContent = diabeticZed[PlaceIntInArr()[4]].eveningmeal;
+      supaDayFive.textContent = diabeticZed[indexGiven[4]].eveningmeal;
       supaDayFive.nextElementSibling.textContent =
-        diabeticZed[PlaceIntInArr()[4]].eveningmealside[0];
+        diabeticZed[indexGiven[4]].eveningmealside[0];
       supaDayFive.nextElementSibling.nextElementSibling.textContent =
-        diabeticZed[PlaceIntInArr()[4]].eveningmealside[1];
+        diabeticZed[indexGiven[4]].eveningmealside[1];
 
       //day6
       let breakfastDaySix = document.querySelector(
@@ -1902,29 +1902,29 @@ document.addEventListener("DOMContentLoaded", () => {
       let snackDaySix = document.querySelector("#day6 .day-card .snack dt");
       let supaDaySix = document.querySelector("#day6 .day-card .supa dt");
 
-      breakfastDaySix.textContent = diabeticZed[PlaceIntInArr()[5]].breakfast;
+      breakfastDaySix.textContent = diabeticZed[indexGiven[5]].breakfast;
       breakfastDaySix.nextElementSibling.textContent =
-        diabeticZed[PlaceIntInArr()[5]].breakfastSide[0];
+        diabeticZed[indexGiven[5]].breakfastSide[0];
       breakfastDaySix.nextElementSibling.nextElementSibling.textContent =
-        diabeticZed[PlaceIntInArr()[5]].breakfastSide[1];
+        diabeticZed[indexGiven[5]].breakfastSide[1];
 
-      lunchDaySix.textContent = diabeticZed[PlaceIntInArr()[5]].lunch;
+      lunchDaySix.textContent = diabeticZed[indexGiven[5]].lunch;
       lunchDaySix.nextElementSibling.textContent =
-        diabeticZed[PlaceIntInArr()[5]].lunchside[0];
+        diabeticZed[indexGiven[5]].lunchside[0];
       lunchDaySix.nextElementSibling.nextElementSibling.textContent =
-        diabeticZed[PlaceIntInArr()[5]].lunchside[1];
+        diabeticZed[indexGiven[5]].lunchside[1];
 
-      snackDaySix.textContent = diabeticZed[PlaceIntInArr()[5]].mealSunset;
+      snackDaySix.textContent = diabeticZed[indexGiven[5]].mealSunset;
       snackDaySix.nextElementSibling.textContent =
-        diabeticZed[PlaceIntInArr()[5]].mealSunsetSide[0];
+        diabeticZed[indexGiven[5]].mealSunsetSide[0];
       snackDaySix.nextElementSibling.nextElementSibling.textContent =
-        diabeticZed[PlaceIntInArr()[5]].mealSunsetSide[1];
+        diabeticZed[indexGiven[5]].mealSunsetSide[1];
 
-      supaDaySix.textContent = diabeticZed[PlaceIntInArr()[5]].eveningmeal;
+      supaDaySix.textContent = diabeticZed[indexGiven[5]].eveningmeal;
       supaDaySix.nextElementSibling.textContent =
-        diabeticZed[PlaceIntInArr()[5]].eveningmealside[0];
+        diabeticZed[indexGiven[5]].eveningmealside[0];
       supaDaySix.nextElementSibling.nextElementSibling.textContent =
-        diabeticZed[PlaceIntInArr()[5]].eveningmealside[1];
+        diabeticZed[indexGiven[5]].eveningmealside[1];
 
       //day7
       let breakfastDaySeven = document.querySelector(
@@ -1934,29 +1934,29 @@ document.addEventListener("DOMContentLoaded", () => {
       let snackDaySeven = document.querySelector("#day7 .day-card .snack dt");
       let supaDaySeven = document.querySelector("#day7 .day-card .supa dt");
 
-      breakfastDaySeven.textContent = diabeticZed[PlaceIntInArr()[6]].breakfast;
+      breakfastDaySeven.textContent = diabeticZed[indexGiven[6]].breakfast;
       breakfastDaySeven.nextElementSibling.textContent =
-        diabeticZed[PlaceIntInArr()[6]].breakfastSide[0];
+        diabeticZed[indexGiven[6]].breakfastSide[0];
       breakfastDaySeven.nextElementSibling.nextElementSibling.textContent =
-        diabeticZed[PlaceIntInArr()[6]].breakfastSide[1];
+        diabeticZed[indexGiven[6]].breakfastSide[1];
 
-      lunchDaySeven.textContent = diabeticZed[PlaceIntInArr()[6]].lunch;
+      lunchDaySeven.textContent = diabeticZed[indexGiven[6]].lunch;
       lunchDaySeven.nextElementSibling.textContent =
-        diabeticZed[PlaceIntInArr()[6]].lunchside[0];
+        diabeticZed[indexGiven[6]].lunchside[0];
       lunchDaySeven.nextElementSibling.nextElementSibling.textContent =
-        diabeticZed[PlaceIntInArr()[6]].lunchside[1];
+        diabeticZed[indexGiven[6]].lunchside[1];
 
-      snackDaySeven.textContent = diabeticZed[PlaceIntInArr()[6]].mealSunset;
+      snackDaySeven.textContent = diabeticZed[indexGiven[6]].mealSunset;
       snackDaySeven.nextElementSibling.textContent =
-        diabeticZed[PlaceIntInArr()[6]].mealSunsetSide[0];
+        diabeticZed[indexGiven[6]].mealSunsetSide[0];
       snackDaySeven.nextElementSibling.nextElementSibling.textContent =
-        diabeticZed[PlaceIntInArr()[6]].mealSunsetSide[1];
+        diabeticZed[indexGiven[6]].mealSunsetSide[1];
 
-      supaDaySeven.textContent = diabeticZed[PlaceIntInArr()[6]].eveningmeal;
+      supaDaySeven.textContent = diabeticZed[indexGiven[6]].eveningmeal;
       supaDaySeven.nextElementSibling.textContent =
-        diabeticZed[PlaceIntInArr()[6]].eveningmealside[0];
+        diabeticZed[indexGiven[6]].eveningmealside[0];
       supaDaySeven.nextElementSibling.nextElementSibling.textContent =
-        diabeticZed[PlaceIntInArr()[6]].eveningmealside[1];
+        diabeticZed[indexGiven[6]].eveningmealside[1];
     }
     // diabetic two
     else if (
@@ -1967,19 +1967,19 @@ document.addEventListener("DOMContentLoaded", () => {
       //to place unique code on header
       let unigueCode = document.getElementById("special-code");
       unigueCode.textContent =
-        PlaceIntInArr()[0] +
+        indexGiven[0] +
         " - " +
-        PlaceIntInArr()[1] +
+        indexGiven[1] +
         " - " +
-        PlaceIntInArr()[2] +
+        indexGiven[2] +
         " - " +
-        PlaceIntInArr()[3] +
+        indexGiven[3] +
         " - " +
-        PlaceIntInArr()[4] +
+        indexGiven[4] +
         " - " +
-        PlaceIntInArr()[5] +
+        indexGiven[5] +
         " - " +
-        PlaceIntInArr()[6];
+        indexGiven[6];
       //to place unique word on top
       let FancyName = document.getElementById("special-name");
       FancyName.textContent = diabetic2;
@@ -1994,29 +1994,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
       //placing the meals on document
 
-      breakfastDayOne.textContent = diabeticWest[PlaceIntInArr()[0]].breakfast;
+      breakfastDayOne.textContent = diabeticWest[indexGiven[0]].breakfast;
       breakfastDayOne.nextElementSibling.textContent =
-        diabeticWest[PlaceIntInArr()[0]].breakfastSide[0];
+        diabeticWest[indexGiven[0]].breakfastSide[0];
       breakfastDayOne.nextElementSibling.nextElementSibling.textContent =
-        diabeticWest[PlaceIntInArr()[0]].breakfastSide[1];
+        diabeticWest[indexGiven[0]].breakfastSide[1];
 
-      lunchDayOne.textContent = diabeticWest[PlaceIntInArr()[0]].lunch;
+      lunchDayOne.textContent = diabeticWest[indexGiven[0]].lunch;
       lunchDayOne.nextElementSibling.textContent =
-        diabeticWest[PlaceIntInArr()[0]].lunchside[0];
+        diabeticWest[indexGiven[0]].lunchside[0];
       lunchDayOne.nextElementSibling.nextElementSibling.textContent =
-        diabeticWest[PlaceIntInArr()[0]].lunchside[1];
+        diabeticWest[indexGiven[0]].lunchside[1];
 
-      snackDayOne.textContent = diabeticWest[PlaceIntInArr()[0]].mealSunset;
+      snackDayOne.textContent = diabeticWest[indexGiven[0]].mealSunset;
       snackDayOne.nextElementSibling.textContent =
-        diabeticWest[PlaceIntInArr()[0]].mealSunsetSide[0];
+        diabeticWest[indexGiven[0]].mealSunsetSide[0];
       snackDayOne.nextElementSibling.nextElementSibling.textContent =
-        diabeticWest[PlaceIntInArr()[0]].mealSunsetSide[1];
+        diabeticWest[indexGiven[0]].mealSunsetSide[1];
 
-      supaDayOne.textContent = diabeticWest[PlaceIntInArr()[0]].eveningmeal;
+      supaDayOne.textContent = diabeticWest[indexGiven[0]].eveningmeal;
       supaDayOne.nextElementSibling.textContent =
-        diabeticWest[PlaceIntInArr()[0]].eveningmealside[0];
+        diabeticWest[indexGiven[0]].eveningmealside[0];
       supaDayOne.nextElementSibling.nextElementSibling.textContent =
-        diabeticWest[PlaceIntInArr()[0]].eveningmealside[1];
+        diabeticWest[indexGiven[0]].eveningmealside[1];
 
       //day2
       let breakfastDayTwo = document.querySelector(
@@ -2026,29 +2026,29 @@ document.addEventListener("DOMContentLoaded", () => {
       let snackDayTwo = document.querySelector("#day2 .day-card .snack dt");
       let supaDayTwo = document.querySelector("#day2 .day-card .supa dt");
 
-      breakfastDayTwo.textContent = diabeticWest[PlaceIntInArr()[1]].breakfast;
+      breakfastDayTwo.textContent = diabeticWest[indexGiven[1]].breakfast;
       breakfastDayTwo.nextElementSibling.textContent =
-        diabeticWest[PlaceIntInArr()[1]].breakfastSide[0];
+        diabeticWest[indexGiven[1]].breakfastSide[0];
       breakfastDayTwo.nextElementSibling.nextElementSibling.textContent =
-        diabeticWest[PlaceIntInArr()[1]].breakfastSide[1];
+        diabeticWest[indexGiven[1]].breakfastSide[1];
 
-      lunchDayTwo.textContent = diabeticWest[PlaceIntInArr()[1]].lunch;
+      lunchDayTwo.textContent = diabeticWest[indexGiven[1]].lunch;
       lunchDayTwo.nextElementSibling.textContent =
-        diabeticWest[PlaceIntInArr()[1]].lunchside[0];
+        diabeticWest[indexGiven[1]].lunchside[0];
       lunchDayTwo.nextElementSibling.nextElementSibling.textContent =
-        diabeticWest[PlaceIntInArr()[1]].lunchside[1];
+        diabeticWest[indexGiven[1]].lunchside[1];
 
-      snackDayTwo.textContent = diabeticWest[PlaceIntInArr()[1]].mealSunset;
+      snackDayTwo.textContent = diabeticWest[indexGiven[1]].mealSunset;
       snackDayTwo.nextElementSibling.textContent =
-        diabeticWest[PlaceIntInArr()[1]].mealSunsetSide[0];
+        diabeticWest[indexGiven[1]].mealSunsetSide[0];
       snackDayTwo.nextElementSibling.nextElementSibling.textContent =
-        diabeticWest[PlaceIntInArr()[1]].mealSunsetSide[1];
+        diabeticWest[indexGiven[1]].mealSunsetSide[1];
 
-      supaDayTwo.textContent = diabeticWest[PlaceIntInArr()[1]].eveningmeal;
+      supaDayTwo.textContent = diabeticWest[indexGiven[1]].eveningmeal;
       supaDayTwo.nextElementSibling.textContent =
-        diabeticWest[PlaceIntInArr()[1]].eveningmealside[0];
+        diabeticWest[indexGiven[1]].eveningmealside[0];
       supaDayTwo.nextElementSibling.nextElementSibling.textContent =
-        diabeticWest[PlaceIntInArr()[1]].eveningmealside[1];
+        diabeticWest[indexGiven[1]].eveningmealside[1];
 
       //day3
       let breakfastDayThree = document.querySelector(
@@ -2059,29 +2059,29 @@ document.addEventListener("DOMContentLoaded", () => {
       let supaDayThree = document.querySelector("#day3 .day-card .supa dt");
 
       breakfastDayThree.textContent =
-        diabeticWest[PlaceIntInArr()[2]].breakfast;
+        diabeticWest[indexGiven[2]].breakfast;
       breakfastDayThree.nextElementSibling.textContent =
-        diabeticWest[PlaceIntInArr()[2]].breakfastSide[0];
+        diabeticWest[indexGiven[2]].breakfastSide[0];
       breakfastDayThree.nextElementSibling.nextElementSibling.textContent =
-        diabeticWest[PlaceIntInArr()[2]].breakfastSide[1];
+        diabeticWest[indexGiven[2]].breakfastSide[1];
 
-      lunchDayThree.textContent = diabeticWest[PlaceIntInArr()[2]].lunch;
+      lunchDayThree.textContent = diabeticWest[indexGiven[2]].lunch;
       lunchDayThree.nextElementSibling.textContent =
-        diabeticWest[PlaceIntInArr()[2]].lunchside[0];
+        diabeticWest[indexGiven[2]].lunchside[0];
       lunchDayThree.nextElementSibling.nextElementSibling.textContent =
-        diabeticWest[PlaceIntInArr()[2]].lunchside[1];
+        diabeticWest[indexGiven[2]].lunchside[1];
 
-      snackDayThree.textContent = diabeticWest[PlaceIntInArr()[2]].mealSunset;
+      snackDayThree.textContent = diabeticWest[indexGiven[2]].mealSunset;
       snackDayThree.nextElementSibling.textContent =
-        diabeticWest[PlaceIntInArr()[2]].mealSunsetSide[0];
+        diabeticWest[indexGiven[2]].mealSunsetSide[0];
       snackDayThree.nextElementSibling.nextElementSibling.textContent =
-        diabeticWest[PlaceIntInArr()[2]].mealSunsetSide[1];
+        diabeticWest[indexGiven[2]].mealSunsetSide[1];
 
-      supaDayThree.textContent = diabeticWest[PlaceIntInArr()[2]].eveningmeal;
+      supaDayThree.textContent = diabeticWest[indexGiven[2]].eveningmeal;
       supaDayThree.nextElementSibling.textContent =
-        diabeticWest[PlaceIntInArr()[2]].eveningmealside[0];
+        diabeticWest[indexGiven[2]].eveningmealside[0];
       supaDayThree.nextElementSibling.nextElementSibling.textContent =
-        diabeticWest[PlaceIntInArr()[2]].eveningmealside[1];
+        diabeticWest[indexGiven[2]].eveningmealside[1];
 
       //day4
       let breakfastDayFour = document.querySelector(
@@ -2091,29 +2091,29 @@ document.addEventListener("DOMContentLoaded", () => {
       let snackDayFour = document.querySelector("#day4 .day-card .snack dt");
       let supaDayFour = document.querySelector("#day4 .day-card .supa dt");
 
-      breakfastDayFour.textContent = diabeticWest[PlaceIntInArr()[3]].breakfast;
+      breakfastDayFour.textContent = diabeticWest[indexGiven[3]].breakfast;
       breakfastDayFour.nextElementSibling.textContent =
-        diabeticWest[PlaceIntInArr()[3]].breakfastSide[0];
+        diabeticWest[indexGiven[3]].breakfastSide[0];
       breakfastDayFour.nextElementSibling.nextElementSibling.textContent =
-        diabeticWest[PlaceIntInArr()[3]].breakfastSide[1];
+        diabeticWest[indexGiven[3]].breakfastSide[1];
 
-      lunchDayFour.textContent = diabeticWest[PlaceIntInArr()[3]].lunch;
+      lunchDayFour.textContent = diabeticWest[indexGiven[3]].lunch;
       lunchDayFour.nextElementSibling.textContent =
-        diabeticWest[PlaceIntInArr()[3]].lunchside[0];
+        diabeticWest[indexGiven[3]].lunchside[0];
       lunchDayFour.nextElementSibling.nextElementSibling.textContent =
-        diabeticWest[PlaceIntInArr()[3]].lunchside[1];
+        diabeticWest[indexGiven[3]].lunchside[1];
 
-      snackDayFour.textContent = diabeticWest[PlaceIntInArr()[3]].mealSunset;
+      snackDayFour.textContent = diabeticWest[indexGiven[3]].mealSunset;
       snackDayFour.nextElementSibling.textContent =
-        diabeticWest[PlaceIntInArr()[3]].mealSunsetSide[0];
+        diabeticWest[indexGiven[3]].mealSunsetSide[0];
       snackDayFour.nextElementSibling.nextElementSibling.textContent =
-        diabeticWest[PlaceIntInArr()[3]].mealSunsetSide[1];
+        diabeticWest[indexGiven[3]].mealSunsetSide[1];
 
-      supaDayFour.textContent = diabeticWest[PlaceIntInArr()[3]].eveningmeal;
+      supaDayFour.textContent = diabeticWest[indexGiven[3]].eveningmeal;
       supaDayFour.nextElementSibling.textContent =
-        diabeticWest[PlaceIntInArr()[3]].eveningmealside[0];
+        diabeticWest[indexGiven[3]].eveningmealside[0];
       supaDayFour.nextElementSibling.nextElementSibling.textContent =
-        diabeticWest[PlaceIntInArr()[3]].eveningmealside[1];
+        diabeticWest[indexGiven[3]].eveningmealside[1];
 
       //day5
       let breakfastDayFive = document.querySelector(
@@ -2123,29 +2123,29 @@ document.addEventListener("DOMContentLoaded", () => {
       let snackDayFive = document.querySelector("#day5 .day-card .snack dt");
       let supaDayFive = document.querySelector("#day5 .day-card .supa dt");
 
-      breakfastDayFive.textContent = diabeticWest[PlaceIntInArr()[4]].breakfast;
+      breakfastDayFive.textContent = diabeticWest[indexGiven[4]].breakfast;
       breakfastDayFive.nextElementSibling.textContent =
-        diabeticWest[PlaceIntInArr()[4]].breakfastSide[0];
+        diabeticWest[indexGiven[4]].breakfastSide[0];
       breakfastDayFive.nextElementSibling.nextElementSibling.textContent =
-        diabeticWest[PlaceIntInArr()[4]].breakfastSide[1];
+        diabeticWest[indexGiven[4]].breakfastSide[1];
 
-      lunchDayFive.textContent = diabeticWest[PlaceIntInArr()[4]].lunch;
+      lunchDayFive.textContent = diabeticWest[indexGiven[4]].lunch;
       lunchDayFive.nextElementSibling.textContent =
-        diabeticWest[PlaceIntInArr()[4]].lunchside[0];
+        diabeticWest[indexGiven[4]].lunchside[0];
       lunchDayFive.nextElementSibling.nextElementSibling.textContent =
-        diabeticWest[PlaceIntInArr()[4]].lunchside[1];
+        diabeticWest[indexGiven[4]].lunchside[1];
 
-      snackDayFive.textContent = diabeticWest[PlaceIntInArr()[4]].mealSunset;
+      snackDayFive.textContent = diabeticWest[indexGiven[4]].mealSunset;
       snackDayFive.nextElementSibling.textContent =
-        diabeticWest[PlaceIntInArr()[4]].mealSunsetSide[0];
+        diabeticWest[indexGiven[4]].mealSunsetSide[0];
       snackDayFive.nextElementSibling.nextElementSibling.textContent =
-        diabeticWest[PlaceIntInArr()[4]].mealSunsetSide[1];
+        diabeticWest[indexGiven[4]].mealSunsetSide[1];
 
-      supaDayFive.textContent = diabeticWest[PlaceIntInArr()[4]].eveningmeal;
+      supaDayFive.textContent = diabeticWest[indexGiven[4]].eveningmeal;
       supaDayFive.nextElementSibling.textContent =
-        diabeticWest[PlaceIntInArr()[4]].eveningmealside[0];
+        diabeticWest[indexGiven[4]].eveningmealside[0];
       supaDayFive.nextElementSibling.nextElementSibling.textContent =
-        diabeticWest[PlaceIntInArr()[4]].eveningmealside[1];
+        diabeticWest[indexGiven[4]].eveningmealside[1];
 
       //day6
       let breakfastDaySix = document.querySelector(
@@ -2155,29 +2155,29 @@ document.addEventListener("DOMContentLoaded", () => {
       let snackDaySix = document.querySelector("#day6 .day-card .snack dt");
       let supaDaySix = document.querySelector("#day6 .day-card .supa dt");
 
-      breakfastDaySix.textContent = diabeticWest[PlaceIntInArr()[5]].breakfast;
+      breakfastDaySix.textContent = diabeticWest[indexGiven[5]].breakfast;
       breakfastDaySix.nextElementSibling.textContent =
-        diabeticWest[PlaceIntInArr()[5]].breakfastSide[0];
+        diabeticWest[indexGiven[5]].breakfastSide[0];
       breakfastDaySix.nextElementSibling.nextElementSibling.textContent =
-        diabeticWest[PlaceIntInArr()[5]].breakfastSide[1];
+        diabeticWest[indexGiven[5]].breakfastSide[1];
 
-      lunchDaySix.textContent = diabeticWest[PlaceIntInArr()[5]].lunch;
+      lunchDaySix.textContent = diabeticWest[indexGiven[5]].lunch;
       lunchDaySix.nextElementSibling.textContent =
-        diabeticWest[PlaceIntInArr()[5]].lunchside[0];
+        diabeticWest[indexGiven[5]].lunchside[0];
       lunchDaySix.nextElementSibling.nextElementSibling.textContent =
-        diabeticWest[PlaceIntInArr()[5]].lunchside[1];
+        diabeticWest[indexGiven[5]].lunchside[1];
 
-      snackDaySix.textContent = diabeticWest[PlaceIntInArr()[5]].mealSunset;
+      snackDaySix.textContent = diabeticWest[indexGiven[5]].mealSunset;
       snackDaySix.nextElementSibling.textContent =
-        diabeticWest[PlaceIntInArr()[5]].mealSunsetSide[0];
+        diabeticWest[indexGiven[5]].mealSunsetSide[0];
       snackDaySix.nextElementSibling.nextElementSibling.textContent =
-        diabeticWest[PlaceIntInArr()[5]].mealSunsetSide[1];
+        diabeticWest[indexGiven[5]].mealSunsetSide[1];
 
-      supaDaySix.textContent = diabeticWest[PlaceIntInArr()[5]].eveningmeal;
+      supaDaySix.textContent = diabeticWest[indexGiven[5]].eveningmeal;
       supaDaySix.nextElementSibling.textContent =
-        diabeticWest[PlaceIntInArr()[5]].eveningmealside[0];
+        diabeticWest[indexGiven[5]].eveningmealside[0];
       supaDaySix.nextElementSibling.nextElementSibling.textContent =
-        diabeticWest[PlaceIntInArr()[5]].eveningmealside[1];
+        diabeticWest[indexGiven[5]].eveningmealside[1];
 
       //day7
       let breakfastDaySeven = document.querySelector(
@@ -2188,29 +2188,29 @@ document.addEventListener("DOMContentLoaded", () => {
       let supaDaySeven = document.querySelector("#day7 .day-card .supa dt");
 
       breakfastDaySeven.textContent =
-        diabeticWest[PlaceIntInArr()[6]].breakfast;
+        diabeticWest[indexGiven[6]].breakfast;
       breakfastDaySeven.nextElementSibling.textContent =
-        diabeticWest[PlaceIntInArr()[6]].breakfastSide[0];
+        diabeticWest[indexGiven[6]].breakfastSide[0];
       breakfastDaySeven.nextElementSibling.nextElementSibling.textContent =
-        diabeticWest[PlaceIntInArr()[6]].breakfastSide[1];
+        diabeticWest[indexGiven[6]].breakfastSide[1];
 
-      lunchDaySeven.textContent = diabeticWest[PlaceIntInArr()[6]].lunch;
+      lunchDaySeven.textContent = diabeticWest[indexGiven[6]].lunch;
       lunchDaySeven.nextElementSibling.textContent =
-        diabeticWest[PlaceIntInArr()[6]].lunchside[0];
+        diabeticWest[indexGiven[6]].lunchside[0];
       lunchDaySeven.nextElementSibling.nextElementSibling.textContent =
-        diabeticWest[PlaceIntInArr()[6]].lunchside[1];
+        diabeticWest[indexGiven[6]].lunchside[1];
 
-      snackDaySeven.textContent = diabeticWest[PlaceIntInArr()[6]].mealSunset;
+      snackDaySeven.textContent = diabeticWest[indexGiven[6]].mealSunset;
       snackDaySeven.nextElementSibling.textContent =
-        diabeticWest[PlaceIntInArr()[6]].mealSunsetSide[0];
+        diabeticWest[indexGiven[6]].mealSunsetSide[0];
       snackDaySeven.nextElementSibling.nextElementSibling.textContent =
-        diabeticWest[PlaceIntInArr()[6]].mealSunsetSide[1];
+        diabeticWest[indexGiven[6]].mealSunsetSide[1];
 
-      supaDaySeven.textContent = diabeticWest[PlaceIntInArr()[6]].eveningmeal;
+      supaDaySeven.textContent = diabeticWest[indexGiven[6]].eveningmeal;
       supaDaySeven.nextElementSibling.textContent =
-        diabeticWest[PlaceIntInArr()[6]].eveningmealside[0];
+        diabeticWest[indexGiven[6]].eveningmealside[0];
       supaDaySeven.nextElementSibling.nextElementSibling.textContent =
-        diabeticWest[PlaceIntInArr()[6]].eveningmealside[1];
+        diabeticWest[indexGiven[6]].eveningmealside[1];
     }
     // diabetic three
     else if (
@@ -2221,19 +2221,19 @@ document.addEventListener("DOMContentLoaded", () => {
       //to place unique code on header
       let unigueCode = document.getElementById("special-code");
       unigueCode.textContent =
-        PlaceIntInArrTwo()[0] +
+        indexGiven2[0] +
         " - " +
-        PlaceIntInArrTwo()[1] +
+        indexGiven2[1] +
         " - " +
-        PlaceIntInArrTwo()[2] +
+        indexGiven2[2] +
         " - " +
-        PlaceIntInArrTwo()[3] +
+        indexGiven2[3] +
         " - " +
-        PlaceIntInArrTwo()[4] +
+        indexGiven2[4] +
         " - " +
-        PlaceIntInArrTwo()[5] +
+        indexGiven2[5] +
         " - " +
-        PlaceIntInArrTwo()[6];
+        indexGiven2[6];
       //to place unique word on top
       let FancyName = document.getElementById("special-name");
       FancyName.textContent = diabetic3;
@@ -2249,29 +2249,29 @@ document.addEventListener("DOMContentLoaded", () => {
       //placing the meals on document
 
       breakfastDayOne.textContent =
-        diabeticMix[PlaceIntInArrTwo()[0]].breakfast;
+        diabeticMix[indexGiven2[0]].breakfast;
       breakfastDayOne.nextElementSibling.textContent =
-        diabeticMix[PlaceIntInArrTwo()[0]].breakfastSide[0];
+        diabeticMix[indexGiven2[0]].breakfastSide[0];
       breakfastDayOne.nextElementSibling.nextElementSibling.textContent =
-        diabeticMix[PlaceIntInArrTwo()[0]].breakfastSide[1];
+        diabeticMix[indexGiven2[0]].breakfastSide[1];
 
-      lunchDayOne.textContent = diabeticMix[PlaceIntInArrTwo()[0]].lunch;
+      lunchDayOne.textContent = diabeticMix[indexGiven2[0]].lunch;
       lunchDayOne.nextElementSibling.textContent =
-        diabeticMix[PlaceIntInArrTwo()[0]].lunchside[0];
+        diabeticMix[indexGiven2[0]].lunchside[0];
       lunchDayOne.nextElementSibling.nextElementSibling.textContent =
-        diabeticMix[PlaceIntInArrTwo()[0]].lunchside[1];
+        diabeticMix[indexGiven2[0]].lunchside[1];
 
-      snackDayOne.textContent = diabeticMix[PlaceIntInArrTwo()[0]].mealSunset;
+      snackDayOne.textContent = diabeticMix[indexGiven2[0]].mealSunset;
       snackDayOne.nextElementSibling.textContent =
-        diabeticMix[PlaceIntInArrTwo()[0]].mealSunsetSide[0];
+        diabeticMix[indexGiven2[0]].mealSunsetSide[0];
       snackDayOne.nextElementSibling.nextElementSibling.textContent =
-        diabeticMix[PlaceIntInArrTwo()[0]].mealSunsetSide[1];
+        diabeticMix[indexGiven2[0]].mealSunsetSide[1];
 
-      supaDayOne.textContent = diabeticMix[PlaceIntInArrTwo()[0]].eveningmeal;
+      supaDayOne.textContent = diabeticMix[indexGiven2[0]].eveningmeal;
       supaDayOne.nextElementSibling.textContent =
-        diabeticMix[PlaceIntInArrTwo()[0]].eveningmealside[0];
+        diabeticMix[indexGiven2[0]].eveningmealside[0];
       supaDayOne.nextElementSibling.nextElementSibling.textContent =
-        diabeticMix[PlaceIntInArrTwo()[0]].eveningmealside[1];
+        diabeticMix[indexGiven2[0]].eveningmealside[1];
 
       //day2
       let breakfastDayTwo = document.querySelector(
@@ -2282,29 +2282,29 @@ document.addEventListener("DOMContentLoaded", () => {
       let supaDayTwo = document.querySelector("#day2 .day-card .supa dt");
 
       breakfastDayTwo.textContent =
-        diabeticMix[PlaceIntInArrTwo()[1]].breakfast;
+        diabeticMix[indexGiven2[1]].breakfast;
       breakfastDayTwo.nextElementSibling.textContent =
-        diabeticMix[PlaceIntInArrTwo()[1]].breakfastSide[0];
+        diabeticMix[indexGiven2[1]].breakfastSide[0];
       breakfastDayTwo.nextElementSibling.nextElementSibling.textContent =
-        diabeticMix[PlaceIntInArrTwo()[1]].breakfastSide[1];
+        diabeticMix[indexGiven2[1]].breakfastSide[1];
 
-      lunchDayTwo.textContent = diabeticMix[PlaceIntInArrTwo()[1]].lunch;
+      lunchDayTwo.textContent = diabeticMix[indexGiven2[1]].lunch;
       lunchDayTwo.nextElementSibling.textContent =
-        diabeticMix[PlaceIntInArrTwo()[1]].lunchside[0];
+        diabeticMix[indexGiven2[1]].lunchside[0];
       lunchDayTwo.nextElementSibling.nextElementSibling.textContent =
-        diabeticMix[PlaceIntInArrTwo()[1]].lunchside[1];
+        diabeticMix[indexGiven2[1]].lunchside[1];
 
-      snackDayTwo.textContent = diabeticMix[PlaceIntInArrTwo()[1]].mealSunset;
+      snackDayTwo.textContent = diabeticMix[indexGiven2[1]].mealSunset;
       snackDayTwo.nextElementSibling.textContent =
-        diabeticMix[PlaceIntInArrTwo()[1]].mealSunsetSide[0];
+        diabeticMix[indexGiven2[1]].mealSunsetSide[0];
       snackDayTwo.nextElementSibling.nextElementSibling.textContent =
-        diabeticMix[PlaceIntInArrTwo()[1]].mealSunsetSide[1];
+        diabeticMix[indexGiven2[1]].mealSunsetSide[1];
 
-      supaDayTwo.textContent = diabeticMix[PlaceIntInArrTwo()[1]].eveningmeal;
+      supaDayTwo.textContent = diabeticMix[indexGiven2[1]].eveningmeal;
       supaDayTwo.nextElementSibling.textContent =
-        diabeticMix[PlaceIntInArrTwo()[1]].eveningmealside[0];
+        diabeticMix[indexGiven2[1]].eveningmealside[0];
       supaDayTwo.nextElementSibling.nextElementSibling.textContent =
-        diabeticMix[PlaceIntInArrTwo()[1]].eveningmealside[1];
+        diabeticMix[indexGiven2[1]].eveningmealside[1];
 
       //day3
       let breakfastDayThree = document.querySelector(
@@ -2315,29 +2315,29 @@ document.addEventListener("DOMContentLoaded", () => {
       let supaDayThree = document.querySelector("#day3 .day-card .supa dt");
 
       breakfastDayThree.textContent =
-        diabeticMix[PlaceIntInArrTwo()[2]].breakfast;
+        diabeticMix[indexGiven2[2]].breakfast;
       breakfastDayThree.nextElementSibling.textContent =
-        diabeticMix[PlaceIntInArrTwo()[2]].breakfastSide[0];
+        diabeticMix[indexGiven2[2]].breakfastSide[0];
       breakfastDayThree.nextElementSibling.nextElementSibling.textContent =
-        diabeticMix[PlaceIntInArrTwo()[2]].breakfastSide[1];
+        diabeticMix[indexGiven2[2]].breakfastSide[1];
 
-      lunchDayThree.textContent = diabeticMix[PlaceIntInArrTwo()[2]].lunch;
+      lunchDayThree.textContent = diabeticMix[indexGiven2[2]].lunch;
       lunchDayThree.nextElementSibling.textContent =
-        diabeticMix[PlaceIntInArrTwo()[2]].lunchside[0];
+        diabeticMix[indexGiven2[2]].lunchside[0];
       lunchDayThree.nextElementSibling.nextElementSibling.textContent =
-        diabeticMix[PlaceIntInArrTwo()[2]].lunchside[1];
+        diabeticMix[indexGiven2[2]].lunchside[1];
 
-      snackDayThree.textContent = diabeticMix[PlaceIntInArrTwo()[2]].mealSunset;
+      snackDayThree.textContent = diabeticMix[indexGiven2[2]].mealSunset;
       snackDayThree.nextElementSibling.textContent =
-        diabeticMix[PlaceIntInArrTwo()[2]].mealSunsetSide[0];
+        diabeticMix[indexGiven2[2]].mealSunsetSide[0];
       snackDayThree.nextElementSibling.nextElementSibling.textContent =
-        diabeticMix[PlaceIntInArrTwo()[2]].mealSunsetSide[1];
+        diabeticMix[indexGiven2[2]].mealSunsetSide[1];
 
-      supaDayThree.textContent = diabeticMix[PlaceIntInArrTwo()[2]].eveningmeal;
+      supaDayThree.textContent = diabeticMix[indexGiven2[2]].eveningmeal;
       supaDayThree.nextElementSibling.textContent =
-        diabeticMix[PlaceIntInArrTwo()[2]].eveningmealside[0];
+        diabeticMix[indexGiven2[2]].eveningmealside[0];
       supaDayThree.nextElementSibling.nextElementSibling.textContent =
-        diabeticMix[PlaceIntInArrTwo()[2]].eveningmealside[1];
+        diabeticMix[indexGiven2[2]].eveningmealside[1];
 
       //day4
       let breakfastDayFour = document.querySelector(
@@ -2348,29 +2348,29 @@ document.addEventListener("DOMContentLoaded", () => {
       let supaDayFour = document.querySelector("#day4 .day-card .supa dt");
 
       breakfastDayFour.textContent =
-        diabeticMix[PlaceIntInArrTwo()[3]].breakfast;
+        diabeticMix[indexGiven2[3]].breakfast;
       breakfastDayFour.nextElementSibling.textContent =
-        diabeticMix[PlaceIntInArrTwo()[3]].breakfastSide[0];
+        diabeticMix[indexGiven2[3]].breakfastSide[0];
       breakfastDayFour.nextElementSibling.nextElementSibling.textContent =
-        diabeticMix[PlaceIntInArrTwo()[3]].breakfastSide[1];
+        diabeticMix[indexGiven2[3]].breakfastSide[1];
 
-      lunchDayFour.textContent = diabeticMix[PlaceIntInArrTwo()[3]].lunch;
+      lunchDayFour.textContent = diabeticMix[indexGiven2[3]].lunch;
       lunchDayFour.nextElementSibling.textContent =
-        diabeticMix[PlaceIntInArrTwo()[3]].lunchside[0];
+        diabeticMix[indexGiven2[3]].lunchside[0];
       lunchDayFour.nextElementSibling.nextElementSibling.textContent =
-        diabeticMix[PlaceIntInArrTwo()[3]].lunchside[1];
+        diabeticMix[indexGiven2[3]].lunchside[1];
 
-      snackDayFour.textContent = diabeticMix[PlaceIntInArrTwo()[3]].mealSunset;
+      snackDayFour.textContent = diabeticMix[indexGiven2[3]].mealSunset;
       snackDayFour.nextElementSibling.textContent =
-        diabeticMix[PlaceIntInArrTwo()[3]].mealSunsetSide[0];
+        diabeticMix[indexGiven2[3]].mealSunsetSide[0];
       snackDayFour.nextElementSibling.nextElementSibling.textContent =
-        diabeticMix[PlaceIntInArrTwo()[3]].mealSunsetSide[1];
+        diabeticMix[indexGiven2[3]].mealSunsetSide[1];
 
-      supaDayFour.textContent = diabeticMix[PlaceIntInArrTwo()[3]].eveningmeal;
+      supaDayFour.textContent = diabeticMix[indexGiven2[3]].eveningmeal;
       supaDayFour.nextElementSibling.textContent =
-        diabeticMix[PlaceIntInArrTwo()[3]].eveningmealside[0];
+        diabeticMix[indexGiven2[3]].eveningmealside[0];
       supaDayFour.nextElementSibling.nextElementSibling.textContent =
-        diabeticMix[PlaceIntInArrTwo()[3]].eveningmealside[1];
+        diabeticMix[indexGiven2[3]].eveningmealside[1];
 
       //day5
       let breakfastDayFive = document.querySelector(
@@ -2381,29 +2381,29 @@ document.addEventListener("DOMContentLoaded", () => {
       let supaDayFive = document.querySelector("#day5 .day-card .supa dt");
 
       breakfastDayFive.textContent =
-        diabeticMix[PlaceIntInArrTwo()[4]].breakfast;
+        diabeticMix[indexGiven2[4]].breakfast;
       breakfastDayFive.nextElementSibling.textContent =
-        diabeticMix[PlaceIntInArrTwo()[4]].breakfastSide[0];
+        diabeticMix[indexGiven2[4]].breakfastSide[0];
       breakfastDayFive.nextElementSibling.nextElementSibling.textContent =
-        diabeticMix[PlaceIntInArrTwo()[4]].breakfastSide[1];
+        diabeticMix[indexGiven2[4]].breakfastSide[1];
 
-      lunchDayFive.textContent = diabeticMix[PlaceIntInArrTwo()[4]].lunch;
+      lunchDayFive.textContent = diabeticMix[indexGiven2[4]].lunch;
       lunchDayFive.nextElementSibling.textContent =
-        diabeticMix[PlaceIntInArrTwo()[4]].lunchside[0];
+        diabeticMix[indexGiven2[4]].lunchside[0];
       lunchDayFive.nextElementSibling.nextElementSibling.textContent =
-        diabeticMix[PlaceIntInArrTwo()[4]].lunchside[1];
+        diabeticMix[indexGiven2[4]].lunchside[1];
 
-      snackDayFive.textContent = diabeticMix[PlaceIntInArrTwo()[4]].mealSunset;
+      snackDayFive.textContent = diabeticMix[indexGiven2[4]].mealSunset;
       snackDayFive.nextElementSibling.textContent =
-        diabeticMix[PlaceIntInArrTwo()[4]].mealSunsetSide[0];
+        diabeticMix[indexGiven2[4]].mealSunsetSide[0];
       snackDayFive.nextElementSibling.nextElementSibling.textContent =
-        diabeticMix[PlaceIntInArrTwo()[4]].mealSunsetSide[1];
+        diabeticMix[indexGiven2[4]].mealSunsetSide[1];
 
-      supaDayFive.textContent = diabeticMix[PlaceIntInArrTwo()[4]].eveningmeal;
+      supaDayFive.textContent = diabeticMix[indexGiven2[4]].eveningmeal;
       supaDayFive.nextElementSibling.textContent =
-        diabeticMix[PlaceIntInArrTwo()[4]].eveningmealside[0];
+        diabeticMix[indexGiven2[4]].eveningmealside[0];
       supaDayFive.nextElementSibling.nextElementSibling.textContent =
-        diabeticMix[PlaceIntInArrTwo()[4]].eveningmealside[1];
+        diabeticMix[indexGiven2[4]].eveningmealside[1];
 
       //day6
       let breakfastDaySix = document.querySelector(
@@ -2414,29 +2414,29 @@ document.addEventListener("DOMContentLoaded", () => {
       let supaDaySix = document.querySelector("#day6 .day-card .supa dt");
 
       breakfastDaySix.textContent =
-        diabeticMix[PlaceIntInArrTwo()[5]].breakfast;
+        diabeticMix[indexGiven2[5]].breakfast;
       breakfastDaySix.nextElementSibling.textContent =
-        diabeticMix[PlaceIntInArrTwo()[5]].breakfastSide[0];
+        diabeticMix[indexGiven2[5]].breakfastSide[0];
       breakfastDaySix.nextElementSibling.nextElementSibling.textContent =
-        diabeticMix[PlaceIntInArrTwo()[5]].breakfastSide[1];
+        diabeticMix[indexGiven2[5]].breakfastSide[1];
 
-      lunchDaySix.textContent = diabeticMix[PlaceIntInArrTwo()[5]].lunch;
+      lunchDaySix.textContent = diabeticMix[indexGiven2[5]].lunch;
       lunchDaySix.nextElementSibling.textContent =
-        diabeticMix[PlaceIntInArrTwo()[5]].lunchside[0];
+        diabeticMix[indexGiven2[5]].lunchside[0];
       lunchDaySix.nextElementSibling.nextElementSibling.textContent =
-        diabeticMix[PlaceIntInArrTwo()[5]].lunchside[1];
+        diabeticMix[indexGiven2[5]].lunchside[1];
 
-      snackDaySix.textContent = diabeticMix[PlaceIntInArrTwo()[5]].mealSunset;
+      snackDaySix.textContent = diabeticMix[indexGiven2[5]].mealSunset;
       snackDaySix.nextElementSibling.textContent =
-        diabeticMix[PlaceIntInArrTwo()[5]].mealSunsetSide[0];
+        diabeticMix[indexGiven2[5]].mealSunsetSide[0];
       snackDaySix.nextElementSibling.nextElementSibling.textContent =
-        diabeticMix[PlaceIntInArrTwo()[5]].mealSunsetSide[1];
+        diabeticMix[indexGiven2[5]].mealSunsetSide[1];
 
-      supaDaySix.textContent = diabeticMix[PlaceIntInArrTwo()[5]].eveningmeal;
+      supaDaySix.textContent = diabeticMix[indexGiven2[5]].eveningmeal;
       supaDaySix.nextElementSibling.textContent =
-        diabeticMix[PlaceIntInArrTwo()[5]].eveningmealside[0];
+        diabeticMix[indexGiven2[5]].eveningmealside[0];
       supaDaySix.nextElementSibling.nextElementSibling.textContent =
-        diabeticMix[PlaceIntInArrTwo()[5]].eveningmealside[1];
+        diabeticMix[indexGiven2[5]].eveningmealside[1];
 
       //day7
       let breakfastDaySeven = document.querySelector(
@@ -2447,29 +2447,29 @@ document.addEventListener("DOMContentLoaded", () => {
       let supaDaySeven = document.querySelector("#day7 .day-card .supa dt");
 
       breakfastDaySeven.textContent =
-        diabeticMix[PlaceIntInArrTwo()[6]].breakfast;
+        diabeticMix[indexGiven2[6]].breakfast;
       breakfastDaySeven.nextElementSibling.textContent =
-        diabeticMix[PlaceIntInArrTwo()[6]].breakfastSide[0];
+        diabeticMix[indexGiven2[6]].breakfastSide[0];
       breakfastDaySeven.nextElementSibling.nextElementSibling.textContent =
-        diabeticMix[PlaceIntInArrTwo()[6]].breakfastSide[1];
+        diabeticMix[indexGiven2[6]].breakfastSide[1];
 
-      lunchDaySeven.textContent = diabeticMix[PlaceIntInArrTwo()[6]].lunch;
+      lunchDaySeven.textContent = diabeticMix[indexGiven2[6]].lunch;
       lunchDaySeven.nextElementSibling.textContent =
-        diabeticMix[PlaceIntInArrTwo()[6]].lunchside[0];
+        diabeticMix[indexGiven2[6]].lunchside[0];
       lunchDaySeven.nextElementSibling.nextElementSibling.textContent =
-        diabeticMix[PlaceIntInArrTwo()[6]].lunchside[1];
+        diabeticMix[indexGiven2[6]].lunchside[1];
 
-      snackDaySeven.textContent = diabeticMix[PlaceIntInArrTwo()[6]].mealSunset;
+      snackDaySeven.textContent = diabeticMix[indexGiven2[6]].mealSunset;
       snackDaySeven.nextElementSibling.textContent =
-        diabeticMix[PlaceIntInArrTwo()[6]].mealSunsetSide[0];
+        diabeticMix[indexGiven2[6]].mealSunsetSide[0];
       snackDaySeven.nextElementSibling.nextElementSibling.textContent =
-        diabeticMix[PlaceIntInArrTwo()[6]].mealSunsetSide[1];
+        diabeticMix[indexGiven2[6]].mealSunsetSide[1];
 
-      supaDaySeven.textContent = diabeticMix[PlaceIntInArrTwo()[6]].eveningmeal;
+      supaDaySeven.textContent = diabeticMix[indexGiven2[6]].eveningmeal;
       supaDaySeven.nextElementSibling.textContent =
-        diabeticMix[PlaceIntInArrTwo()[6]].eveningmealside[0];
+        diabeticMix[indexGiven2[6]].eveningmealside[0];
       supaDaySeven.nextElementSibling.nextElementSibling.textContent =
-        diabeticMix[PlaceIntInArrTwo()[6]].eveningmealside[1];
+        diabeticMix[indexGiven2[6]].eveningmealside[1];
     }
     // Pescaerian one
     else if (
@@ -2484,19 +2484,19 @@ document.addEventListener("DOMContentLoaded", () => {
       //to place unique code on header
       let unigueCode = document.getElementById("special-code");
       unigueCode.textContent =
-        PlaceIntInArr()[0] +
+        indexGiven[0] +
         " - " +
-        PlaceIntInArr()[1] +
+        indexGiven[1] +
         " - " +
-        PlaceIntInArr()[2] +
+        indexGiven[2] +
         " - " +
-        PlaceIntInArr()[3] +
+        indexGiven[3] +
         " - " +
-        PlaceIntInArr()[4] +
+        indexGiven[4] +
         " - " +
-        PlaceIntInArr()[5] +
+        indexGiven[5] +
         " - " +
-        PlaceIntInArr()[6];
+        indexGiven[6];
 
       //day1 //variables holding location
       let breakfastDayOne = document.querySelector(
@@ -2509,29 +2509,29 @@ document.addEventListener("DOMContentLoaded", () => {
       //placing the meals on document
 
       breakfastDayOne.textContent =
-        pescatarianZed[PlaceIntInArr()[0]].breakfast;
+        pescatarianZed[indexGiven[0]].breakfast;
       breakfastDayOne.nextElementSibling.textContent =
-        pescatarianZed[PlaceIntInArr()[0]].breakfastSide[0];
+        pescatarianZed[indexGiven[0]].breakfastSide[0];
       breakfastDayOne.nextElementSibling.nextElementSibling.textContent =
-        pescatarianZed[PlaceIntInArr()[0]].breakfastSide[1];
+        pescatarianZed[indexGiven[0]].breakfastSide[1];
 
-      lunchDayOne.textContent = pescatarianZed[PlaceIntInArr()[0]].lunch;
+      lunchDayOne.textContent = pescatarianZed[indexGiven[0]].lunch;
       lunchDayOne.nextElementSibling.textContent =
-        pescatarianZed[PlaceIntInArr()[0]].lunchside[0];
+        pescatarianZed[indexGiven[0]].lunchside[0];
       lunchDayOne.nextElementSibling.nextElementSibling.textContent =
-        pescatarianZed[PlaceIntInArr()[0]].lunchside[1];
+        pescatarianZed[indexGiven[0]].lunchside[1];
 
-      snackDayOne.textContent = pescatarianZed[PlaceIntInArr()[0]].mealSunset;
+      snackDayOne.textContent = pescatarianZed[indexGiven[0]].mealSunset;
       snackDayOne.nextElementSibling.textContent =
-        pescatarianZed[PlaceIntInArr()[0]].mealSunsetSide[0];
+        pescatarianZed[indexGiven[0]].mealSunsetSide[0];
       snackDayOne.nextElementSibling.nextElementSibling.textContent =
-        pescatarianZed[PlaceIntInArr()[0]].mealSunsetSide[1];
+        pescatarianZed[indexGiven[0]].mealSunsetSide[1];
 
-      supaDayOne.textContent = pescatarianZed[PlaceIntInArr()[0]].eveningmeal;
+      supaDayOne.textContent = pescatarianZed[indexGiven[0]].eveningmeal;
       supaDayOne.nextElementSibling.textContent =
-        pescatarianZed[PlaceIntInArr()[0]].eveningmealside[0];
+        pescatarianZed[indexGiven[0]].eveningmealside[0];
       supaDayOne.nextElementSibling.nextElementSibling.textContent =
-        pescatarianZed[PlaceIntInArr()[0]].eveningmealside[1];
+        pescatarianZed[indexGiven[0]].eveningmealside[1];
 
       //day2
       let breakfastDayTwo = document.querySelector(
@@ -2542,29 +2542,29 @@ document.addEventListener("DOMContentLoaded", () => {
       let supaDayTwo = document.querySelector("#day2 .day-card .supa dt");
 
       breakfastDayTwo.textContent =
-        pescatarianZed[PlaceIntInArr()[1]].breakfast;
+        pescatarianZed[indexGiven[1]].breakfast;
       breakfastDayTwo.nextElementSibling.textContent =
-        pescatarianZed[PlaceIntInArr()[1]].breakfastSide[0];
+        pescatarianZed[indexGiven[1]].breakfastSide[0];
       breakfastDayTwo.nextElementSibling.nextElementSibling.textContent =
-        pescatarianZed[PlaceIntInArr()[1]].breakfastSide[1];
+        pescatarianZed[indexGiven[1]].breakfastSide[1];
 
-      lunchDayTwo.textContent = pescatarianZed[PlaceIntInArr()[1]].lunch;
+      lunchDayTwo.textContent = pescatarianZed[indexGiven[1]].lunch;
       lunchDayTwo.nextElementSibling.textContent =
-        pescatarianZed[PlaceIntInArr()[1]].lunchside[0];
+        pescatarianZed[indexGiven[1]].lunchside[0];
       lunchDayTwo.nextElementSibling.nextElementSibling.textContent =
-        pescatarianZed[PlaceIntInArr()[1]].lunchside[1];
+        pescatarianZed[indexGiven[1]].lunchside[1];
 
-      snackDayTwo.textContent = normalized[PlaceIntInArr()[1]].mealSunset;
+      snackDayTwo.textContent = normalized[indexGiven[1]].mealSunset;
       snackDayTwo.nextElementSibling.textContent =
-        normalized[PlaceIntInArr()[1]].mealSunsetSide[0];
+        normalized[indexGiven[1]].mealSunsetSide[0];
       snackDayTwo.nextElementSibling.nextElementSibling.textContent =
-        normalized[PlaceIntInArr()[1]].mealSunsetSide[1];
+        normalized[indexGiven[1]].mealSunsetSide[1];
 
-      supaDayTwo.textContent = pescatarianZed[PlaceIntInArr()[1]].eveningmeal;
+      supaDayTwo.textContent = pescatarianZed[indexGiven[1]].eveningmeal;
       supaDayTwo.nextElementSibling.textContent =
-        pescatarianZed[PlaceIntInArr()[1]].eveningmealside[0];
+        pescatarianZed[indexGiven[1]].eveningmealside[0];
       supaDayTwo.nextElementSibling.nextElementSibling.textContent =
-        pescatarianZed[PlaceIntInArr()[1]].eveningmealside[1];
+        pescatarianZed[indexGiven[1]].eveningmealside[1];
 
       //day3
       let breakfastDayThree = document.querySelector(
@@ -2575,29 +2575,29 @@ document.addEventListener("DOMContentLoaded", () => {
       let supaDayThree = document.querySelector("#day3 .day-card .supa dt");
 
       breakfastDayThree.textContent =
-        pescatarianZed[PlaceIntInArr()[2]].breakfast;
+        pescatarianZed[indexGiven[2]].breakfast;
       breakfastDayThree.nextElementSibling.textContent =
-        pescatarianZed[PlaceIntInArr()[2]].breakfastSide[0];
+        pescatarianZed[indexGiven[2]].breakfastSide[0];
       breakfastDayThree.nextElementSibling.nextElementSibling.textContent =
-        pescatarianZed[PlaceIntInArr()[2]].breakfastSide[1];
+        pescatarianZed[indexGiven[2]].breakfastSide[1];
 
-      lunchDayThree.textContent = pescatarianZed[PlaceIntInArr()[2]].lunch;
+      lunchDayThree.textContent = pescatarianZed[indexGiven[2]].lunch;
       lunchDayThree.nextElementSibling.textContent =
-        pescatarianZed[PlaceIntInArr()[2]].lunchside[0];
+        pescatarianZed[indexGiven[2]].lunchside[0];
       lunchDayThree.nextElementSibling.nextElementSibling.textContent =
-        pescatarianZed[PlaceIntInArr()[2]].lunchside[1];
+        pescatarianZed[indexGiven[2]].lunchside[1];
 
-      snackDayThree.textContent = pescatarianZed[PlaceIntInArr()[2]].mealSunset;
+      snackDayThree.textContent = pescatarianZed[indexGiven[2]].mealSunset;
       snackDayThree.nextElementSibling.textContent =
-        pescatarianZed[PlaceIntInArr()[2]].mealSunsetSide[0];
+        pescatarianZed[indexGiven[2]].mealSunsetSide[0];
       snackDayThree.nextElementSibling.nextElementSibling.textContent =
-        pescatarianZed[PlaceIntInArr()[2]].mealSunsetSide[1];
+        pescatarianZed[indexGiven[2]].mealSunsetSide[1];
 
-      supaDayThree.textContent = pescatarianZed[PlaceIntInArr()[2]].eveningmeal;
+      supaDayThree.textContent = pescatarianZed[indexGiven[2]].eveningmeal;
       supaDayThree.nextElementSibling.textContent =
-        pescatarianZed[PlaceIntInArr()[2]].eveningmealside[0];
+        pescatarianZed[indexGiven[2]].eveningmealside[0];
       supaDayThree.nextElementSibling.nextElementSibling.textContent =
-        pescatarianZed[PlaceIntInArr()[2]].eveningmealside[1];
+        pescatarianZed[indexGiven[2]].eveningmealside[1];
 
       //day4
       let breakfastDayFour = document.querySelector(
@@ -2608,29 +2608,29 @@ document.addEventListener("DOMContentLoaded", () => {
       let supaDayFour = document.querySelector("#day4 .day-card .supa dt");
 
       breakfastDayFour.textContent =
-        pescatarianZed[PlaceIntInArr()[3]].breakfast;
+        pescatarianZed[indexGiven[3]].breakfast;
       breakfastDayFour.nextElementSibling.textContent =
-        pescatarianZed[PlaceIntInArr()[3]].breakfastSide[0];
+        pescatarianZed[indexGiven[3]].breakfastSide[0];
       breakfastDayFour.nextElementSibling.nextElementSibling.textContent =
-        pescatarianZed[PlaceIntInArr()[3]].breakfastSide[1];
+        pescatarianZed[indexGiven[3]].breakfastSide[1];
 
-      lunchDayFour.textContent = pescatarianZed[PlaceIntInArr()[3]].lunch;
+      lunchDayFour.textContent = pescatarianZed[indexGiven[3]].lunch;
       lunchDayFour.nextElementSibling.textContent =
-        pescatarianZed[PlaceIntInArr()[3]].lunchside[0];
+        pescatarianZed[indexGiven[3]].lunchside[0];
       lunchDayFour.nextElementSibling.nextElementSibling.textContent =
-        pescatarianZed[PlaceIntInArr()[3]].lunchside[1];
+        pescatarianZed[indexGiven[3]].lunchside[1];
 
-      snackDayFour.textContent = pescatarianZed[PlaceIntInArr()[3]].mealSunset;
+      snackDayFour.textContent = pescatarianZed[indexGiven[3]].mealSunset;
       snackDayFour.nextElementSibling.textContent =
-        pescatarianZed[PlaceIntInArr()[3]].mealSunsetSide[0];
+        pescatarianZed[indexGiven[3]].mealSunsetSide[0];
       snackDayFour.nextElementSibling.nextElementSibling.textContent =
-        pescatarianZed[PlaceIntInArr()[3]].mealSunsetSide[1];
+        pescatarianZed[indexGiven[3]].mealSunsetSide[1];
 
-      supaDayFour.textContent = pescatarianZed[PlaceIntInArr()[3]].eveningmeal;
+      supaDayFour.textContent = pescatarianZed[indexGiven[3]].eveningmeal;
       supaDayFour.nextElementSibling.textContent =
-        pescatarianZed[PlaceIntInArr()[3]].eveningmealside[0];
+        pescatarianZed[indexGiven[3]].eveningmealside[0];
       supaDayFour.nextElementSibling.nextElementSibling.textContent =
-        pescatarianZed[PlaceIntInArr()[3]].eveningmealside[1];
+        pescatarianZed[indexGiven[3]].eveningmealside[1];
 
       //day5
       let breakfastDayFive = document.querySelector(
@@ -2641,29 +2641,29 @@ document.addEventListener("DOMContentLoaded", () => {
       let supaDayFive = document.querySelector("#day5 .day-card .supa dt");
 
       breakfastDayFive.textContent =
-        pescatarianZed[PlaceIntInArr()[4]].breakfast;
+        pescatarianZed[indexGiven[4]].breakfast;
       breakfastDayFive.nextElementSibling.textContent =
-        pescatarianZed[PlaceIntInArr()[4]].breakfastSide[0];
+        pescatarianZed[indexGiven[4]].breakfastSide[0];
       breakfastDayFive.nextElementSibling.nextElementSibling.textContent =
-        pescatarianZed[PlaceIntInArr()[4]].breakfastSide[1];
+        pescatarianZed[indexGiven[4]].breakfastSide[1];
 
-      lunchDayFive.textContent = pescatarianZed[PlaceIntInArr()[4]].lunch;
+      lunchDayFive.textContent = pescatarianZed[indexGiven[4]].lunch;
       lunchDayFive.nextElementSibling.textContent =
-        pescatarianZed[PlaceIntInArr()[4]].lunchside[0];
+        pescatarianZed[indexGiven[4]].lunchside[0];
       lunchDayFive.nextElementSibling.nextElementSibling.textContent =
-        pescatarianZed[PlaceIntInArr()[4]].lunchside[1];
+        pescatarianZed[indexGiven[4]].lunchside[1];
 
-      snackDayFive.textContent = pescatarianZed[PlaceIntInArr()[4]].mealSunset;
+      snackDayFive.textContent = pescatarianZed[indexGiven[4]].mealSunset;
       snackDayFive.nextElementSibling.textContent =
-        pescatarianZed[PlaceIntInArr()[4]].mealSunsetSide[0];
+        pescatarianZed[indexGiven[4]].mealSunsetSide[0];
       snackDayFive.nextElementSibling.nextElementSibling.textContent =
-        pescatarianZed[PlaceIntInArr()[4]].mealSunsetSide[1];
+        pescatarianZed[indexGiven[4]].mealSunsetSide[1];
 
-      supaDayFive.textContent = pescatarianZed[PlaceIntInArr()[4]].eveningmeal;
+      supaDayFive.textContent = pescatarianZed[indexGiven[4]].eveningmeal;
       supaDayFive.nextElementSibling.textContent =
-        pescatarianZed[PlaceIntInArr()[4]].eveningmealside[0];
+        pescatarianZed[indexGiven[4]].eveningmealside[0];
       supaDayFive.nextElementSibling.nextElementSibling.textContent =
-        pescatarianZed[PlaceIntInArr()[4]].eveningmealside[1];
+        pescatarianZed[indexGiven[4]].eveningmealside[1];
 
       //day6
       let breakfastDaySix = document.querySelector(
@@ -2674,29 +2674,29 @@ document.addEventListener("DOMContentLoaded", () => {
       let supaDaySix = document.querySelector("#day6 .day-card .supa dt");
 
       breakfastDaySix.textContent =
-        pescatarianZed[PlaceIntInArr()[5]].breakfast;
+        pescatarianZed[indexGiven[5]].breakfast;
       breakfastDaySix.nextElementSibling.textContent =
-        pescatarianZed[PlaceIntInArr()[5]].breakfastSide[0];
+        pescatarianZed[indexGiven[5]].breakfastSide[0];
       breakfastDaySix.nextElementSibling.nextElementSibling.textContent =
-        pescatarianZed[PlaceIntInArr()[5]].breakfastSide[1];
+        pescatarianZed[indexGiven[5]].breakfastSide[1];
 
-      lunchDaySix.textContent = pescatarianZed[PlaceIntInArr()[5]].lunch;
+      lunchDaySix.textContent = pescatarianZed[indexGiven[5]].lunch;
       lunchDaySix.nextElementSibling.textContent =
-        pescatarianZed[PlaceIntInArr()[5]].lunchside[0];
+        pescatarianZed[indexGiven[5]].lunchside[0];
       lunchDaySix.nextElementSibling.nextElementSibling.textContent =
-        pescatarianZed[PlaceIntInArr()[5]].lunchside[1];
+        pescatarianZed[indexGiven[5]].lunchside[1];
 
-      snackDaySix.textContent = pescatarianZed[PlaceIntInArr()[5]].mealSunset;
+      snackDaySix.textContent = pescatarianZed[indexGiven[5]].mealSunset;
       snackDaySix.nextElementSibling.textContent =
-        pescatarianZed[PlaceIntInArr()[5]].mealSunsetSide[0];
+        pescatarianZed[indexGiven[5]].mealSunsetSide[0];
       snackDaySix.nextElementSibling.nextElementSibling.textContent =
-        pescatarianZed[PlaceIntInArr()[5]].mealSunsetSide[1];
+        pescatarianZed[indexGiven[5]].mealSunsetSide[1];
 
-      supaDaySix.textContent = pescatarianZed[PlaceIntInArr()[5]].eveningmeal;
+      supaDaySix.textContent = pescatarianZed[indexGiven[5]].eveningmeal;
       supaDaySix.nextElementSibling.textContent =
-        pescatarianZed[PlaceIntInArr()[5]].eveningmealside[0];
+        pescatarianZed[indexGiven[5]].eveningmealside[0];
       supaDaySix.nextElementSibling.nextElementSibling.textContent =
-        pescatarianZed[PlaceIntInArr()[5]].eveningmealside[1];
+        pescatarianZed[indexGiven[5]].eveningmealside[1];
 
       //day7
       let breakfastDaySeven = document.querySelector(
@@ -2707,29 +2707,29 @@ document.addEventListener("DOMContentLoaded", () => {
       let supaDaySeven = document.querySelector("#day7 .day-card .supa dt");
 
       breakfastDaySeven.textContent =
-        pescatarianZed[PlaceIntInArr()[6]].breakfast;
+        pescatarianZed[indexGiven[6]].breakfast;
       breakfastDaySeven.nextElementSibling.textContent =
-        pescatarianZed[PlaceIntInArr()[6]].breakfastSide[0];
+        pescatarianZed[indexGiven[6]].breakfastSide[0];
       breakfastDaySeven.nextElementSibling.nextElementSibling.textContent =
-        pescatarianZed[PlaceIntInArr()[6]].breakfastSide[1];
+        pescatarianZed[indexGiven[6]].breakfastSide[1];
 
-      lunchDaySeven.textContent = pescatarianZed[PlaceIntInArr()[6]].lunch;
+      lunchDaySeven.textContent = pescatarianZed[indexGiven[6]].lunch;
       lunchDaySeven.nextElementSibling.textContent =
-        pescatarianZed[PlaceIntInArr()[6]].lunchside[0];
+        pescatarianZed[indexGiven[6]].lunchside[0];
       lunchDaySeven.nextElementSibling.nextElementSibling.textContent =
-        pescatarianZed[PlaceIntInArr()[6]].lunchside[1];
+        pescatarianZed[indexGiven[6]].lunchside[1];
 
-      snackDaySeven.textContent = pescatarianZed[PlaceIntInArr()[6]].mealSunset;
+      snackDaySeven.textContent = pescatarianZed[indexGiven[6]].mealSunset;
       snackDaySeven.nextElementSibling.textContent =
-        pescatarianZed[PlaceIntInArr()[6]].mealSunsetSide[0];
+        pescatarianZed[indexGiven[6]].mealSunsetSide[0];
       snackDaySeven.nextElementSibling.nextElementSibling.textContent =
-        pescatarianZed[PlaceIntInArr()[6]].mealSunsetSide[1];
+        pescatarianZed[indexGiven[6]].mealSunsetSide[1];
 
-      supaDaySeven.textContent = pescatarianZed[PlaceIntInArr()[6]].eveningmeal;
+      supaDaySeven.textContent = pescatarianZed[indexGiven[6]].eveningmeal;
       supaDaySeven.nextElementSibling.textContent =
-        pescatarianZed[PlaceIntInArr()[6]].eveningmealside[0];
+        pescatarianZed[indexGiven[6]].eveningmealside[0];
       supaDaySeven.nextElementSibling.nextElementSibling.textContent =
-        pescatarianZed[PlaceIntInArr()[6]].eveningmealside[1];
+        pescatarianZed[indexGiven[6]].eveningmealside[1];
     }
     // pescatarian Two
     else if (
@@ -2744,19 +2744,19 @@ document.addEventListener("DOMContentLoaded", () => {
       //to place unique code on header
       let unigueCode = document.getElementById("special-code");
       unigueCode.textContent =
-        PlaceIntInArr()[0] +
+        indexGiven[0] +
         " - " +
-        PlaceIntInArr()[1] +
+        indexGiven[1] +
         " - " +
-        PlaceIntInArr()[2] +
+        indexGiven[2] +
         " - " +
-        PlaceIntInArr()[3] +
+        indexGiven[3] +
         " - " +
-        PlaceIntInArr()[4] +
+        indexGiven[4] +
         " - " +
-        PlaceIntInArr()[5] +
+        indexGiven[5] +
         " - " +
-        PlaceIntInArr()[6];
+        indexGiven[6];
 
       //day1 //variables holding location
       let breakfastDayOne = document.querySelector(
@@ -2769,29 +2769,29 @@ document.addEventListener("DOMContentLoaded", () => {
       //placing the meals on document
 
       breakfastDayOne.textContent =
-        pescatarianWest[PlaceIntInArr()[0]].breakfast;
+        pescatarianWest[indexGiven[0]].breakfast;
       breakfastDayOne.nextElementSibling.textContent =
-        pescatarianWest[PlaceIntInArr()[0]].breakfastSide[0];
+        pescatarianWest[indexGiven[0]].breakfastSide[0];
       breakfastDayOne.nextElementSibling.nextElementSibling.textContent =
-        pescatarianWest[PlaceIntInArr()[0]].breakfastSide[1];
+        pescatarianWest[indexGiven[0]].breakfastSide[1];
 
-      lunchDayOne.textContent = pescatarianWest[PlaceIntInArr()[0]].lunch;
+      lunchDayOne.textContent = pescatarianWest[indexGiven[0]].lunch;
       lunchDayOne.nextElementSibling.textContent =
-        pescatarianWest[PlaceIntInArr()[0]].lunchside[0];
+        pescatarianWest[indexGiven[0]].lunchside[0];
       lunchDayOne.nextElementSibling.nextElementSibling.textContent =
-        pescatarianWest[PlaceIntInArr()[0]].lunchside[1];
+        pescatarianWest[indexGiven[0]].lunchside[1];
 
-      snackDayOne.textContent = pescatarianWest[PlaceIntInArr()[0]].mealSunset;
+      snackDayOne.textContent = pescatarianWest[indexGiven[0]].mealSunset;
       snackDayOne.nextElementSibling.textContent =
-        pescatarianWest[PlaceIntInArr()[0]].mealSunsetSide[0];
+        pescatarianWest[indexGiven[0]].mealSunsetSide[0];
       snackDayOne.nextElementSibling.nextElementSibling.textContent =
-        pescatarianWest[PlaceIntInArr()[0]].mealSunsetSide[1];
+        pescatarianWest[indexGiven[0]].mealSunsetSide[1];
 
-      supaDayOne.textContent = pescatarianWest[PlaceIntInArr()[0]].eveningmeal;
+      supaDayOne.textContent = pescatarianWest[indexGiven[0]].eveningmeal;
       supaDayOne.nextElementSibling.textContent =
-        pescatarianWest[PlaceIntInArr()[0]].eveningmealside[0];
+        pescatarianWest[indexGiven[0]].eveningmealside[0];
       supaDayOne.nextElementSibling.nextElementSibling.textContent =
-        pescatarianWest[PlaceIntInArr()[0]].eveningmealside[1];
+        pescatarianWest[indexGiven[0]].eveningmealside[1];
 
       //day2
       let breakfastDayTwo = document.querySelector(
@@ -2802,29 +2802,29 @@ document.addEventListener("DOMContentLoaded", () => {
       let supaDayTwo = document.querySelector("#day2 .day-card .supa dt");
 
       breakfastDayTwo.textContent =
-        pescatarianWest[PlaceIntInArr()[1]].breakfast;
+        pescatarianWest[indexGiven[1]].breakfast;
       breakfastDayTwo.nextElementSibling.textContent =
-        pescatarianWest[PlaceIntInArr()[1]].breakfastSide[0];
+        pescatarianWest[indexGiven[1]].breakfastSide[0];
       breakfastDayTwo.nextElementSibling.nextElementSibling.textContent =
-        pescatarianWest[PlaceIntInArr()[1]].breakfastSide[1];
+        pescatarianWest[indexGiven[1]].breakfastSide[1];
 
-      lunchDayTwo.textContent = pescatarianWest[PlaceIntInArr()[1]].lunch;
+      lunchDayTwo.textContent = pescatarianWest[indexGiven[1]].lunch;
       lunchDayTwo.nextElementSibling.textContent =
-        pescatarianWest[PlaceIntInArr()[1]].lunchside[0];
+        pescatarianWest[indexGiven[1]].lunchside[0];
       lunchDayTwo.nextElementSibling.nextElementSibling.textContent =
-        pescatarianWest[PlaceIntInArr()[1]].lunchside[1];
+        pescatarianWest[indexGiven[1]].lunchside[1];
 
-      snackDayTwo.textContent = normalized[PlaceIntInArr()[1]].mealSunset;
+      snackDayTwo.textContent = normalized[indexGiven[1]].mealSunset;
       snackDayTwo.nextElementSibling.textContent =
-        normalized[PlaceIntInArr()[1]].mealSunsetSide[0];
+        normalized[indexGiven[1]].mealSunsetSide[0];
       snackDayTwo.nextElementSibling.nextElementSibling.textContent =
-        normalized[PlaceIntInArr()[1]].mealSunsetSide[1];
+        normalized[indexGiven[1]].mealSunsetSide[1];
 
-      supaDayTwo.textContent = pescatarianWest[PlaceIntInArr()[1]].eveningmeal;
+      supaDayTwo.textContent = pescatarianWest[indexGiven[1]].eveningmeal;
       supaDayTwo.nextElementSibling.textContent =
-        pescatarianWest[PlaceIntInArr()[1]].eveningmealside[0];
+        pescatarianWest[indexGiven[1]].eveningmealside[0];
       supaDayTwo.nextElementSibling.nextElementSibling.textContent =
-        pescatarianWest[PlaceIntInArr()[1]].eveningmealside[1];
+        pescatarianWest[indexGiven[1]].eveningmealside[1];
 
       //day3
       let breakfastDayThree = document.querySelector(
@@ -2835,31 +2835,31 @@ document.addEventListener("DOMContentLoaded", () => {
       let supaDayThree = document.querySelector("#day3 .day-card .supa dt");
 
       breakfastDayThree.textContent =
-        pescatarianWest[PlaceIntInArr()[2]].breakfast;
+        pescatarianWest[indexGiven[2]].breakfast;
       breakfastDayThree.nextElementSibling.textContent =
-        pescatarianWest[PlaceIntInArr()[2]].breakfastSide[0];
+        pescatarianWest[indexGiven[2]].breakfastSide[0];
       breakfastDayThree.nextElementSibling.nextElementSibling.textContent =
-        pescatarianWest[PlaceIntInArr()[2]].breakfastSide[1];
+        pescatarianWest[indexGiven[2]].breakfastSide[1];
 
-      lunchDayThree.textContent = pescatarianWest[PlaceIntInArr()[2]].lunch;
+      lunchDayThree.textContent = pescatarianWest[indexGiven[2]].lunch;
       lunchDayThree.nextElementSibling.textContent =
-        pescatarianWest[PlaceIntInArr()[2]].lunchside[0];
+        pescatarianWest[indexGiven[2]].lunchside[0];
       lunchDayThree.nextElementSibling.nextElementSibling.textContent =
-        pescatarianWest[PlaceIntInArr()[2]].lunchside[1];
+        pescatarianWest[indexGiven[2]].lunchside[1];
 
       snackDayThree.textContent =
-        pescatarianWest[PlaceIntInArr()[2]].mealSunset;
+        pescatarianWest[indexGiven[2]].mealSunset;
       snackDayThree.nextElementSibling.textContent =
-        pescatarianWest[PlaceIntInArr()[2]].mealSunsetSide[0];
+        pescatarianWest[indexGiven[2]].mealSunsetSide[0];
       snackDayThree.nextElementSibling.nextElementSibling.textContent =
-        pescatarianWest[PlaceIntInArr()[2]].mealSunsetSide[1];
+        pescatarianWest[indexGiven[2]].mealSunsetSide[1];
 
       supaDayThree.textContent =
-        pescatarianWest[PlaceIntInArr()[2]].eveningmeal;
+        pescatarianWest[indexGiven[2]].eveningmeal;
       supaDayThree.nextElementSibling.textContent =
-        pescatarianWest[PlaceIntInArr()[2]].eveningmealside[0];
+        pescatarianWest[indexGiven[2]].eveningmealside[0];
       supaDayThree.nextElementSibling.nextElementSibling.textContent =
-        pescatarianWest[PlaceIntInArr()[2]].eveningmealside[1];
+        pescatarianWest[indexGiven[2]].eveningmealside[1];
 
       //day4
       let breakfastDayFour = document.querySelector(
@@ -2870,29 +2870,29 @@ document.addEventListener("DOMContentLoaded", () => {
       let supaDayFour = document.querySelector("#day4 .day-card .supa dt");
 
       breakfastDayFour.textContent =
-        pescatarianWest[PlaceIntInArr()[3]].breakfast;
+        pescatarianWest[indexGiven[3]].breakfast;
       breakfastDayFour.nextElementSibling.textContent =
-        pescatarianWest[PlaceIntInArr()[3]].breakfastSide[0];
+        pescatarianWest[indexGiven[3]].breakfastSide[0];
       breakfastDayFour.nextElementSibling.nextElementSibling.textContent =
-        pescatarianWest[PlaceIntInArr()[3]].breakfastSide[1];
+        pescatarianWest[indexGiven[3]].breakfastSide[1];
 
-      lunchDayFour.textContent = pescatarianWest[PlaceIntInArr()[3]].lunch;
+      lunchDayFour.textContent = pescatarianWest[indexGiven[3]].lunch;
       lunchDayFour.nextElementSibling.textContent =
-        pescatarianWest[PlaceIntInArr()[3]].lunchside[0];
+        pescatarianWest[indexGiven[3]].lunchside[0];
       lunchDayFour.nextElementSibling.nextElementSibling.textContent =
-        pescatarianWest[PlaceIntInArr()[3]].lunchside[1];
+        pescatarianWest[indexGiven[3]].lunchside[1];
 
-      snackDayFour.textContent = pescatarianWest[PlaceIntInArr()[3]].mealSunset;
+      snackDayFour.textContent = pescatarianWest[indexGiven[3]].mealSunset;
       snackDayFour.nextElementSibling.textContent =
-        pescatarianWest[PlaceIntInArr()[3]].mealSunsetSide[0];
+        pescatarianWest[indexGiven[3]].mealSunsetSide[0];
       snackDayFour.nextElementSibling.nextElementSibling.textContent =
-        pescatarianWest[PlaceIntInArr()[3]].mealSunsetSide[1];
+        pescatarianWest[indexGiven[3]].mealSunsetSide[1];
 
-      supaDayFour.textContent = pescatarianWest[PlaceIntInArr()[3]].eveningmeal;
+      supaDayFour.textContent = pescatarianWest[indexGiven[3]].eveningmeal;
       supaDayFour.nextElementSibling.textContent =
-        pescatarianWest[PlaceIntInArr()[3]].eveningmealside[0];
+        pescatarianWest[indexGiven[3]].eveningmealside[0];
       supaDayFour.nextElementSibling.nextElementSibling.textContent =
-        pescatarianWest[PlaceIntInArr()[3]].eveningmealside[1];
+        pescatarianWest[indexGiven[3]].eveningmealside[1];
 
       //day5
       let breakfastDayFive = document.querySelector(
@@ -2903,29 +2903,29 @@ document.addEventListener("DOMContentLoaded", () => {
       let supaDayFive = document.querySelector("#day5 .day-card .supa dt");
 
       breakfastDayFive.textContent =
-        pescatarianWest[PlaceIntInArr()[4]].breakfast;
+        pescatarianWest[indexGiven[4]].breakfast;
       breakfastDayFive.nextElementSibling.textContent =
-        pescatarianWest[PlaceIntInArr()[4]].breakfastSide[0];
+        pescatarianWest[indexGiven[4]].breakfastSide[0];
       breakfastDayFive.nextElementSibling.nextElementSibling.textContent =
-        pescatarianWest[PlaceIntInArr()[4]].breakfastSide[1];
+        pescatarianWest[indexGiven[4]].breakfastSide[1];
 
-      lunchDayFive.textContent = pescatarianWest[PlaceIntInArr()[4]].lunch;
+      lunchDayFive.textContent = pescatarianWest[indexGiven[4]].lunch;
       lunchDayFive.nextElementSibling.textContent =
-        pescatarianWest[PlaceIntInArr()[4]].lunchside[0];
+        pescatarianWest[indexGiven[4]].lunchside[0];
       lunchDayFive.nextElementSibling.nextElementSibling.textContent =
-        pescatarianWest[PlaceIntInArr()[4]].lunchside[1];
+        pescatarianWest[indexGiven[4]].lunchside[1];
 
-      snackDayFive.textContent = pescatarianWest[PlaceIntInArr()[4]].mealSunset;
+      snackDayFive.textContent = pescatarianWest[indexGiven[4]].mealSunset;
       snackDayFive.nextElementSibling.textContent =
-        pescatarianWest[PlaceIntInArr()[4]].mealSunsetSide[0];
+        pescatarianWest[indexGiven[4]].mealSunsetSide[0];
       snackDayFive.nextElementSibling.nextElementSibling.textContent =
-        pescatarianWest[PlaceIntInArr()[4]].mealSunsetSide[1];
+        pescatarianWest[indexGiven[4]].mealSunsetSide[1];
 
-      supaDayFive.textContent = pescatarianWest[PlaceIntInArr()[4]].eveningmeal;
+      supaDayFive.textContent = pescatarianWest[indexGiven[4]].eveningmeal;
       supaDayFive.nextElementSibling.textContent =
-        pescatarianWest[PlaceIntInArr()[4]].eveningmealside[0];
+        pescatarianWest[indexGiven[4]].eveningmealside[0];
       supaDayFive.nextElementSibling.nextElementSibling.textContent =
-        pescatarianWest[PlaceIntInArr()[4]].eveningmealside[1];
+        pescatarianWest[indexGiven[4]].eveningmealside[1];
 
       //day6
       let breakfastDaySix = document.querySelector(
@@ -2936,29 +2936,29 @@ document.addEventListener("DOMContentLoaded", () => {
       let supaDaySix = document.querySelector("#day6 .day-card .supa dt");
 
       breakfastDaySix.textContent =
-        pescatarianWest[PlaceIntInArr()[5]].breakfast;
+        pescatarianWest[indexGiven[5]].breakfast;
       breakfastDaySix.nextElementSibling.textContent =
-        pescatarianWest[PlaceIntInArr()[5]].breakfastSide[0];
+        pescatarianWest[indexGiven[5]].breakfastSide[0];
       breakfastDaySix.nextElementSibling.nextElementSibling.textContent =
-        pescatarianWest[PlaceIntInArr()[5]].breakfastSide[1];
+        pescatarianWest[indexGiven[5]].breakfastSide[1];
 
-      lunchDaySix.textContent = pescatarianWest[PlaceIntInArr()[5]].lunch;
+      lunchDaySix.textContent = pescatarianWest[indexGiven[5]].lunch;
       lunchDaySix.nextElementSibling.textContent =
-        pescatarianWest[PlaceIntInArr()[5]].lunchside[0];
+        pescatarianWest[indexGiven[5]].lunchside[0];
       lunchDaySix.nextElementSibling.nextElementSibling.textContent =
-        pescatarianWest[PlaceIntInArr()[5]].lunchside[1];
+        pescatarianWest[indexGiven[5]].lunchside[1];
 
-      snackDaySix.textContent = pescatarianWest[PlaceIntInArr()[5]].mealSunset;
+      snackDaySix.textContent = pescatarianWest[indexGiven[5]].mealSunset;
       snackDaySix.nextElementSibling.textContent =
-        pescatarianWest[PlaceIntInArr()[5]].mealSunsetSide[0];
+        pescatarianWest[indexGiven[5]].mealSunsetSide[0];
       snackDaySix.nextElementSibling.nextElementSibling.textContent =
-        pescatarianWest[PlaceIntInArr()[5]].mealSunsetSide[1];
+        pescatarianWest[indexGiven[5]].mealSunsetSide[1];
 
-      supaDaySix.textContent = pescatarianWest[PlaceIntInArr()[5]].eveningmeal;
+      supaDaySix.textContent = pescatarianWest[indexGiven[5]].eveningmeal;
       supaDaySix.nextElementSibling.textContent =
-        pescatarianWest[PlaceIntInArr()[5]].eveningmealside[0];
+        pescatarianWest[indexGiven[5]].eveningmealside[0];
       supaDaySix.nextElementSibling.nextElementSibling.textContent =
-        pescatarianWest[PlaceIntInArr()[5]].eveningmealside[1];
+        pescatarianWest[indexGiven[5]].eveningmealside[1];
 
       //day7
       let breakfastDaySeven = document.querySelector(
@@ -2969,31 +2969,31 @@ document.addEventListener("DOMContentLoaded", () => {
       let supaDaySeven = document.querySelector("#day7 .day-card .supa dt");
 
       breakfastDaySeven.textContent =
-        pescatarianWest[PlaceIntInArr()[6]].breakfast;
+        pescatarianWest[indexGiven[6]].breakfast;
       breakfastDaySeven.nextElementSibling.textContent =
-        pescatarianWest[PlaceIntInArr()[6]].breakfastSide[0];
+        pescatarianWest[indexGiven[6]].breakfastSide[0];
       breakfastDaySeven.nextElementSibling.nextElementSibling.textContent =
-        pescatarianWest[PlaceIntInArr()[6]].breakfastSide[1];
+        pescatarianWest[indexGiven[6]].breakfastSide[1];
 
-      lunchDaySeven.textContent = pescatarianWest[PlaceIntInArr()[6]].lunch;
+      lunchDaySeven.textContent = pescatarianWest[indexGiven[6]].lunch;
       lunchDaySeven.nextElementSibling.textContent =
-        pescatarianWest[PlaceIntInArr()[6]].lunchside[0];
+        pescatarianWest[indexGiven[6]].lunchside[0];
       lunchDaySeven.nextElementSibling.nextElementSibling.textContent =
-        pescatarianWest[PlaceIntInArr()[6]].lunchside[1];
+        pescatarianWest[indexGiven[6]].lunchside[1];
 
       snackDaySeven.textContent =
-        pescatarianWest[PlaceIntInArr()[6]].mealSunset;
+        pescatarianWest[indexGiven[6]].mealSunset;
       snackDaySeven.nextElementSibling.textContent =
-        pescatarianWest[PlaceIntInArr()[6]].mealSunsetSide[0];
+        pescatarianWest[indexGiven[6]].mealSunsetSide[0];
       snackDaySeven.nextElementSibling.nextElementSibling.textContent =
-        pescatarianWest[PlaceIntInArr()[6]].mealSunsetSide[1];
+        pescatarianWest[indexGiven[6]].mealSunsetSide[1];
 
       supaDaySeven.textContent =
-        pescatarianWest[PlaceIntInArr()[6]].eveningmeal;
+        pescatarianWest[indexGiven[6]].eveningmeal;
       supaDaySeven.nextElementSibling.textContent =
-        pescatarianWest[PlaceIntInArr()[6]].eveningmealside[0];
+        pescatarianWest[indexGiven[6]].eveningmealside[0];
       supaDaySeven.nextElementSibling.nextElementSibling.textContent =
-        pescatarianWest[PlaceIntInArr()[6]].eveningmealside[1];
+        pescatarianWest[indexGiven[6]].eveningmealside[1];
     }
     // pescaterian three
     else if (
@@ -3004,19 +3004,19 @@ document.addEventListener("DOMContentLoaded", () => {
       //to place unique code on header
       let unigueCode = document.getElementById("special-code");
       unigueCode.textContent =
-        PlaceIntInArrTwo()[0] +
+        indexGiven2[0] +
         " - " +
-        PlaceIntInArrTwo()[1] +
+        indexGiven2[1] +
         " - " +
-        PlaceIntInArrTwo()[2] +
+        indexGiven2[2] +
         " - " +
-        PlaceIntInArrTwo()[3] +
+        indexGiven2[3] +
         " - " +
-        PlaceIntInArrTwo()[4] +
+        indexGiven2[4] +
         " - " +
-        PlaceIntInArrTwo()[5] +
+        indexGiven2[5] +
         " - " +
-        PlaceIntInArrTwo()[6];
+        indexGiven2[6];
       //to place unique word on top
       let FancyName = document.getElementById("special-name");
       FancyName.textContent = pescatarian3;
@@ -3032,31 +3032,31 @@ document.addEventListener("DOMContentLoaded", () => {
       //placing the meals on document
 
       breakfastDayOne.textContent =
-        pescatarianMix[PlaceIntInArrTwo()[0]].breakfast;
+        pescatarianMix[indexGiven2[0]].breakfast;
       breakfastDayOne.nextElementSibling.textContent =
-        pescatarianMix[PlaceIntInArrTwo()[0]].breakfastSide[0];
+        pescatarianMix[indexGiven2[0]].breakfastSide[0];
       breakfastDayOne.nextElementSibling.nextElementSibling.textContent =
-        pescatarianMix[PlaceIntInArrTwo()[0]].breakfastSide[1];
+        pescatarianMix[indexGiven2[0]].breakfastSide[1];
 
-      lunchDayOne.textContent = pescatarianMix[PlaceIntInArrTwo()[0]].lunch;
+      lunchDayOne.textContent = pescatarianMix[indexGiven2[0]].lunch;
       lunchDayOne.nextElementSibling.textContent =
-        pescatarianMix[PlaceIntInArrTwo()[0]].lunchside[0];
+        pescatarianMix[indexGiven2[0]].lunchside[0];
       lunchDayOne.nextElementSibling.nextElementSibling.textContent =
-        pescatarianMix[PlaceIntInArrTwo()[0]].lunchside[1];
+        pescatarianMix[indexGiven2[0]].lunchside[1];
 
       snackDayOne.textContent =
-        pescatarianMix[PlaceIntInArrTwo()[0]].mealSunset;
+        pescatarianMix[indexGiven2[0]].mealSunset;
       snackDayOne.nextElementSibling.textContent =
-        pescatarianMix[PlaceIntInArrTwo()[0]].mealSunsetSide[0];
+        pescatarianMix[indexGiven2[0]].mealSunsetSide[0];
       snackDayOne.nextElementSibling.nextElementSibling.textContent =
-        pescatarianMix[PlaceIntInArrTwo()[0]].mealSunsetSide[1];
+        pescatarianMix[indexGiven2[0]].mealSunsetSide[1];
 
       supaDayOne.textContent =
-        pescatarianMix[PlaceIntInArrTwo()[0]].eveningmeal;
+        pescatarianMix[indexGiven2[0]].eveningmeal;
       supaDayOne.nextElementSibling.textContent =
-        pescatarianMix[PlaceIntInArrTwo()[0]].eveningmealside[0];
+        pescatarianMix[indexGiven2[0]].eveningmealside[0];
       supaDayOne.nextElementSibling.nextElementSibling.textContent =
-        pescatarianMix[PlaceIntInArrTwo()[0]].eveningmealside[1];
+        pescatarianMix[indexGiven2[0]].eveningmealside[1];
 
       //day2
       let breakfastDayTwo = document.querySelector(
@@ -3067,31 +3067,31 @@ document.addEventListener("DOMContentLoaded", () => {
       let supaDayTwo = document.querySelector("#day2 .day-card .supa dt");
 
       breakfastDayTwo.textContent =
-        pescatarianMix[PlaceIntInArrTwo()[1]].breakfast;
+        pescatarianMix[indexGiven2[1]].breakfast;
       breakfastDayTwo.nextElementSibling.textContent =
-        pescatarianMix[PlaceIntInArrTwo()[1]].breakfastSide[0];
+        pescatarianMix[indexGiven2[1]].breakfastSide[0];
       breakfastDayTwo.nextElementSibling.nextElementSibling.textContent =
-        pescatarianMix[PlaceIntInArrTwo()[1]].breakfastSide[1];
+        pescatarianMix[indexGiven2[1]].breakfastSide[1];
 
-      lunchDayTwo.textContent = pescatarianMix[PlaceIntInArrTwo()[1]].lunch;
+      lunchDayTwo.textContent = pescatarianMix[indexGiven2[1]].lunch;
       lunchDayTwo.nextElementSibling.textContent =
-        pescatarianMix[PlaceIntInArrTwo()[1]].lunchside[0];
+        pescatarianMix[indexGiven2[1]].lunchside[0];
       lunchDayTwo.nextElementSibling.nextElementSibling.textContent =
-        pescatarianMix[PlaceIntInArrTwo()[1]].lunchside[1];
+        pescatarianMix[indexGiven2[1]].lunchside[1];
 
       snackDayTwo.textContent =
-        pescatarianMix[PlaceIntInArrTwo()[1]].mealSunset;
+        pescatarianMix[indexGiven2[1]].mealSunset;
       snackDayTwo.nextElementSibling.textContent =
-        pescatarianMix[PlaceIntInArrTwo()[1]].mealSunsetSide[0];
+        pescatarianMix[indexGiven2[1]].mealSunsetSide[0];
       snackDayTwo.nextElementSibling.nextElementSibling.textContent =
-        pescatarianMix[PlaceIntInArrTwo()[1]].mealSunsetSide[1];
+        pescatarianMix[indexGiven2[1]].mealSunsetSide[1];
 
       supaDayTwo.textContent =
-        pescatarianMix[PlaceIntInArrTwo()[1]].eveningmeal;
+        pescatarianMix[indexGiven2[1]].eveningmeal;
       supaDayTwo.nextElementSibling.textContent =
-        pescatarianMix[PlaceIntInArrTwo()[1]].eveningmealside[0];
+        pescatarianMix[indexGiven2[1]].eveningmealside[0];
       supaDayTwo.nextElementSibling.nextElementSibling.textContent =
-        pescatarianMix[PlaceIntInArrTwo()[1]].eveningmealside[1];
+        pescatarianMix[indexGiven2[1]].eveningmealside[1];
 
       //day3
       let breakfastDayThree = document.querySelector(
@@ -3102,31 +3102,31 @@ document.addEventListener("DOMContentLoaded", () => {
       let supaDayThree = document.querySelector("#day3 .day-card .supa dt");
 
       breakfastDayThree.textContent =
-        pescatarianMix[PlaceIntInArrTwo()[2]].breakfast;
+        pescatarianMix[indexGiven2[2]].breakfast;
       breakfastDayThree.nextElementSibling.textContent =
-        pescatarianMix[PlaceIntInArrTwo()[2]].breakfastSide[0];
+        pescatarianMix[indexGiven2[2]].breakfastSide[0];
       breakfastDayThree.nextElementSibling.nextElementSibling.textContent =
-        pescatarianMix[PlaceIntInArrTwo()[2]].breakfastSide[1];
+        pescatarianMix[indexGiven2[2]].breakfastSide[1];
 
-      lunchDayThree.textContent = pescatarianMix[PlaceIntInArrTwo()[2]].lunch;
+      lunchDayThree.textContent = pescatarianMix[indexGiven2[2]].lunch;
       lunchDayThree.nextElementSibling.textContent =
-        pescatarianMix[PlaceIntInArrTwo()[2]].lunchside[0];
+        pescatarianMix[indexGiven2[2]].lunchside[0];
       lunchDayThree.nextElementSibling.nextElementSibling.textContent =
-        pescatarianMix[PlaceIntInArrTwo()[2]].lunchside[1];
+        pescatarianMix[indexGiven2[2]].lunchside[1];
 
       snackDayThree.textContent =
-        pescatarianMix[PlaceIntInArrTwo()[2]].mealSunset;
+        pescatarianMix[indexGiven2[2]].mealSunset;
       snackDayThree.nextElementSibling.textContent =
-        pescatarianMix[PlaceIntInArrTwo()[2]].mealSunsetSide[0];
+        pescatarianMix[indexGiven2[2]].mealSunsetSide[0];
       snackDayThree.nextElementSibling.nextElementSibling.textContent =
-        pescatarianMix[PlaceIntInArrTwo()[2]].mealSunsetSide[1];
+        pescatarianMix[indexGiven2[2]].mealSunsetSide[1];
 
       supaDayThree.textContent =
-        pescatarianMix[PlaceIntInArrTwo()[2]].eveningmeal;
+        pescatarianMix[indexGiven2[2]].eveningmeal;
       supaDayThree.nextElementSibling.textContent =
-        pescatarianMix[PlaceIntInArrTwo()[2]].eveningmealside[0];
+        pescatarianMix[indexGiven2[2]].eveningmealside[0];
       supaDayThree.nextElementSibling.nextElementSibling.textContent =
-        pescatarianMix[PlaceIntInArrTwo()[2]].eveningmealside[1];
+        pescatarianMix[indexGiven2[2]].eveningmealside[1];
 
       //day4
       let breakfastDayFour = document.querySelector(
@@ -3137,31 +3137,31 @@ document.addEventListener("DOMContentLoaded", () => {
       let supaDayFour = document.querySelector("#day4 .day-card .supa dt");
 
       breakfastDayFour.textContent =
-        pescatarianMix[PlaceIntInArrTwo()[3]].breakfast;
+        pescatarianMix[indexGiven2[3]].breakfast;
       breakfastDayFour.nextElementSibling.textContent =
-        pescatarianMix[PlaceIntInArrTwo()[3]].breakfastSide[0];
+        pescatarianMix[indexGiven2[3]].breakfastSide[0];
       breakfastDayFour.nextElementSibling.nextElementSibling.textContent =
-        pescatarianMix[PlaceIntInArrTwo()[3]].breakfastSide[1];
+        pescatarianMix[indexGiven2[3]].breakfastSide[1];
 
-      lunchDayFour.textContent = pescatarianMix[PlaceIntInArrTwo()[3]].lunch;
+      lunchDayFour.textContent = pescatarianMix[indexGiven2[3]].lunch;
       lunchDayFour.nextElementSibling.textContent =
-        pescatarianMix[PlaceIntInArrTwo()[3]].lunchside[0];
+        pescatarianMix[indexGiven2[3]].lunchside[0];
       lunchDayFour.nextElementSibling.nextElementSibling.textContent =
-        pescatarianMix[PlaceIntInArrTwo()[3]].lunchside[1];
+        pescatarianMix[indexGiven2[3]].lunchside[1];
 
       snackDayFour.textContent =
-        pescatarianMix[PlaceIntInArrTwo()[3]].mealSunset;
+        pescatarianMix[indexGiven2[3]].mealSunset;
       snackDayFour.nextElementSibling.textContent =
-        pescatarianMix[PlaceIntInArrTwo()[3]].mealSunsetSide[0];
+        pescatarianMix[indexGiven2[3]].mealSunsetSide[0];
       snackDayFour.nextElementSibling.nextElementSibling.textContent =
-        pescatarianMix[PlaceIntInArrTwo()[3]].mealSunsetSide[1];
+        pescatarianMix[indexGiven2[3]].mealSunsetSide[1];
 
       supaDayFour.textContent =
-        pescatarianMix[PlaceIntInArrTwo()[3]].eveningmeal;
+        pescatarianMix[indexGiven2[3]].eveningmeal;
       supaDayFour.nextElementSibling.textContent =
-        pescatarianMix[PlaceIntInArrTwo()[3]].eveningmealside[0];
+        pescatarianMix[indexGiven2[3]].eveningmealside[0];
       supaDayFour.nextElementSibling.nextElementSibling.textContent =
-        pescatarianMix[PlaceIntInArrTwo()[3]].eveningmealside[1];
+        pescatarianMix[indexGiven2[3]].eveningmealside[1];
 
       //day5
       let breakfastDayFive = document.querySelector(
@@ -3172,31 +3172,31 @@ document.addEventListener("DOMContentLoaded", () => {
       let supaDayFive = document.querySelector("#day5 .day-card .supa dt");
 
       breakfastDayFive.textContent =
-        pescatarianMix[PlaceIntInArrTwo()[4]].breakfast;
+        pescatarianMix[indexGiven2[4]].breakfast;
       breakfastDayFive.nextElementSibling.textContent =
-        pescatarianMix[PlaceIntInArrTwo()[4]].breakfastSide[0];
+        pescatarianMix[indexGiven2[4]].breakfastSide[0];
       breakfastDayFive.nextElementSibling.nextElementSibling.textContent =
-        pescatarianMix[PlaceIntInArrTwo()[4]].breakfastSide[1];
+        pescatarianMix[indexGiven2[4]].breakfastSide[1];
 
-      lunchDayFive.textContent = pescatarianMix[PlaceIntInArrTwo()[4]].lunch;
+      lunchDayFive.textContent = pescatarianMix[indexGiven2[4]].lunch;
       lunchDayFive.nextElementSibling.textContent =
-        pescatarianMix[PlaceIntInArrTwo()[4]].lunchside[0];
+        pescatarianMix[indexGiven2[4]].lunchside[0];
       lunchDayFive.nextElementSibling.nextElementSibling.textContent =
-        pescatarianMix[PlaceIntInArrTwo()[4]].lunchside[1];
+        pescatarianMix[indexGiven2[4]].lunchside[1];
 
       snackDayFive.textContent =
-        pescatarianMix[PlaceIntInArrTwo()[4]].mealSunset;
+        pescatarianMix[indexGiven2[4]].mealSunset;
       snackDayFive.nextElementSibling.textContent =
-        pescatarianMix[PlaceIntInArrTwo()[4]].mealSunsetSide[0];
+        pescatarianMix[indexGiven2[4]].mealSunsetSide[0];
       snackDayFive.nextElementSibling.nextElementSibling.textContent =
-        pescatarianMix[PlaceIntInArrTwo()[4]].mealSunsetSide[1];
+        pescatarianMix[indexGiven2[4]].mealSunsetSide[1];
 
       supaDayFive.textContent =
-        pescatarianMix[PlaceIntInArrTwo()[4]].eveningmeal;
+        pescatarianMix[indexGiven2[4]].eveningmeal;
       supaDayFive.nextElementSibling.textContent =
-        pescatarianMix[PlaceIntInArrTwo()[4]].eveningmealside[0];
+        pescatarianMix[indexGiven2[4]].eveningmealside[0];
       supaDayFive.nextElementSibling.nextElementSibling.textContent =
-        pescatarianMix[PlaceIntInArrTwo()[4]].eveningmealside[1];
+        pescatarianMix[indexGiven2[4]].eveningmealside[1];
 
       //day6
       let breakfastDaySix = document.querySelector(
@@ -3207,31 +3207,31 @@ document.addEventListener("DOMContentLoaded", () => {
       let supaDaySix = document.querySelector("#day6 .day-card .supa dt");
 
       breakfastDaySix.textContent =
-        pescatarianMix[PlaceIntInArrTwo()[5]].breakfast;
+        pescatarianMix[indexGiven2[5]].breakfast;
       breakfastDaySix.nextElementSibling.textContent =
-        pescatarianMix[PlaceIntInArrTwo()[5]].breakfastSide[0];
+        pescatarianMix[indexGiven2[5]].breakfastSide[0];
       breakfastDaySix.nextElementSibling.nextElementSibling.textContent =
-        pescatarianMix[PlaceIntInArrTwo()[5]].breakfastSide[1];
+        pescatarianMix[indexGiven2[5]].breakfastSide[1];
 
-      lunchDaySix.textContent = pescatarianMix[PlaceIntInArrTwo()[5]].lunch;
+      lunchDaySix.textContent = pescatarianMix[indexGiven2[5]].lunch;
       lunchDaySix.nextElementSibling.textContent =
-        pescatarianMix[PlaceIntInArrTwo()[5]].lunchside[0];
+        pescatarianMix[indexGiven2[5]].lunchside[0];
       lunchDaySix.nextElementSibling.nextElementSibling.textContent =
-        pescatarianMix[PlaceIntInArrTwo()[5]].lunchside[1];
+        pescatarianMix[indexGiven2[5]].lunchside[1];
 
       snackDaySix.textContent =
-        pescatarianMix[PlaceIntInArrTwo()[5]].mealSunset;
+        pescatarianMix[indexGiven2[5]].mealSunset;
       snackDaySix.nextElementSibling.textContent =
-        pescatarianMix[PlaceIntInArrTwo()[5]].mealSunsetSide[0];
+        pescatarianMix[indexGiven2[5]].mealSunsetSide[0];
       snackDaySix.nextElementSibling.nextElementSibling.textContent =
-        pescatarianMix[PlaceIntInArrTwo()[5]].mealSunsetSide[1];
+        pescatarianMix[indexGiven2[5]].mealSunsetSide[1];
 
       supaDaySix.textContent =
-        pescatarianMix[PlaceIntInArrTwo()[5]].eveningmeal;
+        pescatarianMix[indexGiven2[5]].eveningmeal;
       supaDaySix.nextElementSibling.textContent =
-        pescatarianMix[PlaceIntInArrTwo()[5]].eveningmealside[0];
+        pescatarianMix[indexGiven2[5]].eveningmealside[0];
       supaDaySix.nextElementSibling.nextElementSibling.textContent =
-        pescatarianMix[PlaceIntInArrTwo()[5]].eveningmealside[1];
+        pescatarianMix[indexGiven2[5]].eveningmealside[1];
 
       //day7
       let breakfastDaySeven = document.querySelector(
@@ -3242,31 +3242,31 @@ document.addEventListener("DOMContentLoaded", () => {
       let supaDaySeven = document.querySelector("#day7 .day-card .supa dt");
 
       breakfastDaySeven.textContent =
-        pescatarianMix[PlaceIntInArrTwo()[6]].breakfast;
+        pescatarianMix[indexGiven2[6]].breakfast;
       breakfastDaySeven.nextElementSibling.textContent =
-        pescatarianMix[PlaceIntInArrTwo()[6]].breakfastSide[0];
+        pescatarianMix[indexGiven2[6]].breakfastSide[0];
       breakfastDaySeven.nextElementSibling.nextElementSibling.textContent =
-        pescatarianMix[PlaceIntInArrTwo()[6]].breakfastSide[1];
+        pescatarianMix[indexGiven2[6]].breakfastSide[1];
 
-      lunchDaySeven.textContent = pescatarianMix[PlaceIntInArrTwo()[6]].lunch;
+      lunchDaySeven.textContent = pescatarianMix[indexGiven2[6]].lunch;
       lunchDaySeven.nextElementSibling.textContent =
-        pescatarianMix[PlaceIntInArrTwo()[6]].lunchside[0];
+        pescatarianMix[indexGiven2[6]].lunchside[0];
       lunchDaySeven.nextElementSibling.nextElementSibling.textContent =
-        pescatarianMix[PlaceIntInArrTwo()[6]].lunchside[1];
+        pescatarianMix[indexGiven2[6]].lunchside[1];
 
       snackDaySeven.textContent =
-        pescatarianMix[PlaceIntInArrTwo()[6]].mealSunset;
+        pescatarianMix[indexGiven2[6]].mealSunset;
       snackDaySeven.nextElementSibling.textContent =
-        pescatarianMix[PlaceIntInArrTwo()[6]].mealSunsetSide[0];
+        pescatarianMix[indexGiven2[6]].mealSunsetSide[0];
       snackDaySeven.nextElementSibling.nextElementSibling.textContent =
-        pescatarianMix[PlaceIntInArrTwo()[6]].mealSunsetSide[1];
+        pescatarianMix[indexGiven2[6]].mealSunsetSide[1];
 
       supaDaySeven.textContent =
-        pescatarianMix[PlaceIntInArrTwo()[6]].eveningmeal;
+        pescatarianMix[indexGiven2[6]].eveningmeal;
       supaDaySeven.nextElementSibling.textContent =
-        pescatarianMix[PlaceIntInArrTwo()[6]].eveningmealside[0];
+        pescatarianMix[indexGiven2[6]].eveningmealside[0];
       supaDaySeven.nextElementSibling.nextElementSibling.textContent =
-        pescatarianMix[PlaceIntInArrTwo()[6]].eveningmealside[1];
+        pescatarianMix[indexGiven2[6]].eveningmealside[1];
     }
     // ** normal 1 returning customer
     else if (userDetailsTwo && userDetailsTwo.Name === norm1) {
