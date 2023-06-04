@@ -4,7 +4,7 @@
   "description": "This web application is designed to help users in Zambia generate a balanced diet for a week using a random generation algorithm. The application is intended to address the problem of poor nutrition in the country, particularly among high-risk groups such as diabetics and children.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build-css": "tailwindcss build -i style.css -o css/style.css --watch"
   },
   "repository": {
     "type": "git",
@@ -18,5 +18,9 @@
   "homepage": "https://github.com/Chilanzi-thirt33n/PROJECT-BALANCE#readme",
   "devDependencies": {
     "tailwindcss": "^3.3.2"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.4.14",
+    "postcss": "^8.4.24"
   }
 }
