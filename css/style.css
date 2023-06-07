@@ -663,6 +663,10 @@ video {
   margin-top: 1.5rem;
 }
 
+.mb-3 {
+  margin-bottom: 0.75rem;
+}
+
 .block {
   display: block;
 }
@@ -779,6 +783,18 @@ video {
   width: 100vw;
 }
 
+.w-\[40rem\] {
+  width: 40rem;
+}
+
+.w-\[35rem\] {
+  width: 35rem;
+}
+
+.w-\[30rem\] {
+  width: 30rem;
+}
+
 .max-w-screen-xl {
   max-width: 1280px;
 }
@@ -831,6 +847,14 @@ video {
 
 .justify-evenly {
   justify-content: space-evenly;
+}
+
+.gap-1 {
+  gap: 0.25rem;
+}
+
+.gap-2 {
+  gap: 0.5rem;
 }
 
 .space-x-2 > :not([hidden]) ~ :not([hidden]) {
@@ -1056,6 +1080,10 @@ video {
   padding-top: 0.25rem;
 }
 
+.text-left {
+  text-align: left;
+}
+
 .text-center {
   text-align: center;
 }
@@ -1130,6 +1158,14 @@ video {
 
 .font-semibold {
   font-weight: 600;
+}
+
+.font-black {
+  font-weight: 900;
+}
+
+.font-thin {
+  font-weight: 100;
 }
 
 .italic {
@@ -1273,6 +1309,11 @@ video {
 .hover\:bg-myGreen:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(134 188 66 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-myDarkGreen:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(40 55 57 / var(--tw-bg-opacity));
 }
 
 .hover\:text-myGreen:hover {
@@ -1617,8 +1658,48 @@ video {
     width: 55rem;
   }
 
+  .lg\:w-4\/5 {
+    width: 80%;
+  }
+
+  .lg\:w-3\/4 {
+    width: 75%;
+  }
+
+  .lg\:w-96 {
+    width: 24rem;
+  }
+
+  .lg\:w-72 {
+    width: 18rem;
+  }
+
+  .lg\:w-\[60rem\] {
+    width: 60rem;
+  }
+
+  .lg\:w-\[50rem\] {
+    width: 50rem;
+  }
+
+  .lg\:w-\[80rem\] {
+    width: 80rem;
+  }
+
+  .lg\:w-\[35rem\] {
+    width: 35rem;
+  }
+
+  .lg\:w-\[30rem\] {
+    width: 30rem;
+  }
+
   .lg\:flex-row {
     flex-direction: row;
+  }
+
+  .lg\:items-start {
+    align-items: flex-start;
   }
 
   .lg\:items-center {
@@ -1735,9 +1816,21 @@ video {
     padding: 1.25rem;
   }
 
+  .lg\:p-2 {
+    padding: 0.5rem;
+  }
+
   .lg\:px-32 {
     padding-left: 8rem;
     padding-right: 8rem;
+  }
+
+  .lg\:text-left {
+    text-align: left;
+  }
+
+  .lg\:text-center {
+    text-align: center;
   }
 
   .lg\:text-2xl {
@@ -1773,6 +1866,16 @@ video {
   .lg\:text-xs {
     font-size: 0.75rem;
     line-height: 1rem;
+  }
+
+  .lg\:text-3xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+
+  .lg\:text-6xl {
+    font-size: 3.75rem;
+    line-height: 1;
   }
 
   .lg\:font-normal {
