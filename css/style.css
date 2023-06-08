@@ -590,6 +590,10 @@ video {
   margin: 0px;
 }
 
+.m-4 {
+  margin: 1rem;
+}
+
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -667,6 +671,10 @@ video {
   margin-bottom: 0.75rem;
 }
 
+.mb-24 {
+  margin-bottom: 6rem;
+}
+
 .block {
   display: block;
 }
@@ -735,6 +743,26 @@ video {
   height: 85svh;
 }
 
+.h-\[600px\] {
+  height: 600px;
+}
+
+.h-\[500px\] {
+  height: 500px;
+}
+
+.h-\[90svh\] {
+  height: 90svh;
+}
+
+.h-\[60svh\] {
+  height: 60svh;
+}
+
+.h-\[70svh\] {
+  height: 70svh;
+}
+
 .max-h-full {
   max-height: 100%;
 }
@@ -793,6 +821,18 @@ video {
 
 .w-\[30rem\] {
   width: 30rem;
+}
+
+.w-\[\] {
+  width: ;
+}
+
+.w-\[300px\] {
+  width: 300px;
+}
+
+.w-\[100\%\] {
+  width: 100%;
 }
 
 .max-w-screen-xl {
@@ -855,6 +895,10 @@ video {
 
 .gap-2 {
   gap: 0.5rem;
+}
+
+.gap-8 {
+  gap: 2rem;
 }
 
 .space-x-2 > :not([hidden]) ~ :not([hidden]) {
@@ -997,6 +1041,10 @@ video {
   background-image: url('/images/index-mobile-bg.png');
 }
 
+.bg-\[url\(\'\/images\/bg-nutri\.jpg\'\)\] {
+  background-image: url('/images/bg-nutri.jpg');
+}
+
 .bg-cover {
   background-size: cover;
 }
@@ -1011,6 +1059,10 @@ video {
 
 .bg-center {
   background-position: center;
+}
+
+.bg-top {
+  background-position: top;
 }
 
 .bg-no-repeat {
@@ -1078,6 +1130,14 @@ video {
 
 .pt-1 {
   padding-top: 0.25rem;
+}
+
+.pb-2 {
+  padding-bottom: 0.5rem;
+}
+
+.pb-4 {
+  padding-bottom: 1rem;
 }
 
 .text-left {
@@ -1577,6 +1637,14 @@ video {
     inset: 0px;
   }
 
+  .lg\:m-5 {
+    margin: 1.25rem;
+  }
+
+  .lg\:m-6 {
+    margin: 1.5rem;
+  }
+
   .lg\:mx-72 {
     margin-left: 18rem;
     margin-right: 18rem;
@@ -1616,6 +1684,14 @@ video {
 
   .lg\:mt-52 {
     margin-top: 13rem;
+  }
+
+  .lg\:mb-5 {
+    margin-bottom: 1.25rem;
+  }
+
+  .lg\:mb-24 {
+    margin-bottom: 6rem;
   }
 
   .lg\:flex {
@@ -1875,6 +1951,11 @@ video {
 
   .lg\:text-6xl {
     font-size: 3.75rem;
+    line-height: 1;
+  }
+
+  .lg\:text-7xl {
+    font-size: 4.5rem;
     line-height: 1;
   }
 
