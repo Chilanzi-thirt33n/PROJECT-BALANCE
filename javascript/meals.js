@@ -7,7 +7,7 @@ let normalized = [
     breakfastSide: ["milk", "Eggs"],
     lunch: "nshima",
     lunchside: ["Village chicken", "Spinach"],
-    mealSunset: "Fried sweet potatoes ",
+    mealSunset: "Fried potatoes ",
     mealSunsetSide: ["Black tea", "Ground nuts"],
     eveningmeal: "nshima",
     eveningmealside: ["Village Chicken", "Beans"],
@@ -15,7 +15,7 @@ let normalized = [
   //day2
   {
     image: "images/meals/normal",
-    breakfast: "Peanut butter Buns",
+    breakfast: "Peanut Buns",
     breakfastSide: ["Milk tea", "Banana"],
     lunch: "nshima",
     lunchside: ["Salted Fish", "Kalembula veg"],
@@ -27,7 +27,7 @@ let normalized = [
   //day3
   {
     image: "images/meals/normal",
-    breakfast: "2 slices bread",
+    breakfast: "2slices bread",
     breakfastSide: ["milk", "eggs"],
     lunch: "nshima",
     lunchside: ["vinkubala", "cabbage"],
@@ -42,7 +42,7 @@ let normalized = [
     breakfast: "Sample (corn mix)",
     breakfastSide: ["Tea", "orange"],
     lunch: "nshima",
-    lunchside: ["Kapenta", "Five years(veggies)"],
+    lunchside: ["Kapenta", "5 years(veg)"],
     mealSunset: "Tobwa",
     mealSunsetSide: ["Water", "Mangoes"],
     eveningmeal: "Rice",
@@ -114,10 +114,10 @@ let normalWest = [
     breakfastSide: ["Barries", "Granola"],
     lunch: "Grilled Chicken",
     lunchside: ["Roasted Veg", "Pasta"],
-    mealSunset: "Black bean soup",
+    mealSunset: "Bean soup",
     mealSunsetSide: ["salad", "bread"],
-    eveningmeal: "Grilled Chicken Breast",
-    eveningmealside: ["Steamed Broccoli", "Sliced Strawberries"],
+    eveningmeal: "Grilled Chicken",
+    eveningmealside: ["Steamed Broccoli", "Sliced berries"],
   },
   //day4
   {
@@ -132,10 +132,10 @@ let normalWest = [
   },
   //day5
   {
-    breakfast: "Hard Boiled Egg",
+    breakfast: "Boiled Egg",
     breakfastSide: ["Black Tea", "Apple"],
     lunch: "Veggie burger",
-    lunchside: ["Sweet Potato fries", "Yogurt"],
+    lunchside: ["Sweet Potato", "Yogurt"],
     mealSunset: "Cereal",
     mealSunsetSide: ["Milk", "Apple"],
     eveningmeal: "Grilled Steak",
@@ -146,10 +146,10 @@ let normalWest = [
     breakfast: "Fruit Salad",
     breakfastSide: ["Yogurt", "bread"],
     lunch: "Lentil soup",
-    lunchside: ["Salad", "Whole wheat bread"],
+    lunchside: ["Salad", "wheat bread"],
     mealSunset: "Sweat potato",
     mealSunsetSide: ["Ground nuts", "Black tea"],
-    eveningmeal: "Grilled Pork Tenderloin",
+    eveningmeal: "Pork Tenderloin",
     eveningmealside: ["Couscous", "Watermelon Slices"],
   },
   //day7
@@ -172,7 +172,7 @@ let normalMix = [
     breakfastSide: ["milk", "Eggs"],
     lunch: "nshima",
     lunchside: ["Village chicken", "Spinach"],
-    mealSunset: "Fried sweet potatoes ",
+    mealSunset: "sweet potatoes ",
     mealSunsetSide: ["Black tea", "Ground nuts"],
     eveningmeal: "nshima",
     eveningmealside: ["Village Chicken", "Beans"],
@@ -180,7 +180,7 @@ let normalMix = [
   //day2
   {
     image: "images/meals/normal",
-    breakfast: "Peanut butter Buns",
+    breakfast: "butter Buns",
     breakfastSide: ["Milk tea", "Banana"],
     lunch: "nshima",
     lunchside: ["Salted Fish", "Kalembula veg"],
@@ -204,10 +204,10 @@ let normalMix = [
   //day4
   {
     images: "images/meals/normal",
-    breakfast: "Sample (corn mix)",
+    breakfast: "Sample(corn mix)",
     breakfastSide: ["Tea", "orange"],
     lunch: "nshima",
-    lunchside: ["Kapenta", "Five years(veggies)"],
+    lunchside: ["Kapenta", "5 years(veg)"],
     mealSunset: "Tobwa",
     mealSunsetSide: ["Water", "Mangoes"],
     eveningmeal: "Rice",
@@ -279,8 +279,8 @@ let normalMix = [
     lunchside: ["Roasted Veg", "Pasta"],
     mealSunset: "Black bean soup",
     mealSunsetSide: ["salad", "bread"],
-    eveningmeal: "Grilled Chicken Breast",
-    eveningmealside: ["Steamed Broccoli", "Sliced Strawberries"],
+    eveningmeal: "Grilled Chicken",
+    eveningmealside: ["Broccoli", "Strawberries"],
   },
   //day11
   {
@@ -295,25 +295,25 @@ let normalMix = [
   },
   //day12
   {
-    breakfast: "Hard Boiled Egg",
+    breakfast: "Boiled Egg",
     breakfastSide: ["Black Tea", "Apple"],
     lunch: "Veggie burger",
-    lunchside: ["Sweet Potato fries", "Yogurt"],
+    lunchside: ["Sweet Potato", "Yogurt"],
     mealSunset: "Cereal",
     mealSunsetSide: ["Milk", "Apple"],
     eveningmeal: "Grilled Steak",
-    eveningmealside: ["Roasted Vegetables", "Sliced Mango"],
+    eveningmealside: ["Roasted Veg", "Sliced Mango"],
   },
   //day13
   {
     breakfast: "Fruit Salad",
     breakfastSide: ["Yogurt", "bread"],
     lunch: "Lentil soup",
-    lunchside: ["Salad", "Whole wheat bread"],
+    lunchside: ["Salad", "Wheat bread"],
     mealSunset: "Sweat potato",
     mealSunsetSide: ["Ground nuts", "Black tea"],
-    eveningmeal: "Grilled Pork Tenderloin",
-    eveningmealside: ["Couscous", "Watermelon Slices"],
+    eveningmeal: "Pork Tenderloin",
+    eveningmealside: ["Couscous", "Watermelon"],
   },
   //day14
   {
