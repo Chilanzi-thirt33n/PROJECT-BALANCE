@@ -331,8 +331,8 @@ let normalMix = [
 let veganized = [
   //day1
   {
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
+    breakfast: "Veggie Omelette",
+    breakfastSide: ["Toast", "Berries"],
     lunch: "nshima",
     lunchside: ["village chicken", "spinach"],
     mealSunset: "placeholder",
@@ -342,8 +342,8 @@ let veganized = [
   },
   //day2
   {
-    breakfast: "brown bread",
-    breakfastSide: ["milk", "eggs"],
+    breakfast: "Avocado Toast",
+    breakfastSide: ["Yogurt", "Orange"],
     lunch: "nshima",
     lunchside: ["village chicken", "spinach"],
     mealSunset: "placeholder",
